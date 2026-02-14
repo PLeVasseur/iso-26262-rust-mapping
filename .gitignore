@@ -1,0 +1,22 @@
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+
+# Local virtual environments
+.venv/
+venv/
+
+# Common Python tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated artifacts
+build/docx/
+build/reports/
+build/render_compare/
+build/tmp/
+out/
+
+# OS clutter
+.DS_Store

@@ -3,20 +3,23 @@
 This project treats the `.docx` as a **generated artifact**.
 
 **Sources of truth**
+- `docgen/*.py` — build/compare/render implementation modules
 - `src/iso26262_rust_mapping.md` — narrative text + document structure (with `{{TABLE: table-XX}}` placeholders)
 - `src/tables/table-XX.yaml` — table content in YAML
 - `src/schemas/table-XX.schema.json` — per-table JSON Schema validation (refs `table_common.schema.json`)
 
 **Build artifact**
-- `out/iso26262_rust_mapping_generated.docx`
+- `build/docx/iso26262_rust_mapping_generated.docx`
 
 ## Requirements
 
 - Python 3.11+ (recommended)
 - [`uv`](https://github.com/astral-sh/uv)
-- For `make.py verify --render-pages N` (optional visual QA):
+- For default `make.py verify` behavior (render first 2 pages):
   - LibreOffice (`soffice`)
   - Poppler (`pdftoppm`)
+
+If render dependencies are unavailable, you can still run compare-only verification with `make.py verify --render-pages 0`.
 
 ## Quickstart (with uv)
 
@@ -24,13 +27,15 @@ This project treats the `.docx` as a **generated artifact**.
 uv sync
 uv run python make.py validate
 uv run python make.py build
-uv run python make.py verify --render-pages 2
+uv run python make.py verify
 ```
 
 Outputs:
-- `out/iso26262_rust_mapping_generated.docx`
-- `out/compare_report.md`
-- `out/render_compare/` (PNG renders of baseline + generated)
+- `build/docx/iso26262_rust_mapping_generated.docx`
+- `build/reports/compare_report.md`
+- `build/render_compare/` (PNG renders of baseline + generated)
+
+Migration note: artifact output has a hard cutover from `out/` to `build/`.
 
 ## Notes on markdown dialect
 
