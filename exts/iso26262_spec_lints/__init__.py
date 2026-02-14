@@ -9,7 +9,6 @@ from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 from sphinx.errors import ExtensionError
 
-
 LEGACY_TOKENS = ("{{TABLE:", "{{PAGE_BREAK}}", "{{BLANK}}")
 NATIVE_TABLE_DIRECTIVES = ("```{table}", "```{list-table}", "```{csv-table}")
 
@@ -30,7 +29,9 @@ def _write_text(path: Path, text: str) -> None:
 
 def _write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def _find_legacy_tokens(src_root: Path) -> list[str]:
@@ -49,7 +50,9 @@ def _find_native_table_usage(src_root: Path) -> list[str]:
         text = md_file.read_text(encoding="utf-8")
         for directive in NATIVE_TABLE_DIRECTIVES:
             if directive in text:
-                findings.append(f"{md_file}: contains traceable native table directive {directive}")
+                findings.append(
+                    f"{md_file}: contains traceable native table directive {directive}"
+                )
     return findings
 
 
@@ -77,7 +80,9 @@ def _validate_missing_preface_units(env: BuildEnvironment) -> list[str]:
     findings: list[str] = []
     for docname, missing in env.iso26262_doc_missing_units.items():
         for snippet in missing:
-            findings.append(f"{docname}: missing metadata preface for statement '{snippet[:100]}'")
+            findings.append(
+                f"{docname}: missing metadata preface for statement '{snippet[:100]}'"
+            )
     return findings
 
 
@@ -128,21 +133,50 @@ def _run_lints(app: Sphinx, env: BuildEnvironment) -> None:
     }
 
     if lint_root is not None:
-        _write_text(lint_root / "no-legacy-token-lint.log", "\n".join(findings["no_legacy_tokens"]) + "\n")
-        _write_text(lint_root / "traceable-table-usage-lint.log", "\n".join(findings["traceable_table_usage"]) + "\n")
-        _write_text(lint_root / "anchor-resolution-lint.log", "\n".join(findings["anchor_resolution"]) + "\n")
-        _write_text(lint_root / "preface-adjacency-lint.log", "\n".join(findings["preface_adjacency"]) + "\n")
-        _write_text(lint_root / "table-anchor-targets-lint.log", "\n".join(findings["table_anchor_targets"]) + "\n")
-        _write_text(lint_root / "trace-status-values-lint.log", "\n".join(findings["trace_status_values"]) + "\n")
+        _write_text(
+            lint_root / "no-legacy-token-lint.log",
+            "\n".join(findings["no_legacy_tokens"]) + "\n",
+        )
+        _write_text(
+            lint_root / "traceable-table-usage-lint.log",
+            "\n".join(findings["traceable_table_usage"]) + "\n",
+        )
+        _write_text(
+            lint_root / "anchor-resolution-lint.log",
+            "\n".join(findings["anchor_resolution"]) + "\n",
+        )
+        _write_text(
+            lint_root / "preface-adjacency-lint.log",
+            "\n".join(findings["preface_adjacency"]) + "\n",
+        )
+        _write_text(
+            lint_root / "table-anchor-targets-lint.log",
+            "\n".join(findings["table_anchor_targets"]) + "\n",
+        )
+        _write_text(
+            lint_root / "trace-status-values-lint.log",
+            "\n".join(findings["trace_status_values"]) + "\n",
+        )
 
         summary = {
             "lint_counts": {key: len(value) for key, value in findings.items()},
-            "status": "pass" if all(not values for values in findings.values()) else "fail",
+            "status": (
+                "pass" if all(not values for values in findings.values()) else "fail"
+            ),
         }
         _write_json(lint_root / "lint-summary.json", summary)
-        _write_text(lint_root / "orphan-preface-lint.log", "\n".join(findings["preface_adjacency"]) + "\n")
-        _write_text(lint_root / "table-trace-coverage-lint.log", "\n".join(findings["extension_errors"]) + "\n")
-        _write_text(lint_root / "table-trace-precedence-lint.log", "\n".join(findings["extension_errors"]) + "\n")
+        _write_text(
+            lint_root / "orphan-preface-lint.log",
+            "\n".join(findings["preface_adjacency"]) + "\n",
+        )
+        _write_text(
+            lint_root / "table-trace-coverage-lint.log",
+            "\n".join(findings["extension_errors"]) + "\n",
+        )
+        _write_text(
+            lint_root / "table-trace-precedence-lint.log",
+            "\n".join(findings["extension_errors"]) + "\n",
+        )
 
     all_findings = [item for values in findings.values() for item in values]
     if all_findings:

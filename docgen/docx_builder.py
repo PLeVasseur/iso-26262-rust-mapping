@@ -20,6 +20,7 @@ STYLE_RE = re.compile(r"^<!--\s*style:\s*(.+?)\s*-->$")  # legacy
 BLANK_RE = re.compile(r"^\{\{BLANK\}\}$")
 PAGE_BREAK_RE = re.compile(r"^\{\{PAGE_BREAK\}\}$")
 
+
 @dataclass
 class Block:
     kind: str  # "heading" | "para" | "table" | "empty" | "page_break"
@@ -28,6 +29,7 @@ class Block:
     fmt: Dict[str, object] = field(default_factory=dict)
     table_id: Optional[str] = None
 
+
 def _clear_document_body(doc: Document) -> None:
     body = doc._element.body
     # Keep sectPr (section properties) if present, remove everything else
@@ -35,6 +37,7 @@ def _clear_document_body(doc: Document) -> None:
         if child.tag.endswith("}sectPr"):
             continue
         body.remove(child)
+
 
 def _set_paragraph_text_with_breaks(paragraph, text: str) -> None:
     paragraph.text = ""  # clear
@@ -46,6 +49,7 @@ def _set_paragraph_text_with_breaks(paragraph, text: str) -> None:
             r = paragraph.add_run()
             r.add_break()  # line break within paragraph
             r.add_text(line)
+
 
 def _apply_paragraph_format(paragraph, fmt: Dict[str, object]) -> None:
     # Alignment
@@ -74,6 +78,7 @@ def _apply_paragraph_format(paragraph, fmt: Dict[str, object]) -> None:
         if isinstance(italic, bool):
             run.italic = italic
 
+
 def _set_cell_text(cell, text: str) -> None:
     """
     Replace cell contents.
@@ -88,12 +93,14 @@ def _set_cell_text(cell, text: str) -> None:
     for part in parts[1:]:
         cell.add_paragraph(part)
 
+
 def _set_repeat_table_header(row) -> None:
     tr = row._tr
     trPr = tr.get_or_add_trPr()
     tblHeader = OxmlElement("w:tblHeader")
     tblHeader.set(qn("w:val"), "true")
     trPr.append(tblHeader)
+
 
 def _parse_fmt_kv(s: str) -> Dict[str, object]:
     """
@@ -115,7 +122,7 @@ def _parse_fmt_kv(s: str) -> Dict[str, object]:
         if isinstance(val, str):
             low = val.lower()
             if low in ("true", "false"):
-                out[key] = (low == "true")
+                out[key] = low == "true"
                 continue
             # number?
             try:
@@ -130,6 +137,7 @@ def _parse_fmt_kv(s: str) -> Dict[str, object]:
         out[key] = val
 
     return out
+
 
 def parse_narrative(md_path: Path) -> List[Block]:
     """
@@ -154,14 +162,17 @@ def parse_narrative(md_path: Path) -> List[Block]:
     def flush_para() -> None:
         nonlocal para_lines, para_fmt
         if para_lines:
-            blocks.append(Block(kind="para", text="\n".join(para_lines), fmt=para_fmt or {}))
+            blocks.append(
+                Block(kind="para", text="\n".join(para_lines), fmt=para_fmt or {})
+            )
             para_lines = []
             para_fmt = None
 
     for raw in lines:
         line = raw.rstrip("\n")
 
-        # Blank line = paragraph boundary (multiple blanks do NOT create empty paras; use {{BLANK}} for that)
+        # Blank line = paragraph boundary.
+        # Multiple blanks do not create empty paras; use {{BLANK}} for that.
         if line.strip() == "":
             flush_para()
             continue
@@ -217,6 +228,7 @@ def parse_narrative(md_path: Path) -> List[Block]:
 
     flush_para()
     return blocks
+
 
 def build_docx(
     template_docx: Path,

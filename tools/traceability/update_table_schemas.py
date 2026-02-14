@@ -8,7 +8,9 @@ from pathlib import Path
 
 def update_common_schema(common_schema_path: Path) -> None:
     schema = json.loads(common_schema_path.read_text(encoding="utf-8"))
-    schema.setdefault("properties", {}).setdefault("rows", {}).setdefault("items", {})["additionalProperties"] = True
+    schema.setdefault("properties", {}).setdefault("rows", {}).setdefault("items", {})[
+        "additionalProperties"
+    ] = True
     defs = schema.setdefault("$defs", {})
     defs["traceStatus"] = {
         "type": "string",
@@ -75,7 +77,9 @@ def update_common_schema(common_schema_path: Path) -> None:
         "additionalProperties": False,
     }
 
-    common_schema_path.write_text(json.dumps(schema, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    common_schema_path.write_text(
+        json.dumps(schema, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def update_table_schema(table_schema_path: Path) -> dict[str, int | str]:
@@ -91,7 +95,11 @@ def update_table_schema(table_schema_path: Path) -> dict[str, int | str]:
     if "row_id" not in required:
         required.append("row_id")
 
-    col_keys = [key for key in properties.keys() if key not in {"row_id", "_trace", "cell_trace"}]
+    col_keys = [
+        key
+        for key in properties.keys()
+        if key not in {"row_id", "_trace", "cell_trace"}
+    ]
 
     properties["_trace"] = {
         "$ref": "table_common.schema.json#/$defs/traceMetadata",
@@ -114,7 +122,9 @@ def update_table_schema(table_schema_path: Path) -> dict[str, int | str]:
     row_items["required"] = required
     row_items["additionalProperties"] = False
 
-    table_schema_path.write_text(json.dumps(schema, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    table_schema_path.write_text(
+        json.dumps(schema, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     return {
         "schema": str(table_schema_path),
         "column_count": len(col_keys),
@@ -122,7 +132,9 @@ def update_table_schema(table_schema_path: Path) -> dict[str, int | str]:
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="Update table schemas with trace-aware metadata contracts")
+    parser = argparse.ArgumentParser(
+        description="Update table schemas with trace-aware metadata contracts"
+    )
     parser.add_argument("--schemas-dir", required=True)
     parser.add_argument("--report-json", default="")
     args = parser.parse_args(argv)
@@ -143,7 +155,9 @@ def main(argv: list[str]) -> int:
     if args.report_json:
         report_path = Path(args.report_json)
         report_path.parent.mkdir(parents=True, exist_ok=True)
-        report_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        report_path.write_text(
+            json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
     print(f"TABLE_SCHEMA_COUNT={len(per_table)}")
     return 0

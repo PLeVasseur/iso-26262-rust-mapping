@@ -19,6 +19,7 @@ build/render_compare/
 build/tmp/
 build/html/
 build/doctrees/
+artifacts/
 out/
 
 # OS clutter

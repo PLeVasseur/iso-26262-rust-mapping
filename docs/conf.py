@@ -4,7 +4,6 @@ import os
 import sys
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
@@ -44,8 +43,12 @@ iso26262_trace_statuses = [
     "out_of_scope_with_rationale",
 ]
 
-iso26262_trace_schema_path = str(REPO_ROOT / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json")
-iso26262_anchor_registry_path = str(REPO_ROOT / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc")
+iso26262_trace_schema_path = str(
+    REPO_ROOT / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json"
+)
+iso26262_anchor_registry_path = str(
+    REPO_ROOT / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
+)
 iso26262_table_root = str(REPO_ROOT / "src" / "tables")
 
 iso26262_run_root = os.environ.get("SPHINX_MIGRATION_RUN_ROOT", "")

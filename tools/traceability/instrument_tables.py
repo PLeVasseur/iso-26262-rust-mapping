@@ -7,7 +7,6 @@ from pathlib import Path
 
 import yaml
 
-
 TRACE_STATUS_DEFAULT = "unmapped_with_rationale"
 
 
@@ -52,7 +51,10 @@ def instrument_table(path: Path) -> dict[str, int | str]:
             if not isinstance(trace_entry, dict):
                 trace_entry = {}
 
-            trace_entry.setdefault("source_id", _make_source_id(payload.get("id", path.stem), row_index, col_index))
+            trace_entry.setdefault(
+                "source_id",
+                _make_source_id(payload.get("id", path.stem), row_index, col_index),
+            )
             trace_entry.setdefault("trace_status", TRACE_STATUS_DEFAULT)
             trace_entry.setdefault("anchor_ids", [])
             trace_entry.setdefault("relation", "")
@@ -72,14 +74,18 @@ def instrument_table(path: Path) -> dict[str, int | str]:
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="Add row_id/cell_trace instrumentation to table YAML files")
+    parser = argparse.ArgumentParser(
+        description="Add row_id/cell_trace instrumentation to table YAML files"
+    )
     parser.add_argument("--tables-dir", required=True)
     parser.add_argument("--report-json", default="")
     parser.add_argument("--report-md", default="")
     args = parser.parse_args(argv)
 
     tables_dir = Path(args.tables_dir)
-    results = [instrument_table(path) for path in sorted(tables_dir.glob("table-*.yaml"))]
+    results = [
+        instrument_table(path) for path in sorted(tables_dir.glob("table-*.yaml"))
+    ]
     total_rows = sum(int(item["rows"]) for item in results)
     total_cells = sum(int(item["instrumented_cells"]) for item in results)
 
@@ -93,20 +99,25 @@ def main(argv: list[str]) -> int:
     if args.report_json:
         report_json_path = Path(args.report_json)
         report_json_path.parent.mkdir(parents=True, exist_ok=True)
-        report_json_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        report_json_path.write_text(
+            json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
     if args.report_md:
         report_md_path = Path(args.report_md)
         report_md_path.parent.mkdir(parents=True, exist_ok=True)
-        report_md = "\n".join(
-            [
-                "# Table Schema Migration Report",
-                "",
-                f"- tables updated: {len(results)}",
-                f"- total rows: {total_rows}",
-                f"- total instrumented cells: {total_cells}",
-            ]
-        ) + "\n"
+        report_md = (
+            "\n".join(
+                [
+                    "# Table Schema Migration Report",
+                    "",
+                    f"- tables updated: {len(results)}",
+                    f"- total rows: {total_rows}",
+                    f"- total instrumented cells: {total_cells}",
+                ]
+            )
+            + "\n"
+        )
         report_md_path.write_text(report_md, encoding="utf-8")
 
     print(f"TABLE_COUNT={len(results)}")

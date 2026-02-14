@@ -18,7 +18,6 @@ from sphinx.errors import ExtensionError
 from sphinx.roles import SphinxRole
 from sphinx.util import logging
 
-
 LOGGER = logging.getLogger(__name__)
 
 TRACE_STATUSES = {
@@ -100,14 +99,18 @@ def _record_error(env: BuildEnvironment, message: str) -> None:
     env.iso26262_trace_errors.append(message)
 
 
-def _register_record(env: BuildEnvironment, record: dict[str, Any], source_context: str) -> None:
+def _register_record(
+    env: BuildEnvironment, record: dict[str, Any], source_context: str
+) -> None:
     _ensure_env(env)
     source_id = record["id"]
     existing = env.iso26262_trace_records.get(source_id)
     if existing is not None:
+        existing_doc = existing.get("doc", "<unknown>")
         _record_error(
             env,
-            f"duplicate source_id '{source_id}' in {source_context}; first seen in {existing.get('doc', '<unknown>')}",
+            f"duplicate source_id '{source_id}' in {source_context}; "
+            f"first seen in {existing_doc}",
         )
         return
 
@@ -156,7 +159,12 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
             continue
         has_non_metadata_content = True
 
-    if has_any_metadata and (not has_non_metadata_content) and len(source_ids) == 1 and len(statuses) == 1:
+    if (
+        has_any_metadata
+        and (not has_non_metadata_content)
+        and len(source_ids) == 1
+        and len(statuses) == 1
+    ):
         return PrefaceMetadata(
             source_id=source_ids[0],
             trace_status=statuses[0],
@@ -166,10 +174,13 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
         )
 
     raw = (paragraph.rawsource or "").strip()
-    role_preface = re.match(
-        r"^\{dp\}`(?P<sid>[^`]+)`\s+\{ts\}`(?P<status>[^`]+)`(?:\s+\{rel\}`(?P<rel>[^`]+)`)?(?:\s+\{a\}`(?P<aid>[^`]+)`)?(?:\n(?P<body>[\s\S]+))?$",
-        raw,
+    role_preface_pattern = (
+        r"^\{dp\}`(?P<sid>[^`]+)`\s+\{ts\}`(?P<status>[^`]+)`"
+        r"(?:\s+\{rel\}`(?P<rel>[^`]+)`)?"
+        r"(?:\s+\{a\}`(?P<aid>[^`]+)`)?"
+        r"(?:\n(?P<body>[\s\S]+))?$"
     )
+    role_preface = re.match(role_preface_pattern, raw)
     if role_preface:
         sid = role_preface.group("sid").strip()
         status = role_preface.group("status").strip()
@@ -185,10 +196,12 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
         )
 
     text = paragraph.astext().strip()
-    plain_preface = re.match(
-        r"^(?P<sid>SRCN-[A-Za-z0-9-]+)\s+(?P<status>mapped|unmapped_with_rationale|out_of_scope_with_rationale)(?:\n(?P<body>[\s\S]+)|\s+(?P<rest>.+))?$",
-        text,
+    plain_preface_pattern = (
+        r"^(?P<sid>SRCN-[A-Za-z0-9-]+)\s+"
+        r"(?P<status>mapped|unmapped_with_rationale|out_of_scope_with_rationale)"
+        r"(?:\n(?P<body>[\s\S]+)|\s+(?P<rest>.+))?$"
     )
+    plain_preface = re.match(plain_preface_pattern, text)
     if plain_preface:
         sid = plain_preface.group("sid").strip()
         status = plain_preface.group("status").strip()
@@ -223,7 +236,9 @@ def _set_paragraph_text(paragraph: nodes.paragraph, text: str) -> None:
         paragraph += nodes.Text(line)
 
 
-def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: nodes.Element) -> None:
+def _bind_prefaces(
+    app: Sphinx, env: BuildEnvironment, docname: str, container: nodes.Element
+) -> None:
     if not hasattr(container, "children"):
         return
 
@@ -236,19 +251,33 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
         if isinstance(node, nodes.paragraph):
             metadata = _extract_preface(node)
             if metadata is not None:
-                inline_target = isinstance(node, nodes.paragraph) and bool(metadata.inline_body)
+                inline_target = isinstance(node, nodes.paragraph) and bool(
+                    metadata.inline_body
+                )
                 if inline_target:
                     _set_paragraph_text(node, metadata.inline_body)
                     target = node
                     source_id = metadata.source_id
                     trace_status = metadata.trace_status
                     if trace_status not in TRACE_STATUSES:
-                        _record_error(env, f"invalid trace status '{trace_status}' for {source_id} in {docname}")
+                        _record_error(
+                            env,
+                            f"invalid trace status '{trace_status}' "
+                            f"for {source_id} in {docname}",
+                        )
 
                     if trace_status == "mapped" and not metadata.anchor_ids:
-                        _record_error(env, f"mapped statement '{source_id}' in {docname} has no anchor_ids")
+                        _record_error(
+                            env,
+                            f"mapped statement '{source_id}' in {docname} "
+                            "has no anchor_ids",
+                        )
                     if trace_status == "mapped" and not metadata.relation:
-                        _record_error(env, f"mapped statement '{source_id}' in {docname} has no relation")
+                        _record_error(
+                            env,
+                            f"mapped statement '{source_id}' in {docname} "
+                            "has no relation",
+                        )
 
                     anchor_id = _statement_anchor_from_source_id(source_id)
                     target_ids = target.setdefault("ids", [])
@@ -277,7 +306,9 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
                         },
                     }
                     _register_record(env, record, f"{docname} inline metadata preface")
-                    env.iso26262_doc_statement_ids.setdefault(docname, []).append(source_id)
+                    env.iso26262_doc_statement_ids.setdefault(docname, []).append(
+                        source_id
+                    )
 
                     rebuilt.append(node)
                     idx += 1
@@ -292,7 +323,8 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
                 if not _is_markdown_statement_node(target):
                     _record_error(
                         env,
-                        f"metadata preface in {docname} is not directly above a markdown statement unit",
+                        f"metadata preface in {docname} is not directly above a "
+                        "markdown statement unit",
                     )
                     idx += 1
                     continue
@@ -300,12 +332,24 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
                 source_id = metadata.source_id
                 trace_status = metadata.trace_status
                 if trace_status not in TRACE_STATUSES:
-                    _record_error(env, f"invalid trace status '{trace_status}' for {source_id} in {docname}")
+                    _record_error(
+                        env,
+                        f"invalid trace status '{trace_status}' "
+                        f"for {source_id} in {docname}",
+                    )
 
                 if trace_status == "mapped" and not metadata.anchor_ids:
-                    _record_error(env, f"mapped statement '{source_id}' in {docname} has no anchor_ids")
+                    _record_error(
+                        env,
+                        f"mapped statement '{source_id}' in {docname} "
+                        "has no anchor_ids",
+                    )
                 if trace_status == "mapped" and not metadata.relation:
-                    _record_error(env, f"mapped statement '{source_id}' in {docname} has no relation")
+                    _record_error(
+                        env,
+                        f"mapped statement '{source_id}' in {docname} "
+                        "has no relation",
+                    )
 
                 anchor_id = _statement_anchor_from_source_id(source_id)
                 target_ids = target.setdefault("ids", [])
@@ -317,7 +361,9 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
                 target["trace_anchor_ids"] = metadata.anchor_ids
                 target["trace_relation"] = metadata.relation
 
-                unit_type = "paragraph" if isinstance(target, nodes.paragraph) else "list_item"
+                unit_type = (
+                    "paragraph" if isinstance(target, nodes.paragraph) else "list_item"
+                )
                 statement_text = target.astext().strip()
                 href = f"{docname}.html#{anchor_id}"
 
@@ -350,7 +396,9 @@ def _bind_prefaces(app: Sphinx, env: BuildEnvironment, docname: str, container: 
     container.children = rebuilt
 
 
-def _collect_missing_units(env: BuildEnvironment, docname: str, doctree: nodes.document) -> None:
+def _collect_missing_units(
+    env: BuildEnvironment, docname: str, doctree: nodes.document
+) -> None:
     missing: list[str] = []
     for paragraph in doctree.traverse(nodes.paragraph):
         if isinstance(paragraph.parent, nodes.entry):
@@ -370,7 +418,8 @@ def _collect_missing_units(env: BuildEnvironment, docname: str, doctree: nodes.d
             continue
         # If the list item contains a traced paragraph, treat it as covered.
         traced_child = any(
-            isinstance(child, nodes.paragraph) and child.get("trace_source_id") for child in list_item.children
+            isinstance(child, nodes.paragraph) and child.get("trace_source_id")
+            for child in list_item.children
         )
         if not traced_child:
             missing.append(text)
@@ -403,7 +452,9 @@ def _load_anchor_registry(app: Sphinx, env: BuildEnvironment) -> None:
 
 def _write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def _write_text(path: Path, text: str) -> None:
@@ -428,7 +479,12 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
     }
     _write_json(paragraph_ids_path, paragraph_payload)
 
-    schema_path = Path(app.config.iso26262_opencode_config_dir) / "reports" / "schemas" / "paragraph-ids.schema.json"
+    schema_path = (
+        Path(app.config.iso26262_opencode_config_dir)
+        / "reports"
+        / "schemas"
+        / "paragraph-ids.schema.json"
+    )
     schema_validation_result = {
         "schema_path": str(schema_path),
         "paragraph_ids_path": str(paragraph_ids_path),
@@ -440,16 +496,25 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
         try:
             schema = json.loads(schema_path.read_text(encoding="utf-8"))
             validator = Draft202012Validator(schema)
-            errors = sorted(validator.iter_errors(paragraph_payload), key=lambda err: list(err.absolute_path))
+            errors = sorted(
+                validator.iter_errors(paragraph_payload),
+                key=lambda err: list(err.absolute_path),
+            )
             if errors:
                 schema_validation_result["valid"] = False
                 schema_validation_result["errors"] = [err.message for err in errors]
                 for err in errors:
-                    _record_error(env, f"paragraph-ids schema validation error: {err.message}")
+                    _record_error(
+                        env, f"paragraph-ids schema validation error: {err.message}"
+                    )
         except Exception as exc:
             schema_validation_result["valid"] = False
-            schema_validation_result["errors"] = [f"schema validation execution failed: {exc}"]
-            _record_error(env, f"paragraph-ids schema validation failed to execute: {exc}")
+            schema_validation_result["errors"] = [
+                f"schema validation execution failed: {exc}"
+            ]
+            _record_error(
+                env, f"paragraph-ids schema validation failed to execute: {exc}"
+            )
     else:
         schema_validation_result["valid"] = False
         schema_validation_result["errors"] = ["schema file missing"]
@@ -486,21 +551,28 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
         **unit_counts,
     }
 
-    coverage_md = "\n".join(
-        [
-            "# Traceability Statement Coverage",
-            "",
-            f"- total: {total}",
-            f"- mapped: {status_counts['mapped']}",
-            f"- unmapped_with_rationale: {status_counts['unmapped_with_rationale']}",
-            f"- out_of_scope_with_rationale: {status_counts['out_of_scope_with_rationale']}",
-            f"- markdown_preface_units: {unit_counts['markdown_preface_units']}",
-            f"- table_cell_units: {unit_counts['table_cell_units']}",
-            f"- table_row_units: {unit_counts['table_row_units']}",
-            "",
-            f"- paragraph_ids_json: `{paragraph_ids_path}`",
-        ]
-    ) + "\n"
+    mapped_count = status_counts["mapped"]
+    unmapped_with_rationale_count = status_counts["unmapped_with_rationale"]
+    out_of_scope_with_rationale_count = status_counts["out_of_scope_with_rationale"]
+
+    coverage_md = (
+        "\n".join(
+            [
+                "# Traceability Statement Coverage",
+                "",
+                f"- total: {total}",
+                f"- mapped: {mapped_count}",
+                f"- unmapped_with_rationale: {unmapped_with_rationale_count}",
+                f"- out_of_scope_with_rationale: {out_of_scope_with_rationale_count}",
+                f"- markdown_preface_units: {unit_counts['markdown_preface_units']}",
+                f"- table_cell_units: {unit_counts['table_cell_units']}",
+                f"- table_row_units: {unit_counts['table_row_units']}",
+                "",
+                f"- paragraph_ids_json: `{paragraph_ids_path}`",
+            ]
+        )
+        + "\n"
+    )
 
     run_root_raw = app.config.iso26262_run_root
     opencode_config_dir_raw = app.config.iso26262_opencode_config_dir
@@ -510,7 +582,10 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
         _write_text(run_root / "traceability-statement-coverage.md", coverage_md)
 
         _write_json(
-            run_root / "artifacts" / "traceability" / "paragraph-ids-schema-validation.json",
+            run_root
+            / "artifacts"
+            / "traceability"
+            / "paragraph-ids-schema-validation.json",
             schema_validation_result,
         )
         table_audit = {
@@ -518,7 +593,13 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
             "table_row_record_count": unit_counts["table_row_units"],
             "canonical_anchor_pattern": "<table_label>--r-<row_id>--c-<col_key>",
         }
-        _write_json(run_root / "artifacts" / "traceability" / "paragraph-ids-table-entry-audit.json", table_audit)
+        _write_json(
+            run_root
+            / "artifacts"
+            / "traceability"
+            / "paragraph-ids-table-entry-audit.json",
+            table_audit,
+        )
 
         source_to_anchor_stats = {
             "record_count": total,
@@ -526,17 +607,27 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
             "unmapped_count": status_counts["unmapped_with_rationale"],
             "out_of_scope_count": status_counts["out_of_scope_with_rationale"],
         }
-        _write_json(run_root / "artifacts" / "indexes" / "source_to_anchor.stats.json", source_to_anchor_stats)
+        _write_json(
+            run_root / "artifacts" / "indexes" / "source_to_anchor.stats.json",
+            source_to_anchor_stats,
+        )
         anchor_to_source_stats = {
             "known_anchor_count": len(env.iso26262_anchor_registry_ids),
             "mapped_record_count": status_counts["mapped"],
         }
-        _write_json(run_root / "artifacts" / "indexes" / "anchor_to_source.stats.json", anchor_to_source_stats)
+        _write_json(
+            run_root / "artifacts" / "indexes" / "anchor_to_source.stats.json",
+            anchor_to_source_stats,
+        )
 
     if opencode_config_dir_raw:
         reports_root = Path(opencode_config_dir_raw) / "reports"
-        _write_json(reports_root / "traceability-statement-coverage-latest.json", coverage_json)
-        _write_text(reports_root / "traceability-statement-coverage-latest.md", coverage_md)
+        _write_json(
+            reports_root / "traceability-statement-coverage-latest.json", coverage_json
+        )
+        _write_text(
+            reports_root / "traceability-statement-coverage-latest.md", coverage_md
+        )
 
 
 class _BaseTraceRole(SphinxRole):
@@ -584,7 +675,9 @@ class TraceMetaDirective(Directive):
         paragraph += nodes.Text(" ")
         paragraph += ts_node(self.options["ts"], self.options["ts"])
         anchors_raw = self.options.get("a", "")
-        for anchor in [value.strip() for value in anchors_raw.split(",") if value.strip()]:
+        for anchor in [
+            value.strip() for value in anchors_raw.split(",") if value.strip()
+        ]:
             paragraph += nodes.Text(" ")
             paragraph += a_node(anchor, anchor)
         relation = self.options.get("rel", "").strip()
@@ -672,14 +765,22 @@ class IsoTableDirective(Directive):
 
             row_node = nodes.row()
             tbody += row_node
-            row_trace = row.get("_trace") if isinstance(row.get("_trace"), dict) else None
-            cell_trace = row.get("cell_trace") if isinstance(row.get("cell_trace"), dict) else {}
+            row_trace = (
+                row.get("_trace") if isinstance(row.get("_trace"), dict) else None
+            )
+            cell_trace = (
+                row.get("cell_trace") if isinstance(row.get("cell_trace"), dict) else {}
+            )
 
             row_anchor = f"{_slug(label)}--r-{row_slug}"
             if isinstance(row_trace, dict):
                 row_source_id = str(row_trace.get("source_id", "")).strip()
                 row_status = str(row_trace.get("trace_status", "")).strip()
-                row_anchor_ids = [str(item).strip() for item in row_trace.get("anchor_ids", []) if str(item).strip()]
+                row_anchor_ids = [
+                    str(item).strip()
+                    for item in row_trace.get("anchor_ids", [])
+                    if str(item).strip()
+                ]
                 row_relation = str(row_trace.get("relation", "")).strip()
                 if row_source_id and row_status:
                     row_record = {
@@ -688,7 +789,9 @@ class IsoTableDirective(Directive):
                         "display_number": "",
                         "doc": env.docname,
                         "href": f"{env.docname}.html#{row_anchor}",
-                        "checksum": _sha256_text("|".join(str(row.get(key, "")) for key in col_keys)),
+                        "checksum": _sha256_text(
+                            "|".join(str(row.get(key, "")) for key in col_keys)
+                        ),
                         "trace_status": row_status,
                         "anchor_ids": row_anchor_ids,
                         "relation": row_relation,
@@ -714,22 +817,46 @@ class IsoTableDirective(Directive):
                 if text.strip():
                     meta = cell_trace.get(key)
                     if not isinstance(meta, dict):
-                        _record_error(env, f"table '{table_id}' row '{row_id}' col '{key}' missing cell_trace metadata")
+                        _record_error(
+                            env,
+                            f"table '{table_id}' row '{row_id}' col '{key}' "
+                            "missing cell_trace metadata",
+                        )
                         meta = {}
 
                     source_id = str(meta.get("source_id", "")).strip()
                     trace_status = str(meta.get("trace_status", "")).strip()
-                    anchor_ids = [str(item).strip() for item in meta.get("anchor_ids", []) if str(item).strip()]
+                    anchor_ids = [
+                        str(item).strip()
+                        for item in meta.get("anchor_ids", [])
+                        if str(item).strip()
+                    ]
                     relation = str(meta.get("relation", "")).strip()
 
                     if not source_id:
-                        _record_error(env, f"table '{table_id}' row '{row_id}' col '{key}' missing source_id")
+                        _record_error(
+                            env,
+                            f"table '{table_id}' row '{row_id}' col '{key}' "
+                            "missing source_id",
+                        )
                     if not trace_status:
-                        _record_error(env, f"table '{table_id}' row '{row_id}' col '{key}' missing trace_status")
+                        _record_error(
+                            env,
+                            f"table '{table_id}' row '{row_id}' col '{key}' "
+                            "missing trace_status",
+                        )
                     if trace_status == "mapped" and not anchor_ids:
-                        _record_error(env, f"mapped table cell '{table_id}:{row_id}:{key}' missing anchor_ids")
+                        _record_error(
+                            env,
+                            f"mapped table cell '{table_id}:{row_id}:{key}' "
+                            "missing anchor_ids",
+                        )
                     if trace_status == "mapped" and not relation:
-                        _record_error(env, f"mapped table cell '{table_id}:{row_id}:{key}' missing relation")
+                        _record_error(
+                            env,
+                            f"mapped table cell '{table_id}:{row_id}:{key}' "
+                            "missing relation",
+                        )
 
                     col_slug = _slug(key)
                     cell_anchor = f"{_slug(label)}--r-{row_slug}--c-{col_slug}"
@@ -771,7 +898,11 @@ class TraceDomain(Domain):
     }
 
     def clear_doc(self, docname: str) -> None:
-        stale = [key for key, value in self.data.get("objects", {}).items() if value[0] == docname]
+        stale = [
+            key
+            for key, value in self.data.get("objects", {}).items()
+            if value[0] == docname
+        ]
         for key in stale:
             del self.data["objects"][key]
 
@@ -804,7 +935,9 @@ def _on_env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
     env.iso26262_doc_missing_units.pop(docname, None)
 
 
-def _on_env_merge_info(app: Sphinx, env: BuildEnvironment, docnames: list[str], other: BuildEnvironment) -> None:
+def _on_env_merge_info(
+    app: Sphinx, env: BuildEnvironment, docnames: list[str], other: BuildEnvironment
+) -> None:
     _ensure_env(env)
     _ensure_env(other)
     for source_id in other.iso26262_trace_order:
@@ -832,7 +965,9 @@ def _on_doctree_resolved(app: Sphinx, doctree: nodes.document, docname: str) -> 
         target_id = ref.astext().strip()
         href = env.iso26262_statement_locations.get(target_id, "")
         if not href:
-            _record_error(env, f"unresolved statement reference '{{p}}`{target_id}`' in {docname}")
+            _record_error(
+                env, f"unresolved statement reference '{{p}}`{target_id}`' in {docname}"
+            )
             ref.replace_self(nodes.literal(text=target_id))
             continue
         reference = nodes.reference(text=target_id, refuri=href)
@@ -841,7 +976,10 @@ def _on_doctree_resolved(app: Sphinx, doctree: nodes.document, docname: str) -> 
     for anchor_ref in list(doctree.traverse(a_node)):
         target_anchor = anchor_ref.astext().strip()
         if target_anchor and target_anchor not in env.iso26262_anchor_registry_ids:
-            _record_error(env, f"unknown ISO anchor reference '{{a}}`{target_anchor}`' in {docname}")
+            _record_error(
+                env,
+                f"unknown ISO anchor reference '{{a}}`{target_anchor}`' in {docname}",
+            )
         anchor_ref.replace_self(nodes.literal(text=target_anchor))
 
 

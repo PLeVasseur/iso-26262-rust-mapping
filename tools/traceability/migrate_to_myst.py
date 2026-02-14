@@ -6,8 +6,7 @@ import json
 import re
 from pathlib import Path
 
-
-FMT_RE = re.compile(r"^\s*<!--\s*(fmt:|style:)" )
+FMT_RE = re.compile(r"^\s*<!--\s*(fmt:|style:)")
 TABLE_RE = re.compile(r"^\s*\{\{TABLE:\s*(table-\d{2})\s*\}\}\s*$")
 ORDERED_LIST_RE = re.compile(r"^(\d+)\.\s+")
 
@@ -118,7 +117,9 @@ def migrate_text(text: str) -> tuple[str, dict[str, int]]:
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="Convert legacy markdown source into MyST + preface syntax")
+    parser = argparse.ArgumentParser(
+        description="Convert legacy markdown source into MyST + preface syntax"
+    )
     parser.add_argument("--source", required=True)
     parser.add_argument("--report-json", default="")
     parser.add_argument("--report-md", default="")
@@ -143,34 +144,47 @@ def main(argv: list[str]) -> int:
     if args.prepost_json:
         prepost_path = Path(args.prepost_json)
         prepost_path.parent.mkdir(parents=True, exist_ok=True)
-        prepost_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        prepost_path.write_text(
+            json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
     if args.report_json:
         report_json_path = Path(args.report_json)
         report_json_path.parent.mkdir(parents=True, exist_ok=True)
-        report_json_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        report_json_path.write_text(
+            json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
     if args.report_md:
         report_md_path = Path(args.report_md)
         report_md_path.parent.mkdir(parents=True, exist_ok=True)
-        report_md = "\n".join(
-            [
-                "# MyST Conversion Report",
-                "",
-                f"- source: `{source_path}`",
-                f"- pre table placeholders: {pre_counts['table_placeholders']}",
-                f"- post table placeholders: {migration_counts['remaining_table_placeholders']}",
-                f"- post page-break tokens: {migration_counts['remaining_page_break_tokens']}",
-                f"- post blank tokens: {migration_counts['remaining_blank_tokens']}",
-                f"- statement prefaces generated: {migration_counts['statement_preface_count']}",
-            ]
-        ) + "\n"
+        post_table_placeholders = migration_counts["remaining_table_placeholders"]
+        post_page_break_tokens = migration_counts["remaining_page_break_tokens"]
+        post_blank_tokens = migration_counts["remaining_blank_tokens"]
+        statement_preface_count = migration_counts["statement_preface_count"]
+        report_md = (
+            "\n".join(
+                [
+                    "# MyST Conversion Report",
+                    "",
+                    f"- source: `{source_path}`",
+                    f"- pre table placeholders: {pre_counts['table_placeholders']}",
+                    f"- post table placeholders: {post_table_placeholders}",
+                    f"- post page-break tokens: {post_page_break_tokens}",
+                    f"- post blank tokens: {post_blank_tokens}",
+                    f"- statement prefaces generated: {statement_preface_count}",
+                ]
+            )
+            + "\n"
+        )
         report_md_path.write_text(report_md, encoding="utf-8")
 
     print(f"SOURCE={source_path}")
     print(f"STATEMENT_PREFACE_COUNT={migration_counts['statement_preface_count']}")
     print(f"REMAINING_TABLE_TOKENS={migration_counts['remaining_table_placeholders']}")
-    print(f"REMAINING_PAGE_BREAK_TOKENS={migration_counts['remaining_page_break_tokens']}")
+    print(
+        f"REMAINING_PAGE_BREAK_TOKENS={migration_counts['remaining_page_break_tokens']}"
+    )
     print(f"REMAINING_BLANK_TOKENS={migration_counts['remaining_blank_tokens']}")
     return 0
 

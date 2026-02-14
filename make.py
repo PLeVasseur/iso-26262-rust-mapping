@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run
 from __future__ import annotations
 
 import argparse
@@ -9,10 +9,6 @@ import re
 import subprocess
 from pathlib import Path
 
-from jsonschema import Draft202012Validator
-from docgen.validate import validate_all_tables
-
-
 ROOT = Path(__file__).resolve().parent
 CONF_DIR = ROOT / "docs"
 SOURCE_DIR = ROOT / "src"
@@ -20,6 +16,45 @@ OUT_DIR = ROOT / "build" / "html"
 DOCTREE_DIR = ROOT / "build" / "doctrees"
 
 LEGACY_TOKENS = ("{{TABLE:", "{{PAGE_BREAK}}", "{{BLANK}}")
+TRACE_ENV_VARS = ("OPENCODE_CONFIG_DIR", "SPHINX_MIGRATION_RUN_ROOT")
+
+
+def _draft202012_validator(schema: dict):
+    from jsonschema import Draft202012Validator
+
+    return Draft202012Validator(schema)
+
+
+def _validate_all_tables() -> None:
+    try:
+        from docgen.validate import validate_all_tables
+    except ModuleNotFoundError as exc:
+        raise SystemExit(
+            "missing Python dependencies for validation; run via ./make.py "
+            "(uv launcher) or `uv sync` first"
+        ) from exc
+
+    validate_all_tables(
+        src_tables_dir=ROOT / "src" / "tables",
+        src_schemas_dir=ROOT / "src" / "schemas",
+    )
+
+
+def _require_trace_env(command_name: str) -> None:
+    missing = [key for key in TRACE_ENV_VARS if not os.environ.get(key)]
+    if not missing:
+        return
+
+    missing_csv = ", ".join(missing)
+
+    details = [
+        f"missing required environment variables for '{command_name}': {missing_csv}",
+        "",
+        "Export and retry, for example:",
+        "  export OPENCODE_CONFIG_DIR=<path-to-opencode-config>",
+        "  export SPHINX_MIGRATION_RUN_ROOT=<path-to-run-root>",
+    ]
+    raise SystemExit("\n".join(details))
 
 
 def _run_sphinx_html() -> None:
@@ -53,8 +88,12 @@ def _load_jsonc(path: Path) -> dict:
 
 
 def _validate_anchor_registry() -> None:
-    registry_path = ROOT / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
-    schema_path = ROOT / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json"
+    registry_path = (
+        ROOT / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
+    )
+    schema_path = (
+        ROOT / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json"
+    )
 
     if not registry_path.exists():
         raise SystemExit(f"missing anchor registry: {registry_path}")
@@ -63,8 +102,10 @@ def _validate_anchor_registry() -> None:
 
     registry = _load_jsonc(registry_path)
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
-    validator = Draft202012Validator(schema)
-    errors = sorted(validator.iter_errors(registry), key=lambda err: list(err.absolute_path))
+    validator = _draft202012_validator(schema)
+    errors = sorted(
+        validator.iter_errors(registry), key=lambda err: list(err.absolute_path)
+    )
     if errors:
         details = "\n".join(f"- {err.message}" for err in errors)
         raise SystemExit(f"anchor registry schema validation failed:\n{details}")
@@ -124,12 +165,19 @@ def _run_trace_validate() -> tuple[bool, list[str]]:
 
         opencode_dir = os.environ.get("OPENCODE_CONFIG_DIR", "")
         if opencode_dir:
-            schema_path = Path(opencode_dir) / "reports" / "schemas" / "paragraph-ids.schema.json"
+            schema_path = (
+                Path(opencode_dir) / "reports" / "schemas" / "paragraph-ids.schema.json"
+            )
             if schema_path.exists():
                 schema = json.loads(schema_path.read_text(encoding="utf-8"))
-                validator = Draft202012Validator(schema)
-                errors = sorted(validator.iter_errors(payload), key=lambda err: list(err.absolute_path))
-                diagnostics.extend([f"paragraph-ids schema: {err.message}" for err in errors])
+                validator = _draft202012_validator(schema)
+                errors = sorted(
+                    validator.iter_errors(payload),
+                    key=lambda err: list(err.absolute_path),
+                )
+                diagnostics.extend(
+                    [f"paragraph-ids schema: {err.message}" for err in errors]
+                )
             else:
                 diagnostics.append(f"missing paragraph-ids schema: {schema_path}")
 
@@ -140,11 +188,16 @@ def _run_trace_validate() -> tuple[bool, list[str]]:
                 continue
             href = str(record.get("href", ""))
             if "#" not in href:
-                diagnostics.append(f"table_cell record missing anchor in href: {record.get('id', '<unknown>')}")
+                record_id = record.get("id", "<unknown>")
+                diagnostics.append(
+                    f"table_cell record missing anchor in href: {record_id}"
+                )
                 continue
             anchor = href.split("#", 1)[1]
             if not table_anchor_re.match(anchor):
-                diagnostics.append(f"table_cell record has non-canonical anchor '{anchor}'")
+                diagnostics.append(
+                    f"table_cell record has non-canonical anchor '{anchor}'"
+                )
 
     diagnostics.extend(_find_legacy_tokens())
     diagnostics.extend(_validate_no_leak())
@@ -172,14 +225,13 @@ def _write_trace_validate_log(success: bool, diagnostics: list[str]) -> None:
 
 
 def cmd_validate(_: argparse.Namespace) -> None:
-    validate_all_tables(
-        src_tables_dir=ROOT / "src" / "tables",
-        src_schemas_dir=ROOT / "src" / "schemas",
-    )
+    _validate_all_tables()
     _validate_anchor_registry()
     legacy = _find_legacy_tokens()
     if legacy:
-        raise SystemExit("legacy token check failed:\n" + "\n".join(f"- {item}" for item in legacy))
+        raise SystemExit(
+            "legacy token check failed:\n" + "\n".join(f"- {item}" for item in legacy)
+        )
 
 
 def cmd_build(args: argparse.Namespace) -> None:
@@ -189,25 +241,35 @@ def cmd_build(args: argparse.Namespace) -> None:
 
 
 def cmd_trace_validate(args: argparse.Namespace) -> None:
+    _require_trace_env("trace-validate")
     cmd_build(args)
     success, diagnostics = _run_trace_validate()
     _write_trace_validate_log(success, diagnostics)
     if not success:
-        raise SystemExit("trace-validate failed:\n" + "\n".join(f"- {item}" for item in diagnostics))
+        raise SystemExit(
+            "trace-validate failed:\n" + "\n".join(f"- {item}" for item in diagnostics)
+        )
     print("trace-validate passed")
 
 
 def cmd_trace_report(args: argparse.Namespace) -> None:
+    _require_trace_env("trace-report")
     cmd_build(args)
     run_root = os.environ.get("SPHINX_MIGRATION_RUN_ROOT", "")
     if run_root:
-        print(f"Run-scoped coverage JSON: {Path(run_root) / 'traceability-statement-coverage.json'}")
-        print(f"Run-scoped coverage MD: {Path(run_root) / 'traceability-statement-coverage.md'}")
+        coverage_json_path = Path(run_root) / "traceability-statement-coverage.json"
+        coverage_md_path = Path(run_root) / "traceability-statement-coverage.md"
+        print(f"Run-scoped coverage JSON: {coverage_json_path}")
+        print(f"Run-scoped coverage MD: {coverage_md_path}")
     else:
-        print("SPHINX_MIGRATION_RUN_ROOT is not set; only build-scoped outputs were generated")
+        print(
+            "SPHINX_MIGRATION_RUN_ROOT is not set; "
+            "only build-scoped outputs were generated"
+        )
 
 
 def cmd_verify(args: argparse.Namespace) -> None:
+    _require_trace_env("verify")
     cmd_trace_validate(args)
     cmd_trace_report(args)
 
@@ -252,25 +314,42 @@ def cmd_migrate_sphinx(_: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Sphinx migration make entrypoint")
-    sub = parser.add_subparsers(dest="cmd", required=True)
+    parser_description = (
+        "Sphinx migration make entrypoint "
+        "(defaults to build when no command is provided)"
+    )
+    parser = argparse.ArgumentParser(
+        description=parser_description,
+    )
+    sub = parser.add_subparsers(dest="cmd")
+    parser.set_defaults(func=cmd_build, cmd="build")
 
-    p_validate = sub.add_parser("validate", help="Validate schema and migration invariants.")
+    p_validate = sub.add_parser(
+        "validate", help="Validate schema and migration invariants."
+    )
     p_validate.set_defaults(func=cmd_validate)
 
     p_build = sub.add_parser("build", help="Run strict Sphinx HTML build.")
     p_build.set_defaults(func=cmd_build)
 
-    p_trace_validate = sub.add_parser("trace-validate", help="Run strict traceability gates.")
+    p_trace_validate = sub.add_parser(
+        "trace-validate", help="Run strict traceability gates."
+    )
     p_trace_validate.set_defaults(func=cmd_trace_validate)
 
-    p_trace_report = sub.add_parser("trace-report", help="Generate/update coverage reports.")
+    p_trace_report = sub.add_parser(
+        "trace-report", help="Generate/update coverage reports."
+    )
     p_trace_report.set_defaults(func=cmd_trace_report)
 
-    p_verify = sub.add_parser("verify", help="Run validate + build + trace gates + reports.")
+    p_verify = sub.add_parser(
+        "verify", help="Run validate + build + trace gates + reports."
+    )
     p_verify.set_defaults(func=cmd_verify)
 
-    p_migrate = sub.add_parser("migrate-sphinx", help="One-shot deterministic source migration helper.")
+    p_migrate = sub.add_parser(
+        "migrate-sphinx", help="One-shot deterministic source migration helper."
+    )
     p_migrate.set_defaults(func=cmd_migrate_sphinx)
 
     args = parser.parse_args()
