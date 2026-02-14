@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-02.schema.json",
-  "title": "Schema for table-02",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-02"
-    },
     "columns": {
       "const": [
         {
@@ -35,36 +31,77 @@
         }
       ]
     },
+    "id": {
+      "const": "table-02"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "iso_topic",
-          "iso_intent",
-          "rust_mechanisms",
-          "coding_standard_implications",
-          "asil_notes"
-        ],
         "properties": {
-          "iso_topic": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "asil_notes": {
+            "type": "string"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "asil_notes": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "coding_standard_implications": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "iso_intent": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "iso_topic": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_mechanisms": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "iso_topic",
+              "iso_intent",
+              "rust_mechanisms",
+              "coding_standard_implications",
+              "asil_notes"
+            ],
+            "type": "object"
+          },
+          "coding_standard_implications": {
             "type": "string"
           },
           "iso_intent": {
             "type": "string"
           },
+          "iso_topic": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
           "rust_mechanisms": {
             "type": "string"
-          },
-          "coding_standard_implications": {
-            "type": "string"
-          },
-          "asil_notes": {
-            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "iso_topic",
+          "iso_intent",
+          "rust_mechanisms",
+          "coding_standard_implications",
+          "asil_notes",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-02"
 }

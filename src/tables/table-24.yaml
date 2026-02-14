@@ -11,34 +11,210 @@ columns:
   title: Preferred alternatives
 rows:
 - api_pattern: '`unwrap()` / `expect()` on Option/Result'
-  status: R (QM–B), X (C/D)
+  status: "R (QM\u2013B), X (C/D)"
   rationale: Panics on error/None; hides error handling
   preferred_alternatives: Use `?`, `match`, or `unwrap_or` with defined fallback; treat panics as fatal invariants only.
+  row_id: r0001
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: Indexing (`v[i]`, `slice[i]`)
-  status: R (QM–B), X (C/D)
+  status: "R (QM\u2013B), X (C/D)"
   rationale: May panic; harder to prove bounds for MC/DC and review
   preferred_alternatives: Use iterators or `get()` returning Option and handle error path.
+  row_id: r0002
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: '`panic!`, `todo!`, `unimplemented!`'
   status: R/X
   rationale: Uncontrolled termination; placeholders unacceptable in released code
   preferred_alternatives: Return `Result` with error; use explicit fail-safe state transitions.
+  row_id: r0003
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: '`mem::transmute`, `mem::zeroed`'
   status: X
   rationale: High UB risk, invalid values, layout assumptions
   preferred_alternatives: Use explicit conversions, `from_ne_bytes`, `bytemuck`-like qualified wrappers (if approved).
+  row_id: r0004
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: '`ptr::read`, `ptr::write`, `get_unchecked`'
   status: Q (C/D)
   rationale: Unsafe memory access
   preferred_alternatives: Prefer safe APIs; encapsulate in audited safe abstractions.
+  row_id: r0005
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: '`Rc` / cycles with `Arc` + `Weak`'
   status: R
   rationale: Complex ownership and drop order; potential leaks
   preferred_alternatives: Prefer explicit ownership trees or arenas; document cycle-breaking strategy.
+  row_id: r0006
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: Hash-based collections (`HashMap`, `HashSet`)
   status: P/R
   rationale: Nondeterministic iteration order; DOS considerations
   preferred_alternatives: Prefer `BTreeMap/BTreeSet` for determinism; if HashMap needed, fix hasher and document.
+  row_id: r0007
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - api_pattern: '`std::thread::spawn`'
-  status: R (B–D)
+  status: "R (B\u2013D)"
   rationale: Unbounded concurrency and scheduling nondeterminism
   preferred_alternatives: Prefer RTOS tasks with known scheduling; bound thread count; use message passing.
+  row_id: r0008
+  cell_trace:
+    api_pattern:
+      source_id: SRCN-T24-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    status:
+      source_id: SRCN-T24-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rationale:
+      source_id: SRCN-T24-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    preferred_alternatives:
+      source_id: SRCN-T24-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

@@ -23,6 +23,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0001
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0001-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0001-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: as
   qm: P
   a: P
@@ -30,22 +67,131 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0002
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0002-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0002-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: async
   qm: P
   a: R
   b: R
   c: R
   d: X
-  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited
-    by default at ASIL D.
+  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited by default at ASIL D.
+  row_id: r0003
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0003-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0003-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: await
   qm: P
   a: R
   b: R
   c: R
   d: X
-  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited
-    by default at ASIL D.
+  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited by default at ASIL D.
+  row_id: r0004
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0004-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0004-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: break
   qm: P
   a: P
@@ -53,6 +199,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0005
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0005-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0005-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: const
   qm: P
   a: P
@@ -60,6 +243,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0006
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0006-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0006-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: continue
   qm: P
   a: P
@@ -67,6 +287,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0007
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0007-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0007-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: crate
   qm: P
   a: P
@@ -74,6 +331,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0008
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0008-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0008-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: dyn
   qm: P
   a: P
@@ -81,6 +375,43 @@ rows:
   c: R
   d: R
   notes_restrictions: Trait objects introduce dynamic dispatch; restrict in timing-critical code; justify use over generics.
+  row_id: r0009
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0009-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0009-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: else
   qm: P
   a: P
@@ -88,6 +419,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0010
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0010-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0010-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0010-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: enum
   qm: P
   a: P
@@ -95,6 +463,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0011
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0011-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0011-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0011-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0011-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0011-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0011-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0011-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: extern
   qm: R
   a: R
@@ -102,6 +507,43 @@ rows:
   c: Q
   d: Q
   notes_restrictions: 'FFI boundary: only in qualified wrappers; require input validation and no unwinding across FFI.'
+  row_id: r0012
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0012-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0012-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0012-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0012-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0012-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0012-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0012-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: 'false'
   qm: P
   a: P
@@ -109,6 +551,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0013
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0013-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0013-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0013-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0013-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0013-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0013-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0013-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: fn
   qm: P
   a: P
@@ -116,6 +595,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0014
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0014-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0014-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0014-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0014-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0014-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0014-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0014-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: for
   qm: P
   a: P
@@ -123,6 +639,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0015
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0015-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0015-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0015-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0015-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0015-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0015-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0015-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: if
   qm: P
   a: P
@@ -130,6 +683,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0016
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0016-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0016-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0016-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0016-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0016-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0016-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0016-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: impl
   qm: P
   a: P
@@ -137,6 +727,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0017
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0017-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0017-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0017-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0017-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0017-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0017-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0017-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: in
   qm: P
   a: P
@@ -144,6 +771,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0018
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0018-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0018-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0018-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0018-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0018-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0018-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0018-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: let
   qm: P
   a: P
@@ -151,6 +815,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0019
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0019-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0019-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0019-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0019-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0019-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0019-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0019-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: loop
   qm: P
   a: P
@@ -158,6 +859,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0020
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0020-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0020-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0020-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0020-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0020-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0020-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0020-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: match
   qm: P
   a: P
@@ -165,6 +903,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0021
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0021-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0021-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0021-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0021-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0021-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0021-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0021-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: mod
   qm: P
   a: P
@@ -172,6 +947,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0022
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0022-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0022-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0022-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0022-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0022-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0022-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0022-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: move
   qm: P
   a: P
@@ -179,6 +991,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0023
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0023-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0023-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0023-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0023-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0023-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0023-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0023-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: mut
   qm: P
   a: P
@@ -186,6 +1035,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0024
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0024-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0024-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0024-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0024-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0024-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0024-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0024-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: pub
   qm: P
   a: P
@@ -193,6 +1079,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0025
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0025-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0025-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0025-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0025-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0025-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0025-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0025-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: ref
   qm: P
   a: P
@@ -200,6 +1123,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0026
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0026-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0026-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0026-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0026-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0026-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0026-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0026-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: return
   qm: P
   a: P
@@ -207,6 +1167,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0027
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0027-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0027-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0027-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0027-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0027-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0027-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0027-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: self
   qm: P
   a: P
@@ -214,6 +1211,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0028
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0028-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0028-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0028-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0028-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0028-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0028-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0028-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: Self
   qm: P
   a: P
@@ -221,6 +1255,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0029
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0029-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0029-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0029-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0029-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0029-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0029-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0029-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: static
   qm: P
   a: R
@@ -228,6 +1299,43 @@ rows:
   c: R
   d: R
   notes_restrictions: Immutables allowed; `static mut` prohibited. Prefer `OnceLock`/`LazyLock` with controlled init.
+  row_id: r0030
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0030-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0030-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0030-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0030-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0030-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0030-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0030-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: struct
   qm: P
   a: P
@@ -235,6 +1343,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0031
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0031-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0031-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0031-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0031-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0031-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0031-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0031-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: super
   qm: P
   a: P
@@ -242,6 +1387,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0032
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0032-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0032-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0032-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0032-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0032-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0032-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0032-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: trait
   qm: P
   a: P
@@ -249,6 +1431,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0033
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0033-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0033-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0033-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0033-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0033-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0033-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0033-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: 'true'
   qm: P
   a: P
@@ -256,6 +1475,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0034
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0034-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0034-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0034-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0034-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0034-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0034-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0034-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: type
   qm: P
   a: P
@@ -263,6 +1519,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0035
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0035-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0035-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0035-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0035-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0035-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0035-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0035-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: unsafe
   qm: R
   a: R
@@ -270,6 +1563,43 @@ rows:
   c: Q
   d: Q
   notes_restrictions: 'Unsafe boundary: allowed only in Q/TCB crates at ASIL C/D; forbid in ASIL application crates.'
+  row_id: r0036
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0036-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0036-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0036-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0036-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0036-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0036-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0036-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: use
   qm: P
   a: P
@@ -277,6 +1607,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0037
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0037-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0037-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0037-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0037-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0037-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0037-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0037-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: where
   qm: P
   a: P
@@ -284,6 +1651,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0038
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0038-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0038-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0038-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0038-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0038-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0038-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0038-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: while
   qm: P
   a: P
@@ -291,118 +1695,659 @@ rows:
   c: P
   d: P
   notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+  row_id: r0039
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0039-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0039-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0039-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0039-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0039-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0039-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0039-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: abstract
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0040
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0040-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0040-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0040-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0040-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0040-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0040-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0040-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: become
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0041
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0041-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0041-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0041-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0041-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0041-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0041-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0041-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: box
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0042
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0042-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0042-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0042-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0042-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0042-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0042-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0042-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: do
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0043
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0043-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0043-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0043-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0043-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0043-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0043-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0043-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: final
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0044
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0044-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0044-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0044-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0044-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0044-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0044-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0044-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: gen
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0045
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0045-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0045-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0045-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0045-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0045-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0045-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0045-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: macro
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0046
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0046-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0046-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0046-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0046-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0046-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0046-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0046-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: override
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0047
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0047-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0047-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0047-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0047-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0047-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0047-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0047-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: priv
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0048
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0048-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0048-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0048-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0048-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0048-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0048-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0048-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: try
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0049
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0049-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0049-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0049-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0049-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0049-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0049-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0049-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: typeof
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0050
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0050-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0050-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0050-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0050-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0050-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0050-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0050-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: unsized
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0051
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0051-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0051-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0051-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0051-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0051-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0051-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0051-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: virtual
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0052
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0052-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0052-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0052-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0052-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0052-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0052-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0052-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: yield
   qm: U
   a: U
   b: U
   c: U
   d: U
-  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
-    (see below).
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted (see below).
+  row_id: r0053
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0053-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0053-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0053-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0053-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0053-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0053-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0053-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: '''static'
   qm: P
   a: P
@@ -410,6 +2355,43 @@ rows:
   c: P
   d: P
   notes_restrictions: Static lifetime permitted; avoid overusing `'static` bounds that hide ownership issues.
+  row_id: r0054
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0054-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0054-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0054-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0054-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0054-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0054-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0054-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: macro_rules
   qm: P
   a: R
@@ -417,6 +2399,43 @@ rows:
   c: R
   d: R
   notes_restrictions: 'Declarative macros restricted: allowlist only; expansions must not hide control flow.'
+  row_id: r0055
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0055-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0055-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0055-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0055-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0055-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0055-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0055-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: raw
   qm: R
   a: R
@@ -424,6 +2443,43 @@ rows:
   c: Q
   d: Q
   notes_restrictions: Raw borrow operators and raw pointers are unsafe-adjacent; restrict to Q/TCB.
+  row_id: r0056
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0056-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0056-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0056-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0056-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0056-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0056-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0056-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: safe
   qm: U
   a: U
@@ -431,6 +2487,43 @@ rows:
   c: U
   d: U
   notes_restrictions: Contextual keyword in external blocks; avoid relying on experimental syntax for certified code.
+  row_id: r0057
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0057-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0057-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0057-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0057-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0057-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0057-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0057-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: union
   qm: R
   a: R
@@ -438,6 +2531,43 @@ rows:
   c: Q
   d: Q
   notes_restrictions: Unions allowed only for FFI; field access is unsafe; require safe wrapper enum.
+  row_id: r0058
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0058-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0058-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0058-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0058-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0058-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0058-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0058-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: Raw identifiers (r#ident)
   qm: P
   a: R
@@ -445,6 +2575,43 @@ rows:
   c: R
   d: R
   notes_restrictions: Allowed only when interfacing with external APIs requiring keyword names; otherwise prohibited for readability.
+  row_id: r0059
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0059-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0059-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0059-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0059-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0059-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0059-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0059-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - keyword_construct: Edition-2024 reserved syntax (#"..."#, ident##"..."##)
   qm: U
   a: U
@@ -452,3 +2619,40 @@ rows:
   c: U
   d: U
   notes_restrictions: Reserved syntax in Rust 2024 edition; avoid in certified code to prevent forward-compat surprises.
+  row_id: r0060
+  cell_trace:
+    keyword_construct:
+      source_id: SRCN-T13-R0060-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T13-R0060-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T13-R0060-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T13-R0060-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T13-R0060-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T13-R0060-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_restrictions:
+      source_id: SRCN-T13-R0060-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

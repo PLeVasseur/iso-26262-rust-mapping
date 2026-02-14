@@ -15,55 +15,288 @@ rows:
 - iso_topic: 1a Low complexity
   iso_intent: Control complexity to improve correctness, reviewability, and testability.
   rust_mechanisms: Modules/visibility; ownership; iterators; type-driven design; compiler + Clippy complexity lints.
-  coding_standard_implications: 'Define quantitative limits: function length, cyclomatic complexity, nesting depth, generic/lifetime
-    complexity. Prefer small cohesive modules and explicit interfaces.'
+  coding_standard_implications: 'Define quantitative limits: function length, cyclomatic complexity, nesting depth, generic/lifetime complexity. Prefer small cohesive modules and explicit interfaces.'
   asil_notes: ++ for all ASIL; enforce tighter thresholds at ASIL C/D.
+  row_id: r0001
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1b Language subsets
   iso_intent: Define and enforce a safe subset of the language to avoid error-prone constructs.
   rust_mechanisms: Safe Rust as default; crate-level forbid/deny unsafe; edition pinning; feature-gating; linting.
-  coding_standard_implications: 'Default profile: forbid unsafe in application crates; allow unsafe only in named TCB crates
-    with documented invariants and independent review. Prohibit nightly features.'
+  coding_standard_implications: 'Default profile: forbid unsafe in application crates; allow unsafe only in named TCB crates with documented invariants and independent review. Prohibit nightly features.'
   asil_notes: ++ for all ASIL; ASIL C/D require strict subset and inventory gating.
+  row_id: r0002
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1c Strong typing
   iso_intent: Prevent type confusion and unintended conversions.
   rust_mechanisms: No implicit numeric conversions; enums/newtypes; Option/Result; const generics; trait bounds.
-  coding_standard_implications: Require fixed-width integer types at interfaces; use newtypes for units; restrict `as` casts;
-    require TryFrom for narrowing conversions; avoid typographical errors via naming rules.
+  coding_standard_implications: Require fixed-width integer types at interfaces; use newtypes for units; restrict `as` casts; require TryFrom for narrowing conversions; avoid typographical errors via naming rules.
   asil_notes: ++ for all ASIL.
+  row_id: r0003
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1d Defensive implementation techniques
   iso_intent: Detect and handle errors, invalid inputs, and internal failures.
   rust_mechanisms: Result/Option; bounds checks; checked/saturating arithmetic; assertions; pattern matching.
-  coding_standard_implications: Define error-handling policy (no panics for expected errors); define precondition checks;
-    require checked arithmetic where overflow possible; define assertion usage per build mode.
+  coding_standard_implications: Define error-handling policy (no panics for expected errors); define precondition checks; require checked arithmetic where overflow possible; define assertion usage per build mode.
   asil_notes: + for ASIL A/B; ++ for ASIL C/D.
+  row_id: r0004
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1e Well-trusted design principles
   iso_intent: Prefer proven design principles (modularity, encapsulation, RAII).
   rust_mechanisms: RAII/Drop; composition via traits; exhaustive match; explicit ownership; zero-cost abstractions.
-  coding_standard_implications: Prefer state machines encoded as enums; enforce encapsulation via visibility; define resource
-    ownership patterns and lifecycle rules; document invariants and safety mechanisms.
+  coding_standard_implications: Prefer state machines encoded as enums; enforce encapsulation via visibility; define resource ownership patterns and lifecycle rules; document invariants and safety mechanisms.
   asil_notes: + for ASIL A/B; ++ for ASIL C/D.
+  row_id: r0005
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1f Unambiguous graphical representation
   iso_intent: Ensure design representations are unambiguous and understandable.
   rust_mechanisms: Rustdoc for API docs; module dependency graphs; UML/Arch diagrams generated from Cargo metadata.
-  coding_standard_implications: Mandate architecture diagrams for safety-related crates, including component interfaces and
-    data/control flow. Keep diagrams consistent with code via CI checks where feasible.
-  asil_notes: ++ for ASIL B–D; + for ASIL A.
+  coding_standard_implications: Mandate architecture diagrams for safety-related crates, including component interfaces and data/control flow. Keep diagrams consistent with code via CI checks where feasible.
+  asil_notes: "++ for ASIL B\u2013D; + for ASIL A."
+  row_id: r0006
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1g Style guides
   iso_intent: Consistency and readability to support reviews and maintenance.
   rust_mechanisms: rustfmt; Clippy; Rust API Guidelines; project-specific lints.
-  coding_standard_implications: Define rustfmt profile and lock it; deny warnings; define mandatory Clippy lint set; ban wildcard
-    imports; require documentation for public APIs.
+  coding_standard_implications: Define rustfmt profile and lock it; deny warnings; define mandatory Clippy lint set; ban wildcard imports; require documentation for public APIs.
   asil_notes: ++ for all ASIL.
+  row_id: r0007
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1h Naming conventions
   iso_intent: Avoid ambiguity and improve traceability.
   rust_mechanisms: Compiler lints for non_snake_case, non_camel_case_types, etc.
-  coding_standard_implications: Define naming for signals, units, safety mechanisms, and diagnostic IDs; require consistent
-    prefixes for safety-related items; prohibit shadowing and confusing names.
+  coding_standard_implications: Define naming for signals, units, safety mechanisms, and diagnostic IDs; require consistent prefixes for safety-related items; prohibit shadowing and confusing names.
   asil_notes: ++ for all ASIL.
+  row_id: r0008
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - iso_topic: 1i Concurrency aspects
   iso_intent: Prevent unintended interference via shared resources and concurrency.
   rust_mechanisms: Send/Sync; ownership; Mutex/RwLock/Atomics; no data races in safe code; explicit synchronization primitives.
-  coding_standard_implications: 'Define approved concurrency model: message passing vs shared state; lock ordering; forbid
-    `static mut`; restrict atomics to documented orderings; require deadlock analysis and bounded blocking; define RT scheduling
-    constraints.'
+  coding_standard_implications: 'Define approved concurrency model: message passing vs shared state; lock ordering; forbid `static mut`; restrict atomics to documented orderings; require deadlock analysis and bounded blocking; define RT scheduling constraints.'
   asil_notes: + for ASIL A/B; ++ for ASIL C/D (often required by architecture).
+  row_id: r0009
+  cell_trace:
+    iso_topic:
+      source_id: SRCN-T02-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_intent:
+      source_id: SRCN-T02-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mechanisms:
+      source_id: SRCN-T02-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    coding_standard_implications:
+      source_id: SRCN-T02-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_notes:
+      source_id: SRCN-T02-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

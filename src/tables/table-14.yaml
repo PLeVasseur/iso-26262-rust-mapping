@@ -23,6 +23,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Use modules to enforce encapsulation and layering; require module-level docs for safety-related modules.
+  row_id: r0001
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0001-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0001-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Imports (`use`)
   qm: P
   a: P
@@ -30,6 +67,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prohibit wildcard imports (`use foo::*`) in ASIL code; prefer explicit paths for traceability.
+  row_id: r0002
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0002-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0002-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Public visibility (`pub`)
   qm: P
   a: R
@@ -37,6 +111,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Minimize public API surface; all `pub` items require documentation and review.
+  row_id: r0003
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0003-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0003-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Restricted visibility (`pub(crate)`, `pub(super)`, `pub(in path)`)
   qm: HR
   a: HR
@@ -44,6 +155,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Preferred over `pub` to support encapsulation.
+  row_id: r0004
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0004-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0004-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Constants (`const` items)
   qm: P
   a: P
@@ -51,6 +199,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prefer `const` for pure values; avoid large computed const expressions unless toolchain supports.
+  row_id: r0005
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0005-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0005-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Statics (`static` immutable)
   qm: P
   a: R
@@ -58,6 +243,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowed for immutable data; must be justified if used for shared resources.
+  row_id: r0006
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0006-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0006-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Mutable statics (`static mut`)
   qm: X
   a: X
@@ -65,6 +287,43 @@ rows:
   c: X
   d: X
   restrictions_notes: Prohibited; use safe synchronization (`Mutex`, atomics) or partitioning.
+  row_id: r0007
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0007-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0007-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Functions (`fn`)
   qm: P
   a: P
@@ -72,6 +331,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Apply complexity limits and error-handling policy; prefer explicit `Result`.
+  row_id: r0008
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0008-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0008-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Traits (`trait`)
   qm: P
   a: P
@@ -79,6 +375,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Document trait contracts and invariants; restrict deep hierarchies.
+  row_id: r0009
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0009-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0009-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Trait objects (`dyn Trait`)
   qm: P
   a: P
@@ -86,6 +419,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Dynamic dispatch requires justification; restrict in timing-critical paths.
+  row_id: r0010
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0010-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0010-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0010-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Implementations (`impl`)
   qm: P
   a: P
@@ -93,6 +463,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prefer inherent methods for cohesion; avoid orphan impls in application code.
+  row_id: r0011
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0011-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0011-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0011-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0011-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0011-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0011-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0011-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Type aliases (`type`)
   qm: P
   a: P
@@ -100,6 +507,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Use for readability only; prefer newtypes for type safety.
+  row_id: r0012
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0012-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0012-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0012-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0012-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0012-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0012-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0012-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Structs (`struct`)
   qm: P
   a: P
@@ -107,6 +551,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Preferred for domain modeling; document invariants; use private fields.
+  row_id: r0013
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0013-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0013-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0013-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0013-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0013-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0013-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0013-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Enums (`enum`)
   qm: HR
   a: HR
@@ -114,6 +595,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Prefer to encode state machines; require exhaustive matching; avoid wildcard arms for evolving enums.
+  row_id: r0014
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0014-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0014-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0014-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0014-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0014-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0014-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0014-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Unions (`union`)
   qm: R
   a: R
@@ -121,6 +639,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only for FFI; must be wrapped and audited; unsafe field access.
+  row_id: r0015
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0015-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0015-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0015-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0015-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0015-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0015-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0015-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Extern blocks (`extern "C" { ... }`)
   qm: R
   a: R
@@ -128,6 +683,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: FFI allowed only in qualified boundary modules; validate all inputs; forbid unwinding across boundary.
+  row_id: r0016
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0016-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0016-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0016-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0016-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0016-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0016-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0016-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Unsafe functions (`unsafe fn`)
   qm: R
   a: R
@@ -135,6 +727,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only where preconditions cannot be expressed; require documented SAFETY contract.
+  row_id: r0017
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0017-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0017-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0017-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0017-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0017-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0017-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0017-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Unsafe traits/impls
   qm: R
   a: R
@@ -142,6 +771,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only with explicit invariant proof; independent review at ASIL C/D.
+  row_id: r0018
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0018-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0018-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0018-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0018-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0018-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0018-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0018-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Macro definitions (`macro_rules!`)
   qm: P
   a: R
@@ -149,6 +815,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowlist only; expansions must be reviewed; avoid hidden control flow.
+  row_id: r0019
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0019-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0019-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0019-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0019-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0019-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0019-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0019-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Procedural macros
   qm: R
   a: R
@@ -156,3 +859,40 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only if macro crate is qualified and generated code is reviewable; prefer explicit code.
+  row_id: r0020
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T14-R0020-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T14-R0020-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T14-R0020-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T14-R0020-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T14-R0020-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T14-R0020-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T14-R0020-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

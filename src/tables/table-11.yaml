@@ -11,6 +11,40 @@ rows:
 - coverage_metric_table_12: Function coverage
   rust_considerations: Count executed functions in final binary; be careful with inlining and generics
   evidence_rules: Set target thresholds per ASIL; justify excluded code (debug/instrumentation).
+  row_id: r0001
+  cell_trace:
+    coverage_metric_table_12:
+      source_id: SRCN-T11-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_considerations:
+      source_id: SRCN-T11-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_rules:
+      source_id: SRCN-T11-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - coverage_metric_table_12: Call coverage
   rust_considerations: Exercise call sites, including trait dispatch paths (static and dyn)
   evidence_rules: Require call-path tests for safety mechanisms and error handling paths.
+  row_id: r0002
+  cell_trace:
+    coverage_metric_table_12:
+      source_id: SRCN-T11-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_considerations:
+      source_id: SRCN-T11-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_rules:
+      source_id: SRCN-T11-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

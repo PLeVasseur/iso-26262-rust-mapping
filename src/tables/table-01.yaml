@@ -11,21 +11,140 @@ rows:
 - document_section: Section 3 (Clause 5)
   iso_26262_6_2018_reference: Clause 5, Table 1
   scope_notes: General topics and modelling/coding guideline topics.
+  row_id: r0001
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 4 (Clause 7)
   iso_26262_6_2018_reference: Clause 7, Tables 2-4
   scope_notes: 'Software architectural design: notations, principles, and verification methods.'
+  row_id: r0002
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 5 (Clause 8)
   iso_26262_6_2018_reference: Clause 8, Tables 5-6
   scope_notes: 'Software unit design and implementation: notations and unit design principles.'
+  row_id: r0003
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 6 (Clause 9)
   iso_26262_6_2018_reference: Clause 9, Tables 7-9
   scope_notes: 'Software unit verification: verification methods, test derivation, and structural coverage metrics.'
+  row_id: r0004
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 7 (Clause 10)
   iso_26262_6_2018_reference: Clause 10, Tables 10-12
   scope_notes: 'Software integration and verification: methods, test derivation, and architectural-level structural coverage.'
+  row_id: r0005
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 8 (Clause 11)
   iso_26262_6_2018_reference: Clause 11, Tables 13-15
   scope_notes: 'Testing of embedded software: test environments, methods, and test case derivation.'
+  row_id: r0006
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - document_section: Section 9 (Configurable Software)
   iso_26262_6_2018_reference: Annex C
   scope_notes: Configurable software guidance (configuration/calibration management considerations).
+  row_id: r0007
+  cell_trace:
+    document_section:
+      source_id: SRCN-T01-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    iso_26262_6_2018_reference:
+      source_id: SRCN-T01-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    scope_notes:
+      source_id: SRCN-T01-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

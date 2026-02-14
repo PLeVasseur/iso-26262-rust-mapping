@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-24.schema.json",
-  "title": "Schema for table-24",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-24"
-    },
     "columns": {
       "const": [
         {
@@ -31,32 +27,69 @@
         }
       ]
     },
+    "id": {
+      "const": "table-24"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "api_pattern",
-          "status",
-          "rationale",
-          "preferred_alternatives"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
           "api_pattern": {
             "type": "string"
           },
-          "status": {
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "api_pattern": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "preferred_alternatives": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rationale": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "status": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "api_pattern",
+              "status",
+              "rationale",
+              "preferred_alternatives"
+            ],
+            "type": "object"
+          },
+          "preferred_alternatives": {
             "type": "string"
           },
           "rationale": {
             "type": "string"
           },
-          "preferred_alternatives": {
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "status": {
             "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "api_pattern",
+          "status",
+          "rationale",
+          "preferred_alternatives",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-24"
 }

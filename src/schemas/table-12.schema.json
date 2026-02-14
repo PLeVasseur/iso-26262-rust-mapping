@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-12.schema.json",
-  "title": "Schema for table-12",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-12"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-12"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "environment",
-          "rust_considerations",
-          "guidance"
-        ],
         "properties": {
-          "environment": {
-            "type": "string"
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
           },
-          "rust_considerations": {
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "environment": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "guidance": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_considerations": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "environment",
+              "rust_considerations",
+              "guidance"
+            ],
+            "type": "object"
+          },
+          "environment": {
             "type": "string"
           },
           "guidance": {
             "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "rust_considerations": {
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "environment",
+          "rust_considerations",
+          "guidance",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-12"
 }

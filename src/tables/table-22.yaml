@@ -14,239 +14,1559 @@ rows:
   purpose_risk_area: Allocator interfaces
   profile_qm_a_b_c_d: P/R/R/Q/Q
   notes_key_restrictions: Allocator must be qualified; prefer no-alloc for ASIL D.
+  row_id: r0001
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::any
   purpose_risk_area: Dynamic typing/reflection
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Restrict for C/D; avoid runtime type dispatch in safety code.
+  row_id: r0002
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::arch
   purpose_risk_area: SIMD/vendor intrinsics
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Hardware-specific; only in qualified modules with timing review.
+  row_id: r0003
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::array
   purpose_risk_area: Array utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0004
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::ascii
   purpose_risk_area: ASCII utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0005
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::backtrace
   purpose_risk_area: Backtrace capture
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Diagnostics only; avoid in production safety paths; may allocate and depend on OS.
+  row_id: r0006
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::borrow
   purpose_risk_area: Borrow utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; watch for hidden allocations via Cow.
+  row_id: r0007
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::boxed
   purpose_risk_area: Box
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation policy applies.
+  row_id: r0008
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::cell
   purpose_risk_area: Interior mutability
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict; avoid runtime borrow panics.
+  row_id: r0009
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::char
   purpose_risk_area: Char utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0010
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::clone
   purpose_risk_area: Clone trait
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0011
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0011-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0011-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0011-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0011-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::cmp
   purpose_risk_area: Comparisons
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0012
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0012-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0012-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0012-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0012-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::collections
   purpose_risk_area: Collections
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Restrict unbounded growth; prefer deterministic maps (BTree*) for higher ASIL.
+  row_id: r0013
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0013-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0013-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0013-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0013-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::convert
   purpose_risk_area: Conversions
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Require TryFrom for narrowing.
+  row_id: r0014
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0014-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0014-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0014-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0014-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::default
   purpose_risk_area: Default
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Default must be valid state.
+  row_id: r0015
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0015-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0015-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0015-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0015-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::env
   purpose_risk_area: Environment variables
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Global mutable state; restrict to initialization/config only.
+  row_id: r0016
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0016-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0016-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0016-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0016-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::error
   purpose_risk_area: Error traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0017
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0017-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0017-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0017-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0017-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::f32 / std::f64
   purpose_risk_area: Float constants
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict floating point usage unless justified.
+  row_id: r0018
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0018-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0018-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0018-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0018-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::ffi
   purpose_risk_area: FFI utilities
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Qualified boundary only; validate all conversions.
+  row_id: r0019
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0019-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0019-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0019-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0019-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::fmt
   purpose_risk_area: Formatting
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Formatting may allocate; restrict in timing-critical paths.
+  row_id: r0020
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0020-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0020-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0020-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0020-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::fs
   purpose_risk_area: Filesystem
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; allowed only in qualified platform components.
+  row_id: r0021
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0021-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0021-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0021-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0021-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::future
   purpose_risk_area: Async basics
   profile_qm_a_b_c_d: P/R/R/R/X
   notes_key_restrictions: Requires qualified runtime; prohibited by default at ASIL D.
+  row_id: r0022
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0022-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0022-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0022-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0022-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::hash
   purpose_risk_area: Hashing
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Hash collections may be nondeterministic; prefer ordered collections for C/D.
+  row_id: r0023
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0023-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0023-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0023-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0023-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::hint
   purpose_risk_area: Compiler hints
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Allow sparingly; document usage.
+  row_id: r0024
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0024-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0024-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0024-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0024-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::{i8,i16,i32,i64,i128,isize,u8,u16,u32,u64,u128,usize} (const modules)
   purpose_risk_area: Redundant constants (deprecation planned)
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Avoid in new code; prefer inherent constants (e.g., i32::MAX).
+  row_id: r0025
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0025-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0025-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0025-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0025-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::io
   purpose_risk_area: I/O traits and helpers
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; all I/O is fallible; restrict to qualified components.
+  row_id: r0026
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0026-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0026-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0026-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0026-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::iter
   purpose_risk_area: Iterators
   profile_qm_a_b_c_d: HR/HR/HR/HR/HR
   notes_key_restrictions: Preferred iteration.
+  row_id: r0027
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0027-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0027-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0027-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0027-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::marker
   purpose_risk_area: Marker traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0028
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0028-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0028-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0028-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0028-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::mem
   purpose_risk_area: Memory utilities
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Permit safe subset; unsafe-adjacent APIs only in Q.
+  row_id: r0029
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0029-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0029-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0029-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0029-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::net
   purpose_risk_area: Networking
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; typically restricted in ECU software.
+  row_id: r0030
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0030-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0030-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0030-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0030-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::num
   purpose_risk_area: Numeric utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Encourage explicit overflow handling.
+  row_id: r0031
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0031-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0031-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0031-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0031-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::ops
   purpose_risk_area: Operator traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Operator overloading restricted by semantics.
+  row_id: r0032
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0032-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0032-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0032-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0032-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::option / std::result
   purpose_risk_area: Option/Result
   profile_qm_a_b_c_d: M/M/M/M/M
   notes_key_restrictions: Mandatory for optional/fallible operations.
+  row_id: r0033
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0033-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0033-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0033-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0033-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::os
   purpose_risk_area: OS-specific APIs
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Qualified platform layer only; avoid in portable safety components.
+  row_id: r0034
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0034-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0034-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0034-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0034-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::panic
   purpose_risk_area: Panic support
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Define panic policy; avoid panics in normal control flow.
+  row_id: r0035
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0035-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0035-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0035-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0035-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::path
   purpose_risk_area: Paths
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Path parsing/normalization can be complex; restrict to platform layer.
+  row_id: r0036
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0036-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0036-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0036-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0036-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::pin
   purpose_risk_area: Pinning
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Restrict to qualified async or self-referential code.
+  row_id: r0037
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0037-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0037-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0037-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0037-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::prelude / std::primitive
   purpose_risk_area: Prelude and primitive reexports
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0038
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0038-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0038-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0038-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0038-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::process
   purpose_risk_area: Process control
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Rare in ECU; restrict to tooling or qualified diagnostics.
+  row_id: r0039
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0039-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0039-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0039-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0039-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::ptr
   purpose_risk_area: Raw pointer operations
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Unsafe-adjacent; Q only.
+  row_id: r0040
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0040-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0040-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0040-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0040-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::rc
   purpose_risk_area: Rc/Weak
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Restrict due to complex lifetimes and cycles; avoid in safety-critical.
+  row_id: r0041
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0041-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0041-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0041-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0041-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::slice / std::str
   purpose_risk_area: Slice/str utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Prefer checked access.
+  row_id: r0042
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0042-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0042-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0042-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0042-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::string
   purpose_risk_area: String
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation; restrict size and avoid in timing-critical code.
+  row_id: r0043
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0043-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0043-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0043-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0043-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::sync
   purpose_risk_area: Synchronization primitives
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Deadlocks not prevented by type system; define lock order and bounded blocking.
+  row_id: r0044
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0044-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0044-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0044-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0044-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::task
   purpose_risk_area: Async task types
   profile_qm_a_b_c_d: P/R/R/R/X
   notes_key_restrictions: Depends on async policy.
+  row_id: r0045
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0045-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0045-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0045-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0045-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::thread
   purpose_risk_area: OS threads
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict; define thread creation policy; avoid unbounded threads.
+  row_id: r0046
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0046-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0046-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0046-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0046-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::time
   purpose_risk_area: Time measurement
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Prefer monotonic `Instant` for timing; wall-clock for logging only.
+  row_id: r0047
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0047-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0047-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0047-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0047-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::vec
   purpose_risk_area: Vec
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation policy applies; bounded capacity required at C/D.
+  row_id: r0048
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0048-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0048-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0048-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0048-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::assert_matches (Experimental)
   purpose_risk_area: Unstable assert_matches macro
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; not allowed in certified builds.
+  row_id: r0049
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0049-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0049-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0049-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0049-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::async_iter (Experimental)
   purpose_risk_area: Async iterators
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0050
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0050-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0050-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0050-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0050-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::autodiff (Experimental)
   purpose_risk_area: Automatic differentiation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0051
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0051-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0051-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0051-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0051-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::bstr (Experimental)
   purpose_risk_area: Byte strings
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0052
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0052-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0052-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0052-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0052-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::f16 / std::f128 (Experimental)
   purpose_risk_area: Experimental float constants
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0053
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0053-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0053-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0053-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0053-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::from (Experimental)
   purpose_risk_area: Unstable From derive
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0054
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0054-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0054-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0054-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0054-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::intrinsics (Experimental)
   purpose_risk_area: Compiler intrinsics
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0055
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0055-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0055-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0055-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0055-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::pat (Experimental)
   purpose_risk_area: pattern_type helpers
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0056
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0056-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0056-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0056-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0056-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::random (Experimental)
   purpose_risk_area: Random generation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; prohibit.
+  row_id: r0057
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0057-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0057-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0057-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0057-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::range (Experimental)
   purpose_risk_area: Replacement range types
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0058
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0058-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0058-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0058-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0058-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::simd (Experimental)
   purpose_risk_area: Portable SIMD
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0059
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0059-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0059-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0059-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0059-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - module: std::unsafe_binder (Experimental)
   purpose_risk_area: Unsafe binder operators
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0060
+  cell_trace:
+    module:
+      source_id: SRCN-T22-R0060-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose_risk_area:
+      source_id: SRCN-T22-R0060-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    profile_qm_a_b_c_d:
+      source_id: SRCN-T22-R0060-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_key_restrictions:
+      source_id: SRCN-T22-R0060-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

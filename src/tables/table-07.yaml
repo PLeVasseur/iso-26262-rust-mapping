@@ -14,43 +14,285 @@ rows:
   rust_aligned_implementation: Peer walk-through of design + source (include safety arguments and invariants)
   suggested_tools_artifacts: Review minutes, issue tracking, sign-off
   notes: Useful early; not sufficient alone for ASIL C/D.
+  row_id: r0001
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1b Pair-programming
   rust_aligned_implementation: Structured pair work on safety-critical or unsafe sections
   suggested_tools_artifacts: Pairing records; reviewer sign-off
-  notes: Treat as ‘enhanced review’, not a substitute for formal inspection.
+  notes: "Treat as \u2018enhanced review\u2019, not a substitute for formal inspection."
+  row_id: r0002
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1c Inspection
   rust_aligned_implementation: Checklist-based inspection of code, especially unsafe boundaries
   suggested_tools_artifacts: Inspection checklist; defect density metrics
   notes: Mandatory intensity increases with ASIL.
+  row_id: r0003
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1d Semi-formal verification
   rust_aligned_implementation: Formalized reasoning about invariants, contracts, and state machines
   suggested_tools_artifacts: Proof sketches, contracts, model checks
   notes: Use for concurrency protocols and safety mechanisms.
+  row_id: r0004
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1e Formal verification
   rust_aligned_implementation: Theorem proving / model checking for highest-risk components
   suggested_tools_artifacts: Formal artifacts, assumptions, traceability
   notes: Target unsafe abstractions and complex decision logic.
+  row_id: r0005
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1f Control flow analysis
   rust_aligned_implementation: Control-flow graphs; complexity metrics; unreachable/dead-code checks
   suggested_tools_artifacts: Clippy lints; custom CFG tools; coverage reports
   notes: Tie to complexity thresholds and Table 6 principles.
+  row_id: r0006
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1g Data flow analysis
   rust_aligned_implementation: Initialization, aliasing, shared resource access, and value range checks
   suggested_tools_artifacts: Static analysis; value-range tools; lint reports
   notes: For Rust, include unsafe and FFI boundary checks.
+  row_id: r0007
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1h Static code analysis
   rust_aligned_implementation: Systematic linting and pattern-based checks
   suggested_tools_artifacts: Clippy reports; `#![deny(warnings)]`; MISRA-style rules implemented as lints
   notes: Make lints part of CI; qualify tool where required.
+  row_id: r0008
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1i Abstract interpretation
   rust_aligned_implementation: High-assurance static analyzers for runtime errors, overflow, ranges
   suggested_tools_artifacts: Abstract interpretation reports
   notes: Especially useful for ASIL C/D where value ranges matter.
+  row_id: r0009
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1j Requirements-based test
   rust_aligned_implementation: Unit tests derived from requirements; property tests where appropriate
   suggested_tools_artifacts: Test specs; test results; traceability
-  notes: Avoid relying solely on ‘happy path’; include boundary cases.
+  notes: "Avoid relying solely on \u2018happy path\u2019; include boundary cases."
+  row_id: r0010
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method_table_7: 1k Interface test
   rust_aligned_implementation: Unit interface tests validating preconditions, error paths, and contracts
   suggested_tools_artifacts: Interface test suites; mocks/harnesses
   notes: Critical for FFI and hardware interaction layers.
+  row_id: r0011
+  cell_trace:
+    method_table_7:
+      source_id: SRCN-T07-R0011-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_implementation:
+      source_id: SRCN-T07-R0011-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    suggested_tools_artifacts:
+      source_id: SRCN-T07-R0011-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes:
+      source_id: SRCN-T07-R0011-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

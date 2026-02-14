@@ -16,13 +16,50 @@ columns:
 - key: restrictions_notes
   title: Restrictions / notes
 rows:
-- construct_feature: Fixed-width integers (i8…i128, u8…u128)
+- construct_feature: "Fixed-width integers (i8\u2026i128, u8\u2026u128)"
   qm: P
   a: P
   b: P
   c: P
   d: P
   restrictions_notes: Prefer fixed-width for interfaces; define explicit overflow strategy (checked/saturating/wrapping).
+  row_id: r0001
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0001-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0001-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Platform-sized ints (isize/usize)
   qm: P
   a: R
@@ -30,6 +67,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Use for indexing and pointer-sized values only; avoid for domain quantities crossing interfaces.
+  row_id: r0002
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0002-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0002-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Floating point (f32/f64)
   qm: P
   a: R
@@ -37,6 +111,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowed with explicit handling of NaN/Inf and rounding; avoid in safety-critical control unless justified.
+  row_id: r0003
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0003-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0003-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Experimental floats (f16/f128)
   qm: U
   a: U
@@ -44,6 +155,43 @@ rows:
   c: U
   d: U
   restrictions_notes: Experimental in Rust 1.93.1 docs; not allowed in certified builds.
+  row_id: r0004
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0004-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0004-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Bool/char
   qm: P
   a: P
@@ -51,6 +199,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Permitted; for char/str ensure UTF-8 assumptions match domain needs.
+  row_id: r0005
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0005-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0005-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Never type (`!`)
   qm: R
   a: R
@@ -58,6 +243,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Used for diverging functions (panic/loop). Restrict to panic handlers and deliberate diverging APIs.
+  row_id: r0006
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0006-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0006-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Arrays `[T; N]`
   qm: HR
   a: HR
@@ -65,6 +287,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Preferred for fixed-size buffers; supports bounds safety and determinism.
+  row_id: r0007
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0007-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0007-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Slices `[T]` / `&[T]`
   qm: P
   a: P
@@ -72,13 +331,87 @@ rows:
   c: P
   d: P
   restrictions_notes: Prefer iterator access; restrict indexing that can panic; use `get()` for checked access.
+  row_id: r0008
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0008-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0008-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Tuples
   qm: P
   a: R
   b: R
   c: R
   d: R
-  restrictions_notes: Allow small tuples (2–3) for returns; prefer named structs for larger tuples.
+  restrictions_notes: "Allow small tuples (2\u20133) for returns; prefer named structs for larger tuples."
+  row_id: r0009
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0009-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0009-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: References `&T`, `&mut T`
   qm: HR
   a: HR
@@ -86,6 +419,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Default pointer-like mechanism; require explicit lifetimes in public APIs at ASIL C/D.
+  row_id: r0010
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0010-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0010-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0010-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Raw pointers `*const T`, `*mut T`
   qm: R
   a: R
@@ -93,6 +463,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only in qualified unsafe code; no arithmetic/deref in application code.
+  row_id: r0011
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0011-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0011-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0011-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0011-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0011-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0011-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0011-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Function pointers `fn(...) -> ...`
   qm: P
   a: P
@@ -100,6 +507,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Permitted; document calling conventions and lifetimes; be careful with callbacks crossing FFI.
+  row_id: r0012
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0012-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0012-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0012-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0012-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0012-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0012-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0012-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Trait bounds / generics
   qm: P
   a: P
@@ -107,6 +551,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Limit generic complexity; prefer associated types over many parameters.
+  row_id: r0013
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0013-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0013-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0013-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0013-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0013-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0013-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0013-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Higher-ranked trait bounds (`for<'a>`)
   qm: R
   a: R
@@ -114,6 +595,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Powerful but complex; restrict to library/TCB code with justification.
+  row_id: r0014
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0014-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0014-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0014-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0014-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0014-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0014-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0014-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Const generics
   qm: P
   a: P
@@ -121,6 +639,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Encourage for fixed-capacity buffers and dimensioned arrays; verify const expressions remain simple.
+  row_id: r0015
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0015-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0015-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0015-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0015-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0015-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0015-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0015-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Lifetime elision
   qm: P
   a: R
@@ -128,6 +683,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allow in internal functions; prohibit in public safety-related APIs to improve auditability.
+  row_id: r0016
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0016-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0016-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0016-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0016-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0016-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0016-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0016-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: UnsafeCell / interior mutability primitives
   qm: R
   a: R
@@ -135,6 +727,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Direct `UnsafeCell` usage only in qualified synchronization primitives; prefer safe wrappers.
+  row_id: r0017
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0017-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0017-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0017-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0017-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0017-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0017-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0017-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - construct_feature: Auto traits (Send/Sync/Unpin)
   qm: P
   a: P
@@ -142,3 +771,40 @@ rows:
   c: P
   d: P
   restrictions_notes: Auto-implemented is preferred; manual impls are unsafe and therefore Q.
+  row_id: r0018
+  cell_trace:
+    construct_feature:
+      source_id: SRCN-T15-R0018-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T15-R0018-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    a:
+      source_id: SRCN-T15-R0018-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    b:
+      source_id: SRCN-T15-R0018-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    c:
+      source_id: SRCN-T15-R0018-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    d:
+      source_id: SRCN-T15-R0018-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    restrictions_notes:
+      source_id: SRCN-T15-R0018-C07
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

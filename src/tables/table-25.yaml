@@ -11,18 +11,120 @@ rows:
 - tool_activity: Compiler (rustc / qualified distribution)
   purpose: Primary enforcement of the language subset, type system, and borrow checking
   evidence_artifacts: Qualified compiler version; locked flags; reproducible builds; documented baselines.
+  row_id: r0001
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - tool_activity: Formatter (rustfmt)
   purpose: Deterministic formatting to reduce review noise
   evidence_artifacts: Locked rustfmt version/config; CI enforcement.
+  row_id: r0002
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - tool_activity: Static analysis (Clippy + custom lints)
   purpose: Enforce subset rules, complexity limits, and bug patterns
   evidence_artifacts: Qualified lint set; reports stored as work products.
+  row_id: r0003
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - tool_activity: Unsafe analysis (Miri / UB checkers)
   purpose: Detect undefined behavior in unsafe code paths
   evidence_artifacts: Run on all unsafe modules; store results.
+  row_id: r0004
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - tool_activity: Dependency auditing (cargo-audit / cargo-deny)
   purpose: Detect known vulnerabilities and license issues
   evidence_artifacts: Regular scans; policy for remediation; SBOM.
+  row_id: r0005
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - tool_activity: Coverage tooling (llvm-cov/tarpaulin/etc.)
   purpose: Provide structural coverage evidence
   evidence_artifacts: Qualified tool or validated workflow; consistent build flags; archive reports.
+  row_id: r0006
+  cell_trace:
+    tool_activity:
+      source_id: SRCN-T25-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    purpose:
+      source_id: SRCN-T25-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T25-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

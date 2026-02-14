@@ -20,57 +20,377 @@ rows:
   asil_b: Restricted + enhanced review
   asil_c: Q only (TCB crates); 4-eye review
   asil_d: Q only + independent verification/formal argument
+  row_id: r0001
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0001-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Heap allocation
   qm: Allowed
   asil_a: Allowed (bounded)
   asil_b: Allowed (bounded + monitoring)
   asil_c: Restricted (qualified allocator, deterministic)
   asil_d: Prefer no-alloc; otherwise Q allocator + strict bounds
+  row_id: r0002
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0002-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Panics / unwinding
   qm: Allowed but discouraged
   asil_a: Restricted; define policy
   asil_b: Restricted; panic=abort preferred
   asil_c: panic=abort required; no panics for expected errors
   asil_d: panic=abort required; panics only for fatal invariants
+  row_id: r0003
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0003-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Recursion
   qm: Allowed
   asil_a: Allowed with caution
   asil_b: Restricted; prefer iterative
   asil_c: Only bounded and justified
   asil_d: Only bounded and justified; prefer iterative
+  row_id: r0004
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0004-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Dynamic dispatch (`dyn Trait`)
   qm: Allowed
   asil_a: Allowed with justification
   asil_b: Restricted in critical paths
   asil_c: Restricted; avoid in timing-critical
   asil_d: Strongly discouraged; prefer generics/static dispatch
+  row_id: r0005
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0005-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Async/await
   qm: Allowed if needed
   asil_a: Restricted
   asil_b: Restricted
   asil_c: Restricted; qualified runtime required
   asil_d: Prohibited by default; allow only with qualified runtime and evidence
+  row_id: r0006
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0006-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Conditional compilation (`cfg`)
   qm: Allowed
   asil_a: Restricted; test variants
   asil_b: Restricted; test variants
   asil_c: Minimize; verify all configs
   asil_d: Minimize; verify all configs; avoid safety logic behind cfg
+  row_id: r0007
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0007-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Macros
   qm: Allowed
   asil_a: Allowlist recommended
   asil_b: Allowlist required for safety code
   asil_c: Allowlist required; proc macros qualified
   asil_d: Allowlist required; proc macros qualified; minimize macro complexity
+  row_id: r0008
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0008-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: Concurrency primitives
   qm: Allowed
   asil_a: Allowed with policy
   asil_b: Restricted (deadlock/priority)
   asil_c: Restricted (bounded blocking, analysis)
   asil_d: Restricted + scheduling analysis + freedom-from-interference evidence
+  row_id: r0009
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0009-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - policy_topic: HashMap/HashSet
   qm: Allowed
   asil_a: Allowed with justification
   asil_b: Restricted
   asil_c: Restricted; prefer BTree*
   asil_d: Prefer BTree*; HashMap only with fixed hasher and justification
+  row_id: r0010
+  cell_trace:
+    policy_topic:
+      source_id: SRCN-T26-R0010-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    qm:
+      source_id: SRCN-T26-R0010-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_a:
+      source_id: SRCN-T26-R0010-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_b:
+      source_id: SRCN-T26-R0010-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_c:
+      source_id: SRCN-T26-R0010-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_d:
+      source_id: SRCN-T26-R0010-C06
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

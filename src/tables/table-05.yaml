@@ -14,31 +14,207 @@ rows:
   rust_aligned_practice: Structured architecture review with stakeholders
   evidence_artifacts: Review records, issue log, decisions, traceability to requirements
   asil_expectations: ++ at ASIL A; + at ASIL B; o at ASIL C/D (still useful but not sufficient).
+  row_id: r0001
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Inspection (+/++)
   rust_aligned_practice: Formal inspections of architecture and interface specs
   evidence_artifacts: Inspection checklist, defect metrics, sign-off
-  asil_expectations: + at ASIL A; ++ at ASIL B–D.
+  asil_expectations: "+ at ASIL A; ++ at ASIL B\u2013D."
+  row_id: r0002
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Simulation (+/++ for D)
   rust_aligned_practice: Model-level or harness-level simulation of dynamic behavior
   evidence_artifacts: Simulation results, assumptions, coverage of modes
-  asil_expectations: + at ASIL A–C; ++ at ASIL D for timing/concurrency risks.
+  asil_expectations: "+ at ASIL A\u2013C; ++ at ASIL D for timing/concurrency risks."
+  row_id: r0003
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Prototype generation (o/++ for D)
   rust_aligned_practice: Executable spike for risky interfaces/protocols
   evidence_artifacts: Prototype report and lessons learned
   asil_expectations: Typically o at ASIL A/B; +/++ at C/D when uncertainty is high.
+  row_id: r0004
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Formal verification (o/+)
   rust_aligned_practice: Formalize and verify critical protocols, unsafe abstractions, or control logic
   evidence_artifacts: Proofs, model checking results, assumptions and limitations
   asil_expectations: Primarily for ASIL C/D hotspots.
+  row_id: r0005
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Control flow analysis (+/++)
   rust_aligned_practice: Control-flow graph analysis; restrict complex branching; review unsafe code
   evidence_artifacts: Static analysis reports; complexity metrics
   asil_expectations: + at ASIL A/B; ++ at ASIL C/D.
+  row_id: r0006
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Data flow analysis (+/++)
   rust_aligned_practice: Data-flow analysis for initialization, lifetimes, shared resources
   evidence_artifacts: Static analysis; taint/dataflow results
   asil_expectations: + at ASIL A/B; ++ at ASIL C/D.
+  row_id: r0007
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - method: Scheduling analysis (+/++)
   rust_aligned_practice: WCET/timing budget analysis; priority inversion review
   evidence_artifacts: Timing models; measurement reports; lock analysis
   asil_expectations: + at ASIL A/B; ++ at ASIL C/D (often required).
+  row_id: r0008
+  cell_trace:
+    method:
+      source_id: SRCN-T05-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_aligned_practice:
+      source_id: SRCN-T05-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    evidence_artifacts:
+      source_id: SRCN-T05-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_expectations:
+      source_id: SRCN-T05-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''

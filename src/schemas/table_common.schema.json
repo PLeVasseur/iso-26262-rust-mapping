@@ -1,55 +1,119 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "traceMetadata": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "trace_status": {
+                "const": "mapped"
+              }
+            },
+            "required": [
+              "trace_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "anchor_ids": {
+                "minItems": 1
+              },
+              "relation": {
+                "minLength": 1
+              }
+            },
+            "required": [
+              "anchor_ids",
+              "relation"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "anchor_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "relation": {
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "trace_status": {
+          "$ref": "#/$defs/traceStatus"
+        }
+      },
+      "required": [
+        "source_id",
+        "trace_status"
+      ],
+      "type": "object"
+    },
+    "traceStatus": {
+      "enum": [
+        "mapped",
+        "unmapped_with_rationale",
+        "out_of_scope_with_rationale"
+      ],
+      "type": "string"
+    }
+  },
   "$id": "table_common.schema.json",
-  "title": "Generic ISO table data file",
-  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "required": [
-    "id",
-    "style",
-    "columns",
-    "rows"
-  ],
   "properties": {
+    "columns": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "title"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
     "id": {
-      "type": "string",
-      "pattern": "^table-\\d{2}$"
+      "pattern": "^table-\\d{2}$",
+      "type": "string"
+    },
+    "rows": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "type": "array"
     },
     "style": {
       "type": [
         "string",
         "null"
       ]
-    },
-    "columns": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "key",
-          "title"
-        ],
-        "properties": {
-          "key": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9_]*$"
-          },
-          "title": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "rows": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      }
     }
-  }
+  },
+  "required": [
+    "id",
+    "style",
+    "columns",
+    "rows"
+  ],
+  "title": "Generic ISO table data file",
+  "type": "object"
 }

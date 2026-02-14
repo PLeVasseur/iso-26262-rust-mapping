@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-10.schema.json",
-  "title": "Schema for table-10",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-10"
-    },
     "columns": {
       "const": [
         {
@@ -31,32 +27,69 @@
         }
       ]
     },
+    "id": {
+      "const": "table-10"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "method_table_10",
-          "rust_aligned_execution",
-          "evidence_artifacts",
-          "asil_notes"
-        ],
         "properties": {
-          "method_table_10": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "asil_notes": {
             "type": "string"
           },
-          "rust_aligned_execution": {
-            "type": "string"
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "asil_notes": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "evidence_artifacts": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "method_table_10": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_aligned_execution": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "method_table_10",
+              "rust_aligned_execution",
+              "evidence_artifacts",
+              "asil_notes"
+            ],
+            "type": "object"
           },
           "evidence_artifacts": {
             "type": "string"
           },
-          "asil_notes": {
+          "method_table_10": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "rust_aligned_execution": {
             "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "method_table_10",
+          "rust_aligned_execution",
+          "evidence_artifacts",
+          "asil_notes",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-10"
 }

@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-06.schema.json",
-  "title": "Schema for table-06",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-06"
-    },
     "columns": {
       "const": [
         {
@@ -35,36 +31,77 @@
         }
       ]
     },
+    "id": {
+      "const": "table-06"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
+        "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "asil_c_d_tightening": {
+            "type": "string"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "asil_c_d_tightening": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "default_rule": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "principle": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rationale": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_mapping": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "principle",
+              "rust_mapping",
+              "default_rule",
+              "asil_c_d_tightening",
+              "rationale"
+            ],
+            "type": "object"
+          },
+          "default_rule": {
+            "type": "string"
+          },
+          "principle": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "rust_mapping": {
+            "type": "string"
+          }
+        },
         "required": [
           "principle",
           "rust_mapping",
           "default_rule",
           "asil_c_d_tightening",
-          "rationale"
+          "rationale",
+          "row_id",
+          "cell_trace"
         ],
-        "properties": {
-          "principle": {
-            "type": "string"
-          },
-          "rust_mapping": {
-            "type": "string"
-          },
-          "default_rule": {
-            "type": "string"
-          },
-          "asil_c_d_tightening": {
-            "type": "string"
-          },
-          "rationale": {
-            "type": "string"
-          }
-        }
-      }
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-06"
 }

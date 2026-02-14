@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-13.schema.json",
-  "title": "Schema for table-13",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-13"
-    },
     "columns": {
       "const": [
         {
@@ -43,26 +39,15 @@
         }
       ]
     },
+    "id": {
+      "const": "table-13"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "keyword_construct",
-          "qm",
-          "a",
-          "b",
-          "c",
-          "d",
-          "notes_restrictions"
-        ],
         "properties": {
-          "keyword_construct": {
-            "type": "string"
-          },
-          "qm": {
-            "type": "string"
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
           },
           "a": {
             "type": "string"
@@ -73,14 +58,74 @@
           "c": {
             "type": "string"
           },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "a": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "b": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "c": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "d": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "keyword_construct": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "notes_restrictions": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "qm": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "keyword_construct",
+              "qm",
+              "a",
+              "b",
+              "c",
+              "d",
+              "notes_restrictions"
+            ],
+            "type": "object"
+          },
           "d": {
+            "type": "string"
+          },
+          "keyword_construct": {
             "type": "string"
           },
           "notes_restrictions": {
             "type": "string"
+          },
+          "qm": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "keyword_construct",
+          "qm",
+          "a",
+          "b",
+          "c",
+          "d",
+          "notes_restrictions",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-13"
 }

@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-07.schema.json",
-  "title": "Schema for table-07",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-07"
-    },
     "columns": {
       "const": [
         {
@@ -31,19 +27,48 @@
         }
       ]
     },
+    "id": {
+      "const": "table-07"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "method_table_7",
-          "rust_aligned_implementation",
-          "suggested_tools_artifacts",
-          "notes"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "method_table_7": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "notes": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_aligned_implementation": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "suggested_tools_artifacts": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "method_table_7",
+              "rust_aligned_implementation",
+              "suggested_tools_artifacts",
+              "notes"
+            ],
+            "type": "object"
+          },
           "method_table_7": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
             "type": "string"
           },
           "rust_aligned_implementation": {
@@ -51,12 +76,20 @@
           },
           "suggested_tools_artifacts": {
             "type": "string"
-          },
-          "notes": {
-            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "method_table_7",
+          "rust_aligned_implementation",
+          "suggested_tools_artifacts",
+          "notes",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-07"
 }

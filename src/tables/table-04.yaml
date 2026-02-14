@@ -13,50 +13,290 @@ columns:
   title: Notes / examples
 rows:
 - principle: 1a Hierarchical structure
-  rust_mapping: Crates → modules → submodules; layered architecture; explicit dependency direction.
-  key_rules: Define architectural layers (e.g., HAL → platform → safety services → application). Enforce via crate boundaries
-    and dependency linting.
+  rust_mapping: "Crates \u2192 modules \u2192 submodules; layered architecture; explicit dependency direction."
+  key_rules: "Define architectural layers (e.g., HAL \u2192 platform \u2192 safety services \u2192 application). Enforce via crate boundaries and dependency linting."
   asil_tightening: 'C/D: no layer violations; safety mechanisms isolated in dedicated crates.'
   notes_examples: Use `pub(crate)` and `pub(in path)` to enforce encapsulation.
+  row_id: r0001
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0001-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0001-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0001-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0001-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0001-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1b Restricted size/complexity
   rust_mapping: Metrics + linting; idiomatic small functions; avoid mega-modules.
   key_rules: Set limits for LOC, cyclomatic complexity, nesting, generic bounds; require refactoring when exceeded.
   asil_tightening: 'C/D: stricter thresholds; require independent review on exceptions.'
   notes_examples: Prefer composition over deep trait hierarchies.
+  row_id: r0002
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0002-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0002-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0002-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0002-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0002-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1c Restricted interface size
   rust_mapping: Small public APIs; narrow traits; explicit types.
   key_rules: Minimize `pub` surface; forbid wildcard re-exports; use newtypes to prevent accidental misuse.
   asil_tightening: 'D: treat all shared interfaces as safety-related; require formal interface review.'
   notes_examples: Prefer `pub(crate)` for internal reuse.
+  row_id: r0003
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0003-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0003-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0003-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0003-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0003-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1d Strong cohesion
   rust_mapping: Cohesive modules with single responsibility; private helpers.
-  key_rules: Group by domain concept; avoid ‘util’ grab-bags; require module-level docs describing responsibilities and invariants.
+  key_rules: "Group by domain concept; avoid \u2018util\u2019 grab-bags; require module-level docs describing responsibilities and invariants."
   asil_tightening: 'C/D: explicit design rationale for module boundaries.'
   notes_examples: Use internal modules to encapsulate unsafe or concurrency details.
+  row_id: r0004
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0004-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0004-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0004-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0004-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0004-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1e Loose coupling
   rust_mapping: Dependency inversion via traits; avoid global state; explicit data flow.
   key_rules: Prefer passing dependencies explicitly; avoid hidden singletons; restrict `lazy_static`/global caches.
   asil_tightening: 'C/D: forbid circular dependencies; require dependency graph checks.'
   notes_examples: Use message passing for cross-component interactions where practical.
+  row_id: r0005
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0005-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0005-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0005-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0005-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0005-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1f Scheduling properties
   rust_mapping: Deterministic execution model; avoid unbounded work; bounded loops; time budgets.
-  key_rules: For RT code, require bounded execution time per cycle; avoid allocation on hot paths; avoid dynamic dispatch
-    in timing-critical code.
+  key_rules: For RT code, require bounded execution time per cycle; avoid allocation on hot paths; avoid dynamic dispatch in timing-critical code.
   asil_tightening: 'D: timing analysis required; no hidden blocking; bounded locks.'
   notes_examples: Use `#[inline(never)]` selectively to support WCET analysis (tool-dependent).
+  row_id: r0006
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0006-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0006-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0006-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0006-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0006-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1g Restricted interrupts
   rust_mapping: Interrupt handlers as minimal, deterministic, side-effect controlled functions; use atomics/critical sections.
   key_rules: Keep ISRs short; no allocation; no locks that can deadlock; communicate via lock-free queues or deferred processing.
   asil_tightening: 'C/D: formally justify ISR design; verify priority scheme; avoid shared mutable state.'
   notes_examples: In bare-metal Rust, use a qualified HAL + critical-section abstraction.
+  row_id: r0007
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0007-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0007-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0007-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0007-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0007-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1h Spatial isolation
-  rust_mapping: Memory protection + partitioning; Rust’s memory safety complements but does not replace MPU/MMU partitioning.
+  rust_mapping: "Memory protection + partitioning; Rust\u2019s memory safety complements but does not replace MPU/MMU partitioning."
   key_rules: No shared mutable globals; isolate safety partitions into separate processes/partitions where needed.
   asil_tightening: 'D: require evidence of freedom from interference; use MPU/MMU or OS partitioning.'
   notes_examples: Rust prevents many memory errors but not timing/resource interference.
+  row_id: r0008
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0008-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0008-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0008-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0008-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0008-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
 - principle: 1i Shared resource management
   rust_mapping: Mutex/RwLock/Atomics; ownership; explicit resource arbitration; avoid global contention.
-  key_rules: Define lock ordering; require bounded blocking; prefer lock-free only with documented memory ordering; resource
-    usage budgets.
+  key_rules: Define lock ordering; require bounded blocking; prefer lock-free only with documented memory ordering; resource usage budgets.
   asil_tightening: 'C/D: deadlock analysis; resource usage evaluation (stack/heap/time).'
   notes_examples: Applies to shared HW resources (buses, peripherals) and SW resources.
+  row_id: r0009
+  cell_trace:
+    principle:
+      source_id: SRCN-T04-R0009-C01
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    rust_mapping:
+      source_id: SRCN-T04-R0009-C02
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    key_rules:
+      source_id: SRCN-T04-R0009-C03
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    asil_tightening:
+      source_id: SRCN-T04-R0009-C04
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+    notes_examples:
+      source_id: SRCN-T04-R0009-C05
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
