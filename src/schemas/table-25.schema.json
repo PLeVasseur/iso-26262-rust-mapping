@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-25.schema.json",
+  "title": "Schema for table-25",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-25"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "tool_activity",
+          "title": "Tool / activity"
+        },
+        {
+          "key": "purpose",
+          "title": "Purpose"
+        },
+        {
+          "key": "evidence_artifacts",
+          "title": "Evidence artifacts"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tool_activity",
+          "purpose",
+          "evidence_artifacts"
+        ],
+        "properties": {
+          "tool_activity": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "evidence_artifacts": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+id: table-25
+style: Table Grid
+columns:
+- key: tool_activity
+  title: Tool / activity
+- key: purpose
+  title: Purpose
+- key: evidence_artifacts
+  title: Evidence artifacts
+rows:
+- tool_activity: Compiler (rustc / qualified distribution)
+  purpose: Primary enforcement of the language subset, type system, and borrow checking
+  evidence_artifacts: Qualified compiler version; locked flags; reproducible builds; documented baselines.
+- tool_activity: Formatter (rustfmt)
+  purpose: Deterministic formatting to reduce review noise
+  evidence_artifacts: Locked rustfmt version/config; CI enforcement.
+- tool_activity: Static analysis (Clippy + custom lints)
+  purpose: Enforce subset rules, complexity limits, and bug patterns
+  evidence_artifacts: Qualified lint set; reports stored as work products.
+- tool_activity: Unsafe analysis (Miri / UB checkers)
+  purpose: Detect undefined behavior in unsafe code paths
+  evidence_artifacts: Run on all unsafe modules; store results.
+- tool_activity: Dependency auditing (cargo-audit / cargo-deny)
+  purpose: Detect known vulnerabilities and license issues
+  evidence_artifacts: Regular scans; policy for remediation; SBOM.
+- tool_activity: Coverage tooling (llvm-cov/tarpaulin/etc.)
+  purpose: Provide structural coverage evidence
+  evidence_artifacts: Qualified tool or validated workflow; consistent build flags; archive reports.

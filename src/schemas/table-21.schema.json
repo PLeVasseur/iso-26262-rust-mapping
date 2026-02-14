@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-21.schema.json",
+  "title": "Schema for table-21",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-21"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "module",
+          "title": "Module"
+        },
+        {
+          "key": "purpose_risk_area",
+          "title": "Purpose / risk area"
+        },
+        {
+          "key": "profile_qm_a_b_c_d",
+          "title": "Profile (QM/A/B/C/D)"
+        },
+        {
+          "key": "notes_key_restrictions",
+          "title": "Notes / key restrictions"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "module",
+          "purpose_risk_area",
+          "profile_qm_a_b_c_d",
+          "notes_key_restrictions"
+        ],
+        "properties": {
+          "module": {
+            "type": "string"
+          },
+          "purpose_risk_area": {
+            "type": "string"
+          },
+          "profile_qm_a_b_c_d": {
+            "type": "string"
+          },
+          "notes_key_restrictions": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

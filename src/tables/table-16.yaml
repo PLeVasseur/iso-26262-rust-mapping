@@ -1,0 +1,109 @@
+id: table-16
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: '`if` / `else`'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Standard conditional; keep boolean expressions simple for MC/DC.
+- construct_feature: '`match` (exhaustive)'
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Prefer exhaustive matching over if-chains; avoid wildcard arms for enums (esp. C/D).
+- construct_feature: '`if let` / `while let`'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Use for single-pattern matches; still consider exhaustiveness for enums.
+- construct_feature: '`let ... else`'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Permitted; use primarily for early error exits with clear rationale.
+- construct_feature: Loops (`for`)
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Preferred iteration form; avoid manual indexing where possible.
+- construct_feature: Loops (`while`/`loop`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Allowed; require documented termination condition and bounds for complex loops.
+- construct_feature: '`break`/`continue`'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Permitted; keep scope local; prefer structured refactoring over complex jumps.
+- construct_feature: Labelled breaks/continues
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Restrict to cases that reduce complexity; otherwise refactor.
+- construct_feature: Early `return`
+  qm: P
+  a: P
+  b: P
+  c: R
+  d: R
+  restrictions_notes: Allowed for error paths and simple guards; restrict in complex functions at C/D.
+- construct_feature: '`?` operator'
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Preferred for propagating `Result`/`Option`; ensure error types are explicit.
+- construct_feature: Divergence (`-> !`, `panic!`, infinite loops)
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowed only for panic handlers, fatal invariants, and main loops; document rationale.
+- construct_feature: Recursion
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Only bounded recursion allowed with explicit depth and stack analysis (C/D).
+- construct_feature: Async/await suspension points
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: X
+  restrictions_notes: 'See keyword table: requires qualified runtime and cancellation policy; prohibited by default at D.'

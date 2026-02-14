@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-03.schema.json",
+  "title": "Schema for table-03",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-03"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "notation_type_table_2",
+          "title": "Notation type (Table 2)"
+        },
+        {
+          "key": "rust_aligned_artifacts",
+          "title": "Rust-aligned artifacts"
+        },
+        {
+          "key": "guideline_evidence",
+          "title": "Guideline / evidence"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "notation_type_table_2",
+          "rust_aligned_artifacts",
+          "guideline_evidence"
+        ],
+        "properties": {
+          "notation_type_table_2": {
+            "type": "string"
+          },
+          "rust_aligned_artifacts": {
+            "type": "string"
+          },
+          "guideline_evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

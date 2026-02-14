@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-09.schema.json",
+  "title": "Schema for table-09",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-09"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "coverage_metric",
+          "title": "Coverage metric"
+        },
+        {
+          "key": "rust_specific_considerations",
+          "title": "Rust-specific considerations"
+        },
+        {
+          "key": "evidence_rules",
+          "title": "Evidence / rules"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "coverage_metric",
+          "rust_specific_considerations",
+          "evidence_rules"
+        ],
+        "properties": {
+          "coverage_metric": {
+            "type": "string"
+          },
+          "rust_specific_considerations": {
+            "type": "string"
+          },
+          "evidence_rules": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+id: table-01
+style: Normal Table
+columns:
+- key: document_section
+  title: Document section
+- key: iso_26262_6_2018_reference
+  title: ISO 26262-6:2018 reference
+- key: scope_notes
+  title: Scope / notes
+rows:
+- document_section: Section 3 (Clause 5)
+  iso_26262_6_2018_reference: Clause 5, Table 1
+  scope_notes: General topics and modelling/coding guideline topics.
+- document_section: Section 4 (Clause 7)
+  iso_26262_6_2018_reference: Clause 7, Tables 2-4
+  scope_notes: 'Software architectural design: notations, principles, and verification methods.'
+- document_section: Section 5 (Clause 8)
+  iso_26262_6_2018_reference: Clause 8, Tables 5-6
+  scope_notes: 'Software unit design and implementation: notations and unit design principles.'
+- document_section: Section 6 (Clause 9)
+  iso_26262_6_2018_reference: Clause 9, Tables 7-9
+  scope_notes: 'Software unit verification: verification methods, test derivation, and structural coverage metrics.'
+- document_section: Section 7 (Clause 10)
+  iso_26262_6_2018_reference: Clause 10, Tables 10-12
+  scope_notes: 'Software integration and verification: methods, test derivation, and architectural-level structural coverage.'
+- document_section: Section 8 (Clause 11)
+  iso_26262_6_2018_reference: Clause 11, Tables 13-15
+  scope_notes: 'Testing of embedded software: test environments, methods, and test case derivation.'
+- document_section: Section 9 (Configurable Software)
+  iso_26262_6_2018_reference: Annex C
+  scope_notes: Configurable software guidance (configuration/calibration management considerations).

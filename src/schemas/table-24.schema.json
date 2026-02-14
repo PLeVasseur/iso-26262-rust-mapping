@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-24.schema.json",
+  "title": "Schema for table-24",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-24"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "api_pattern",
+          "title": "API / pattern"
+        },
+        {
+          "key": "status",
+          "title": "Status"
+        },
+        {
+          "key": "rationale",
+          "title": "Rationale"
+        },
+        {
+          "key": "preferred_alternatives",
+          "title": "Preferred alternatives"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_pattern",
+          "status",
+          "rationale",
+          "preferred_alternatives"
+        ],
+        "properties": {
+          "api_pattern": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "preferred_alternatives": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+id: table-05
+style: Table Grid
+columns:
+- key: method
+  title: Method
+- key: rust_aligned_practice
+  title: Rust-aligned practice
+- key: evidence_artifacts
+  title: Evidence artifacts
+- key: asil_expectations
+  title: ASIL expectations
+rows:
+- method: Walk-through (++)/+(o)
+  rust_aligned_practice: Structured architecture review with stakeholders
+  evidence_artifacts: Review records, issue log, decisions, traceability to requirements
+  asil_expectations: ++ at ASIL A; + at ASIL B; o at ASIL C/D (still useful but not sufficient).
+- method: Inspection (+/++)
+  rust_aligned_practice: Formal inspections of architecture and interface specs
+  evidence_artifacts: Inspection checklist, defect metrics, sign-off
+  asil_expectations: + at ASIL A; ++ at ASIL B–D.
+- method: Simulation (+/++ for D)
+  rust_aligned_practice: Model-level or harness-level simulation of dynamic behavior
+  evidence_artifacts: Simulation results, assumptions, coverage of modes
+  asil_expectations: + at ASIL A–C; ++ at ASIL D for timing/concurrency risks.
+- method: Prototype generation (o/++ for D)
+  rust_aligned_practice: Executable spike for risky interfaces/protocols
+  evidence_artifacts: Prototype report and lessons learned
+  asil_expectations: Typically o at ASIL A/B; +/++ at C/D when uncertainty is high.
+- method: Formal verification (o/+)
+  rust_aligned_practice: Formalize and verify critical protocols, unsafe abstractions, or control logic
+  evidence_artifacts: Proofs, model checking results, assumptions and limitations
+  asil_expectations: Primarily for ASIL C/D hotspots.
+- method: Control flow analysis (+/++)
+  rust_aligned_practice: Control-flow graph analysis; restrict complex branching; review unsafe code
+  evidence_artifacts: Static analysis reports; complexity metrics
+  asil_expectations: + at ASIL A/B; ++ at ASIL C/D.
+- method: Data flow analysis (+/++)
+  rust_aligned_practice: Data-flow analysis for initialization, lifetimes, shared resources
+  evidence_artifacts: Static analysis; taint/dataflow results
+  asil_expectations: + at ASIL A/B; ++ at ASIL C/D.
+- method: Scheduling analysis (+/++)
+  rust_aligned_practice: WCET/timing budget analysis; priority inversion review
+  evidence_artifacts: Timing models; measurement reports; lock analysis
+  asil_expectations: + at ASIL A/B; ++ at ASIL C/D (often required).

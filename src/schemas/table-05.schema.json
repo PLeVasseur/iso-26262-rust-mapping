@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-05.schema.json",
+  "title": "Schema for table-05",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-05"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "method",
+          "title": "Method"
+        },
+        {
+          "key": "rust_aligned_practice",
+          "title": "Rust-aligned practice"
+        },
+        {
+          "key": "evidence_artifacts",
+          "title": "Evidence artifacts"
+        },
+        {
+          "key": "asil_expectations",
+          "title": "ASIL expectations"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "method",
+          "rust_aligned_practice",
+          "evidence_artifacts",
+          "asil_expectations"
+        ],
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "rust_aligned_practice": {
+            "type": "string"
+          },
+          "evidence_artifacts": {
+            "type": "string"
+          },
+          "asil_expectations": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

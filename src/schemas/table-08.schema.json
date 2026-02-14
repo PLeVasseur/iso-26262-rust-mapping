@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-08.schema.json",
+  "title": "Schema for table-08",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-08"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "method_table_8",
+          "title": "Method (Table 8)"
+        },
+        {
+          "key": "rust_testing_approach",
+          "title": "Rust testing approach"
+        },
+        {
+          "key": "concrete_guidance",
+          "title": "Concrete guidance"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "method_table_8",
+          "rust_testing_approach",
+          "concrete_guidance"
+        ],
+        "properties": {
+          "method_table_8": {
+            "type": "string"
+          },
+          "rust_testing_approach": {
+            "type": "string"
+          },
+          "concrete_guidance": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

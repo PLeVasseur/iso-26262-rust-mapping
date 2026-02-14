@@ -1,0 +1,158 @@
+id: table-14
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: Modules (`mod`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Use modules to enforce encapsulation and layering; require module-level docs for safety-related modules.
+- construct_feature: Imports (`use`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Prohibit wildcard imports (`use foo::*`) in ASIL code; prefer explicit paths for traceability.
+- construct_feature: Public visibility (`pub`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Minimize public API surface; all `pub` items require documentation and review.
+- construct_feature: Restricted visibility (`pub(crate)`, `pub(super)`, `pub(in path)`)
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Preferred over `pub` to support encapsulation.
+- construct_feature: Constants (`const` items)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Prefer `const` for pure values; avoid large computed const expressions unless toolchain supports.
+- construct_feature: Statics (`static` immutable)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowed for immutable data; must be justified if used for shared resources.
+- construct_feature: Mutable statics (`static mut`)
+  qm: X
+  a: X
+  b: X
+  c: X
+  d: X
+  restrictions_notes: Prohibited; use safe synchronization (`Mutex`, atomics) or partitioning.
+- construct_feature: Functions (`fn`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Apply complexity limits and error-handling policy; prefer explicit `Result`.
+- construct_feature: Traits (`trait`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Document trait contracts and invariants; restrict deep hierarchies.
+- construct_feature: Trait objects (`dyn Trait`)
+  qm: P
+  a: P
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Dynamic dispatch requires justification; restrict in timing-critical paths.
+- construct_feature: Implementations (`impl`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Prefer inherent methods for cohesion; avoid orphan impls in application code.
+- construct_feature: Type aliases (`type`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Use for readability only; prefer newtypes for type safety.
+- construct_feature: Structs (`struct`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Preferred for domain modeling; document invariants; use private fields.
+- construct_feature: Enums (`enum`)
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Prefer to encode state machines; require exhaustive matching; avoid wildcard arms for evolving enums.
+- construct_feature: Unions (`union`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only for FFI; must be wrapped and audited; unsafe field access.
+- construct_feature: Extern blocks (`extern "C" { ... }`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: FFI allowed only in qualified boundary modules; validate all inputs; forbid unwinding across boundary.
+- construct_feature: Unsafe functions (`unsafe fn`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only where preconditions cannot be expressed; require documented SAFETY contract.
+- construct_feature: Unsafe traits/impls
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only with explicit invariant proof; independent review at ASIL C/D.
+- construct_feature: Macro definitions (`macro_rules!`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowlist only; expansions must be reviewed; avoid hidden control flow.
+- construct_feature: Procedural macros
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only if macro crate is qualified and generated code is reviewable; prefer explicit code.

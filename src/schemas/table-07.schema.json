@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-07.schema.json",
+  "title": "Schema for table-07",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-07"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "method_table_7",
+          "title": "Method (Table 7)"
+        },
+        {
+          "key": "rust_aligned_implementation",
+          "title": "Rust-aligned implementation"
+        },
+        {
+          "key": "suggested_tools_artifacts",
+          "title": "Suggested tools / artifacts"
+        },
+        {
+          "key": "notes",
+          "title": "Notes"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "method_table_7",
+          "rust_aligned_implementation",
+          "suggested_tools_artifacts",
+          "notes"
+        ],
+        "properties": {
+          "method_table_7": {
+            "type": "string"
+          },
+          "rust_aligned_implementation": {
+            "type": "string"
+          },
+          "suggested_tools_artifacts": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

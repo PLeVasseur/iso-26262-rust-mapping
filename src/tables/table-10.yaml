@@ -1,0 +1,44 @@
+id: table-10
+style: Table Grid
+columns:
+- key: method_table_10
+  title: Method (Table 10)
+- key: rust_aligned_execution
+  title: Rust-aligned execution
+- key: evidence_artifacts
+  title: Evidence artifacts
+- key: asil_notes
+  title: ASIL notes
+rows:
+- method_table_10: 1a Requirements-based test
+  rust_aligned_execution: Integration tests (`cargo test`) at component boundaries; HSI-level tests for drivers
+  evidence_artifacts: Integration test specs/results; traceability
+  asil_notes: ++ for all ASIL.
+- method_table_10: 1b Interface test
+  rust_aligned_execution: Contract tests for module/crate interfaces; FFI boundary validation
+  evidence_artifacts: Interface test suite; negative tests
+  asil_notes: ++ for all ASIL.
+- method_table_10: 1c Fault injection test
+  rust_aligned_execution: Inject corrupted messages/config/inputs; simulate peripheral failures
+  evidence_artifacts: Fault injection plan/results
+  asil_notes: + at A/B; ++ at C/D.
+- method_table_10: 1d Resource usage evaluation
+  rust_aligned_execution: Measure stack/heap/CPU/time usage; detect contention
+  evidence_artifacts: Resource measurement reports; budgets
+  asil_notes: ++ for all ASIL; must be deterministic at C/D.
+- method_table_10: 1e Back-to-back model/code comparison
+  rust_aligned_execution: If model-based design is used, compare model output to Rust implementation
+  evidence_artifacts: Comparison results; tolerances
+  asil_notes: + at A/B; ++ at C/D.
+- method_table_10: 1f Control/data flow verification
+  rust_aligned_execution: Verify scheduling order, data flow, and mode switching across units
+  evidence_artifacts: Integration analysis report
+  asil_notes: + at A/B; ++ at C/D.
+- method_table_10: 1g Static code analysis
+  rust_aligned_execution: Run linting and static analyzers on integrated builds; check cfg variants
+  evidence_artifacts: Static analysis reports
+  asil_notes: ++ for all ASIL.
+- method_table_10: 1h Abstract interpretation
+  rust_aligned_execution: Use high-assurance analyzers for integration-level runtime errors
+  evidence_artifacts: Abstract interpretation report
+  asil_notes: + across ASIL; often used for C/D.

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-11.schema.json",
+  "title": "Schema for table-11",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-11"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "coverage_metric_table_12",
+          "title": "Coverage metric (Table 12)"
+        },
+        {
+          "key": "rust_considerations",
+          "title": "Rust considerations"
+        },
+        {
+          "key": "evidence_rules",
+          "title": "Evidence / rules"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "coverage_metric_table_12",
+          "rust_considerations",
+          "evidence_rules"
+        ],
+        "properties": {
+          "coverage_metric_table_12": {
+            "type": "string"
+          },
+          "rust_considerations": {
+            "type": "string"
+          },
+          "evidence_rules": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

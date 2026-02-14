@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-13.schema.json",
+  "title": "Schema for table-13",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-13"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "keyword_construct",
+          "title": "Keyword / construct"
+        },
+        {
+          "key": "qm",
+          "title": "QM"
+        },
+        {
+          "key": "a",
+          "title": "A"
+        },
+        {
+          "key": "b",
+          "title": "B"
+        },
+        {
+          "key": "c",
+          "title": "C"
+        },
+        {
+          "key": "d",
+          "title": "D"
+        },
+        {
+          "key": "notes_restrictions",
+          "title": "Notes / restrictions"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "keyword_construct",
+          "qm",
+          "a",
+          "b",
+          "c",
+          "d",
+          "notes_restrictions"
+        ],
+        "properties": {
+          "keyword_construct": {
+            "type": "string"
+          },
+          "qm": {
+            "type": "string"
+          },
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "c": {
+            "type": "string"
+          },
+          "d": {
+            "type": "string"
+          },
+          "notes_restrictions": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

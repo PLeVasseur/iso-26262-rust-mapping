@@ -1,0 +1,218 @@
+id: table-20
+style: Table Grid
+columns:
+- key: module
+  title: Module
+- key: purpose_risk_area
+  title: Purpose / risk area
+- key: profile_qm_a_b_c_d
+  title: Profile (QM/A/B/C/D)
+- key: notes_key_restrictions
+  title: Notes / key restrictions
+rows:
+- module: core::alloc
+  purpose_risk_area: Layout and allocation-related types (even in no_std)
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; includes `Layout`, `GlobalAlloc`-related interfaces; treat allocator implementation as
+    Q.
+- module: core::any
+  purpose_risk_area: Type reflection (TypeId) and downcasting
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Restrict in ASIL C/D to avoid dynamic-type complexity; prefer static typing.
+- module: core::arch
+  purpose_risk_area: SIMD/vendor intrinsics
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Hardware-specific; allow only in qualified, reviewed low-level modules; avoid if WCET determinism
+    impacted.
+- module: core::array
+  purpose_risk_area: Array utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; prefer fixed-size arrays for determinism.
+- module: core::ascii
+  purpose_risk_area: ASCII operations
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; ensure encoding assumptions are documented.
+- module: core::borrow
+  purpose_risk_area: Borrowed data utilities (Cow, Borrow)
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; beware of Cow allocations when paired with alloc.
+- module: core::cell
+  purpose_risk_area: Interior mutability (Cell/RefCell/UnsafeCell)
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict; avoid RefCell (runtime panics). UnsafeCell only in Q primitives.
+- module: core::char
+  purpose_risk_area: char utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: core::clone
+  purpose_risk_area: Clone trait
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; review manual Clone implementations.
+- module: core::cmp
+  purpose_risk_area: Comparison and ordering
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: core::convert
+  purpose_risk_area: From/Into/TryFrom/TryInto
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; require TryFrom for fallible/narrowing conversions.
+- module: core::default
+  purpose_risk_area: Default trait
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; Default must represent valid state.
+- module: core::error
+  purpose_risk_area: Error trait
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; define project error taxonomy.
+- module: core::f32 / core::f64
+  purpose_risk_area: Float constants
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict floating point usage in safety-critical control unless justified.
+- module: core::ffi
+  purpose_risk_area: C-compatible primitive types
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: FFI boundary only; validate conversions and layouts.
+- module: core::fmt
+  purpose_risk_area: Formatting traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; avoid panics in fmt; restrict formatting in timing-critical paths.
+- module: core::future / core::task
+  purpose_risk_area: Async primitives
+  profile_qm_a_b_c_d: P/R/R/R/X
+  notes_key_restrictions: Async requires qualified runtime/policy; default prohibit at ASIL D.
+- module: core::hash
+  purpose_risk_area: Hashing support
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Hash-based behavior may be nondeterministic; restrict in high ASIL unless determinism ensured.
+- module: core::hint
+  purpose_risk_area: Compiler hints
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Allow sparingly; document any reliance on optimization behavior.
+- module: core::iter
+  purpose_risk_area: Iterator trait
+  profile_qm_a_b_c_d: HR/HR/HR/HR/HR
+  notes_key_restrictions: Preferred iteration model.
+- module: core::marker
+  purpose_risk_area: Marker traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; manual impls of Send/Sync are Q.
+- module: core::mem
+  purpose_risk_area: Memory utilities (includes some unsafe-adjacent APIs)
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Allow safe subset (size_of, replace); prohibit transmute/zeroed; unsafe parts only in Q.
+- module: core::net
+  purpose_risk_area: Socket address types
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Use only if network stack exists and is qualified; otherwise avoid in embedded.
+- module: core::num
+  purpose_risk_area: Numeric wrappers (NonZero, Wrapping, Saturating)
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Encourage explicit overflow semantics.
+- module: core::ops
+  purpose_risk_area: Operator traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: 'Permitted with restrictions: operator overloading must preserve semantics.'
+- module: core::option / core::result
+  purpose_risk_area: Option/Result
+  profile_qm_a_b_c_d: M/M/M/M/M
+  notes_key_restrictions: Mandatory for optional and fallible operations.
+- module: core::panic
+  purpose_risk_area: Panic support
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Define panic policy; for ASIL C/D require panic=abort.
+- module: core::pin
+  purpose_risk_area: Pinning
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Restrict to advanced code; direct Pin manipulation only in qualified libraries.
+- module: core::prelude / core::primitive
+  purpose_risk_area: Prelude and primitive reexports
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; follow visibility and API rules.
+- module: core::ptr
+  purpose_risk_area: Raw pointer operations
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Unsafe-adjacent; application code forbidden; Q only with proofs.
+- module: core::slice / core::str
+  purpose_risk_area: Slice and string utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Prefer safe accessors; restrict unchecked indexing.
+- module: core::sync
+  purpose_risk_area: Core sync primitives
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Mostly atomic and fence primitives; restrict memory ordering; require documentation.
+- module: core::time
+  purpose_risk_area: Duration and time utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; actual clocks are in std.
+- module: core::{i8,i16,i32,i64,i128,isize,u8,u16,u32,u64,u128,usize} (const modules)
+  purpose_risk_area: Redundant constants modules (deprecation planned)
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Avoid in new code; prefer inherent constants (e.g., i32::MAX).
+- module: core::assert_matches
+  purpose_risk_area: Experimental macro module
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; not allowed in certified builds.
+- module: core::async_iter
+  purpose_risk_area: Experimental async iteration
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::autodiff
+  purpose_risk_area: Experimental automatic differentiation
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::bstr
+  purpose_risk_area: Experimental byte string types
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::contracts
+  purpose_risk_area: Experimental contracts / attribute macros
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::f16 / core::f128 (const modules)
+  purpose_risk_area: Experimental float constants
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::from
+  purpose_risk_area: Experimental From derive macro
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::index
+  purpose_risk_area: Experimental slice indexing helpers
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::intrinsics
+  purpose_risk_area: Compiler intrinsics
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; prohibited.
+- module: core::io / core::os / core::panicking
+  purpose_risk_area: Experimental low-level support modules
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; prohibited.
+- module: core::pat
+  purpose_risk_area: Experimental pattern_type macro helpers
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::profiling
+  purpose_risk_area: Experimental profiling markers
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::random
+  purpose_risk_area: Experimental random generation
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::range
+  purpose_risk_area: Experimental range types
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::simd
+  purpose_risk_area: Experimental portable SIMD
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; prohibit in certified builds.
+- module: core::ub_checks
+  purpose_risk_area: Experimental unsafe precondition checks
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: core::unsafe_binder
+  purpose_risk_area: Experimental unsafe binder operators
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.

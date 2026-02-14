@@ -1,0 +1,14 @@
+[project]
+name = "iso26262-docgen"
+version = "0.1.0"
+description = "Generate ISO 26262 ↔ Rust mapping DOCX from Markdown + YAML tables"
+requires-python = ">=3.11"
+dependencies = [
+  "python-docx>=1.1.0",
+  "PyYAML>=6.0",
+  "jsonschema>=4.21.0",
+  "pillow>=10.0.0",
+]
+
+[dependency-groups]
+dev = []

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-04.schema.json",
+  "title": "Schema for table-04",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-04"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "principle",
+          "title": "Principle"
+        },
+        {
+          "key": "rust_mapping",
+          "title": "Rust mapping"
+        },
+        {
+          "key": "key_rules",
+          "title": "Key rules"
+        },
+        {
+          "key": "asil_tightening",
+          "title": "ASIL tightening"
+        },
+        {
+          "key": "notes_examples",
+          "title": "Notes / examples"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "principle",
+          "rust_mapping",
+          "key_rules",
+          "asil_tightening",
+          "notes_examples"
+        ],
+        "properties": {
+          "principle": {
+            "type": "string"
+          },
+          "rust_mapping": {
+            "type": "string"
+          },
+          "key_rules": {
+            "type": "string"
+          },
+          "asil_tightening": {
+            "type": "string"
+          },
+          "notes_examples": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

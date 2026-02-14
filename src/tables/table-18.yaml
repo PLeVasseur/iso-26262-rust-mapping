@@ -1,0 +1,74 @@
+id: table-18
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: Built-in assert macros (`assert!`, `assert_eq!`, `assert_ne!`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Permitted for invariant checks; must not be used for expected errors; define policy for production builds.
+- construct_feature: Debug-only asserts (`debug_assert!` etc.)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowed only if build system ensures release builds do not rely on them for safety.
+- construct_feature: Panic macros (`panic!`, `todo!`, `unimplemented!`, `unreachable!`)
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Only for unrecoverable invariants; `todo!/unimplemented!` prohibited in released software.
+- construct_feature: Formatting/IO macros (`println!`, `eprintln!`, `dbg!`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Prohibit in production safety code unless routed through a qualified logging/diagnostic layer.
+- construct_feature: Collection macros (`vec!`)
+  qm: P
+  a: P
+  b: P
+  c: R
+  d: R
+  restrictions_notes: Allocates; subject to heap-allocation policy.
+- construct_feature: Include macros (`include!`, `include_bytes!`, `include_str!`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Increases build-time coupling; require justification and traceability; validate included data.
+- construct_feature: Declarative macros (`macro_rules!`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowlist only; require documentation of expansion and prohibit hidden early returns.
+- construct_feature: Procedural macros (derive/attribute/function-like)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only if macro crate is qualified; generated code must be reviewable and stable.

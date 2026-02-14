@@ -1,0 +1,24 @@
+id: table-03
+style: Table Grid
+columns:
+- key: notation_type_table_2
+  title: Notation type (Table 2)
+- key: rust_aligned_artifacts
+  title: Rust-aligned artifacts
+- key: guideline_evidence
+  title: Guideline / evidence
+rows:
+- notation_type_table_2: Natural language (++)
+  rust_aligned_artifacts: Architecture doc + rustdoc module docs
+  guideline_evidence: Mandatory rationale for key decisions; bidirectional traceability to safety requirements.
+- notation_type_table_2: Informal notations (++/+)
+  rust_aligned_artifacts: Block diagrams, interface sketches, simple sequence diagrams
+  guideline_evidence: Allowed for early design; must be converged to semi-formal for ASIL C/D where timing/concurrency matters.
+- notation_type_table_2: Semi-formal notations (+/++)
+  rust_aligned_artifacts: UML/SysML/statecharts; timing models; interface contracts
+  guideline_evidence: Preferred for safety mechanisms, mode management, and partitioning; keep synchronized with code via
+    review gates.
+- notation_type_table_2: Formal notations (+)
+  rust_aligned_artifacts: Formal specs, model checking, theorem proving
+  guideline_evidence: Use selectively for high-risk algorithms, concurrency protocols, and unsafe abstractions; prioritize
+    for ASIL D hotspots.

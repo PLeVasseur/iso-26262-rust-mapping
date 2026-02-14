@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-18.schema.json",
+  "title": "Schema for table-18",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-18"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "construct_feature",
+          "title": "Construct / feature"
+        },
+        {
+          "key": "qm",
+          "title": "QM"
+        },
+        {
+          "key": "a",
+          "title": "A"
+        },
+        {
+          "key": "b",
+          "title": "B"
+        },
+        {
+          "key": "c",
+          "title": "C"
+        },
+        {
+          "key": "d",
+          "title": "D"
+        },
+        {
+          "key": "restrictions_notes",
+          "title": "Restrictions / notes"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "construct_feature",
+          "qm",
+          "a",
+          "b",
+          "c",
+          "d",
+          "restrictions_notes"
+        ],
+        "properties": {
+          "construct_feature": {
+            "type": "string"
+          },
+          "qm": {
+            "type": "string"
+          },
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "c": {
+            "type": "string"
+          },
+          "d": {
+            "type": "string"
+          },
+          "restrictions_notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

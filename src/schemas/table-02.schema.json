@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-02.schema.json",
+  "title": "Schema for table-02",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-02"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "iso_topic",
+          "title": "ISO topic"
+        },
+        {
+          "key": "iso_intent",
+          "title": "ISO intent"
+        },
+        {
+          "key": "rust_mechanisms",
+          "title": "Rust mechanisms"
+        },
+        {
+          "key": "coding_standard_implications",
+          "title": "Coding standard implications"
+        },
+        {
+          "key": "asil_notes",
+          "title": "ASIL notes"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "iso_topic",
+          "iso_intent",
+          "rust_mechanisms",
+          "coding_standard_implications",
+          "asil_notes"
+        ],
+        "properties": {
+          "iso_topic": {
+            "type": "string"
+          },
+          "iso_intent": {
+            "type": "string"
+          },
+          "rust_mechanisms": {
+            "type": "string"
+          },
+          "coding_standard_implications": {
+            "type": "string"
+          },
+          "asil_notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

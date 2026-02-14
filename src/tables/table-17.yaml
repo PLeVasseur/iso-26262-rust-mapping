@@ -1,0 +1,123 @@
+id: table-17
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: Lint levels (`#![deny(warnings)]`, `#![forbid(unsafe_code)]`)
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Make deny/forbid policies part of CI; define allowlist of permitted `#[allow(...)]` suppressions.
+- construct_feature: Conditional compilation (`#[cfg]`, `cfg!`, `cfg_attr`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Minimize cfg variants; require test evidence for each enabled configuration; document all feature flags.
+- construct_feature: Derive (`#[derive(...)]`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Allow only known derives by default; custom derive/proc macros require qualification.
+- construct_feature: Representation (`#[repr(C)]`, `#[repr(transparent)]`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed for FFI and ABI stability only; must be reviewed; prefer explicit layout tests.
+- construct_feature: Representation (`#[repr(packed)]`)
+  qm: X
+  a: X
+  b: X
+  c: X
+  d: X
+  restrictions_notes: 'Prohibited: can create unaligned references and UB; use byte arrays and parsing.'
+- construct_feature: Alignment (`#[repr(align(N))]`)
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allow only with justification; affects memory footprint and may hide assumptions.
+- construct_feature: Inlining hints (`#[inline]`, `#[inline(always)]`, `#[inline(never)]`)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allow sparingly; `always` can harm timing analysis and code size; document when used.
+- construct_feature: Linkage (`#[no_mangle]`, `#[export_name]`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: FFI/ABI surface only; require controlled symbol naming and versioning.
+- construct_feature: Section placement (`#[link_section]`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only in qualified low-level modules; document memory map assumptions.
+- construct_feature: '`#[used]` / `#[used(linker)]`'
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only for linker/interrupt vectors in low-level code; require review.
+- construct_feature: '`#![no_std]`'
+  qm: P
+  a: P
+  b: P
+  c: HR
+  d: HR
+  restrictions_notes: Preferred for ASIL C/D embedded targets; ensures OS-free determinism.
+- construct_feature: '`#![no_main]` / `#[panic_handler]`'
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Used in bare-metal; require validated startup and panic behavior.
+- construct_feature: Global allocator (`#[global_allocator]`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allocator must be qualified; for ASIL D prefer no-alloc profile.
+- construct_feature: Nightly feature gates (`#![feature(...)]`)
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  restrictions_notes: Not allowed in certified builds.
+- construct_feature: Testing attrs (`#[test]`, `#[should_panic]`)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Allowed in test builds only; production code must not depend on test-only behavior.

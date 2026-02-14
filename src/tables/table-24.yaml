@@ -1,0 +1,44 @@
+id: table-24
+style: Table Grid
+columns:
+- key: api_pattern
+  title: API / pattern
+- key: status
+  title: Status
+- key: rationale
+  title: Rationale
+- key: preferred_alternatives
+  title: Preferred alternatives
+rows:
+- api_pattern: '`unwrap()` / `expect()` on Option/Result'
+  status: R (QM–B), X (C/D)
+  rationale: Panics on error/None; hides error handling
+  preferred_alternatives: Use `?`, `match`, or `unwrap_or` with defined fallback; treat panics as fatal invariants only.
+- api_pattern: Indexing (`v[i]`, `slice[i]`)
+  status: R (QM–B), X (C/D)
+  rationale: May panic; harder to prove bounds for MC/DC and review
+  preferred_alternatives: Use iterators or `get()` returning Option and handle error path.
+- api_pattern: '`panic!`, `todo!`, `unimplemented!`'
+  status: R/X
+  rationale: Uncontrolled termination; placeholders unacceptable in released code
+  preferred_alternatives: Return `Result` with error; use explicit fail-safe state transitions.
+- api_pattern: '`mem::transmute`, `mem::zeroed`'
+  status: X
+  rationale: High UB risk, invalid values, layout assumptions
+  preferred_alternatives: Use explicit conversions, `from_ne_bytes`, `bytemuck`-like qualified wrappers (if approved).
+- api_pattern: '`ptr::read`, `ptr::write`, `get_unchecked`'
+  status: Q (C/D)
+  rationale: Unsafe memory access
+  preferred_alternatives: Prefer safe APIs; encapsulate in audited safe abstractions.
+- api_pattern: '`Rc` / cycles with `Arc` + `Weak`'
+  status: R
+  rationale: Complex ownership and drop order; potential leaks
+  preferred_alternatives: Prefer explicit ownership trees or arenas; document cycle-breaking strategy.
+- api_pattern: Hash-based collections (`HashMap`, `HashSet`)
+  status: P/R
+  rationale: Nondeterministic iteration order; DOS considerations
+  preferred_alternatives: Prefer `BTreeMap/BTreeSet` for determinism; if HashMap needed, fix hasher and document.
+- api_pattern: '`std::thread::spawn`'
+  status: R (B–D)
+  rationale: Unbounded concurrency and scheduling nondeterminism
+  preferred_alternatives: Prefer RTOS tasks with known scheduling; bound thread count; use message passing.

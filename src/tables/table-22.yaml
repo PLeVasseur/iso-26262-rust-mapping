@@ -1,0 +1,252 @@
+id: table-22
+style: Table Grid
+columns:
+- key: module
+  title: Module
+- key: purpose_risk_area
+  title: Purpose / risk area
+- key: profile_qm_a_b_c_d
+  title: Profile (QM/A/B/C/D)
+- key: notes_key_restrictions
+  title: Notes / key restrictions
+rows:
+- module: std::alloc
+  purpose_risk_area: Allocator interfaces
+  profile_qm_a_b_c_d: P/R/R/Q/Q
+  notes_key_restrictions: Allocator must be qualified; prefer no-alloc for ASIL D.
+- module: std::any
+  purpose_risk_area: Dynamic typing/reflection
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Restrict for C/D; avoid runtime type dispatch in safety code.
+- module: std::arch
+  purpose_risk_area: SIMD/vendor intrinsics
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Hardware-specific; only in qualified modules with timing review.
+- module: std::array
+  purpose_risk_area: Array utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::ascii
+  purpose_risk_area: ASCII utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::backtrace
+  purpose_risk_area: Backtrace capture
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Diagnostics only; avoid in production safety paths; may allocate and depend on OS.
+- module: std::borrow
+  purpose_risk_area: Borrow utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; watch for hidden allocations via Cow.
+- module: std::boxed
+  purpose_risk_area: Box
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Heap allocation policy applies.
+- module: std::cell
+  purpose_risk_area: Interior mutability
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict; avoid runtime borrow panics.
+- module: std::char
+  purpose_risk_area: Char utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::clone
+  purpose_risk_area: Clone trait
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::cmp
+  purpose_risk_area: Comparisons
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::collections
+  purpose_risk_area: Collections
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Restrict unbounded growth; prefer deterministic maps (BTree*) for higher ASIL.
+- module: std::convert
+  purpose_risk_area: Conversions
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Require TryFrom for narrowing.
+- module: std::default
+  purpose_risk_area: Default
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Default must be valid state.
+- module: std::env
+  purpose_risk_area: Environment variables
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Global mutable state; restrict to initialization/config only.
+- module: std::error
+  purpose_risk_area: Error traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::f32 / std::f64
+  purpose_risk_area: Float constants
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict floating point usage unless justified.
+- module: std::ffi
+  purpose_risk_area: FFI utilities
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Qualified boundary only; validate all conversions.
+- module: std::fmt
+  purpose_risk_area: Formatting
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Formatting may allocate; restrict in timing-critical paths.
+- module: std::fs
+  purpose_risk_area: Filesystem
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Domain-dependent; allowed only in qualified platform components.
+- module: std::future
+  purpose_risk_area: Async basics
+  profile_qm_a_b_c_d: P/R/R/R/X
+  notes_key_restrictions: Requires qualified runtime; prohibited by default at ASIL D.
+- module: std::hash
+  purpose_risk_area: Hashing
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Hash collections may be nondeterministic; prefer ordered collections for C/D.
+- module: std::hint
+  purpose_risk_area: Compiler hints
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Allow sparingly; document usage.
+- module: std::{i8,i16,i32,i64,i128,isize,u8,u16,u32,u64,u128,usize} (const modules)
+  purpose_risk_area: Redundant constants (deprecation planned)
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Avoid in new code; prefer inherent constants (e.g., i32::MAX).
+- module: std::io
+  purpose_risk_area: I/O traits and helpers
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Domain-dependent; all I/O is fallible; restrict to qualified components.
+- module: std::iter
+  purpose_risk_area: Iterators
+  profile_qm_a_b_c_d: HR/HR/HR/HR/HR
+  notes_key_restrictions: Preferred iteration.
+- module: std::marker
+  purpose_risk_area: Marker traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::mem
+  purpose_risk_area: Memory utilities
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Permit safe subset; unsafe-adjacent APIs only in Q.
+- module: std::net
+  purpose_risk_area: Networking
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Domain-dependent; typically restricted in ECU software.
+- module: std::num
+  purpose_risk_area: Numeric utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Encourage explicit overflow handling.
+- module: std::ops
+  purpose_risk_area: Operator traits
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Operator overloading restricted by semantics.
+- module: std::option / std::result
+  purpose_risk_area: Option/Result
+  profile_qm_a_b_c_d: M/M/M/M/M
+  notes_key_restrictions: Mandatory for optional/fallible operations.
+- module: std::os
+  purpose_risk_area: OS-specific APIs
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Qualified platform layer only; avoid in portable safety components.
+- module: std::panic
+  purpose_risk_area: Panic support
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Define panic policy; avoid panics in normal control flow.
+- module: std::path
+  purpose_risk_area: Paths
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Path parsing/normalization can be complex; restrict to platform layer.
+- module: std::pin
+  purpose_risk_area: Pinning
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Restrict to qualified async or self-referential code.
+- module: std::prelude / std::primitive
+  purpose_risk_area: Prelude and primitive reexports
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- module: std::process
+  purpose_risk_area: Process control
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Rare in ECU; restrict to tooling or qualified diagnostics.
+- module: std::ptr
+  purpose_risk_area: Raw pointer operations
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Unsafe-adjacent; Q only.
+- module: std::rc
+  purpose_risk_area: Rc/Weak
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Restrict due to complex lifetimes and cycles; avoid in safety-critical.
+- module: std::slice / std::str
+  purpose_risk_area: Slice/str utilities
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Prefer checked access.
+- module: std::string
+  purpose_risk_area: String
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Heap allocation; restrict size and avoid in timing-critical code.
+- module: std::sync
+  purpose_risk_area: Synchronization primitives
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Deadlocks not prevented by type system; define lock order and bounded blocking.
+- module: std::task
+  purpose_risk_area: Async task types
+  profile_qm_a_b_c_d: P/R/R/R/X
+  notes_key_restrictions: Depends on async policy.
+- module: std::thread
+  purpose_risk_area: OS threads
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict; define thread creation policy; avoid unbounded threads.
+- module: std::time
+  purpose_risk_area: Time measurement
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Prefer monotonic `Instant` for timing; wall-clock for logging only.
+- module: std::vec
+  purpose_risk_area: Vec
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Heap allocation policy applies; bounded capacity required at C/D.
+- module: std::assert_matches (Experimental)
+  purpose_risk_area: Unstable assert_matches macro
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; not allowed in certified builds.
+- module: std::async_iter (Experimental)
+  purpose_risk_area: Async iterators
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::autodiff (Experimental)
+  purpose_risk_area: Automatic differentiation
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::bstr (Experimental)
+  purpose_risk_area: Byte strings
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::f16 / std::f128 (Experimental)
+  purpose_risk_area: Experimental float constants
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::from (Experimental)
+  purpose_risk_area: Unstable From derive
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::intrinsics (Experimental)
+  purpose_risk_area: Compiler intrinsics
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::pat (Experimental)
+  purpose_risk_area: pattern_type helpers
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::random (Experimental)
+  purpose_risk_area: Random generation
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; prohibit.
+- module: std::range (Experimental)
+  purpose_risk_area: Replacement range types
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::simd (Experimental)
+  purpose_risk_area: Portable SIMD
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- module: std::unsafe_binder (Experimental)
+  purpose_risk_area: Unsafe binder operators
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.

@@ -1,0 +1,56 @@
+id: table-07
+style: Table Grid
+columns:
+- key: method_table_7
+  title: Method (Table 7)
+- key: rust_aligned_implementation
+  title: Rust-aligned implementation
+- key: suggested_tools_artifacts
+  title: Suggested tools / artifacts
+- key: notes
+  title: Notes
+rows:
+- method_table_7: 1a Walk-through
+  rust_aligned_implementation: Peer walk-through of design + source (include safety arguments and invariants)
+  suggested_tools_artifacts: Review minutes, issue tracking, sign-off
+  notes: Useful early; not sufficient alone for ASIL C/D.
+- method_table_7: 1b Pair-programming
+  rust_aligned_implementation: Structured pair work on safety-critical or unsafe sections
+  suggested_tools_artifacts: Pairing records; reviewer sign-off
+  notes: Treat as ‘enhanced review’, not a substitute for formal inspection.
+- method_table_7: 1c Inspection
+  rust_aligned_implementation: Checklist-based inspection of code, especially unsafe boundaries
+  suggested_tools_artifacts: Inspection checklist; defect density metrics
+  notes: Mandatory intensity increases with ASIL.
+- method_table_7: 1d Semi-formal verification
+  rust_aligned_implementation: Formalized reasoning about invariants, contracts, and state machines
+  suggested_tools_artifacts: Proof sketches, contracts, model checks
+  notes: Use for concurrency protocols and safety mechanisms.
+- method_table_7: 1e Formal verification
+  rust_aligned_implementation: Theorem proving / model checking for highest-risk components
+  suggested_tools_artifacts: Formal artifacts, assumptions, traceability
+  notes: Target unsafe abstractions and complex decision logic.
+- method_table_7: 1f Control flow analysis
+  rust_aligned_implementation: Control-flow graphs; complexity metrics; unreachable/dead-code checks
+  suggested_tools_artifacts: Clippy lints; custom CFG tools; coverage reports
+  notes: Tie to complexity thresholds and Table 6 principles.
+- method_table_7: 1g Data flow analysis
+  rust_aligned_implementation: Initialization, aliasing, shared resource access, and value range checks
+  suggested_tools_artifacts: Static analysis; value-range tools; lint reports
+  notes: For Rust, include unsafe and FFI boundary checks.
+- method_table_7: 1h Static code analysis
+  rust_aligned_implementation: Systematic linting and pattern-based checks
+  suggested_tools_artifacts: Clippy reports; `#![deny(warnings)]`; MISRA-style rules implemented as lints
+  notes: Make lints part of CI; qualify tool where required.
+- method_table_7: 1i Abstract interpretation
+  rust_aligned_implementation: High-assurance static analyzers for runtime errors, overflow, ranges
+  suggested_tools_artifacts: Abstract interpretation reports
+  notes: Especially useful for ASIL C/D where value ranges matter.
+- method_table_7: 1j Requirements-based test
+  rust_aligned_implementation: Unit tests derived from requirements; property tests where appropriate
+  suggested_tools_artifacts: Test specs; test results; traceability
+  notes: Avoid relying solely on ‘happy path’; include boundary cases.
+- method_table_7: 1k Interface test
+  rust_aligned_implementation: Unit interface tests validating preconditions, error paths, and contracts
+  suggested_tools_artifacts: Interface test suites; mocks/harnesses
+  notes: Critical for FFI and hardware interaction layers.

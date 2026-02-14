@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-01.schema.json",
+  "title": "Schema for table-01",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-01"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "document_section",
+          "title": "Document section"
+        },
+        {
+          "key": "iso_26262_6_2018_reference",
+          "title": "ISO 26262-6:2018 reference"
+        },
+        {
+          "key": "scope_notes",
+          "title": "Scope / notes"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "document_section",
+          "iso_26262_6_2018_reference",
+          "scope_notes"
+        ],
+        "properties": {
+          "document_section": {
+            "type": "string"
+          },
+          "iso_26262_6_2018_reference": {
+            "type": "string"
+          },
+          "scope_notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

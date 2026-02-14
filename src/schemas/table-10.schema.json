@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-10.schema.json",
+  "title": "Schema for table-10",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-10"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "method_table_10",
+          "title": "Method (Table 10)"
+        },
+        {
+          "key": "rust_aligned_execution",
+          "title": "Rust-aligned execution"
+        },
+        {
+          "key": "evidence_artifacts",
+          "title": "Evidence artifacts"
+        },
+        {
+          "key": "asil_notes",
+          "title": "ASIL notes"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "method_table_10",
+          "rust_aligned_execution",
+          "evidence_artifacts",
+          "asil_notes"
+        ],
+        "properties": {
+          "method_table_10": {
+            "type": "string"
+          },
+          "rust_aligned_execution": {
+            "type": "string"
+          },
+          "evidence_artifacts": {
+            "type": "string"
+          },
+          "asil_notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

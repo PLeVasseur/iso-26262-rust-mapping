@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-12.schema.json",
+  "title": "Schema for table-12",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-12"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "environment",
+          "title": "Environment"
+        },
+        {
+          "key": "rust_considerations",
+          "title": "Rust considerations"
+        },
+        {
+          "key": "guidance",
+          "title": "Guidance"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "environment",
+          "rust_considerations",
+          "guidance"
+        ],
+        "properties": {
+          "environment": {
+            "type": "string"
+          },
+          "rust_considerations": {
+            "type": "string"
+          },
+          "guidance": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

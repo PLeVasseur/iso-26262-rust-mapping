@@ -1,0 +1,16 @@
+id: table-11
+style: Table Grid
+columns:
+- key: coverage_metric_table_12
+  title: Coverage metric (Table 12)
+- key: rust_considerations
+  title: Rust considerations
+- key: evidence_rules
+  title: Evidence / rules
+rows:
+- coverage_metric_table_12: Function coverage
+  rust_considerations: Count executed functions in final binary; be careful with inlining and generics
+  evidence_rules: Set target thresholds per ASIL; justify excluded code (debug/instrumentation).
+- coverage_metric_table_12: Call coverage
+  rust_considerations: Exercise call sites, including trait dispatch paths (static and dyn)
+  evidence_rules: Require call-path tests for safety mechanisms and error handling paths.

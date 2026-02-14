@@ -1,0 +1,62 @@
+id: table-04
+style: Table Grid
+columns:
+- key: principle
+  title: Principle
+- key: rust_mapping
+  title: Rust mapping
+- key: key_rules
+  title: Key rules
+- key: asil_tightening
+  title: ASIL tightening
+- key: notes_examples
+  title: Notes / examples
+rows:
+- principle: 1a Hierarchical structure
+  rust_mapping: Crates → modules → submodules; layered architecture; explicit dependency direction.
+  key_rules: Define architectural layers (e.g., HAL → platform → safety services → application). Enforce via crate boundaries
+    and dependency linting.
+  asil_tightening: 'C/D: no layer violations; safety mechanisms isolated in dedicated crates.'
+  notes_examples: Use `pub(crate)` and `pub(in path)` to enforce encapsulation.
+- principle: 1b Restricted size/complexity
+  rust_mapping: Metrics + linting; idiomatic small functions; avoid mega-modules.
+  key_rules: Set limits for LOC, cyclomatic complexity, nesting, generic bounds; require refactoring when exceeded.
+  asil_tightening: 'C/D: stricter thresholds; require independent review on exceptions.'
+  notes_examples: Prefer composition over deep trait hierarchies.
+- principle: 1c Restricted interface size
+  rust_mapping: Small public APIs; narrow traits; explicit types.
+  key_rules: Minimize `pub` surface; forbid wildcard re-exports; use newtypes to prevent accidental misuse.
+  asil_tightening: 'D: treat all shared interfaces as safety-related; require formal interface review.'
+  notes_examples: Prefer `pub(crate)` for internal reuse.
+- principle: 1d Strong cohesion
+  rust_mapping: Cohesive modules with single responsibility; private helpers.
+  key_rules: Group by domain concept; avoid ‘util’ grab-bags; require module-level docs describing responsibilities and invariants.
+  asil_tightening: 'C/D: explicit design rationale for module boundaries.'
+  notes_examples: Use internal modules to encapsulate unsafe or concurrency details.
+- principle: 1e Loose coupling
+  rust_mapping: Dependency inversion via traits; avoid global state; explicit data flow.
+  key_rules: Prefer passing dependencies explicitly; avoid hidden singletons; restrict `lazy_static`/global caches.
+  asil_tightening: 'C/D: forbid circular dependencies; require dependency graph checks.'
+  notes_examples: Use message passing for cross-component interactions where practical.
+- principle: 1f Scheduling properties
+  rust_mapping: Deterministic execution model; avoid unbounded work; bounded loops; time budgets.
+  key_rules: For RT code, require bounded execution time per cycle; avoid allocation on hot paths; avoid dynamic dispatch
+    in timing-critical code.
+  asil_tightening: 'D: timing analysis required; no hidden blocking; bounded locks.'
+  notes_examples: Use `#[inline(never)]` selectively to support WCET analysis (tool-dependent).
+- principle: 1g Restricted interrupts
+  rust_mapping: Interrupt handlers as minimal, deterministic, side-effect controlled functions; use atomics/critical sections.
+  key_rules: Keep ISRs short; no allocation; no locks that can deadlock; communicate via lock-free queues or deferred processing.
+  asil_tightening: 'C/D: formally justify ISR design; verify priority scheme; avoid shared mutable state.'
+  notes_examples: In bare-metal Rust, use a qualified HAL + critical-section abstraction.
+- principle: 1h Spatial isolation
+  rust_mapping: Memory protection + partitioning; Rust’s memory safety complements but does not replace MPU/MMU partitioning.
+  key_rules: No shared mutable globals; isolate safety partitions into separate processes/partitions where needed.
+  asil_tightening: 'D: require evidence of freedom from interference; use MPU/MMU or OS partitioning.'
+  notes_examples: Rust prevents many memory errors but not timing/resource interference.
+- principle: 1i Shared resource management
+  rust_mapping: Mutex/RwLock/Atomics; ownership; explicit resource arbitration; avoid global contention.
+  key_rules: Define lock ordering; require bounded blocking; prefer lock-free only with documented memory ordering; resource
+    usage budgets.
+  asil_tightening: 'C/D: deadlock analysis; resource usage evaluation (stack/heap/time).'
+  notes_examples: Applies to shared HW resources (buses, peripherals) and SW resources.

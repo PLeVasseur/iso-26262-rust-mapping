@@ -1,0 +1,22 @@
+id: table-08
+style: Table Grid
+columns:
+- key: method_table_8
+  title: Method (Table 8)
+- key: rust_testing_approach
+  title: Rust testing approach
+- key: concrete_guidance
+  title: Concrete guidance
+rows:
+- method_table_8: 1a Requirements analysis
+  rust_testing_approach: Write tests that trace to each requirement clause / acceptance criterion
+  concrete_guidance: Require requirement IDs in test names or attributes; maintain traceability matrix.
+- method_table_8: 1b Equivalence classes
+  rust_testing_approach: Partition inputs/outputs; test one representative per class
+  concrete_guidance: Use table-driven tests; consider property tests for broad partitions.
+- method_table_8: 1c Boundary values
+  rust_testing_approach: 'Test edges: min/max, off-by-one, overflow boundaries'
+  concrete_guidance: For numeric code, prefer checked arithmetic and test failure modes explicitly.
+- method_table_8: 1d Error guessing
+  rust_testing_approach: Use ‘lessons learned’ defect patterns to design additional cases
+  concrete_guidance: Maintain a bug-pattern checklist; include fuzzing for parsers where applicable.

@@ -1,0 +1,136 @@
+id: table-23
+style: Table Grid
+columns:
+- key: macro
+  title: Macro
+- key: purpose
+  title: Purpose
+- key: profile_qm_a_b_c_d
+  title: Profile (QM/A/B/C/D)
+- key: notes_key_restrictions
+  title: Notes / key restrictions
+rows:
+- macro: assert!
+  purpose: Runtime assertion
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Allowed for internal invariants; must not replace error handling.
+- macro: assert_eq!
+  purpose: Equality assertion
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Same as assert!; avoid expensive formatting in timing-critical code.
+- macro: assert_ne!
+  purpose: Inequality assertion
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Same as assert!.
+- macro: cfg!
+  purpose: Compile-time cfg evaluation
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Conditional compilation increases verification scope; minimize.
+- macro: column!
+  purpose: Source location
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; primarily for diagnostics.
+- macro: compile_error!
+  purpose: Forced compile error
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted for enforcing configuration constraints.
+- macro: concat!
+  purpose: Concatenate literals
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- macro: dbg!
+  purpose: Debug printing
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Prohibit in production; allow in dev/test.
+- macro: debug_assert! / _eq! / _ne!
+  purpose: Debug-only assertions
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Safety must not depend on debug-only checks; define build policy.
+- macro: env!
+  purpose: Compile-time environment variable
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: 'Restrict: introduces build-environment coupling; document usage.'
+- macro: eprint! / eprintln!
+  purpose: stderr printing
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict to diagnostics layer.
+- macro: file! / line! / module_path!
+  purpose: Source location
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- macro: format! / format_args!
+  purpose: String formatting
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: May allocate; restrict in timing-critical paths; avoid in ISR/RT loops.
+- macro: include! / include_bytes! / include_str!
+  purpose: Include file at compile time
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: 'Restricted: traceability and integrity of included artifacts required.'
+- macro: is_x86_feature_detected!
+  purpose: CPU feature detection
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: Platform-specific; only in qualified modules.
+- macro: matches!
+  purpose: Pattern match predicate
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- macro: option_env!
+  purpose: Optional compile-time env var
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Same restrictions as env!.
+- macro: panic!
+  purpose: Panic
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Only for unrecoverable invariants; C/D require panic=abort.
+- macro: print! / println!
+  purpose: stdout printing
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict to diagnostics layer; avoid in safety logic.
+- macro: stringify!
+  purpose: Stringify tokens
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted.
+- macro: thread_local!
+  purpose: Thread-local storage key
+  profile_qm_a_b_c_d: P/R/R/R/R
+  notes_key_restrictions: Restrict due to hidden global state and initialization order.
+- macro: todo! / unimplemented!
+  purpose: Placeholder panic
+  profile_qm_a_b_c_d: X/X/X/X/X
+  notes_key_restrictions: Prohibited in released software.
+- macro: unreachable!
+  purpose: Unreachable code marker (panics)
+  profile_qm_a_b_c_d: R/R/R/R/R
+  notes_key_restrictions: Only with proof; avoid as logic substitute.
+- macro: vec!
+  purpose: Vec literal (allocates)
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Subject to heap policy.
+- macro: write! / writeln!
+  purpose: Formatted write to buffer
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: May allocate depending on target; prefer preallocated buffers.
+- macro: try! (deprecated)
+  purpose: Error propagation macro
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Deprecated; use `?`.
+- macro: cfg_select! (experimental)
+  purpose: Experimental cfg selection
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable; not allowed.
+- macro: concat_bytes! (experimental)
+  purpose: Experimental bytes concat
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- macro: const_format_args! (experimental)
+  purpose: Experimental const formatting
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- macro: log_syntax! (experimental)
+  purpose: Macro debugging
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.
+- macro: trace_macros! (experimental)
+  purpose: Macro tracing
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Unstable.

@@ -1,0 +1,144 @@
+id: table-15
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: Fixed-width integers (i8…i128, u8…u128)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Prefer fixed-width for interfaces; define explicit overflow strategy (checked/saturating/wrapping).
+- construct_feature: Platform-sized ints (isize/usize)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Use for indexing and pointer-sized values only; avoid for domain quantities crossing interfaces.
+- construct_feature: Floating point (f32/f64)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allowed with explicit handling of NaN/Inf and rounding; avoid in safety-critical control unless justified.
+- construct_feature: Experimental floats (f16/f128)
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  restrictions_notes: Experimental in Rust 1.93.1 docs; not allowed in certified builds.
+- construct_feature: Bool/char
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Permitted; for char/str ensure UTF-8 assumptions match domain needs.
+- construct_feature: Never type (`!`)
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Used for diverging functions (panic/loop). Restrict to panic handlers and deliberate diverging APIs.
+- construct_feature: Arrays `[T; N]`
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Preferred for fixed-size buffers; supports bounds safety and determinism.
+- construct_feature: Slices `[T]` / `&[T]`
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Prefer iterator access; restrict indexing that can panic; use `get()` for checked access.
+- construct_feature: Tuples
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allow small tuples (2–3) for returns; prefer named structs for larger tuples.
+- construct_feature: References `&T`, `&mut T`
+  qm: HR
+  a: HR
+  b: HR
+  c: HR
+  d: HR
+  restrictions_notes: Default pointer-like mechanism; require explicit lifetimes in public APIs at ASIL C/D.
+- construct_feature: Raw pointers `*const T`, `*mut T`
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only in qualified unsafe code; no arithmetic/deref in application code.
+- construct_feature: Function pointers `fn(...) -> ...`
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Permitted; document calling conventions and lifetimes; be careful with callbacks crossing FFI.
+- construct_feature: Trait bounds / generics
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Limit generic complexity; prefer associated types over many parameters.
+- construct_feature: Higher-ranked trait bounds (`for<'a>`)
+  qm: R
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Powerful but complex; restrict to library/TCB code with justification.
+- construct_feature: Const generics
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Encourage for fixed-capacity buffers and dimensioned arrays; verify const expressions remain simple.
+- construct_feature: Lifetime elision
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  restrictions_notes: Allow in internal functions; prohibit in public safety-related APIs to improve auditability.
+- construct_feature: UnsafeCell / interior mutability primitives
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Direct `UnsafeCell` usage only in qualified synchronization primitives; prefer safe wrappers.
+- construct_feature: Auto traits (Send/Sync/Unpin)
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  restrictions_notes: Auto-implemented is preferred; manual impls are unsafe and therefore Q.

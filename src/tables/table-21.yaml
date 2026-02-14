@@ -1,0 +1,64 @@
+id: table-21
+style: Table Grid
+columns:
+- key: module
+  title: Module
+- key: purpose_risk_area
+  title: Purpose / risk area
+- key: profile_qm_a_b_c_d
+  title: Profile (QM/A/B/C/D)
+- key: notes_key_restrictions
+  title: Notes / key restrictions
+rows:
+- module: alloc::alloc
+  purpose_risk_area: Allocator interface and `Layout`
+  profile_qm_a_b_c_d: P/R/R/Q/Q
+  notes_key_restrictions: Allocator itself must be qualified; prefer no-alloc profile at ASIL D.
+- module: alloc::borrow
+  purpose_risk_area: Borrowed data utilities (Cow)
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: May allocate when converting to owned; ensure bounded behavior.
+- module: alloc::boxed
+  purpose_risk_area: Box heap allocation
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Heap allocation subject to policy; require fallible allocation patterns where possible.
+- module: alloc::collections
+  purpose_risk_area: Heap-backed collections
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Restrict unbounded growth; prefer fixed-capacity alternatives for C/D.
+- module: alloc::ffi
+  purpose_risk_area: FFI utilities (CString etc)
+  profile_qm_a_b_c_d: R/R/R/Q/Q
+  notes_key_restrictions: FFI boundary only; validate encoding and lengths.
+- module: alloc::fmt
+  purpose_risk_area: Formatting for `String`
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Formatting allocates; restrict in timing-critical paths.
+- module: alloc::rc
+  purpose_risk_area: Single-threaded reference counting
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Restrict due to complex ownership and potential cycles; avoid in safety-critical components.
+- module: alloc::slice / alloc::str
+  purpose_risk_area: Utilities for slice/str
+  profile_qm_a_b_c_d: P/P/P/P/P
+  notes_key_restrictions: Permitted; allocations depend on method used.
+- module: alloc::string
+  purpose_risk_area: Owned String
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Heap allocation; ensure bounded size and validated inputs.
+- module: alloc::sync
+  purpose_risk_area: Arc and related
+  profile_qm_a_b_c_d: P/P/R/R/R
+  notes_key_restrictions: Restrict to controlled concurrency patterns; avoid cycles with Weak.
+- module: alloc::task
+  purpose_risk_area: Async task types
+  profile_qm_a_b_c_d: P/R/R/R/X
+  notes_key_restrictions: Async requires qualified runtime; prohibited by default at ASIL D.
+- module: alloc::vec
+  purpose_risk_area: Vec heap allocation
+  profile_qm_a_b_c_d: P/P/P/R/R
+  notes_key_restrictions: Require capacity limits and no unbounded growth; prefer fallible allocation.
+- module: alloc::bstr (Experimental)
+  purpose_risk_area: ByteStr/ByteString
+  profile_qm_a_b_c_d: U/U/U/U/U
+  notes_key_restrictions: Experimental; not allowed in certified builds.

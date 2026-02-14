@@ -1,0 +1,454 @@
+id: table-13
+style: Table Grid
+columns:
+- key: keyword_construct
+  title: Keyword / construct
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: notes_restrictions
+  title: Notes / restrictions
+rows:
+- keyword_construct: _
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: as
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: async
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: X
+  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited
+    by default at ASIL D.
+- keyword_construct: await
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: X
+  notes_restrictions: Async/await is allowed only with a qualified runtime and a defined cancellation/pinning policy; prohibited
+    by default at ASIL D.
+- keyword_construct: break
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: const
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: continue
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: crate
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: dyn
+  qm: P
+  a: P
+  b: R
+  c: R
+  d: R
+  notes_restrictions: Trait objects introduce dynamic dispatch; restrict in timing-critical code; justify use over generics.
+- keyword_construct: else
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: enum
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: extern
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  notes_restrictions: 'FFI boundary: only in qualified wrappers; require input validation and no unwinding across FFI.'
+- keyword_construct: 'false'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: fn
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: for
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: if
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: impl
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: in
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: let
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: loop
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: match
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: mod
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: move
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: mut
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: pub
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: ref
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: return
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: self
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: Self
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: static
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  notes_restrictions: Immutables allowed; `static mut` prohibited. Prefer `OnceLock`/`LazyLock` with controlled init.
+- keyword_construct: struct
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: super
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: trait
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: 'true'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: type
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: unsafe
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  notes_restrictions: 'Unsafe boundary: allowed only in Q/TCB crates at ASIL C/D; forbid in ASIL application crates.'
+- keyword_construct: use
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: where
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: while
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Fundamental language construct; apply category-specific rules elsewhere.
+- keyword_construct: abstract
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: become
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: box
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: do
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: final
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: gen
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: macro
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: override
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: priv
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: try
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: typeof
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: unsized
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: virtual
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: yield
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved for future use; cannot be used as identifier. Using raw identifiers (e.g., r#try) is restricted
+    (see below).
+- keyword_construct: '''static'
+  qm: P
+  a: P
+  b: P
+  c: P
+  d: P
+  notes_restrictions: Static lifetime permitted; avoid overusing `'static` bounds that hide ownership issues.
+- keyword_construct: macro_rules
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  notes_restrictions: 'Declarative macros restricted: allowlist only; expansions must not hide control flow.'
+- keyword_construct: raw
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  notes_restrictions: Raw borrow operators and raw pointers are unsafe-adjacent; restrict to Q/TCB.
+- keyword_construct: safe
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Contextual keyword in external blocks; avoid relying on experimental syntax for certified code.
+- keyword_construct: union
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  notes_restrictions: Unions allowed only for FFI; field access is unsafe; require safe wrapper enum.
+- keyword_construct: Raw identifiers (r#ident)
+  qm: P
+  a: R
+  b: R
+  c: R
+  d: R
+  notes_restrictions: Allowed only when interfacing with external APIs requiring keyword names; otherwise prohibited for readability.
+- keyword_construct: Edition-2024 reserved syntax (#"..."#, ident##"..."##)
+  qm: U
+  a: U
+  b: U
+  c: U
+  d: U
+  notes_restrictions: Reserved syntax in Rust 2024 edition; avoid in certified code to prevent forward-compat surprises.

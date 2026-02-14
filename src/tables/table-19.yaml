@@ -1,0 +1,88 @@
+id: table-19
+style: Table Grid
+columns:
+- key: construct_feature
+  title: Construct / feature
+- key: qm
+  title: QM
+- key: a
+  title: A
+- key: b
+  title: B
+- key: c
+  title: C
+- key: d
+  title: D
+- key: restrictions_notes
+  title: Restrictions / notes
+rows:
+- construct_feature: '`unsafe` blocks'
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Every unsafe block requires a `// SAFETY:` justification describing invariants; keep blocks minimal.
+- construct_feature: Raw pointer dereference
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Prohibited in application code; allowed in Q code with proof of validity/alignment/lifetime.
+- construct_feature: Pointer arithmetic (`add`, `offset`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only in Q code; must prove bounds and avoid overflow.
+- construct_feature: Unions and union field access
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only for FFI; wrap in safe enum; avoid type punning.
+- construct_feature: Inline assembly (`asm!`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Only in qualified low-level modules; require architecture-specific review and tests.
+- construct_feature: Volatile access (`read_volatile`, `write_volatile`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Hardware access only; document memory-mapped IO assumptions.
+- construct_feature: Transmute / type punning
+  qm: X
+  a: X
+  b: X
+  c: X
+  d: X
+  restrictions_notes: Prohibited. Use safe conversion APIs or explicit byte-level parsing.
+- construct_feature: Uninitialized memory patterns (`MaybeUninit`)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Allowed only with explicit initialization proof; require tests and UB checking.
+- construct_feature: FFI boundaries (`extern "C"` ABI)
+  qm: R
+  a: R
+  b: R
+  c: Q
+  d: Q
+  restrictions_notes: Validate all inputs; no unwinding; define ownership and lifetime conventions.
+- construct_feature: Manual Send/Sync impls
+  qm: X
+  a: X
+  b: X
+  c: Q
+  d: Q
+  restrictions_notes: 'Treat as unsafe: only in qualified libraries with proof and independent review.'

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "table-26.schema.json",
+  "title": "Schema for table-26",
+  "allOf": [
+    {
+      "$ref": "table_common.schema.json"
+    }
+  ],
+  "properties": {
+    "id": {
+      "const": "table-26"
+    },
+    "columns": {
+      "const": [
+        {
+          "key": "policy_topic",
+          "title": "Policy topic"
+        },
+        {
+          "key": "qm",
+          "title": "QM"
+        },
+        {
+          "key": "asil_a",
+          "title": "ASIL A"
+        },
+        {
+          "key": "asil_b",
+          "title": "ASIL B"
+        },
+        {
+          "key": "asil_c",
+          "title": "ASIL C"
+        },
+        {
+          "key": "asil_d",
+          "title": "ASIL D"
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "policy_topic",
+          "qm",
+          "asil_a",
+          "asil_b",
+          "asil_c",
+          "asil_d"
+        ],
+        "properties": {
+          "policy_topic": {
+            "type": "string"
+          },
+          "qm": {
+            "type": "string"
+          },
+          "asil_a": {
+            "type": "string"
+          },
+          "asil_b": {
+            "type": "string"
+          },
+          "asil_c": {
+            "type": "string"
+          },
+          "asil_d": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
