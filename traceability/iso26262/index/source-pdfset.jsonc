@@ -1,0 +1,22 @@
+{
+  // Source PDF metadata (non-verbatim)
+  "schema_version": 1,
+  "source_pdfset_id": "ISO26262-2018-ed2-p06-p08-p09",
+  "parts": [
+    {
+      "part": "P06",
+      "edition": "2018-ed2",
+      "sha256": "PENDING"
+    },
+    {
+      "part": "P08",
+      "edition": "2018-ed2",
+      "sha256": "PENDING"
+    },
+    {
+      "part": "P09",
+      "edition": "2018-ed2",
+      "sha256": "PENDING"
+    }
+  ]
+}

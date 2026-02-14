@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "part": "P08",
+  "edition": "2018-ed2",
+  "anchors": [
+    "ISO26262:2018-ed2:P08:C11:SEC:001"
+  ]
+}

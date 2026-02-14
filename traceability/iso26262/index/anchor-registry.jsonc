@@ -1,0 +1,27 @@
+{
+  // Minimal seed registry; expanded over migration stages.
+  "schema_version": 1,
+  "anchors": [
+    {
+      "anchor_id": "ISO26262:2018-ed2:P06:C05:SEC:001",
+      "part": "P06",
+      "unit": "C05",
+      "status": "unmapped_with_rationale",
+      "notes": "Seed anchor for clause-level mapping"
+    },
+    {
+      "anchor_id": "ISO26262:2018-ed2:P08:C11:SEC:001",
+      "part": "P08",
+      "unit": "C11",
+      "status": "unmapped_with_rationale",
+      "notes": "Seed anchor for tooling qualification mapping"
+    },
+    {
+      "anchor_id": "ISO26262:2018-ed2:P09:C06:SEC:001",
+      "part": "P09",
+      "unit": "C06",
+      "status": "unmapped_with_rationale",
+      "notes": "Seed anchor for integration/dependent failure mapping"
+    }
+  ]
+}
