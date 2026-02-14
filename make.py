@@ -25,6 +25,7 @@ Project layout:
 from __future__ import annotations
 
 import argparse
+import shutil
 from pathlib import Path
 
 from docgen.validate import validate_all_tables
@@ -36,6 +37,11 @@ ROOT = Path(__file__).resolve().parent
 OUT_DOCX = ROOT / "build" / "docx" / "iso26262_rust_mapping_generated.docx"
 COMPARE_REPORT = ROOT / "build" / "reports" / "compare_report.md"
 RENDER_COMPARE_DIR = ROOT / "build" / "render_compare"
+
+
+def _missing_render_tools() -> list[str]:
+    required = ("soffice", "pdftoppm")
+    return [tool for tool in required if shutil.which(tool) is None]
 
 def cmd_validate(_: argparse.Namespace) -> None:
     validate_all_tables(
@@ -73,6 +79,15 @@ def cmd_verify(args: argparse.Namespace) -> None:
 
     # Quick render QA (first N pages)
     if args.render_pages > 0:
+        missing = _missing_render_tools()
+        if missing:
+            missing_csv = ", ".join(missing)
+            raise SystemExit(
+                "Render QA requested but required tools are missing from PATH: "
+                f"{missing_csv}. Install LibreOffice + Poppler "
+                "(Ubuntu/Debian: `sudo apt-get install -y libreoffice-writer poppler-utils`) "
+                "or run `uv run python make.py verify --render-pages 0` to skip rendering."
+            )
         RENDER_COMPARE_DIR.mkdir(parents=True, exist_ok=True)
         render_docx_to_pngs(baseline, RENDER_COMPARE_DIR / "baseline", max_pages=args.render_pages)
         render_docx_to_pngs(generated, RENDER_COMPARE_DIR / "generated", max_pages=args.render_pages)

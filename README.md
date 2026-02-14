@@ -19,6 +19,11 @@ This project treats the `.docx` as a **generated artifact**.
   - LibreOffice (`soffice`)
   - Poppler (`pdftoppm`)
 
+Install render dependencies:
+
+- Ubuntu/Debian: `sudo apt-get install -y libreoffice-writer poppler-utils`
+- macOS: `brew install --cask libreoffice && brew install poppler`
+
 If render dependencies are unavailable, you can still run compare-only verification with `make.py verify --render-pages 0`.
 
 ## Quickstart (with uv)
