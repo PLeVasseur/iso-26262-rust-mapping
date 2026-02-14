@@ -17,6 +17,8 @@ build/docx/
 build/reports/
 build/render_compare/
 build/tmp/
+build/html/
+build/doctrees/
 out/
 
 # OS clutter

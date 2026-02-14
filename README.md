@@ -1,71 +1,48 @@
-# ISO 26262 ↔ Rust mapping — doc generator (prototype → full conversion)
+# ISO 26262 Rust Mapping (Sphinx Traceability Pipeline)
 
-This project treats the `.docx` as a **generated artifact**.
+This repository uses Sphinx + MyST as the canonical document pipeline.
 
-**Sources of truth**
-- `docgen/*.py` — build/compare/render implementation modules
-- `src/iso26262_rust_mapping.md` — narrative text + document structure (with `{{TABLE: table-XX}}` placeholders)
-- `src/tables/table-XX.yaml` — table content in YAML
-- `src/schemas/table-XX.schema.json` — per-table JSON Schema validation (refs `table_common.schema.json`)
+## Canonical sources
 
-**Build artifact**
-- `build/docx/iso26262_rust_mapping_generated.docx`
+- `src/iso26262_rust_mapping.md` - narrative content with metadata preface lines.
+- `src/tables/table-*.yaml` - YAML-backed tables with `row_id` and `cell_trace` metadata.
+- `traceability/iso26262/**` - tracked ISO anchor registry metadata (non-verbatim).
 
-## Requirements
+## Build path contract
 
-- Python 3.11+ (recommended)
-- [`uv`](https://github.com/astral-sh/uv)
-- For default `make.py verify` behavior (render first 2 pages):
-  - LibreOffice (`soffice`)
-  - Poppler (`pdftoppm`)
+- Sphinx config directory: `docs/`
+- Sphinx source directory: `src/`
+- Build output: `build/html/`
+- Doctrees: `build/doctrees/`
 
-Install render dependencies:
+## Workflow commands
 
-- Ubuntu/Debian: `sudo apt-get install -y libreoffice-writer poppler-utils`
-- macOS: `brew install --cask libreoffice && brew install poppler`
-
-If render dependencies are unavailable, you can still run compare-only verification with `make.py verify --render-pages 0`.
-
-## Quickstart (with uv)
+Run all commands through `uv`:
 
 ```bash
 uv sync
 uv run python make.py validate
 uv run python make.py build
+uv run python make.py trace-validate
+uv run python make.py trace-report
 uv run python make.py verify
 ```
 
-Outputs:
-- `build/docx/iso26262_rust_mapping_generated.docx`
-- `build/reports/compare_report.md`
-- `build/render_compare/` (PNG renders of baseline + generated)
+Optional one-shot migration helper:
 
-Migration note: artifact output has a hard cutover from `out/` to `build/`.
-
-## Notes on markdown dialect
-
-The narrative markdown uses a small, predictable subset:
-
-- Headings: `#`, `##`, `###`, ...
-- Paragraphs separated by blank lines
-- Optional formatting hint for the *next* paragraph:
-
-```md
-<!-- fmt: style="List Paragraph" align=center size=24 bold=true italic=false -->
-Some paragraph text...
+```bash
+uv run python make.py migrate-sphinx
 ```
 
-- Table insertion placeholder:
+## Traceability outputs
 
-```md
-{{TABLE: table-01}}
-```
+- `build/html/paragraph-ids.json`
+- `$OPENCODE_CONFIG_DIR/reports/sphinx-traceability-migration-<run-id>/traceability-statement-coverage.json`
+- `$OPENCODE_CONFIG_DIR/reports/sphinx-traceability-migration-<run-id>/traceability-statement-coverage.md`
+- `$OPENCODE_CONFIG_DIR/reports/traceability-statement-coverage-latest.json`
+- `$OPENCODE_CONFIG_DIR/reports/traceability-statement-coverage-latest.md`
 
-- Explicit empty paragraph / page break markers:
+## Notes
 
-```md
-{{BLANK}}
-{{PAGE_BREAK}}
-```
-
-This keeps the source readable while preserving Word styles/formatting where needed.
+- Legacy placeholders (`{{TABLE: ...}}`, `{{PAGE_BREAK}}`, `{{BLANK}}`) are not allowed.
+- Direct `sphinx-build` use is internal only; operators use `uv run python make.py ...`.
