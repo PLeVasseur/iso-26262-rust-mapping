@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import subprocess
 from pathlib import Path
@@ -107,6 +108,42 @@ def _check_control_plane_report_content(control_root: Path) -> None:
             raise VerifyError(f"disallowed raw-text key in control artifact: {path}")
 
 
+def _signature_for_jsonl(path: Path) -> tuple[str, int]:
+    rows = _load_jsonl(path)
+    canonical_lines = [json.dumps(row, sort_keys=True, separators=(",", ":"), ensure_ascii=True) for row in rows]
+    canonical = "\n".join(canonical_lines)
+    digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    return digest, len(rows)
+
+
+def _write_replay_signature_artifact(control_root: Path, run_root: Path, run_id: str) -> tuple[Path, bool]:
+    page_text = run_root / "extract" / "verbatim" / "page-text.jsonl"
+    unit_slices = run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
+    anchor_links = run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl"
+
+    page_sig, page_count = _signature_for_jsonl(page_text)
+    unit_sig, unit_count = _signature_for_jsonl(unit_slices)
+    anchor_sig, anchor_count = _signature_for_jsonl(anchor_links)
+
+    payload = {
+        "run_id": run_id,
+        "timestamp_utc": utc_now(),
+        "page_text": {"records": page_count, "signature": page_sig},
+        "unit_slices": {"records": unit_count, "signature": unit_sig},
+        "anchor_text_links": {"records": anchor_count, "signature": anchor_sig},
+        "mismatch_count": 0,
+    }
+
+    if unit_count != anchor_count:
+        payload["mismatch_count"] = 1
+
+    replay_dir = control_root / "artifacts" / "replay"
+    replay_dir.mkdir(parents=True, exist_ok=True)
+    replay_path = replay_dir / "verbatim-replay-signatures.json"
+    write_json(replay_path, payload)
+    return replay_path, payload["mismatch_count"] == 0
+
+
 def run_verify_stage(ctx: "StageContext") -> "StageResult":
     repo_root = ctx.paths.repo_root
     control_root = ctx.paths.control_run_root
@@ -119,6 +156,13 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
     anchor_count, corpus_anchor_count = _validate_anchor_registry(repo_root)
     completeness, unresolved_qa = _check_required_part_completeness(control_root)
     _check_control_plane_report_content(control_root)
+    replay_signature_path, replay_signature_pass = _write_replay_signature_artifact(
+        control_root,
+        ctx.paths.run_root,
+        ctx.run_id,
+    )
+    if not replay_signature_pass:
+        raise VerifyError("deterministic replay signature mismatch between unit links and anchor links")
 
     summary = {
         "run_id": ctx.run_id,
@@ -130,6 +174,7 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         "anchor_registry_count": anchor_count,
         "corpus_anchor_count": corpus_anchor_count,
         "report_content_pass": True,
+        "replay_signature_pass": replay_signature_pass,
     }
 
     verify_dir = control_root / "artifacts" / "verify"
@@ -139,4 +184,4 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
 
     from .stages import StageResult
 
-    return StageResult(outputs=[summary_path], input_hashes={})
+    return StageResult(outputs=[summary_path, replay_signature_path], input_hashes={})
