@@ -51,6 +51,22 @@ uv run python tools/traceability/mine_iso_corpus.py \
 5. `C9`..`C12`: verify + operations/docs + pilot evidence.
 6. `C13+`: repeatable required-part rollout batches.
 
+## Verbatim prewarm phase order (`C14+`)
+
+1. `C14`: extract-stage page prewarm cache writers (`page-text`, `page-blocks`, `page-index`, `page-signatures`).
+2. `C15`: normalize-stage unit-slice and unit-text-link integration.
+3. `C16`: anchor-stage anchor-to-verbatim linkage index integration.
+4. `C17`: replay/checkpoint validation for prewarm lineage artifacts.
+5. `C18`: query interface and lineage contracts + `{ts}`/quotation guardrail policy.
+6. `C19`: query CLI (`index`, `search`, `explain`) for deterministic word/phrase lookups.
+7. `C20`: prewarm normalization and artifact-hygiene verification gates.
+8. `C21`: deterministic query probe-set verification + freeze manifest/signature.
+9. `C22`: source insertion helper transactions for `ts_authoring_bundle` outputs.
+10. `C23`: end-to-end query -> src insertion -> `make.py verify` validation with default auto-revert.
+11. `C24`: CI + operator guidance hardening for canonical let-it-rip runs.
+
+See `docs/traceability-prewarm-query-contract.md` for query schema/lineage details.
+
 ## Resume command
 
 Use the same `RUN_ID` and `CONTROL_RUN_ROOT`; the CLI reopens from durable state and checkpoints.
@@ -80,6 +96,12 @@ uv run python tools/traceability/mine_iso_corpus.py \
 - Window B (after mutation before verification): rerun verification then continue.
 - Window C (publish interrupted): reconcile `publish.begin`/`publish.commit` and manifest checksums.
 - Window D (after verify before finalize): rerun idempotent finalize only.
+
+Additional prewarm windows:
+
+- Window E: anchor-link files partially written.
+- Window F: source insertion interrupted after partial `src/` edits.
+- Window G: `SPHINX_MIGRATION_RUN_ROOT="$CONTROL_RUN_ROOT" ./make.py verify` outcome unknown.
 
 ## Extraction policy (primary vs OCR fallback)
 
