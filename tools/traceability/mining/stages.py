@@ -12,6 +12,7 @@ from .ingest import run_ingest_stage
 from .framework import RunPaths, utc_now, write_json
 from .normalize import run_normalize_stage
 from .publish import run_publish_stage
+from .verify import run_verify_stage
 
 
 @dataclass
@@ -69,7 +70,7 @@ def run_publish(ctx: StageContext) -> StageResult:
 
 
 def run_verify(ctx: StageContext) -> StageResult:
-    return _write_scaffold_marker("verify", ctx)
+    return run_verify_stage(ctx)
 
 
 def run_finalize(ctx: StageContext) -> StageResult:
