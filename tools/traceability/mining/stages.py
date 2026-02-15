@@ -9,6 +9,7 @@ from typing import Callable
 from .extract import run_extract_stage
 from .ingest import run_ingest_stage
 from .framework import RunPaths, utc_now, write_json
+from .normalize import run_normalize_stage
 
 
 @dataclass
@@ -54,7 +55,7 @@ def run_extract(ctx: StageContext) -> StageResult:
 
 
 def run_normalize(ctx: StageContext) -> StageResult:
-    return _write_scaffold_marker("normalize", ctx)
+    return run_normalize_stage(ctx)
 
 
 def run_anchor(ctx: StageContext) -> StageResult:
