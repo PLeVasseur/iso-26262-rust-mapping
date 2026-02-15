@@ -20,6 +20,19 @@ class ExtractError(RuntimeError):
     """Raised for extraction stage failures."""
 
 
+def _sanitize_extracted_text(text: str) -> str:
+    cleaned_chars: list[str] = []
+    for ch in text:
+        code = ord(ch)
+        if ch == "\ufffd":
+            continue
+        if code < 32 and ch not in {"\n", "\r", "\t", "\f", "\v"}:
+            cleaned_chars.append(" ")
+            continue
+        cleaned_chars.append(ch)
+    return "".join(cleaned_chars)
+
+
 def _load_ingest_summary(control_run_root: Path) -> dict:
     path = control_run_root / "artifacts" / "ingest" / "ingest-summary.json"
     if not path.exists():
@@ -222,6 +235,7 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
         ocr_quality_counts = {"pass": 0, "needs_review": 0, "fail": 0}
         for page in range(1, page_count + 1):
             text, parser_error = _extract_page_text(pdf_path, page)
+            text = _sanitize_extracted_text(text)
             decision = _page_decision(
                 part=part,
                 page=page,
