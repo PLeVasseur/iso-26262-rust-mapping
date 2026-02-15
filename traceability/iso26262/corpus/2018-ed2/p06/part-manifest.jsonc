@@ -3,7 +3,17 @@
   "edition": "2018-ed2",
   "part": "P06",
   "shards": [
-    "paragraph-0001.jsonl"
+    "list-bullet-0001.jsonl",
+    "paragraph-0001.jsonl",
+    "table-cell-0001.jsonl",
+    "table-cell-0002.jsonl",
+    "table-cell-0003.jsonl",
+    "table-cell-0004.jsonl"
   ],
-  "unit_count": 66
+  "unit_count": 1177,
+  "unit_type_counts": {
+    "list_bullet": 168,
+    "paragraph": 66,
+    "table_cell": 943
+  }
 }

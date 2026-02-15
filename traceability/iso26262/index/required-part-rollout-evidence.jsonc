@@ -1,0 +1,52 @@
+{
+  "edition": "2018-ed2",
+  "required_parts": {
+    "P06": {
+      "parse_completeness_ratio": 1.0,
+      "published_total_units": 1177,
+      "published_unit_type_counts": {
+        "list_bullet": 168,
+        "paragraph": 66,
+        "table_cell": 943
+      },
+      "unresolved_qa_count": 0
+    },
+    "P08": {
+      "parse_completeness_ratio": 1.0,
+      "published_total_units": 910,
+      "published_unit_type_counts": {
+        "list_bullet": 254,
+        "paragraph": 72,
+        "table_cell": 584
+      },
+      "unresolved_qa_count": 0
+    },
+    "P09": {
+      "parse_completeness_ratio": 1.0,
+      "published_total_units": 546,
+      "published_unit_type_counts": {
+        "list_bullet": 72,
+        "paragraph": 38,
+        "table_cell": 436
+      },
+      "unresolved_qa_count": 0
+    }
+  },
+  "run_id": "20260215T143525Z",
+  "schema_version": 1,
+  "supported_unit_types": [
+    "paragraph",
+    "list_bullet",
+    "table_cell"
+  ],
+  "totals": {
+    "published_total_units": 2633,
+    "published_unit_type_totals": {
+      "list_bullet": 494,
+      "paragraph": 176,
+      "table_cell": 1963
+    },
+    "required_parts_completeness": "3/3",
+    "unresolved_qa_count": 0
+  }
+}

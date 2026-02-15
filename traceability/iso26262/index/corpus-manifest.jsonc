@@ -1,20 +1,43 @@
 {
   "edition": "2018-ed2",
-  "generated_at_utc": "2026-02-15T14:57:39Z",
+  "generated_at_utc": "2026-02-15T15:16:48Z",
   "parts": [
     {
       "manifest": "corpus/2018-ed2/p06/part-manifest.jsonc",
-      "part": "P06"
+      "part": "P06",
+      "unit_count": 1177,
+      "unit_type_counts": {
+        "list_bullet": 168,
+        "paragraph": 66,
+        "table_cell": 943
+      }
     },
     {
       "manifest": "corpus/2018-ed2/p08/part-manifest.jsonc",
-      "part": "P08"
+      "part": "P08",
+      "unit_count": 910,
+      "unit_type_counts": {
+        "list_bullet": 254,
+        "paragraph": 72,
+        "table_cell": 584
+      }
     },
     {
       "manifest": "corpus/2018-ed2/p09/part-manifest.jsonc",
-      "part": "P09"
+      "part": "P09",
+      "unit_count": 546,
+      "unit_type_counts": {
+        "list_bullet": 72,
+        "paragraph": 38,
+        "table_cell": 436
+      }
     }
   ],
-  "record_count": 176,
-  "schema_version": 1
+  "record_count": 2633,
+  "schema_version": 1,
+  "unit_type_totals": {
+    "list_bullet": 494,
+    "paragraph": 176,
+    "table_cell": 1963
+  }
 }
