@@ -11,6 +11,7 @@ from .anchor_resolution_check import _validate_anchor_references
 from .common import _ensure_env, _write_json, _write_text
 from .legacy_token_check import _find_legacy_tokens
 from .native_table_check import _find_native_table_usage
+from .paragraph_id_check import _run_paragraph_id_check
 from .preface_adjacency_check import _validate_missing_preface_units
 from .table_anchor_check import _validate_table_anchor_format
 from .trace_status_check import _validate_trace_status_values
@@ -21,6 +22,7 @@ def _run_lints(app: Sphinx, env: BuildEnvironment) -> None:
     src_root = Path(app.srcdir)
     run_root_raw = getattr(app.config, "iso26262_run_root", "")
     lint_root = Path(run_root_raw) / "artifacts" / "lints" if run_root_raw else None
+    paragraph_id_shadow_payload, paragraph_id_errors = _run_paragraph_id_check(app, env)
 
     findings: dict[str, list[str]] = {
         "no_legacy_tokens": _find_legacy_tokens(src_root),
@@ -29,7 +31,8 @@ def _run_lints(app: Sphinx, env: BuildEnvironment) -> None:
         "preface_adjacency": _validate_missing_preface_units(env),
         "table_anchor_targets": _validate_table_anchor_format(env),
         "trace_status_values": _validate_trace_status_values(env),
-        "extension_errors": list(env.iso26262_trace_errors),
+        "extension_errors": list(getattr(env, "iso26262_trace_errors", [])),
+        "paragraph_id_check": paragraph_id_errors,
     }
 
     if lint_root is not None:
@@ -76,6 +79,10 @@ def _run_lints(app: Sphinx, env: BuildEnvironment) -> None:
         _write_text(
             lint_root / "table-trace-precedence-lint.log",
             "\n".join(findings["extension_errors"]) + "\n",
+        )
+        _write_json(
+            lint_root / "paragraph-id-check-shadow.json",
+            paragraph_id_shadow_payload,
         )
 
     all_findings = [item for values in findings.values() for item in values]

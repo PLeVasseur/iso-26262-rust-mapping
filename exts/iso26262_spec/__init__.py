@@ -25,6 +25,7 @@ def setup(app: Sphinx) -> dict[str, Any]:
     app.add_config_value("iso26262_anchor_registry_path", "", "env")
     app.add_config_value("iso26262_table_root", "", "env")
     app.add_config_value("iso26262_run_root", "", "env")
+    app.add_config_value("iso26262_irm_id_strict_mode", False, "env")
 
     app.add_domain(TraceDomain)
 
