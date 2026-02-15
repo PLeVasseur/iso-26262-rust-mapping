@@ -11,6 +11,7 @@ from .extract import run_extract_stage
 from .ingest import run_ingest_stage
 from .framework import RunPaths, utc_now, write_json
 from .normalize import run_normalize_stage
+from .publish import run_publish_stage
 
 
 @dataclass
@@ -64,7 +65,7 @@ def run_anchor(ctx: StageContext) -> StageResult:
 
 
 def run_publish(ctx: StageContext) -> StageResult:
-    return _write_scaffold_marker("publish", ctx)
+    return run_publish_stage(ctx)
 
 
 def run_verify(ctx: StageContext) -> StageResult:

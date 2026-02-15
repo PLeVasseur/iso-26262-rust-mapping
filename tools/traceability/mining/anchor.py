@@ -33,7 +33,9 @@ def _anchor_id(unit: dict) -> str:
     locator = unit["source_locator"]
     raw = f"{locator['part']}|{locator['clause']}|{locator['page_start']}|{unit['unit_type']}|{unit['unit_id']}"
     digest = hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
-    return f"iso26262:{locator['part'].lower()}:{digest}"
+    edition = str(locator.get("edition", "2018-ed2"))
+    page = int(locator.get("page_start", 0))
+    return f"ISO26262:{edition}:{locator['part']}:PG{page:04d}:PAR:{digest}"
 
 
 def _shard_name(unit_type: str, index: int) -> str:
