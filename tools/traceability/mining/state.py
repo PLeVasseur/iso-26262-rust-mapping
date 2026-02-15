@@ -361,7 +361,7 @@ def reconcile_resume(
         )
 
     last_phase = int(state.get("LAST_COMMITTED_PHASE", "0") or "0")
-    if last_phase >= 19 and not Path(state["QUERY_INDEX_MANIFEST_PATH"]).exists():
+    if last_phase >= 19 and state.get("S_ANCHOR_DONE", "0") == "1" and not Path(state["QUERY_INDEX_MANIFEST_PATH"]).exists():
         raise StopConditionError(
             f"query index manifest missing for completed query phase: {state['QUERY_INDEX_MANIFEST_PATH']}"
         )
