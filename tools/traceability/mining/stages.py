@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
+from .anchor import run_anchor_stage
 from .extract import run_extract_stage
 from .ingest import run_ingest_stage
 from .framework import RunPaths, utc_now, write_json
@@ -59,7 +60,7 @@ def run_normalize(ctx: StageContext) -> StageResult:
 
 
 def run_anchor(ctx: StageContext) -> StageResult:
-    return _write_scaffold_marker("anchor", ctx)
+    return run_anchor_stage(ctx)
 
 
 def run_publish(ctx: StageContext) -> StageResult:
