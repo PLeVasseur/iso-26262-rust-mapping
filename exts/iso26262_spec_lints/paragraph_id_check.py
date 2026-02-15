@@ -17,7 +17,7 @@ def _extract_anchor(href: str) -> str:
     return href.split("#", 1)[1].strip()
 
 
-def _collect_findings(env: BuildEnvironment) -> list[dict[str, str]]:
+def _collect_runtime_findings(env: BuildEnvironment) -> list[dict[str, str]]:
     findings: list[dict[str, str]] = []
     anchor_map: dict[str, set[str]] = {}
     records = getattr(env, "iso26262_trace_records", {})
@@ -55,10 +55,10 @@ def _collect_findings(env: BuildEnvironment) -> list[dict[str, str]]:
             )
 
     for message in trace_errors:
-        if "duplicate" in message and "source_id" in message:
+        if "duplicate IRM ID" in message:
             findings.append(
                 {
-                    "code": "duplicate_id",
+                    "code": "duplicate_irm_id",
                     "id": "",
                     "message": message,
                 }
@@ -69,6 +69,47 @@ def _collect_findings(env: BuildEnvironment) -> list[dict[str, str]]:
                     "code": "unresolved_reference",
                     "id": "",
                     "message": message,
+                }
+            )
+
+    return findings
+
+
+def _collect_source_findings(app: Sphinx) -> list[dict[str, str]]:
+    findings: list[dict[str, str]] = []
+    src_root = Path(app.srcdir)
+    table_root = Path(
+        str(getattr(app.config, "iso26262_table_root", src_root / "tables"))
+    )
+
+    markdown_path = src_root / "iso26262_rust_mapping.md"
+    if markdown_path.exists():
+        text = markdown_path.read_text(encoding="utf-8")
+        if "SRCN-" in text:
+            findings.append(
+                {
+                    "code": "legacy_srcn_token",
+                    "id": str(markdown_path),
+                    "message": "Legacy SRCN-* tokens remain in markdown source.",
+                }
+            )
+
+    for table_path in sorted(table_root.glob("table-*.yaml")):
+        text = table_path.read_text(encoding="utf-8")
+        if "source_id:" in text:
+            findings.append(
+                {
+                    "code": "legacy_source_id_key",
+                    "id": str(table_path),
+                    "message": "Legacy source_id metadata key remains in table YAML.",
+                }
+            )
+        if "SRCN-" in text:
+            findings.append(
+                {
+                    "code": "legacy_srcn_token",
+                    "id": str(table_path),
+                    "message": "Legacy SRCN-* tokens remain in table YAML.",
                 }
             )
 
@@ -86,12 +127,17 @@ def _run_paragraph_id_check(
     app: Sphinx, env: BuildEnvironment
 ) -> tuple[dict[str, Any], list[str]]:
     strict_mode = bool(getattr(app.config, "iso26262_irm_id_strict_mode", False))
-    findings = _collect_findings(env)
+
+    runtime_findings = _collect_runtime_findings(env)
+    source_findings = _collect_source_findings(app)
+    findings = runtime_findings + source_findings
 
     payload: dict[str, Any] = {
         "status": "pass" if not findings else "report_only",
         "strict_mode": strict_mode,
         "finding_count": len(findings),
+        "runtime_finding_count": len(runtime_findings),
+        "source_finding_count": len(source_findings),
         "findings": findings,
     }
 

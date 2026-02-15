@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass
 class PrefaceMetadata:
-    source_id: str
+    irm_id: str
     trace_status: str
     anchor_ids: list[str]
     relation: str

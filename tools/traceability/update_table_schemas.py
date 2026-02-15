@@ -23,13 +23,13 @@ def update_common_schema(common_schema_path: Path) -> None:
     defs["traceMetadata"] = {
         "type": "object",
         "required": [
-            "source_id",
+            "irm_id",
             "trace_status",
         ],
         "properties": {
-            "source_id": {
+            "irm_id": {
                 "type": "string",
-                "minLength": 1,
+                "pattern": "^irm_[A-Za-z0-9]{12}$",
             },
             "trace_status": {
                 "$ref": "#/$defs/traceStatus",

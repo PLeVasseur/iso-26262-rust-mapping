@@ -7,12 +7,33 @@ from pathlib import Path
 
 import yaml
 
+from irm_id_utils import mint_irm_id
+
 TRACE_STATUS_DEFAULT = "unmapped_with_rationale"
 
 
-def _make_source_id(table_id: str, row_index: int, col_index: int) -> str:
-    table_num = "".join(ch for ch in table_id if ch.isdigit()) or "00"
-    return f"SRCN-T{int(table_num):02d}-R{row_index:04d}-C{col_index:02d}"
+def _existing_ids(payload: dict) -> set[str]:
+    existing: set[str] = set()
+    rows = payload.get("rows")
+    if not isinstance(rows, list):
+        return existing
+
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        row_trace = row.get("_trace")
+        if isinstance(row_trace, dict):
+            irm_id = str(row_trace.get("irm_id", "")).strip()
+            if irm_id:
+                existing.add(irm_id)
+        cell_trace = row.get("cell_trace")
+        if isinstance(cell_trace, dict):
+            for value in cell_trace.values():
+                if isinstance(value, dict):
+                    irm_id = str(value.get("irm_id", "")).strip()
+                    if irm_id:
+                        existing.add(irm_id)
+    return existing
 
 
 def instrument_table(path: Path) -> dict[str, int | str]:
@@ -26,6 +47,7 @@ def instrument_table(path: Path) -> dict[str, int | str]:
 
     instrumented_cells = 0
     row_count = 0
+    minted_ids = _existing_ids(payload)
 
     for row_index, row in enumerate(rows, start=1):
         if not isinstance(row, dict):
@@ -40,7 +62,7 @@ def instrument_table(path: Path) -> dict[str, int | str]:
             cell_trace = {}
             row["cell_trace"] = cell_trace
 
-        for col_index, key in enumerate(columns, start=1):
+        for key in columns:
             value = row.get(key)
             if value is None:
                 continue
@@ -51,10 +73,13 @@ def instrument_table(path: Path) -> dict[str, int | str]:
             if not isinstance(trace_entry, dict):
                 trace_entry = {}
 
-            trace_entry.setdefault(
-                "source_id",
-                _make_source_id(payload.get("id", path.stem), row_index, col_index),
-            )
+            irm_id = str(trace_entry.get("irm_id", "")).strip()
+            if not irm_id:
+                irm_id = mint_irm_id(minted_ids)
+                minted_ids.add(irm_id)
+            trace_entry["irm_id"] = irm_id
+            trace_entry.pop("source_id", None)
+
             trace_entry.setdefault("trace_status", TRACE_STATUS_DEFAULT)
             trace_entry.setdefault("anchor_ids", [])
             trace_entry.setdefault("relation", "")

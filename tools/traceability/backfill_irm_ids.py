@@ -12,7 +12,7 @@ from typing import Any
 
 import yaml
 
-from tools.traceability.irm_id_utils import is_valid_irm_id, mint_irm_id
+from irm_id_utils import is_valid_irm_id, mint_irm_id
 
 SCRIPT_VERSION = "0.1"
 DP_ROLE_RE = re.compile(r"\{dp\}`([^`]+)`")
@@ -85,13 +85,17 @@ def _build_inventory(markdown_path: Path, tables_dir: Path) -> Inventory:
         statement_id = match.group(1).strip()
         metadata_ids.add(statement_id)
         occurrence_counts[statement_id] = occurrence_counts.get(statement_id, 0) + 1
-        file_occurrence_counts[markdown_key] = file_occurrence_counts.get(markdown_key, 0) + 1
+        file_occurrence_counts[markdown_key] = (
+            file_occurrence_counts.get(markdown_key, 0) + 1
+        )
 
     for match in P_ROLE_RE.finditer(markdown_text):
         reference_id = match.group(1).strip()
         reference_ids.add(reference_id)
         occurrence_counts[reference_id] = occurrence_counts.get(reference_id, 0) + 1
-        file_occurrence_counts[markdown_key] = file_occurrence_counts.get(markdown_key, 0) + 1
+        file_occurrence_counts[markdown_key] = (
+            file_occurrence_counts.get(markdown_key, 0) + 1
+        )
 
     for table_path in sorted(tables_dir.glob("table-*.yaml")):
         payload = yaml.safe_load(table_path.read_text(encoding="utf-8")) or {}
@@ -116,7 +120,9 @@ def _build_inventory(markdown_path: Path, tables_dir: Path) -> Inventory:
                     continue
                 metadata_ids.add(raw_id)
                 occurrence_counts[raw_id] = occurrence_counts.get(raw_id, 0) + 1
-                file_occurrence_counts[file_key] = file_occurrence_counts.get(file_key, 0) + 1
+                file_occurrence_counts[file_key] = (
+                    file_occurrence_counts.get(file_key, 0) + 1
+                )
 
     return Inventory(
         metadata_ids=metadata_ids,
@@ -130,7 +136,9 @@ def _build_inventory(markdown_path: Path, tables_dir: Path) -> Inventory:
 def _generate_mapping(inventory: Inventory) -> dict[str, str]:
     mapping: dict[str, str] = {}
     used_ids = {item for item in inventory.metadata_ids if is_valid_irm_id(item)}
-    legacy_ids = sorted(item for item in inventory.metadata_ids if not is_valid_irm_id(item))
+    legacy_ids = sorted(
+        item for item in inventory.metadata_ids if not is_valid_irm_id(item)
+    )
 
     for legacy_id in legacy_ids:
         minted = mint_irm_id(used_ids)
@@ -139,7 +147,9 @@ def _generate_mapping(inventory: Inventory) -> dict[str, str]:
     return mapping
 
 
-def _replace_markdown_ids(text: str, mapping: dict[str, str]) -> tuple[str, dict[str, int]]:
+def _replace_markdown_ids(
+    text: str, mapping: dict[str, str]
+) -> tuple[str, dict[str, int]]:
     replacement_counts = {"dp": 0, "p": 0}
 
     def replace_dp(match: re.Match[str]) -> str:
@@ -237,7 +247,8 @@ def _apply_mapping(
 
     table_counts = _rewrite_yaml_tables(tables_dir, mapping, apply=apply)
     total_table_updates = sum(
-        values["source_key_updates"] + values["id_updates"] for values in table_counts.values()
+        values["source_key_updates"] + values["id_updates"]
+        for values in table_counts.values()
     )
 
     touched_files = []
@@ -312,7 +323,9 @@ def _summarize_dry_run(
         "mode": "dry-run",
         "statement_metadata_id_count": len(inventory.metadata_ids),
         "statement_reference_id_count": len(inventory.reference_ids),
-        "legacy_id_count": len([item for item in inventory.metadata_ids if not is_valid_irm_id(item)]),
+        "legacy_id_count": len(
+            [item for item in inventory.metadata_ids if not is_valid_irm_id(item)]
+        ),
         "mapping_count": len(mapping),
         "unresolved_reference_ids": unresolved_reference_ids,
         "preview": preview,
@@ -358,7 +371,9 @@ def main(argv: list[str]) -> int:
             if not is_valid_irm_id(statement_id)
         )
         missing_mapping_ids = [
-            statement_id for statement_id in discovered_legacy_ids if statement_id not in mapping
+            statement_id
+            for statement_id in discovered_legacy_ids
+            if statement_id not in mapping
         ]
         if missing_mapping_ids:
             raise SystemExit(
@@ -422,10 +437,14 @@ def main(argv: list[str]) -> int:
         mapping=mapping,
         apply=False,
     )
-    summary_payload = _summarize_dry_run(inventory=inventory, mapping=mapping, preview=preview)
+    summary_payload = _summarize_dry_run(
+        inventory=inventory, mapping=mapping, preview=preview
+    )
 
     mapping_out = (
-        Path(args.mapping_json).resolve() if args.mapping_json else artifact_root / "id-mapping.json"
+        Path(args.mapping_json).resolve()
+        if args.mapping_json
+        else artifact_root / "id-mapping.json"
     )
     summary_out = (
         Path(args.summary_json).resolve()

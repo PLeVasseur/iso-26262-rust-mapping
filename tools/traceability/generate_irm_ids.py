@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from tools.traceability.irm_id_utils import is_valid_irm_id, mint_irm_id
+from irm_id_utils import is_valid_irm_id, mint_irm_id
 
 TRACE_STATUSES = [
     "mapped",
@@ -114,7 +114,7 @@ def _render_myst(entries: list[dict[str, object]]) -> str:
         irm_id = str(entry["irm_id"])
         status = str(entry["trace_status"])
         relation = str(entry["relation"])
-        anchors = [str(item) for item in entry["anchor_ids"]]
+        anchors = _anchor_list(entry)
 
         line = f"{{dp}}`{irm_id}` {{ts}}`{status}`"
         if status == "mapped":
@@ -128,7 +128,7 @@ def _render_myst(entries: list[dict[str, object]]) -> str:
 def _render_yaml_cell(entries: list[dict[str, object]]) -> str:
     blocks: list[str] = []
     for entry in entries:
-        anchors = ", ".join(f"'{item}'" for item in entry["anchor_ids"])
+        anchors = ", ".join(f"'{item}'" for item in _anchor_list(entry))
         blocks.extend(
             [
                 "your_column_key:",
@@ -147,7 +147,7 @@ def _render_yaml_cell(entries: list[dict[str, object]]) -> str:
 def _render_yaml_row(entries: list[dict[str, object]]) -> str:
     blocks: list[str] = []
     for entry in entries:
-        anchors = ", ".join(f"'{item}'" for item in entry["anchor_ids"])
+        anchors = ", ".join(f"'{item}'" for item in _anchor_list(entry))
         blocks.extend(
             [
                 "_trace:",
@@ -182,7 +182,7 @@ def _validate_entries(entries: list[dict[str, object]]) -> None:
         irm_id = str(entry["irm_id"])
         status = str(entry["trace_status"])
         relation = str(entry["relation"])
-        anchors = [str(item) for item in entry["anchor_ids"]]
+        anchors = _anchor_list(entry)
 
         if not is_valid_irm_id(irm_id):
             raise ValueError(f"Invalid IRM ID generated: {irm_id}")
@@ -192,7 +192,9 @@ def _validate_entries(entries: list[dict[str, object]]) -> None:
             if not relation:
                 raise ValueError(f"Mapped IRM ID requires relation: {irm_id}")
             if not anchors:
-                raise ValueError(f"Mapped IRM ID requires at least one anchor ID: {irm_id}")
+                raise ValueError(
+                    f"Mapped IRM ID requires at least one anchor ID: {irm_id}"
+                )
 
 
 def _write_output(output: str, destination: str) -> None:
@@ -203,6 +205,13 @@ def _write_output(output: str, destination: str) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(output, encoding="utf-8")
     print(f"Wrote IRM ID snippets to {output_path}")
+
+
+def _anchor_list(entry: dict[str, object]) -> list[str]:
+    raw = entry.get("anchor_ids", [])
+    if not isinstance(raw, list):
+        return []
+    return [str(item) for item in raw]
 
 
 def main(argv: list[str]) -> int:

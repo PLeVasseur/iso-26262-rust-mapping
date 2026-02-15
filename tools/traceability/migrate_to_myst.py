@@ -6,6 +6,8 @@ import json
 import re
 from pathlib import Path
 
+from irm_id_utils import mint_irm_id
+
 FMT_RE = re.compile(r"^\s*<!--\s*(fmt:|style:)")
 TABLE_RE = re.compile(r"^\s*\{\{TABLE:\s*(table-\d{2})\s*\}\}\s*$")
 ORDERED_LIST_RE = re.compile(r"^(\d+)\.\s+")
@@ -58,6 +60,7 @@ def migrate_text(text: str) -> tuple[str, dict[str, int]]:
     paragraph_buffer: list[str] = []
     in_fence = False
     statement_counter = 0
+    minted_ids: set[str] = set()
 
     def flush_paragraph() -> None:
         nonlocal statement_counter
@@ -71,8 +74,9 @@ def migrate_text(text: str) -> tuple[str, dict[str, int]]:
                 normalized[0] = first.replace(".", "\\.", 1)
 
         statement_counter += 1
-        source_id = f"SRCN-{statement_counter:032X}"
-        output.append(f"{{dp}}`{source_id}` {{ts}}`unmapped_with_rationale`")
+        irm_id = mint_irm_id(minted_ids)
+        minted_ids.add(irm_id)
+        output.append(f"{{dp}}`{irm_id}` {{ts}}`unmapped_with_rationale`")
         output.extend(normalized)
         paragraph_buffer.clear()
 

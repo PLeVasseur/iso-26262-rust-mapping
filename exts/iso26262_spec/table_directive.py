@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
@@ -10,6 +11,40 @@ from sphinx.environment import BuildEnvironment
 
 from .record_store import _ensure_env, _record_error, _register_record
 from .utils import _sha256_text, _slug
+
+IRM_ID_RE = re.compile(r"^irm_[A-Za-z0-9]{12}$")
+
+
+def _read_trace_id(
+    env: BuildEnvironment,
+    meta: dict[str, Any],
+    *,
+    strict_mode: bool,
+    context: str,
+) -> str:
+    has_irm_id = "irm_id" in meta
+    has_legacy_key = "source_id" in meta
+
+    if strict_mode and has_legacy_key:
+        _record_error(
+            env,
+            f"{context} uses legacy key 'source_id'; use 'irm_id' in strict mode",
+        )
+
+    trace_id = ""
+    if has_irm_id:
+        trace_id = str(meta.get("irm_id", "")).strip()
+    elif has_legacy_key:
+        trace_id = str(meta.get("source_id", "")).strip()
+
+    if strict_mode and trace_id and not IRM_ID_RE.match(trace_id):
+        _record_error(
+            env,
+            f"{context} has invalid IRM ID '{trace_id}' "
+            "(expected pattern irm_[A-Za-z0-9]{12})",
+        )
+
+    return trace_id
 
 
 class IsoTableDirective(Directive):
@@ -26,6 +61,7 @@ class IsoTableDirective(Directive):
         env: BuildEnvironment = self.state.document.settings.env
         app = env.app
         _ensure_env(env)
+        strict_mode = bool(getattr(app.config, "iso26262_irm_id_strict_mode", False))
 
         table_id = self.arguments[0].strip()
         caption = self.options.get("caption", "").strip()
@@ -93,23 +129,38 @@ class IsoTableDirective(Directive):
             row_trace = (
                 row.get("_trace") if isinstance(row.get("_trace"), dict) else None
             )
-            cell_trace = (
-                row.get("cell_trace") if isinstance(row.get("cell_trace"), dict) else {}
-            )
+            raw_cell_trace = row.get("cell_trace")
+            if isinstance(raw_cell_trace, dict):
+                cell_trace_map: dict[str, Any] = raw_cell_trace
+            else:
+                cell_trace_map = {}
 
             row_anchor = f"{_slug(label)}--r-{row_slug}"
             if isinstance(row_trace, dict):
-                row_source_id = str(row_trace.get("source_id", "")).strip()
-                row_status = str(row_trace.get("trace_status", "")).strip()
+                row_trace_meta = row_trace
+                row_trace_id = _read_trace_id(
+                    env,
+                    row_trace_meta,
+                    strict_mode=strict_mode,
+                    context=f"table '{table_id}' row '{row_id}' _trace",
+                )
+                row_status = str(row_trace_meta.get("trace_status", "")).strip()
                 row_anchor_ids = [
                     str(item).strip()
-                    for item in row_trace.get("anchor_ids", [])
+                    for item in row_trace_meta.get("anchor_ids", [])
                     if str(item).strip()
                 ]
-                row_relation = str(row_trace.get("relation", "")).strip()
-                if row_source_id and row_status:
+                row_relation = str(row_trace_meta.get("relation", "")).strip()
+
+                if strict_mode and not row_trace_id:
+                    _record_error(
+                        env,
+                        f"table '{table_id}' row '{row_id}' missing irm_id in _trace",
+                    )
+
+                if row_trace_id and row_status:
                     row_record: dict[str, Any] = {
-                        "id": row_source_id,
+                        "id": row_trace_id,
                         "unit_type": "table_row",
                         "display_number": "",
                         "doc": env.docname,
@@ -140,7 +191,7 @@ class IsoTableDirective(Directive):
                 entry += paragraph
 
                 if text.strip():
-                    meta = cell_trace.get(key)
+                    meta = cell_trace_map.get(key)
                     if not isinstance(meta, dict):
                         _record_error(
                             env,
@@ -149,7 +200,12 @@ class IsoTableDirective(Directive):
                         )
                         meta = {}
 
-                    source_id = str(meta.get("source_id", "")).strip()
+                    trace_id = _read_trace_id(
+                        env,
+                        meta,
+                        strict_mode=strict_mode,
+                        context=f"table '{table_id}' row '{row_id}' col '{key}'",
+                    )
                     trace_status = str(meta.get("trace_status", "")).strip()
                     anchor_ids = [
                         str(item).strip()
@@ -158,12 +214,19 @@ class IsoTableDirective(Directive):
                     ]
                     relation = str(meta.get("relation", "")).strip()
 
-                    if not source_id:
+                    if strict_mode and not trace_id:
                         _record_error(
                             env,
                             f"table '{table_id}' row '{row_id}' col '{key}' "
-                            "missing source_id",
+                            "missing irm_id",
                         )
+                    elif not strict_mode and not trace_id:
+                        _record_error(
+                            env,
+                            f"table '{table_id}' row '{row_id}' col '{key}' "
+                            "missing IRM ID",
+                        )
+
                     if not trace_status:
                         _record_error(
                             env,
@@ -187,9 +250,9 @@ class IsoTableDirective(Directive):
                     cell_anchor = f"{_slug(label)}--r-{row_slug}--c-{col_slug}"
                     entry["ids"].append(cell_anchor)
 
-                    if source_id:
+                    if trace_id:
                         record = {
-                            "id": source_id,
+                            "id": trace_id,
                             "unit_type": "table_cell",
                             "display_number": "",
                             "doc": env.docname,

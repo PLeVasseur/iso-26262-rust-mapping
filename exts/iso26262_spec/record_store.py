@@ -20,6 +20,8 @@ def _ensure_env(env: BuildEnvironment) -> None:
         env.iso26262_statement_locations = {}
     if not hasattr(env, "iso26262_anchor_registry_ids"):
         env.iso26262_anchor_registry_ids = set()
+    if not hasattr(env, "iso26262_statement_anchor_ids"):
+        env.iso26262_statement_anchor_ids = {}
 
 
 def _record_error(env: BuildEnvironment, message: str) -> None:
@@ -31,18 +33,34 @@ def _register_record(
     env: BuildEnvironment, record: dict[str, Any], source_context: str
 ) -> None:
     _ensure_env(env)
-    source_id = record["id"]
-    existing = env.iso26262_trace_records.get(source_id)
+    irm_id = record["id"]
+    existing = env.iso26262_trace_records.get(irm_id)
     if existing is not None:
         existing_doc = existing.get("doc", "<unknown>")
         _record_error(
             env,
-            f"duplicate source_id '{source_id}' in {source_context}; "
+            f"duplicate IRM ID '{irm_id}' in {source_context}; "
             f"first seen in {existing_doc}",
         )
         return
 
-    env.iso26262_trace_records[source_id] = record
-    env.iso26262_trace_order.append(source_id)
+    env.iso26262_trace_records[irm_id] = record
+    env.iso26262_trace_order.append(irm_id)
     href = record.get("href", "")
-    env.iso26262_statement_locations[source_id] = href
+    env.iso26262_statement_locations[irm_id] = href
+
+
+def _register_statement_anchor(
+    env: BuildEnvironment, anchor_id: str, irm_id: str, source_context: str
+) -> None:
+    _ensure_env(env)
+    existing = env.iso26262_statement_anchor_ids.get(anchor_id)
+    if existing is not None and existing != irm_id:
+        _record_error(
+            env,
+            "duplicate statement anchor "
+            f"'{anchor_id}' from distinct IRM IDs '{existing}' and '{irm_id}' "
+            f"in {source_context}",
+        )
+        return
+    env.iso26262_statement_anchor_ids[anchor_id] = irm_id

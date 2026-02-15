@@ -42,8 +42,8 @@
         "relation": {
           "type": "string"
         },
-        "source_id": {
-          "minLength": 1,
+        "irm_id": {
+          "pattern": "^irm_[A-Za-z0-9]{12}$",
           "type": "string"
         },
         "trace_status": {
@@ -51,7 +51,7 @@
         }
       },
       "required": [
-        "source_id",
+        "irm_id",
         "trace_status"
       ],
       "type": "object"

@@ -7,9 +7,18 @@ from docutils import nodes
 from .nodes import a_node, dp_node, p_node, rel_node, ts_node
 from .types import PrefaceMetadata
 
+IRM_ID_RE = re.compile(r"^irm_[A-Za-z0-9]{12}$")
 
-def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
-    source_ids: list[str] = []
+
+def _is_valid_irm_id(value: str) -> bool:
+    return bool(IRM_ID_RE.match(value))
+
+
+def _extract_preface(
+    paragraph: nodes.paragraph, *, strict_mode: bool = False
+) -> PrefaceMetadata | None:
+    _ = strict_mode
+    irm_ids: list[str] = []
     statuses: list[str] = []
     anchor_ids: list[str] = []
     relations: list[str] = []
@@ -19,7 +28,7 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
     for child in paragraph.children:
         if isinstance(child, dp_node):
             has_any_metadata = True
-            source_ids.append(child.astext().strip())
+            irm_ids.append(child.astext().strip())
             continue
         if isinstance(child, ts_node):
             has_any_metadata = True
@@ -50,11 +59,11 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
     if (
         has_any_metadata
         and (not has_non_metadata_content)
-        and len(source_ids) == 1
+        and len(irm_ids) == 1
         and len(statuses) == 1
     ):
         return PrefaceMetadata(
-            source_id=source_ids[0],
+            irm_id=irm_ids[0],
             trace_status=statuses[0],
             anchor_ids=anchor_ids,
             relation=relations[0] if relations else "",
@@ -76,7 +85,7 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
         anchor = (role_preface.group("aid") or "").strip()
         body = (role_preface.group("body") or "").strip()
         return PrefaceMetadata(
-            source_id=sid,
+            irm_id=sid,
             trace_status=status,
             anchor_ids=[anchor] if anchor else [],
             relation=relation,
@@ -96,7 +105,7 @@ def _extract_preface(paragraph: nodes.paragraph) -> PrefaceMetadata | None:
         rest = (plain_preface.group("rest") or "").strip()
         body = (plain_preface.group("body") or "").strip()
         return PrefaceMetadata(
-            source_id=sid,
+            irm_id=sid,
             trace_status=status,
             anchor_ids=[],
             relation=rest,

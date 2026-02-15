@@ -14,8 +14,8 @@ def _slug(value: str) -> str:
     return slug.strip("-")
 
 
-def _statement_anchor_from_source_id(source_id: str) -> str:
-    return _slug(source_id)
+def _statement_anchor_from_irm_id(irm_id: str) -> str:
+    return irm_id.strip()
 
 
 def _sha256_text(text: str) -> str:

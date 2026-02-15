@@ -7,9 +7,13 @@ from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 
 from .constants import TRACE_STATUSES
-from .preface_parser import _extract_preface
-from .record_store import _record_error, _register_record
-from .utils import _sha256_text, _statement_anchor_from_source_id
+from .preface_parser import _extract_preface, _is_valid_irm_id
+from .record_store import (
+    _record_error,
+    _register_record,
+    _register_statement_anchor,
+)
+from .utils import _sha256_text, _statement_anchor_from_irm_id
 
 
 def _is_markdown_statement_node(node: nodes.Node) -> bool:
@@ -30,12 +34,25 @@ def _set_paragraph_text(paragraph: nodes.paragraph, text: str) -> None:
         paragraph += nodes.Text(line)
 
 
+def _validate_irm_id(
+    app: Sphinx, env: BuildEnvironment, irm_id: str, source_context: str
+) -> None:
+    strict_mode = bool(getattr(app.config, "iso26262_irm_id_strict_mode", False))
+    if strict_mode and not _is_valid_irm_id(irm_id):
+        _record_error(
+            env,
+            f"invalid IRM ID '{irm_id}' in {source_context}; "
+            "expected pattern irm_[A-Za-z0-9]{12}",
+        )
+
+
 def _bind_prefaces(
     app: Sphinx, env: BuildEnvironment, docname: str, container: nodes.Element
 ) -> None:
     if not hasattr(container, "children"):
         return
 
+    strict_mode = bool(getattr(app.config, "iso26262_irm_id_strict_mode", False))
     children = list(container.children)
     rebuilt: list[nodes.Node] = []
     idx = 0
@@ -43,7 +60,7 @@ def _bind_prefaces(
     while idx < len(children):
         node = children[idx]
         if isinstance(node, nodes.paragraph):
-            metadata = _extract_preface(node)
+            metadata = _extract_preface(node, strict_mode=strict_mode)
             if metadata is not None:
                 inline_target = isinstance(node, nodes.paragraph) and bool(
                     metadata.inline_body
@@ -51,41 +68,54 @@ def _bind_prefaces(
                 if inline_target:
                     _set_paragraph_text(node, metadata.inline_body)
                     target = node
-                    source_id = metadata.source_id
+                    irm_id = metadata.irm_id
+                    _validate_irm_id(
+                        app,
+                        env,
+                        irm_id,
+                        f"{docname} inline metadata preface",
+                    )
+
                     trace_status = metadata.trace_status
                     if trace_status not in TRACE_STATUSES:
                         _record_error(
                             env,
                             f"invalid trace status '{trace_status}' "
-                            f"for {source_id} in {docname}",
+                            f"for {irm_id} in {docname}",
                         )
 
                     if trace_status == "mapped" and not metadata.anchor_ids:
                         _record_error(
                             env,
-                            f"mapped statement '{source_id}' in {docname} "
+                            f"mapped statement '{irm_id}' in {docname} "
                             "has no anchor_ids",
                         )
                     if trace_status == "mapped" and not metadata.relation:
                         _record_error(
                             env,
-                            f"mapped statement '{source_id}' in {docname} "
+                            f"mapped statement '{irm_id}' in {docname} "
                             "has no relation",
                         )
 
-                    anchor_id = _statement_anchor_from_source_id(source_id)
+                    anchor_id = _statement_anchor_from_irm_id(irm_id)
+                    _register_statement_anchor(
+                        env,
+                        anchor_id,
+                        irm_id,
+                        f"{docname} inline metadata preface",
+                    )
                     target_ids = target.setdefault("ids", [])
                     if anchor_id not in target_ids:
                         target_ids.append(anchor_id)
 
-                    target["trace_source_id"] = source_id
+                    target["trace_irm_id"] = irm_id
                     target["trace_status"] = trace_status
                     target["trace_anchor_ids"] = metadata.anchor_ids
                     target["trace_relation"] = metadata.relation
 
                     statement_text = target.astext().strip()
                     record: dict[str, Any] = {
-                        "id": source_id,
+                        "id": irm_id,
                         "unit_type": "paragraph",
                         "display_number": "",
                         "doc": docname,
@@ -101,7 +131,7 @@ def _bind_prefaces(
                     }
                     _register_record(env, record, f"{docname} inline metadata preface")
                     env.iso26262_doc_statement_ids.setdefault(docname, []).append(
-                        source_id
+                        irm_id
                     )
 
                     rebuilt.append(node)
@@ -123,34 +153,41 @@ def _bind_prefaces(
                     idx += 1
                     continue
 
-                source_id = metadata.source_id
+                irm_id = metadata.irm_id
+                _validate_irm_id(app, env, irm_id, f"{docname} markdown preface")
+
                 trace_status = metadata.trace_status
                 if trace_status not in TRACE_STATUSES:
                     _record_error(
                         env,
                         f"invalid trace status '{trace_status}' "
-                        f"for {source_id} in {docname}",
+                        f"for {irm_id} in {docname}",
                     )
 
                 if trace_status == "mapped" and not metadata.anchor_ids:
                     _record_error(
                         env,
-                        f"mapped statement '{source_id}' in {docname} "
+                        f"mapped statement '{irm_id}' in {docname} "
                         "has no anchor_ids",
                     )
                 if trace_status == "mapped" and not metadata.relation:
                     _record_error(
                         env,
-                        f"mapped statement '{source_id}' in {docname} "
-                        "has no relation",
+                        f"mapped statement '{irm_id}' in {docname} " "has no relation",
                     )
 
-                anchor_id = _statement_anchor_from_source_id(source_id)
+                anchor_id = _statement_anchor_from_irm_id(irm_id)
+                _register_statement_anchor(
+                    env,
+                    anchor_id,
+                    irm_id,
+                    f"{docname} markdown preface",
+                )
                 target_ids = target.setdefault("ids", [])
                 if anchor_id not in target_ids:
                     target_ids.append(anchor_id)
 
-                target["trace_source_id"] = source_id
+                target["trace_irm_id"] = irm_id
                 target["trace_status"] = trace_status
                 target["trace_anchor_ids"] = metadata.anchor_ids
                 target["trace_relation"] = metadata.relation
@@ -162,7 +199,7 @@ def _bind_prefaces(
                 href = f"{docname}.html#{anchor_id}"
 
                 record = {
-                    "id": source_id,
+                    "id": irm_id,
                     "unit_type": unit_type,
                     "display_number": "",
                     "doc": docname,
@@ -177,7 +214,7 @@ def _bind_prefaces(
                     },
                 }
                 _register_record(env, record, f"{docname} markdown preface")
-                env.iso26262_doc_statement_ids.setdefault(docname, []).append(source_id)
+                env.iso26262_doc_statement_ids.setdefault(docname, []).append(irm_id)
 
                 idx += 1
                 continue
@@ -200,7 +237,7 @@ def _collect_missing_units(
         text = paragraph.astext().strip()
         if not text:
             continue
-        if paragraph.get("trace_source_id"):
+        if paragraph.get("trace_irm_id"):
             continue
         missing.append(text)
 
@@ -208,10 +245,10 @@ def _collect_missing_units(
         text = list_item.astext().strip()
         if not text:
             continue
-        if list_item.get("trace_source_id"):
+        if list_item.get("trace_irm_id"):
             continue
         traced_child = any(
-            isinstance(child, nodes.paragraph) and child.get("trace_source_id")
+            isinstance(child, nodes.paragraph) and child.get("trace_irm_id")
             for child in list_item.children
         )
         if not traced_child:

@@ -52,3 +52,4 @@ iso26262_anchor_registry_path = str(
 iso26262_table_root = str(REPO_ROOT / "src" / "tables")
 
 iso26262_run_root = os.environ.get("SPHINX_MIGRATION_RUN_ROOT", "")
+iso26262_irm_id_strict_mode = True
