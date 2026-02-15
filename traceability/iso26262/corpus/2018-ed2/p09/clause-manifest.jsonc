@@ -1,156 +1,88 @@
 {
   "clauses": [
     {
-      "clause": "Clause-1",
+      "clause": "1.0",
+      "unit_count": 6
+    },
+    {
+      "clause": "4.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-10",
+      "clause": "4.5",
       "unit_count": 3
     },
     {
-      "clause": "Clause-11",
+      "clause": "5.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-12",
+      "clause": "5.4.10",
+      "unit_count": 2
+    },
+    {
+      "clause": "5.4.4",
       "unit_count": 3
     },
     {
-      "clause": "Clause-13",
+      "clause": "5.4.9",
+      "unit_count": 6
+    },
+    {
+      "clause": "5.5.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-14",
+      "clause": "6.0",
       "unit_count": 3
     },
     {
-      "clause": "Clause-15",
+      "clause": "6.3.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-16",
+      "clause": "6.5.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-17",
+      "clause": "7.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-18",
+      "clause": "7.4.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-19",
+      "clause": "7.4.5",
       "unit_count": 3
     },
     {
-      "clause": "Clause-2",
+      "clause": "7.5.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-20",
+      "clause": "8.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-21",
+      "clause": "8.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-22",
+      "clause": "8.4.10",
       "unit_count": 3
     },
     {
-      "clause": "Clause-23",
+      "clause": "8.4.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-24",
-      "unit_count": 3
+      "clause": "8.5",
+      "unit_count": 11
     },
     {
-      "clause": "Clause-25",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-26",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-27",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-28",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-29",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-3",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-30",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-31",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-32",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-33",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-34",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-35",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-36",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-37",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-38",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-4",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-5",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-6",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-7",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-8",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-9",
-      "unit_count": 3
+      "clause": "8.5.2",
+      "unit_count": 25
     }
   ],
   "edition": "2018-ed2",

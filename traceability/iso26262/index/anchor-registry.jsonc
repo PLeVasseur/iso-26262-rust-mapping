@@ -1,3700 +1,3252 @@
 {
   "anchors": [
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0001:LST:e514b1df0e7a76ea",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0001:PAR:eb8198d44f0309c4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0001-lb"
+      "unit": "p06-p0001-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0001:PAR:ec0e4df9257b7646",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0001:TBL:2daed0b19b60263e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0001-par"
+      "unit": "p06-p0001-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0001:TBL:3ae78d930c640cc5",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0002:PAR:872b5f1613bfb5c0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0001-tc"
+      "unit": "p06-p0002-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0002:LST:9de49955d3280665",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0003:PAR:27efcbe00f468cc9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0002-lb"
+      "unit": "p06-p0003-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0002:PAR:aacedb8a10cf23ab",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0003:TBL:7c19aabd0ec56aeb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0002-par"
+      "unit": "p06-p0003-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0002:TBL:81c89ba75e59e112",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0004:PAR:d9d8d5c04cc2c0dc",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0002-tc"
+      "unit": "p06-p0004-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0003:LST:d582edbe272e9067",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0004:TBL:d09bfbc771b4859c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0003-lb"
+      "unit": "p06-p0004-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0003:PAR:324663226d845578",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0005:LST:db1306f2e2a20f34",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0003-par"
+      "unit": "p06-p0005-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0003:TBL:e222aae4a6e88597",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0005:PAR:7b40fe44cdb1a221",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0003-tc"
+      "unit": "p06-p0005-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0004:LST:cecc7f6f5671732f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0006:PAR:2e6257babcb9f757",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0004-lb"
+      "unit": "p06-p0006-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0004:PAR:4391402e45a1eb5b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:LST:440e97ffe10df6a7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0004-par"
+      "unit": "p06-p0007-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0004:TBL:b31478aae0fe7718",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:PAR:e3abd957fc8f9ebd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0004-tc"
+      "unit": "p06-p0007-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0005:LST:c67566e89b02a698",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:TBL:741eb7366c02f162",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0005-lb"
+      "unit": "p06-p0007-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0005:PAR:c588306b5abd41aa",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0008:PAR:a1e3b2d766aefd69",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0005-par"
+      "unit": "p06-p0008-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0005:TBL:52eba80c78be2039",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0008:TBL:b3aef95d824fb656",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0005-tc"
+      "unit": "p06-p0008-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0006:LST:221a9abb5ab324e3",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:LST:b5e9a025d0bbc861",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0006-lb"
+      "unit": "p06-p0009-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0006:PAR:2319febf878f1635",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:PAR:0f9c46c1a8300d8a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0006-par"
+      "unit": "p06-p0009-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0006:TBL:e57e8b114501c432",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:TBL:acc214f9344a103f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0006-tc"
+      "unit": "p06-p0009-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:LST:8aba1f8b6cd4fe95",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:LST:a3068c95dcf028cf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0007-lb"
+      "unit": "p06-p0010-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:PAR:35ac081bfcbbb98d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:PAR:93f45bb9053c195f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0007-par"
+      "unit": "p06-p0010-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0007:TBL:5ce0765387d11e41",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:TBL:b173387abe4b4567",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0007-tc"
+      "unit": "p06-p0010-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0008:LST:ea47efbc8df169d4",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:LST:6f3660285b5e4431",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0008-lb"
+      "unit": "p06-p0011-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0008:PAR:c2c834b8a039a6a2",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:PAR:03ea07f4133cea68",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0008-par"
+      "unit": "p06-p0011-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0008:TBL:c4eb34a964aba739",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:TBL:d648435135a556dc",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0008-tc"
+      "unit": "p06-p0011-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:LST:d601054fed24e711",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:LST:79d92ec6426091a8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0009-lb"
+      "unit": "p06-p0012-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:PAR:cc1c4f36787213ec",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:PAR:f537943516b50720",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0009-par"
+      "unit": "p06-p0012-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0009:TBL:e6b5ead8ff5de1e7",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:TBL:e6ff2475887ba23e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0009-tc"
+      "unit": "p06-p0012-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:LST:7dbedeed17734a16",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:LST:aa15680df3d6848c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0010-lb"
+      "unit": "p06-p0013-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:PAR:255e561583349eb0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:PAR:29bfc248113003cf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0010-par"
+      "unit": "p06-p0013-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0010:TBL:b86f2d52c5112526",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:TBL:1fcc33b0c22007a0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0010-tc"
+      "unit": "p06-p0013-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:LST:7dc5ad84b41f0f8b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:LST:817783afce5eee8e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0011-lb"
+      "unit": "p06-p0014-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:PAR:099499a6a88ba332",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:PAR:287e5ebb4a687860",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0011-par"
+      "unit": "p06-p0014-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0011:TBL:e023f5abbb23a87b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:TBL:a4f9f2fee20d2b71",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0011-tc"
+      "unit": "p06-p0014-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:LST:af88bcdd6e6f26c1",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:LST:6620cd7e1b0e11ea",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0012-lb"
+      "unit": "p06-p0015-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:PAR:cb7b3a44be331041",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:PAR:2add8368b98d9adf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0012-par"
+      "unit": "p06-p0015-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0012:TBL:d6797d56d2b0434a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:TBL:f538bf76e927eddb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0012-tc"
+      "unit": "p06-p0015-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:LST:760c7c53543ccee6",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:LST:ac6b01403fbb1d36",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0013-lb"
+      "unit": "p06-p0016-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:PAR:bdf096db70faf88a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:PAR:7ae20a15002a6461",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0013-par"
+      "unit": "p06-p0016-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0013:TBL:e345a7bf9692140a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:TBL:7bee196fd25fbb87",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0013-tc"
+      "unit": "p06-p0016-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:LST:700071fdc303c7fc",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:LST:7d0c93b705c8d44f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0014-lb"
+      "unit": "p06-p0017-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:PAR:a49f5c40d1844fce",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:PAR:edb048a6ca918b0f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0014-par"
+      "unit": "p06-p0017-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0014:TBL:3cbb6f5e42c1b9b7",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:TBL:301c83b96e6f1315",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0014-tc"
+      "unit": "p06-p0017-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:LST:48fd89d954f60264",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:LST:d18caf33df73cfb9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0015-lb"
+      "unit": "p06-p0018-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:PAR:773a3416a10bf6cb",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:PAR:0fcdd0326d8e775b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0015-par"
+      "unit": "p06-p0018-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0015:TBL:7f19362df959820c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:TBL:18772afeed7bf653",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0015-tc"
+      "unit": "p06-p0018-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:LST:fcbdb717b1c45fb4",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:LST:5960d10c2b38f083",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0016-lb"
+      "unit": "p06-p0019-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:PAR:d2ed469207ac84bd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:PAR:b5e6b26e808359da",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0016-par"
+      "unit": "p06-p0019-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0016:TBL:7806029e44cfced5",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:TBL:2ce94224b2c92ed8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0016-tc"
+      "unit": "p06-p0019-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:LST:674df179f67c900d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:LST:661b17fff76e1831",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0017-lb"
+      "unit": "p06-p0020-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:PAR:5fb5bd4ae1e0d03f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:PAR:3c2b7ffb02720ad3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0017-par"
+      "unit": "p06-p0020-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0017:TBL:a6ead0bdb3e06271",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:TBL:c8df93a2d4ff1c9b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0017-tc"
+      "unit": "p06-p0020-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:LST:5bf8213c9b0f8559",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:LST:f7fb9e8262a04ed6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0018-lb"
+      "unit": "p06-p0021-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:PAR:fb65c32e91be3682",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:PAR:073ede85245b5674",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0018-par"
+      "unit": "p06-p0021-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0018:TBL:bfef71015558d008",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:TBL:021ac663c7b51a91",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0018-tc"
+      "unit": "p06-p0021-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:LST:f54e32aa47b1bb9b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:LST:8cca6f1bb2def6af",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0019-lb"
+      "unit": "p06-p0022-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:PAR:3ee72e9edb1af66e",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:PAR:c624e9e7f5fb89c4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0019-par"
+      "unit": "p06-p0022-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0019:TBL:b2051b3c0c67fc80",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:TBL:0a9116bbcb2e484c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0019-tc"
+      "unit": "p06-p0022-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:LST:001eccfc520136ff",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:LST:c868111e7e5c792e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0020-lb"
+      "unit": "p06-p0023-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:PAR:d0da2ac5f6e40e78",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:PAR:420ade80a855aeff",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0020-par"
+      "unit": "p06-p0023-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0020:TBL:8d3088a9c1a754da",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:TBL:cf318f57b45ec5ba",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0020-tc"
+      "unit": "p06-p0023-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:LST:5bfd648c42bca974",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:LST:35fb430e6740bf81",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0021-lb"
+      "unit": "p06-p0024-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:PAR:dad901b5dd366415",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:PAR:2338e2f478aef7f4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0021-par"
+      "unit": "p06-p0024-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0021:TBL:48f6b402d7ced929",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:TBL:b9159d8e0bf8f773",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0021-tc"
+      "unit": "p06-p0024-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:LST:e7a138917783e434",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:LST:40f47d35bb57d88b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0022-lb"
+      "unit": "p06-p0025-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:PAR:4bc10f223c57f3fa",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:PAR:3ee8febc7d7cff93",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0022-par"
+      "unit": "p06-p0025-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0022:TBL:9c1f5149264d384b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:TBL:7f2cf447f3bb72d9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0022-tc"
+      "unit": "p06-p0025-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:LST:125dcabc368764af",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:LST:0384fddc2938b0d2",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0023-lb"
+      "unit": "p06-p0026-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:PAR:96ea1343cc101285",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:PAR:8a6504430fa2fa57",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0023-par"
+      "unit": "p06-p0026-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0023:TBL:51d326a7defff1b7",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:TBL:2d1d94f7562b527d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0023-tc"
+      "unit": "p06-p0026-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:LST:163fdf1f4eb5d845",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:LST:f69006c424cf8364",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0024-lb"
+      "unit": "p06-p0027-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:PAR:cafb3208f68206b2",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:PAR:23d96370d6779ecf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0024-par"
+      "unit": "p06-p0027-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0024:TBL:84a5a6156e0c0581",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:TBL:87a113bb2f4edf18",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0024-tc"
+      "unit": "p06-p0027-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:LST:441b8972b1369b8d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:LST:4645fc4652462695",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0025-lb"
+      "unit": "p06-p0028-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:PAR:9be72282dd84d93e",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:PAR:28957f58995da871",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0025-par"
+      "unit": "p06-p0028-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0025:TBL:d518ba0075040c76",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:TBL:4687c9a193efc8ed",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0025-tc"
+      "unit": "p06-p0028-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:LST:c5c42f3244c7beaf",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:LST:9f6bfd7566e14e6d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0026-lb"
+      "unit": "p06-p0029-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:PAR:21cdd973ea116eaf",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:PAR:94bc759a5796d743",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0026-par"
+      "unit": "p06-p0029-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0026:TBL:55ff9a2f6ecd453a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:TBL:209c072e34cdf6af",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0026-tc"
+      "unit": "p06-p0029-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:LST:def3cfaffdb24f33",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0030:PAR:fb7d9c79490df83c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0027-lb"
+      "unit": "p06-p0030-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:PAR:4908968d9ef01c2f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0030:TBL:31156873a4f6e071",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0027-par"
+      "unit": "p06-p0030-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0027:TBL:522ae279e653af40",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:LST:ffdd1a7680afa9a6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0027-tc"
+      "unit": "p06-p0031-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:LST:4b4bf6a80a9e51a1",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:PAR:108d10da46f58aad",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0028-lb"
+      "unit": "p06-p0031-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:PAR:f437872b2f6691f0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:TBL:d7fdea70767bf5d3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0028-par"
+      "unit": "p06-p0031-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0028:TBL:ece7aa0f838e3db3",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:LST:156829a973eec144",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0028-tc"
+      "unit": "p06-p0032-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:LST:4fa71ecd5c3c7ee4",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:PAR:80d547022f04bb46",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0029-lb"
+      "unit": "p06-p0032-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:PAR:d1e52ada7cbe1330",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:TBL:cc9776bdd469f682",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0029-par"
+      "unit": "p06-p0032-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0029:TBL:be61cf0082c46d28",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:LST:5cbaf1d30c345841",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0029-tc"
+      "unit": "p06-p0033-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0030:LST:aec718f25fe582e6",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:PAR:40e81a3c1b97dad7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0030-lb"
+      "unit": "p06-p0033-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0030:PAR:25276e15d023b272",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:TBL:47b6782d6c20b5ed",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0030-par"
+      "unit": "p06-p0033-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0030:TBL:f4573d162bd46690",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0034:PAR:d50ad34f5900584f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0030-tc"
+      "unit": "p06-p0034-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:LST:0481653bfe64196f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0034:TBL:184dd983123a94a8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0031-lb"
+      "unit": "p06-p0034-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:PAR:377bc48f5471ce51",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:LST:a463127d0ab8b64b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0031-par"
+      "unit": "p06-p0035-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0031:TBL:5caa315342b30d04",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:PAR:9710e6cbeee6fe2e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0031-tc"
+      "unit": "p06-p0035-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:LST:e06d95b57ee5a385",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:TBL:e6d066485b289c0d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0032-lb"
+      "unit": "p06-p0035-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:PAR:db367f6403cdfab7",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:LST:5829f651d0dac786",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0032-par"
+      "unit": "p06-p0036-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0032:TBL:d514eaecaab454b4",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:PAR:0c816418b1d3fd02",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0032-tc"
+      "unit": "p06-p0036-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:LST:8457c029e19e500a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:TBL:dd4cee14ff927690",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0033-lb"
+      "unit": "p06-p0036-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:PAR:b8c0176cd3dbc142",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:LST:0c6b1d4888c1bc3c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0033-par"
+      "unit": "p06-p0037-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0033:TBL:0111d148079feb33",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:PAR:db4bac420867eca0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0033-tc"
+      "unit": "p06-p0037-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0034:LST:fe0553ffc290918c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:TBL:19f953d9453bf2d1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0034-lb"
+      "unit": "p06-p0037-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0034:PAR:0c248a1cdc88a1bd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:LST:bc97ebb91ff958e2",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0034-par"
+      "unit": "p06-p0038-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0034:TBL:dfcdbe20b94abe65",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:PAR:b5171b6172e303a4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0034-tc"
+      "unit": "p06-p0038-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:LST:16f118a519e36252",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:TBL:dd415d4cf0fee06c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0035-lb"
+      "unit": "p06-p0038-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:PAR:4367de13ac4d67ef",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:LST:a61d47ce2b20e590",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0035-par"
+      "unit": "p06-p0039-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0035:TBL:b661128797a1aefa",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:PAR:21f676002e2e0170",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0035-tc"
+      "unit": "p06-p0039-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:LST:9bbe19bf597e2a7d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:TBL:6f8751f5424ab361",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0036-lb"
+      "unit": "p06-p0039-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:PAR:367224bbd44c455a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:LST:2d3214f7c33376f4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0036-par"
+      "unit": "p06-p0040-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0036:TBL:90da7106d7b16280",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:PAR:fd639a030764c92d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0036-tc"
+      "unit": "p06-p0040-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:LST:3042a91ad993de54",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:TBL:3a6b76a7d5eb8d7c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0037-lb"
+      "unit": "p06-p0040-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:PAR:3660257f1852d364",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:LST:5d4cbc511347c696",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0037-par"
+      "unit": "p06-p0041-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0037:TBL:4a9995fb350d2fce",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:PAR:b9085bab95072200",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0037-tc"
+      "unit": "p06-p0041-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:LST:547571a17e8cfea0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:TBL:4652cb90725d59af",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0038-lb"
+      "unit": "p06-p0041-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:PAR:ae1da1a6a3ae0045",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:LST:fdb3b3c4ef5cacc1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0038-par"
+      "unit": "p06-p0042-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0038:TBL:a5419f24b67a6b58",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:PAR:5d4a65904866d9d6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0038-tc"
+      "unit": "p06-p0042-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:LST:c81ba9f31d4ada12",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:TBL:35bccab154adfa39",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0039-lb"
+      "unit": "p06-p0042-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:PAR:45916c9987e561fd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:LST:48e40c79be9d75a8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0039-par"
+      "unit": "p06-p0043-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0039:TBL:3a9ed1589e869097",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:PAR:caf7b28f8187fd96",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0039-tc"
+      "unit": "p06-p0043-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:LST:30735dde38702463",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:TBL:f358bb4a396a5719",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0040-lb"
+      "unit": "p06-p0043-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:PAR:57e19d7b06830fae",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:LST:26d62240b43e40d8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0040-par"
+      "unit": "p06-p0044-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0040:TBL:37f52e7d9c71a152",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:PAR:27e50562f493c4a8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0040-tc"
+      "unit": "p06-p0044-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:LST:0cc2457f819d4d31",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:TBL:ec7b2802192de077",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0041-lb"
+      "unit": "p06-p0044-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:PAR:dc5058042ed5cd7a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0045:LST:a31f9bd089b67b96",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0041-par"
+      "unit": "p06-p0045-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0041:TBL:5c0a76a6fa0e6546",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0045:PAR:7a84fc423946a5d0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0041-tc"
+      "unit": "p06-p0045-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:LST:0470999a5a377c4c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:LST:a4688193b63e3b84",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0042-lb"
+      "unit": "p06-p0046-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:PAR:8509ba6704dbea30",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:PAR:c60f172c27827e7b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0042-par"
+      "unit": "p06-p0046-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0042:TBL:512eb5dca0cdc6d0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:TBL:d55f42f6b36a1a86",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0042-tc"
+      "unit": "p06-p0046-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:LST:863ceb8cc927882c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0047:LST:76d61b89c9f32b74",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0043-lb"
+      "unit": "p06-p0047-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:PAR:022d9fb88dfbed88",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0047:PAR:3b50f5e97336ba0d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0043-par"
+      "unit": "p06-p0047-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0043:TBL:b1350710553cba18",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:LST:ed0fb7b9d6edb58a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0043-tc"
+      "unit": "p06-p0048-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:LST:ca7964389bb25e3c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:PAR:c6e43bbc25e7da54",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0044-lb"
+      "unit": "p06-p0048-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:PAR:8472e2fae8b2167c",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:TBL:1c31e0ae59bfa23b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0044-par"
+      "unit": "p06-p0048-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0044:TBL:8086c244daa21241",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:LST:741cf4b74f0c9181",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0044-tc"
+      "unit": "p06-p0049-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0045:LST:4702e487dde225bd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:PAR:73c052099241d4b7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0045-lb"
+      "unit": "p06-p0049-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0045:PAR:82842bd79ee0a44b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:TBL:4ed7a876a130a518",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0045-par"
+      "unit": "p06-p0049-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0045:TBL:c4c3a18b1e7270bd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0050:PAR:2381a2bfb3672671",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0045-tc"
+      "unit": "p06-p0050-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:LST:211a3985bd55c601",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:LST:7c4673df3c193afa",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0046-lb"
+      "unit": "p06-p0051-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:PAR:84864dbdc4f12bc9",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:PAR:aa0f50027e717599",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0046-par"
+      "unit": "p06-p0051-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0046:TBL:12221369a1829d25",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:TBL:513f16ead5830362",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0046-tc"
+      "unit": "p06-p0051-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0047:LST:487ee976263c85ce",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:LST:986fa791d29db370",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0047-lb"
+      "unit": "p06-p0052-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0047:PAR:3a0334b39c095861",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:PAR:f21ae9c9e3115e07",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0047-par"
+      "unit": "p06-p0052-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0047:TBL:5e946c62f31314cd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:TBL:932c1f7ad70502e1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0047-tc"
+      "unit": "p06-p0052-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:LST:398d6afabf1cbaea",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0053:PAR:e95d2274c641ac48",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0048-lb"
+      "unit": "p06-p0053-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:PAR:9235ec6e46c7f7d0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0053:TBL:ef466d608d124a34",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0048-par"
+      "unit": "p06-p0053-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0048:TBL:fc6a22a3518b3f9f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:LST:06defe268e31c361",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0048-tc"
+      "unit": "p06-p0054-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:LST:939a023bb8fb97e6",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:PAR:ee2efa3a157eadb3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0049-lb"
+      "unit": "p06-p0054-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:PAR:005440040d7368d1",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:TBL:371e508b870ba55a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0049-par"
+      "unit": "p06-p0054-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0049:TBL:927b3a325e23a987",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:LST:d369bb0835c7a8a1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0049-tc"
+      "unit": "p06-p0055-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0050:LST:21bd6a126608c1b2",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:PAR:0ca83c7344f53d5b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0050-lb"
+      "unit": "p06-p0055-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0050:PAR:f67d12d718c8c997",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:TBL:07bddaa656523409",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0050-par"
+      "unit": "p06-p0055-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0050:TBL:de32683c34580095",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0056:LST:8f7a4f4d534f4dfd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0050-tc"
+      "unit": "p06-p0056-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:LST:bc5fce12d47cd3f8",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0056:PAR:dfd8ea02fa8cd908",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0051-lb"
+      "unit": "p06-p0056-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:PAR:f170ab0ddd40adc2",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:LST:4306c6c22952aaed",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0051-par"
+      "unit": "p06-p0057-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0051:TBL:753c5cac4907d43a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:PAR:4878f8eab9c97eab",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0051-tc"
+      "unit": "p06-p0057-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:LST:dc8ac04ac59b68e0",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:TBL:d9f22ebd5609406c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0052-lb"
+      "unit": "p06-p0057-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:PAR:70d1271b35a4c3b5",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0058:LST:b66391b1d0b0c93c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0052-par"
+      "unit": "p06-p0058-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0052:TBL:a90fd770799aeadd",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0058:PAR:d68aaac287ecfe60",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0052-tc"
+      "unit": "p06-p0058-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0053:LST:7464787d8518f119",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:LST:05b37f4974eda3df",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0053-lb"
+      "unit": "p06-p0059-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0053:PAR:335a98834b24370f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:PAR:70aeaf9141fb1b32",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0053-par"
+      "unit": "p06-p0059-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0053:TBL:60afafb2a1ace0fe",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:TBL:ed20681d272294b0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0053-tc"
+      "unit": "p06-p0059-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:LST:a045a1d1dbf1e682",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:LST:625dcb43a5379740",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0054-lb"
+      "unit": "p06-p0060-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:PAR:ba1fe1a5fa6a4601",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:PAR:fbb25e25096088a3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0054-par"
+      "unit": "p06-p0060-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0054:TBL:831e89215bbdef81",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:TBL:dfea2b70b3e578d5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0054-tc"
+      "unit": "p06-p0060-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:LST:ce340f3e7d02158a",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:LST:ef120c315e2bd456",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0055-lb"
+      "unit": "p06-p0061-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:PAR:823551a1b8567010",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:PAR:be0298d002e94465",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0055-par"
+      "unit": "p06-p0061-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0055:TBL:d65086efb7d53867",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:TBL:cf20866514c01457",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0055-tc"
+      "unit": "p06-p0061-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0056:LST:f695366067b52d9d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:LST:ff37cf45ee99c2c9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0056-lb"
+      "unit": "p06-p0062-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0056:PAR:a0845834f415761d",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:PAR:b72d620055428258",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0056-par"
+      "unit": "p06-p0062-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0056:TBL:6580571586a977f5",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:TBL:0bdec41009622df9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0056-tc"
+      "unit": "p06-p0062-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:LST:81bee7863b9cc451",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0063:PAR:577385e5210add90",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0057-lb"
+      "unit": "p06-p0063-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:PAR:ad5c6a2a77044506",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0063:TBL:42b4135c7006bd28",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0057-par"
+      "unit": "p06-p0063-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0057:TBL:687b541e845cb293",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:LST:2e9e737f6e8a6515",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0057-tc"
+      "unit": "p06-p0064-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0058:LST:bdaf0769ee475f3f",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:PAR:fb3dc596b8379009",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0058-lb"
+      "unit": "p06-p0064-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0058:PAR:9963f7ea5953e4b3",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:TBL:03d0de29ed3babd5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0058-par"
+      "unit": "p06-p0064-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0058:TBL:4d988d27956dc618",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0065:PAR:551e0e0e674b8e6c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0058-tc"
+      "unit": "p06-p0065-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:LST:a7059de83f8bebab",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0065:TBL:51e055f9fd931572",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0059-lb"
+      "unit": "p06-p0065-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:PAR:8efcdef9feefc17b",
+      "anchor_id": "ISO26262:2018-ed2:P06:PG0066:PAR:94d21a40d8369a69",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P06",
       "status": "mapped",
-      "unit": "p06-p0059-par"
+      "unit": "p06-p0066-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0059:TBL:645e5491034df0b2",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0001:PAR:32c1cee0215eda36",
       "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0059-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:LST:87a8d23f8f91246a",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0060-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:PAR:a07e8aa2b20eb6fe",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0060-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0060:TBL:64c06f19c0771b00",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0060-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:LST:a7d94ba2488abaae",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0061-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:PAR:5965830a03bdcbb2",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0061-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0061:TBL:8b2cf23e6a839195",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0061-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:LST:a027020ae3e84169",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0062-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:PAR:eeb46964827ecd6d",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0062-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0062:TBL:051fb5839906f323",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0062-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0063:LST:7c6a7c04b8373c6e",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0063-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0063:PAR:4d210c1350178221",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0063-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0063:TBL:f50061f123618adf",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0063-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:LST:4d0e9087ad1665c2",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0064-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:PAR:96b17ecce4b6fde9",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0064-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0064:TBL:2df3435acd52bc26",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0064-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0065:LST:a835a4ccf8df1be0",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0065-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0065:PAR:a7917334f6f272ba",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0065-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0065:TBL:dec45084bc265255",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0065-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0066:LST:5b2b866a2829a04c",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0066-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0066:PAR:561077910d3fe451",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0066-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P06:PG0066:TBL:d05adb354b5e1fd0",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P06",
-      "status": "mapped",
-      "unit": "p06-p0066-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0001:LST:6384784c9cc2f4c4",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0001-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0001:PAR:432c39f2197e85ef",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0001-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0001:TBL:ec6f1a70a760f56e",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0001-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0002:LST:92fcce1a17ca3633",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0002-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0002:PAR:1439a3ea0cb45c13",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0002-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0002:TBL:670710ffeb5ee644",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0002-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0003:LST:14302d539c4e0950",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0003-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0003:PAR:45723501a09c7456",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0003-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0003:TBL:762ca8412e14a706",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0003-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0004:LST:44adb03a691db74e",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0004-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0004:PAR:ffa2158d33cec7e9",
-      "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0004-par"
+      "unit": "p08-p0001-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0004:TBL:c63140d699958420",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0001:TBL:eb54126fbd9966bf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0004-tc"
+      "unit": "p08-p0001-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0005:LST:22ab579e3da47700",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0002:PAR:5b068505716d76ea",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0005-lb"
+      "unit": "p08-p0002-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0005:PAR:32593737cbbea3e3",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0003:PAR:d2f4243c46799e97",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0005-par"
+      "unit": "p08-p0003-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0005:TBL:ee4b0c22e7a320e9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0003:TBL:bee860846589b980",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0005-tc"
+      "unit": "p08-p0003-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0006:LST:b3243efff186832f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0004:PAR:667d9ef0ff2ba559",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0006-lb"
+      "unit": "p08-p0004-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0006:PAR:dfab9b9ff6ef5134",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0004:TBL:fc766657ddd66828",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0006-par"
+      "unit": "p08-p0004-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0006:TBL:a4da55a6d347f294",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0005:PAR:a5af589cf25106ba",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0006-tc"
+      "unit": "p08-p0005-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0007:LST:fbe63aa165ae91dc",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0005:TBL:019dfa9ff2a750de",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0007-lb"
+      "unit": "p08-p0005-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0007:PAR:6ce6deab21d480aa",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0006:LST:b34bf4e3f33cbe89",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0007-par"
+      "unit": "p08-p0006-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0007:TBL:c8eb653ce10f1b1d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0006:PAR:2231e24b614cac22",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0007-tc"
+      "unit": "p08-p0006-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:LST:c79c7d16d0b5f21f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0007:PAR:6b811849514c3e53",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0008-lb"
+      "unit": "p08-p0007-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:PAR:bb7f313f221c303c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:LST:fda9109756db812f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0008-par"
+      "unit": "p08-p0008-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:TBL:53ce7fa25dbf3f96",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:PAR:e871db9aaf1a84b4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0008-tc"
+      "unit": "p08-p0008-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0009:LST:1bfab259a971a01b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0008:TBL:0ed4ad8456ac7563",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0009-lb"
+      "unit": "p08-p0008-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0009:PAR:e59a071b65b4b5c6",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0009:PAR:241ce7eeda7fbfbd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0009-par"
+      "unit": "p08-p0009-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0009:TBL:02d10f0cb8327b42",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0009:TBL:63e24d9f58dc7c5a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0009-tc"
+      "unit": "p08-p0009-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0010:LST:fb82bdd33ca0ac3e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:LST:f8a7054ca311a647",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0010-lb"
+      "unit": "p08-p0011-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0010:PAR:32debae95c9f6c58",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:PAR:380dd0d385d9745a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0010-par"
+      "unit": "p08-p0011-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0010:TBL:2edd75a412ac157b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:TBL:f93fcbd487767ba1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0010-tc"
+      "unit": "p08-p0011-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:LST:d966a128b51cae95",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:LST:ae7ff8cb5950bac3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0011-lb"
+      "unit": "p08-p0012-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:PAR:4a7fce27e55f4330",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:PAR:c549afbf4b0e73e1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0011-par"
+      "unit": "p08-p0012-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0011:TBL:97200cc8cb190fdb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:TBL:a3bcdbac575bebdf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0011-tc"
+      "unit": "p08-p0012-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:LST:6d6902ab00955450",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:LST:2e6e3f75e9ab421a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0012-lb"
+      "unit": "p08-p0013-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:PAR:7342f9d97a4d3333",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:PAR:be7d54d90e60a49c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0012-par"
+      "unit": "p08-p0013-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0012:TBL:84857e478f3ea445",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:TBL:c11cfc2bec1a47ef",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0012-tc"
+      "unit": "p08-p0013-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:LST:bb746e82082a5df0",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:LST:6c0acb9aa769c70f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0013-lb"
+      "unit": "p08-p0014-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:PAR:df67b58d4f711696",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:PAR:b35effb1225ee568",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0013-par"
+      "unit": "p08-p0014-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0013:TBL:0e72c0a4f7323b3f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:TBL:1ae147ba354437f8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0013-tc"
+      "unit": "p08-p0014-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:LST:c8e643481b49b77d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:LST:c4e24b4cbf6b5af8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0014-lb"
+      "unit": "p08-p0015-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:PAR:e5024451931bdc8e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:PAR:3c357a9e2e015f9a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0014-par"
+      "unit": "p08-p0015-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0014:TBL:40d17202db6acdcb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:TBL:a2d7eeb8ee2c8168",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0014-tc"
+      "unit": "p08-p0015-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:LST:36e41f3a9d719194",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:LST:e8fd14e82bb6cc3d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0015-lb"
+      "unit": "p08-p0016-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:PAR:0a8db3b25da9242f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:PAR:d31135faa8cb05ef",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0015-par"
+      "unit": "p08-p0016-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0015:TBL:e90f3c585bb58e9f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:TBL:44c013e4b0499b96",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0015-tc"
+      "unit": "p08-p0016-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:LST:e3f0c29911e0f82d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:LST:d394ea102ab5064a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0016-lb"
+      "unit": "p08-p0017-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:PAR:52dfd91af8e3af3e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:PAR:2803818db86e8815",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0016-par"
+      "unit": "p08-p0017-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0016:TBL:1078776d69c176cb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:TBL:ff68799343bdbff3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0016-tc"
+      "unit": "p08-p0017-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:LST:04989cd9c366b9ec",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0018:PAR:403081b53b6e4fed",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0017-lb"
+      "unit": "p08-p0018-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:PAR:bdeb1d6cb5b20973",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0018:TBL:6bbeeae010d6eb22",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0017-par"
+      "unit": "p08-p0018-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0017:TBL:446584b70c029d17",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:LST:464beefe96ca8e85",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0017-tc"
+      "unit": "p08-p0019-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0018:LST:410ac9e62578f560",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:PAR:e890d796a7b6fe00",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0018-lb"
+      "unit": "p08-p0019-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0018:PAR:76b2ba48359f5dee",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:TBL:673a5361835b8ed0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0018-par"
+      "unit": "p08-p0019-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0018:TBL:71aa03843fe5083b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:LST:fec278c1f76f62ad",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0018-tc"
+      "unit": "p08-p0020-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:LST:addf6f05c91a182a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:PAR:dfdf4f3230f075d3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0019-lb"
+      "unit": "p08-p0020-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:PAR:0c812d8c7850149a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:TBL:0c596d0457f2bb10",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0019-par"
+      "unit": "p08-p0020-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0019:TBL:b3bc06fdb11a2054",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:LST:927863cf26fce82a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0019-tc"
+      "unit": "p08-p0021-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:LST:44a50bc4a587a68a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:PAR:4ef1a95f208bcc3e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0020-lb"
+      "unit": "p08-p0021-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:PAR:ecdfd07a6b54de04",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:TBL:c58540368970fe8a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0020-par"
+      "unit": "p08-p0021-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0020:TBL:65e84b9041928045",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:LST:23f8d16b7664496e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0020-tc"
+      "unit": "p08-p0022-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:LST:2ef66374b729eec5",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:PAR:40bcbde78f0f810a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0021-lb"
+      "unit": "p08-p0022-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:PAR:a7d32233fe7dcaab",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:TBL:b68c4519a353b6c1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0021-par"
+      "unit": "p08-p0022-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0021:TBL:f63ffde18b0722ca",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:LST:f927fd1b80d7bbdf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0021-tc"
+      "unit": "p08-p0023-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:LST:37b7dcc15376c2af",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:PAR:6fc5da0902409d49",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0022-lb"
+      "unit": "p08-p0023-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:PAR:c721387e6f59fe57",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:TBL:614e5702b7a2ec3b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0022-par"
+      "unit": "p08-p0023-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0022:TBL:06d6de98407d7746",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:LST:056baba0c231febd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0022-tc"
+      "unit": "p08-p0024-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:LST:a39909104ea1daea",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:PAR:8d22003e37f0350f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0023-lb"
+      "unit": "p08-p0024-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:PAR:86602f5f93b6a96f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:TBL:228d1e7a9567d385",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0023-par"
+      "unit": "p08-p0024-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0023:TBL:34af73de971c9b50",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:LST:8c462fb241aa4713",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0023-tc"
+      "unit": "p08-p0025-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:LST:3d40ccef58fa07e9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:PAR:67a1d74ccc3535d4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0024-lb"
+      "unit": "p08-p0025-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:PAR:e67180b8462ac10c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:TBL:1b19436e0aab7aa5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0024-par"
+      "unit": "p08-p0025-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0024:TBL:b5d825bbdc9f275a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:LST:3cf2dfdeedf96748",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0024-tc"
+      "unit": "p08-p0026-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:LST:1b3eb109896cf859",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:PAR:4eecc455e8da4c4e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0025-lb"
+      "unit": "p08-p0026-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:PAR:9fa6a264106dda72",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:TBL:c3bb696aa51f1dbc",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0025-par"
+      "unit": "p08-p0026-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0025:TBL:e0b3a3ed50d70a77",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:LST:227f5b8dd7b73937",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0025-tc"
+      "unit": "p08-p0027-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:LST:576f7cd844c769aa",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:PAR:d5882fe1e928aec7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0026-lb"
+      "unit": "p08-p0027-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:PAR:a646b6f963b04c6c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:TBL:f1338ad3e4705286",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0026-par"
+      "unit": "p08-p0027-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0026:TBL:4d59db9f909fa18b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:LST:6dabbdff3317ee77",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0026-tc"
+      "unit": "p08-p0028-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:LST:b7cd0185fdcc29e4",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:PAR:fedc61374b1db85d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0027-lb"
+      "unit": "p08-p0028-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:PAR:33e66de0e4d89436",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:TBL:f6dcd2b99406044b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0027-par"
+      "unit": "p08-p0028-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0027:TBL:f661d2a49ed0ef36",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:LST:18859f761e1e3bfa",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0027-tc"
+      "unit": "p08-p0029-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:LST:22f798698613fa1e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:PAR:60d511adf6ebba4a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0028-lb"
+      "unit": "p08-p0029-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:PAR:5f5a4c94966bbabd",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:TBL:f86e67f713e93916",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0028-par"
+      "unit": "p08-p0029-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0028:TBL:2dee64f79058ba0d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:LST:e1966f8b90e1e1da",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0028-tc"
+      "unit": "p08-p0030-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:LST:422e02cb9a99748d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:PAR:81cce41fa12fbbfa",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0029-lb"
+      "unit": "p08-p0030-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:PAR:10ea32cfccd0d270",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:TBL:f727c349695ecfb1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0029-par"
+      "unit": "p08-p0030-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0029:TBL:6f20b3792dc38149",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:LST:6de1563cb26a4bee",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0029-tc"
+      "unit": "p08-p0031-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:LST:29c63b99c1f464cd",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:PAR:6e305ce44895d382",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0030-lb"
+      "unit": "p08-p0031-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:PAR:21540b9a072188f2",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:TBL:cd9cd48f600a9549",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0030-par"
+      "unit": "p08-p0031-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0030:TBL:9d388e33982f2232",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:LST:ad1cc5f6d41db69b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0030-tc"
+      "unit": "p08-p0032-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:LST:05c384124eb0c44c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:PAR:1f2a6b494e0f8672",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0031-lb"
+      "unit": "p08-p0032-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:PAR:a8ed28d326343c2a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:TBL:135d3bb8d1481acf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0031-par"
+      "unit": "p08-p0032-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0031:TBL:02ba559b7d885f58",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:LST:6bff8ed1d06c346d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0031-tc"
+      "unit": "p08-p0033-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:LST:dfcd323be67efe4c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:PAR:a844346641937cea",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0032-lb"
+      "unit": "p08-p0033-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:PAR:e6e2dc88f0fa9a40",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:TBL:8cc57befc795011e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0032-par"
+      "unit": "p08-p0033-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0032:TBL:42004a2b3b358d7a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:LST:7ce727d8feadb55b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0032-tc"
+      "unit": "p08-p0034-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:LST:0ec980c65e57a13c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:PAR:5490a60d8dbb8871",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0033-lb"
+      "unit": "p08-p0034-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:PAR:a0fed3d0ef0b4a84",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:TBL:3b00651dc7ea3d05",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0033-par"
+      "unit": "p08-p0034-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0033:TBL:1f9a834f98282cb1",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:LST:f9c9446b8c34dfb8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0033-tc"
+      "unit": "p08-p0035-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:LST:e0a3d3f4f83928e3",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:PAR:4783c3364cea9f7d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0034-lb"
+      "unit": "p08-p0035-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:PAR:86f8a839625016aa",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:TBL:6d4589ef193c9998",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0034-par"
+      "unit": "p08-p0035-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0034:TBL:0e2b73ccb142134f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0036:LST:88606d7999358416",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0034-tc"
+      "unit": "p08-p0036-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:LST:afaf707057e7e3a3",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0036:PAR:742a5b7125d06f7e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0035-lb"
+      "unit": "p08-p0036-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:PAR:5842080285bfa85e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:LST:dfeffc3f00c7082b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0035-par"
+      "unit": "p08-p0037-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0035:TBL:3f0fdeb6a2959333",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:PAR:dafa65733ea6ac58",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0035-tc"
+      "unit": "p08-p0037-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0036:LST:9f14a241b2c3f4aa",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:TBL:08f28e72142f2caf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0036-lb"
+      "unit": "p08-p0037-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0036:PAR:ec8bcef3c2d82f5d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:LST:69ba9196468b3fd3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0036-par"
+      "unit": "p08-p0038-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0036:TBL:1d3f5dfcd0a5e747",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:PAR:79cd7e202eea7362",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0036-tc"
+      "unit": "p08-p0038-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:LST:a3a218604730c40e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:TBL:9d336ec81f4d23b5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0037-lb"
+      "unit": "p08-p0038-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:PAR:e3cced43b5c5e86f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:LST:729ad48175b6e960",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0037-par"
+      "unit": "p08-p0039-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0037:TBL:d0ddb0767e317873",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:PAR:d18031879e8fdad9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0037-tc"
+      "unit": "p08-p0039-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:LST:7c22f18b2077d256",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:TBL:49678b889ed37683",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0038-lb"
+      "unit": "p08-p0039-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:PAR:85b34a130fb30c50",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:LST:1f051f48d8bcdabc",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0038-par"
+      "unit": "p08-p0040-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0038:TBL:c9e4fe0dc0c46921",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:PAR:bd31083feecd19d4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0038-tc"
+      "unit": "p08-p0040-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:LST:bc4980a393a37161",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:TBL:c8d7986ab36542ad",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0039-lb"
+      "unit": "p08-p0040-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:PAR:a962553656f3ccd0",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:LST:1004067f16086650",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0039-par"
+      "unit": "p08-p0041-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0039:TBL:75497c19f4600509",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:PAR:5c7ae4fc99e96c0e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0039-tc"
+      "unit": "p08-p0041-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:LST:d6f5f218a1c5557b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:TBL:07249177816e61fc",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0040-lb"
+      "unit": "p08-p0041-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:PAR:23f0b1231270fa0b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:LST:2cc55b110cb0dc16",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0040-par"
+      "unit": "p08-p0042-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0040:TBL:be4313cacd3aaa14",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:PAR:5a8b30a8d33b6d0a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0040-tc"
+      "unit": "p08-p0042-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:LST:7184a0136286f03c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:TBL:e81ec07dd8388223",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0041-lb"
+      "unit": "p08-p0042-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:PAR:7950c32968da0331",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:LST:0aa5e85be32b56e9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0041-par"
+      "unit": "p08-p0043-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0041:TBL:ff234ea57edbe8c9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:PAR:ac4e00a1151b0d3e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0041-tc"
+      "unit": "p08-p0043-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:LST:39d238f27c6488bb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:TBL:d958eb07fe060d25",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0042-lb"
+      "unit": "p08-p0043-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:PAR:fc5185ed85b3e825",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:LST:0e3853ca502594d5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0042-par"
+      "unit": "p08-p0044-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0042:TBL:d0ac0a12030d96c5",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:PAR:4be3d18c90f23f9d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0042-tc"
+      "unit": "p08-p0044-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:LST:498024124cb3ab65",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:TBL:83497ce30da4b5a2",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0043-lb"
+      "unit": "p08-p0044-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:PAR:f3c2233064078a0d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:LST:f95d46ebeeb11058",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0043-par"
+      "unit": "p08-p0045-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0043:TBL:a44b38995c860feb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:PAR:7e192da919f388ac",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0043-tc"
+      "unit": "p08-p0045-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:LST:15d8ff126440f25e",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:TBL:bd0839239c199d7b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0044-lb"
+      "unit": "p08-p0045-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:PAR:d7fa3da30fd632a9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:LST:7abcee93e9ede152",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0044-par"
+      "unit": "p08-p0046-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0044:TBL:5f24c16cc4a85071",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:PAR:310a1bee2b8938b4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0044-tc"
+      "unit": "p08-p0046-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:LST:b65e4b67b2532cb7",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:TBL:90fc99d04b687447",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0045-lb"
+      "unit": "p08-p0046-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:PAR:d6366eb56299956a",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:LST:1c7e9be104b649ba",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0045-par"
+      "unit": "p08-p0047-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0045:TBL:4d95198b66851aa4",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:PAR:ef0d171512e7e29a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0045-tc"
+      "unit": "p08-p0047-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:LST:448e8e1150dabdfe",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:TBL:1077759d940a98e2",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0046-lb"
+      "unit": "p08-p0047-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:PAR:6e57b02f2809f64f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:LST:9545c9c3f88c6168",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0046-par"
+      "unit": "p08-p0048-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0046:TBL:71f3c1460c46c331",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:PAR:ed891985298101b1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0046-tc"
+      "unit": "p08-p0048-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:LST:dbdb416c9dd87e79",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:TBL:236ad8bb35b5f88b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0047-lb"
+      "unit": "p08-p0048-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:PAR:f3c6d2056787abf7",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:LST:3a4026741c6d7653",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0047-par"
+      "unit": "p08-p0049-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0047:TBL:15a9416b970d104c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:PAR:2beb0eb97ccf7f30",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0047-tc"
+      "unit": "p08-p0049-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:LST:6423fb85d4727b42",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:TBL:43b336734991833e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0048-lb"
+      "unit": "p08-p0049-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:PAR:015a2a7c2e1d5895",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:LST:ee462020658e9de0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0048-par"
+      "unit": "p08-p0050-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0048:TBL:7340099a35e937dc",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:PAR:bac54e004f364ed0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0048-tc"
+      "unit": "p08-p0050-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:LST:491385bc56504b90",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:TBL:756c6e66efc37349",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0049-lb"
+      "unit": "p08-p0050-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:PAR:8d76775de152f66d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:LST:4cf97fdbb2cc0670",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0049-par"
+      "unit": "p08-p0051-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0049:TBL:0de351f3afd2410c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:PAR:c577ab85968d03df",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0049-tc"
+      "unit": "p08-p0051-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:LST:f174117f1cbbc6a5",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:TBL:0e3fde4a0c409920",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0050-lb"
+      "unit": "p08-p0051-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:PAR:47dffd71f8176f5b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:LST:0390a475e6457926",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0050-par"
+      "unit": "p08-p0052-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0050:TBL:22e115ea76763b51",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:PAR:1eb1f580f466f61b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0050-tc"
+      "unit": "p08-p0052-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:LST:a59829c332568719",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:TBL:3800b365e1a40163",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0051-lb"
+      "unit": "p08-p0052-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:PAR:c55a2accb29f2861",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:LST:3d8e7937107a6682",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0051-par"
+      "unit": "p08-p0053-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0051:TBL:a359f310b789513d",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:PAR:9e8ff28ec1ef510c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0051-tc"
+      "unit": "p08-p0053-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:LST:fb49e74b4a6b8a59",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:TBL:38cefa27be05e829",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0052-lb"
+      "unit": "p08-p0053-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:PAR:5d99c3b3e9768043",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0054:PAR:13c9dd95380b072f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0052-par"
+      "unit": "p08-p0054-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0052:TBL:6485be985d195368",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0054:TBL:7e5813bbe88f0e20",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0052-tc"
+      "unit": "p08-p0054-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:LST:e218e4eb692268dc",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:LST:78cb1a86dcd92ea5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0053-lb"
+      "unit": "p08-p0055-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:PAR:1df75acddbfcd7bb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:PAR:555f829d9b3e4a9a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0053-par"
+      "unit": "p08-p0055-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0053:TBL:01240eadfb4c27a9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:TBL:e599c72e2bd132d5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0053-tc"
+      "unit": "p08-p0055-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0054:LST:c23ef01e455b5743",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:LST:ad363dc640290b65",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0054-lb"
+      "unit": "p08-p0056-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0054:PAR:388ccdc7197fcb69",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:PAR:df24adc791ad7b73",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0054-par"
+      "unit": "p08-p0056-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0054:TBL:e346cdce152167bb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:TBL:5f1f01f26d4c8ae3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0054-tc"
+      "unit": "p08-p0056-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:LST:7a596b50756c1e9c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:LST:d393b99004badcfb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0055-lb"
+      "unit": "p08-p0057-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:PAR:177f3ea5f87e503b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:PAR:cdd0ef4c8a9370c7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0055-par"
+      "unit": "p08-p0057-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0055:TBL:ef9cda654ad9b4bb",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:TBL:37e9ed9d6f2dc19f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0055-tc"
+      "unit": "p08-p0057-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:LST:ddd235889e466e63",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:LST:bb2c7b6a2d90740f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0056-lb"
+      "unit": "p08-p0058-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:PAR:ff179c51af006abe",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:PAR:7e24347f4d63b267",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0056-par"
+      "unit": "p08-p0058-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0056:TBL:f202c13890372bce",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:TBL:c139ca44bc597791",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0056-tc"
+      "unit": "p08-p0058-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:LST:d6173d3f5547e5e9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:LST:5cec96ef23ed4fc8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0057-lb"
+      "unit": "p08-p0059-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:PAR:313ad301a75889de",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:PAR:8a3a065f8fa25845",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0057-par"
+      "unit": "p08-p0059-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0057:TBL:38968c51e7ad3c41",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:TBL:ed061a6761a15796",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0057-tc"
+      "unit": "p08-p0059-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:LST:82b50c93eae60aaf",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:LST:7c15f53c0be093fa",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0058-lb"
+      "unit": "p08-p0060-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:PAR:3dee500b2c22b525",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:PAR:7a322505241bbd5b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0058-par"
+      "unit": "p08-p0060-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0058:TBL:4de8ab9f2e25da66",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:TBL:83a95dce901e3ae6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0058-tc"
+      "unit": "p08-p0060-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:LST:ade6e927e278aa63",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0061:PAR:7375ea5b347013cb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0059-lb"
+      "unit": "p08-p0061-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:PAR:a4897116c7e3b9d3",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0061:TBL:ecec44550e1ecba4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0059-par"
+      "unit": "p08-p0061-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0059:TBL:9115d96be07ece79",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:LST:1a7493f4b61cbf0e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0059-tc"
+      "unit": "p08-p0062-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:LST:c6f5fc4449426751",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:PAR:249168d7a32f38d8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0060-lb"
+      "unit": "p08-p0062-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:PAR:b40bfa44acb47269",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:TBL:ad45074a9f530faa",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0060-par"
+      "unit": "p08-p0062-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0060:TBL:ab8955094364eef2",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:LST:e17d99eaa588d471",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0060-tc"
+      "unit": "p08-p0063-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0061:LST:dadfe03f40c727b4",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:PAR:255bc274a6330437",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0061-lb"
+      "unit": "p08-p0063-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0061:PAR:9fe8c137da58c0f8",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:TBL:5c0b913dc61cd7d0",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0061-par"
+      "unit": "p08-p0063-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0061:TBL:49ed42dfe18ee1d8",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:LST:6aaec86eb53552ab",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0061-tc"
+      "unit": "p08-p0064-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:LST:ed07b1cd99718345",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:PAR:43a91281b3eaaf80",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0062-lb"
+      "unit": "p08-p0064-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:PAR:39b6e1e859204660",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:TBL:92d4c2a353efbbc5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0062-par"
+      "unit": "p08-p0064-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0062:TBL:2716ff23f59cb135",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:LST:b41b0893f60d117b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0062-tc"
+      "unit": "p08-p0065-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:LST:be43edcc292e8a5f",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:PAR:b1015a615141bef9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0063-lb"
+      "unit": "p08-p0065-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:PAR:5d5fab14a0c2cbd6",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:TBL:1278a9df03e11908",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0063-par"
+      "unit": "p08-p0065-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0063:TBL:8c990fd8a917f119",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0066:PAR:950cd1768cd17f39",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0063-tc"
+      "unit": "p08-p0066-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:LST:0fc3d3f236d61274",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0066:TBL:501d519cad67ba9e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0064-lb"
+      "unit": "p08-p0066-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:PAR:30863df6c1608645",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0067:PAR:e4c63a87f9edf7d8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0064-par"
+      "unit": "p08-p0067-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0064:TBL:31c126d41dd965a2",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0067:TBL:4606a7a6dfc45b44",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0064-tc"
+      "unit": "p08-p0067-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:LST:7faa746e81b710b0",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0068:PAR:9482dd539bd927bd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0065-lb"
+      "unit": "p08-p0068-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:PAR:1e8df529cff3e6f3",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0068:TBL:f99952ed4ab704cb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0065-par"
+      "unit": "p08-p0068-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0065:TBL:a93af1eb4dff84b9",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0069:PAR:439e0ea97ee3152f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0065-tc"
+      "unit": "p08-p0069-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0066:LST:bcb3804cdfcbcefc",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0069:TBL:900d6cdebc7d0f59",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0066-lb"
+      "unit": "p08-p0069-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0066:PAR:b88c1175fc45ea8b",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:LST:d3a61b46ac0740e2",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0066-par"
+      "unit": "p08-p0070-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0066:TBL:d6afd48951b127db",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:PAR:418118c3cf6bf8be",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0066-tc"
+      "unit": "p08-p0070-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0067:LST:b824608097fc0e77",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:TBL:82f5ec505e0be187",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
       "status": "mapped",
-      "unit": "p08-p0067-lb"
+      "unit": "p08-p0070-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0067:PAR:01b3f01225e1456c",
+      "anchor_id": "ISO26262:2018-ed2:P08:PG0072:PAR:cb11f6c83d549441",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0067-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0067:TBL:007340a31ae67e32",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0067-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0068:LST:9b20e1f8f79bf1f1",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0068-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0068:PAR:706a5e2b0e4b9748",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0068-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0068:TBL:b83efc1d4ee279a1",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0068-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0069:LST:92f2326b4f9e7757",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0069-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0069:PAR:fe9ad2d9a0ac3162",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0069-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0069:TBL:e3086306edf6857f",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0069-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:LST:1e0a4a583bb32b44",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0070-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:PAR:b8dbfd8083d1dfdd",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0070-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0070:TBL:64418d8e5dc4d715",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0070-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0071:LST:4d836a971326c97c",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0071-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0071:PAR:7c1786b093bf190a",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0071-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0071:TBL:871ede8d5cc0d4e1",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0071-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0072:LST:191d0ff01da0cb7a",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0072-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0072:PAR:cd531e9f30dd2d53",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0072-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P08:PG0072:TBL:f28bbec14f34b824",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P08",
-      "status": "mapped",
-      "unit": "p08-p0072-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0001:LST:ca355c9c41fbdf63",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0001-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0001:PAR:1624ef060a0fbbf5",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0001-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0001:TBL:e2dae03557237f31",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0001-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0002:LST:9051e490b00d71f3",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0002-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0002:PAR:3a6d9f065dc0a79c",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0002-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0002:TBL:2c751513ef84f965",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0002-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0003:LST:01aecda24ead95d6",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0003-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0003:PAR:33c73c299a473e3d",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0003-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0003:TBL:2944c96b2081ed7b",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0003-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0004:LST:31add9f8167be328",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0004-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0004:PAR:f52fdf9b2b75eae2",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0004-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0004:TBL:d568619005776c71",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0004-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0005:LST:8451bcd73d3012e7",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0005-lb"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0005:PAR:18a2b1dcacbccbf8",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0005-par"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0005:TBL:269d21162bae4e3d",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
-      "status": "mapped",
-      "unit": "p09-p0005-tc"
-    },
-    {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0006:LST:5222a8f39188e998",
-      "notes": "auto-published non-verbatim corpus entry",
-      "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0006-lb"
+      "unit": "p08-p0072-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0006:PAR:9b414772a4359501",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0001:PAR:7d4992ae57b930ef",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0006-par"
+      "unit": "p09-p0001-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0006:TBL:3ca8796705b9a700",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0001:TBL:3b886769967967b5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0006-tc"
+      "unit": "p09-p0001-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:LST:d541341ede0c2d67",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0002:PAR:75683da5792efc92",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0007-lb"
+      "unit": "p09-p0002-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:PAR:aa51de235ffd42ba",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0003:PAR:47a8c4a865e4cd0a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0007-par"
+      "unit": "p09-p0003-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:TBL:70e2e4f6ace3dae8",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0003:TBL:73b604dcc3ea7f4d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0007-tc"
+      "unit": "p09-p0003-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0008:LST:36cf11c787561225",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0004:PAR:e68bd6aafbf87027",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0008-lb"
+      "unit": "p09-p0004-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0008:PAR:095f587748e35740",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0005:LST:a75da5e1e650ff35",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0008-par"
+      "unit": "p09-p0005-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0008:TBL:d49edfe8ce16104a",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0005:PAR:cb4436dd913756fd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0008-tc"
+      "unit": "p09-p0005-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:LST:803c8e23ee3925d8",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0006:PAR:81fc0a355ef2d59b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0009-lb"
+      "unit": "p09-p0006-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:PAR:946c770770a828b7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:LST:65fe8f4aaeb93ff8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0009-par"
+      "unit": "p09-p0007-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:TBL:8eaf497e06f5abda",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:PAR:8d2362b533a7b7f6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0009-tc"
+      "unit": "p09-p0007-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:LST:448b777e637a10f7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0007:TBL:9f4d1e0ac4dbc667",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0010-lb"
+      "unit": "p09-p0007-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:PAR:c68c01b66caa4155",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0008:PAR:ac56628468d8592c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0010-par"
+      "unit": "p09-p0008-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:TBL:dfe07c7a9d5dc165",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0008:TBL:2c277d6dfa84adf7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0010-tc"
+      "unit": "p09-p0008-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:LST:cce7c78880bcf5b0",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:LST:ba0488b7c2db7bec",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0011-lb"
+      "unit": "p09-p0009-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:PAR:41ab1eb5af4f85b0",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:PAR:e1b7004c92d54cb8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0011-par"
+      "unit": "p09-p0009-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:TBL:d2face5a4ebcfda0",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0009:TBL:f36ea3c0d8254e60",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0011-tc"
+      "unit": "p09-p0009-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:LST:fecc83d6d86ec8ee",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:LST:dd8df396281ee38f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0012-lb"
+      "unit": "p09-p0010-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:PAR:7923c4ed45603ec2",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:PAR:12f7fe464c1fc28d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0012-par"
+      "unit": "p09-p0010-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:TBL:03eb767ae78f2316",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0010:TBL:0b66cede030d06d3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0012-tc"
+      "unit": "p09-p0010-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:LST:7a1769241bad53ed",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:LST:04a74da0db95f5d4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0013-lb"
+      "unit": "p09-p0011-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:PAR:808b8e1cd06e8e77",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:PAR:bbedf189b2d560af",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0013-par"
+      "unit": "p09-p0011-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:TBL:21574a56168464d2",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0011:TBL:5dde3cd5f375869e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0013-tc"
+      "unit": "p09-p0011-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:LST:49abd3d87266cc40",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:LST:a0401cda98718ce3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0014-lb"
+      "unit": "p09-p0012-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:PAR:9d40cd5ebe3a3f39",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:PAR:e4e4d638932473d7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0014-par"
+      "unit": "p09-p0012-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:TBL:19063043e6e16fd5",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0012:TBL:fd0c8a57bf3bfd0d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0014-tc"
+      "unit": "p09-p0012-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:LST:528b766432cb5284",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:LST:272dfe0106acc813",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0015-lb"
+      "unit": "p09-p0013-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:PAR:904d4b0ad23f76d9",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:PAR:f8b3c36dcd033f15",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0015-par"
+      "unit": "p09-p0013-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:TBL:3aabd2ed51dca65a",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0013:TBL:391edac00f504831",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0015-tc"
+      "unit": "p09-p0013-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0016:LST:cf9faa7e5e4c7df7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:LST:c4c830ebeeec65d1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0016-lb"
+      "unit": "p09-p0014-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0016:PAR:dcf32fd183a426b5",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:PAR:c0dd5bcde3346bea",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0016-par"
+      "unit": "p09-p0014-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0016:TBL:a858df35c548ea3a",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0014:TBL:6109a2d50e47184d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0016-tc"
+      "unit": "p09-p0014-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:LST:ed37648747f6e42b",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:LST:66dd8efc905f5e6f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0017-lb"
+      "unit": "p09-p0015-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:PAR:87ac6c8fdad2449f",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:PAR:63b99213cafaa2db",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0017-par"
+      "unit": "p09-p0015-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:TBL:ebe5b716aa72cc91",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0015:TBL:6d2dcaccdc31da91",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0017-tc"
+      "unit": "p09-p0015-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:LST:9c6551ef74c00278",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0016:PAR:6bed699da60cc736",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0018-lb"
+      "unit": "p09-p0016-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:PAR:5d2389f2036b6623",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0016:TBL:3c42f93e91e32106",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0018-par"
+      "unit": "p09-p0016-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:TBL:07c72ed11f43109b",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:LST:1b44c6fc58e8f620",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0018-tc"
+      "unit": "p09-p0017-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:LST:faa237530d8e3f39",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:PAR:173871f85900fcdd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0019-lb"
+      "unit": "p09-p0017-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:PAR:f55736f6c404f8fb",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0017:TBL:ec95b5deedfcd606",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0019-par"
+      "unit": "p09-p0017-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:TBL:410f58ea2adf0e32",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:LST:940b579d2d0e59c3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0019-tc"
+      "unit": "p09-p0018-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:LST:d09a7640ce0ce5f7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:PAR:38a7bfde22141c92",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0020-lb"
+      "unit": "p09-p0018-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:PAR:7722cda7716c24d1",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0018:TBL:c98547b672a89ce8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0020-par"
+      "unit": "p09-p0018-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:TBL:4757bdc46cd65436",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:LST:9ec238a846e29131",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0020-tc"
+      "unit": "p09-p0019-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:LST:469210e7459da5f8",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:PAR:d71c0cd061d0344a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0021-lb"
+      "unit": "p09-p0019-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:PAR:16d5251db92b4ea5",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0019:TBL:529a2182a2fb4d29",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0021-par"
+      "unit": "p09-p0019-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:TBL:63f75726049b33ca",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:LST:82a2fa39bc905373",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0021-tc"
+      "unit": "p09-p0020-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:LST:8b512c12ae75c7f1",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:PAR:306af1ec6dd5668e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0022-lb"
+      "unit": "p09-p0020-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:PAR:ba64d6875b9a14d4",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0020:TBL:035b7b461771a0b4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0022-par"
+      "unit": "p09-p0020-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:TBL:92f3e3d4159820bf",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:LST:08276fe52611fb5b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0022-tc"
+      "unit": "p09-p0021-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:LST:c6de50b810b02cb1",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:PAR:a900925d41c56d5b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0023-lb"
+      "unit": "p09-p0021-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:PAR:18811d927d1e74bc",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0021:TBL:2947ddd3e463db9e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0023-par"
+      "unit": "p09-p0021-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:TBL:e71f23d0eed6c79c",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:LST:9c329db769ad2dc4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0023-tc"
+      "unit": "p09-p0022-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:LST:77dfb53a262a276c",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:PAR:4f93ae6e4497c2f1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0024-lb"
+      "unit": "p09-p0022-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:PAR:5670864156654ce8",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0022:TBL:9caabc8d93be9c77",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0024-par"
+      "unit": "p09-p0022-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:TBL:2bb390e0bc3af7fa",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:LST:c3ce4a50d0c0284a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0024-tc"
+      "unit": "p09-p0023-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:LST:a25483f2cd9a04f1",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:PAR:c3ce1d293f834f86",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0025-lb"
+      "unit": "p09-p0023-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:PAR:b9f26945186ef1c3",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0023:TBL:608dec9aad59da62",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0025-par"
+      "unit": "p09-p0023-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:TBL:37599a95d794b9b6",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:LST:ba3aa650f4fcaaaf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0025-tc"
+      "unit": "p09-p0024-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:LST:a507b5bc1e115018",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:PAR:5e0a2b157fe1fb8a",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0026-lb"
+      "unit": "p09-p0024-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:PAR:7fe542bf559c63d0",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0024:TBL:091e06fa070e166f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0026-par"
+      "unit": "p09-p0024-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:TBL:64babf1d22c133a3",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:LST:bb7c8c62754bb8ff",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0026-tc"
+      "unit": "p09-p0025-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:LST:5607edc3ec6605d7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:PAR:b09cf15643fc1d7b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0027-lb"
+      "unit": "p09-p0025-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:PAR:c3a73c31cef5a705",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0025:TBL:800d45e0973ce452",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0027-par"
+      "unit": "p09-p0025-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:TBL:55d543031752efc6",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:LST:fbabea9bd23a2f43",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0027-tc"
+      "unit": "p09-p0026-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:LST:933ed7704fe0a5da",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:PAR:f467a968e6895123",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0028-lb"
+      "unit": "p09-p0026-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:PAR:62a366cc6ecadab3",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0026:TBL:8d8cc5084939ef72",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0028-par"
+      "unit": "p09-p0026-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:TBL:16b6629fee40a8ab",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:LST:af8a839260d6153e",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0028-tc"
+      "unit": "p09-p0027-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:LST:1adcd01f191e82aa",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:PAR:2ac166072d780ce5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0029-lb"
+      "unit": "p09-p0027-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:PAR:121bd40fa98c5c3b",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0027:TBL:3399fd2720cbdef8",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0029-par"
+      "unit": "p09-p0027-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:TBL:235131e7d99b9f0b",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:LST:199c82ee107cb6a5",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0029-tc"
+      "unit": "p09-p0028-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:LST:bb4fd7d949146d28",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:PAR:9848422940559216",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0030-lb"
+      "unit": "p09-p0028-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:PAR:70e1d51d4bd8ea5d",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0028:TBL:edec2c27b2d5b910",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0030-par"
+      "unit": "p09-p0028-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:TBL:a1329e8a48bd8ce9",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:LST:660e13f4f06d52c9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0030-tc"
+      "unit": "p09-p0029-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:LST:18d7e14faf901941",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:PAR:7c41568da6acfd66",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0031-lb"
+      "unit": "p09-p0029-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:PAR:e5222d4ab191c0f6",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0029:TBL:fe4e17bb44f25af6",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0031-par"
+      "unit": "p09-p0029-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:TBL:e1430775eb61f3c7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:LST:fe5479043f06397b",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0031-tc"
+      "unit": "p09-p0030-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0032:LST:7c3c6752a652ceda",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:PAR:e970fe9c634b1fcd",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0032-lb"
+      "unit": "p09-p0030-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0032:PAR:a0432132fbf1515c",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0030:TBL:b1b8a015de7659bb",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0032-par"
+      "unit": "p09-p0030-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0032:TBL:decd978e91dee499",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:LST:11df027ff3c8ce04",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0032-tc"
+      "unit": "p09-p0031-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0033:LST:3de8731b15bb6bc5",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:PAR:98b2460c41e66fc3",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0033-lb"
+      "unit": "p09-p0031-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0033:PAR:3dfda7079556e5d4",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0031:TBL:a496f9039d63382d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0033-par"
+      "unit": "p09-p0031-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0033:TBL:b670d42b12502ee0",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0032:LST:fe2aa3e3882b900c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0033-tc"
+      "unit": "p09-p0032-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:LST:7bf1fec002dafe51",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0032:PAR:9712883f9aa6e25d",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0034-lb"
+      "unit": "p09-p0032-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:PAR:f74ab13c4118e99f",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0033:PAR:2cd354ff8f282f89",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0034-par"
+      "unit": "p09-p0033-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:TBL:7a7f27b09a4e2b9e",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0033:TBL:d239436924ab3ebf",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0034-tc"
+      "unit": "p09-p0033-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:LST:fc3f0c77f2843689",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:LST:76ecaf3216f2e24c",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0035-lb"
+      "unit": "p09-p0034-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:PAR:469e59b5ffa9b9fd",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:PAR:b3cbc9926f610341",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0035-par"
+      "unit": "p09-p0034-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:TBL:e0dbed56511a8899",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0034:TBL:36e1bd415f4e6a53",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0035-tc"
+      "unit": "p09-p0034-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:LST:6b6fd5e368a377de",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:LST:df04b93f0468c48f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0036-lb"
+      "unit": "p09-p0035-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:PAR:7f3c239f88ff8b71",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:PAR:b928afa28a5f6ec1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0036-par"
+      "unit": "p09-p0035-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:TBL:bdbb85aa6c1427b7",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0035:TBL:584e8175103d313f",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0036-tc"
+      "unit": "p09-p0035-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0037:LST:5492a3c85bcecf2b",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:LST:222a5839d7b2a6b9",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0037-lb"
+      "unit": "p09-p0036-lb-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0037:PAR:b70d3761c36fd0b1",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:PAR:b19009305ff301e7",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0037-par"
+      "unit": "p09-p0036-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0037:TBL:ee613dea0c594022",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0036:TBL:2de99647dd9665d4",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0037-tc"
+      "unit": "p09-p0036-tc-003"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0038:LST:bf09e89343f7f09a",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0037:PAR:f89090cf2a01efb1",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0038-lb"
+      "unit": "p09-p0037-par-001"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0038:PAR:39ceb7824da5730e",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0037:TBL:148ba277866621df",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0038-par"
+      "unit": "p09-p0037-tc-002"
     },
     {
-      "anchor_id": "ISO26262:2018-ed2:P09:PG0038:TBL:360bae5d692b2578",
+      "anchor_id": "ISO26262:2018-ed2:P09:PG0038:PAR:786f9a454cea4343",
       "notes": "auto-published non-verbatim corpus entry",
       "part": "P09",
       "status": "mapped",
-      "unit": "p09-p0038-tc"
+      "unit": "p09-p0038-par-001"
     }
   ],
   "schema_version": 1

@@ -1,267 +1,143 @@
 {
   "clauses": [
     {
-      "clause": "Clause-1",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-10",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-11",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-12",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-13",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-14",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-15",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-16",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-17",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-18",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-19",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-2",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-20",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-21",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-22",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-23",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-24",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-25",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-26",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-27",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-28",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-29",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-3",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-30",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-31",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-32",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-33",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-34",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-35",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-36",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-37",
-      "unit_count": 3
-    },
-    {
-      "clause": "Clause-38",
-      "unit_count": 3
+      "clause": "1.0",
+      "unit_count": 6
     },
     {
-      "clause": "Clause-39",
+      "clause": "10.3.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-4",
-      "unit_count": 3
+      "clause": "10.4.3",
+      "unit_count": 2
     },
     {
-      "clause": "Clause-40",
+      "clause": "10.4.7",
       "unit_count": 3
     },
     {
-      "clause": "Clause-41",
-      "unit_count": 3
+      "clause": "11.0",
+      "unit_count": 64
     },
     {
-      "clause": "Clause-42",
+      "clause": "11.3.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-43",
+      "clause": "11.4.3",
       "unit_count": 3
     },
     {
-      "clause": "Clause-44",
-      "unit_count": 3
+      "clause": "11.5",
+      "unit_count": 10
     },
     {
-      "clause": "Clause-45",
+      "clause": "11.5.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-46",
+      "clause": "4.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-47",
+      "clause": "4.4",
       "unit_count": 3
     },
     {
-      "clause": "Clause-48",
+      "clause": "5.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-49",
+      "clause": "5.4.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-5",
+      "clause": "5.4.3",
       "unit_count": 3
     },
     {
-      "clause": "Clause-50",
+      "clause": "6.0",
       "unit_count": 3
     },
     {
-      "clause": "Clause-51",
+      "clause": "6.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-52",
+      "clause": "6.4.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-53",
+      "clause": "6.4.7",
       "unit_count": 3
     },
     {
-      "clause": "Clause-54",
+      "clause": "7.3.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-55",
+      "clause": "7.4.10",
       "unit_count": 3
     },
     {
-      "clause": "Clause-56",
+      "clause": "7.4.11",
       "unit_count": 3
     },
     {
-      "clause": "Clause-57",
+      "clause": "7.4.13",
       "unit_count": 3
     },
     {
-      "clause": "Clause-58",
+      "clause": "7.4.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-59",
+      "clause": "7.4.3",
       "unit_count": 3
     },
     {
-      "clause": "Clause-6",
+      "clause": "7.4.7",
       "unit_count": 3
     },
     {
-      "clause": "Clause-60",
+      "clause": "8.0",
       "unit_count": 3
     },
     {
-      "clause": "Clause-61",
+      "clause": "8.1",
       "unit_count": 3
     },
     {
-      "clause": "Clause-62",
+      "clause": "8.4.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-63",
+      "clause": "8.4.5",
       "unit_count": 3
     },
     {
-      "clause": "Clause-64",
+      "clause": "9.0",
       "unit_count": 3
     },
     {
-      "clause": "Clause-65",
+      "clause": "9.2",
       "unit_count": 3
     },
     {
-      "clause": "Clause-66",
-      "unit_count": 3
+      "clause": "9.4",
+      "unit_count": 2
     },
     {
-      "clause": "Clause-7",
-      "unit_count": 3
+      "clause": "9.4.2",
+      "unit_count": 6
     },
     {
-      "clause": "Clause-8",
-      "unit_count": 3
+      "clause": "9.4.4",
+      "unit_count": 2
     },
     {
-      "clause": "Clause-9",
+      "clause": "9.4.5",
       "unit_count": 3
     }
   ],

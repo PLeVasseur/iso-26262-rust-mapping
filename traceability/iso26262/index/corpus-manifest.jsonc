@@ -1,6 +1,6 @@
 {
   "edition": "2018-ed2",
-  "generated_at_utc": "2026-02-15T16:47:29Z",
+  "generated_at_utc": "2026-02-15T23:03:49Z",
   "parts": [
     {
       "manifest": "corpus/2018-ed2/p06/part-manifest.jsonc",
@@ -15,6 +15,6 @@
       "part": "P09"
     }
   ],
-  "record_count": 528,
+  "record_count": 464,
   "schema_version": 1
 }
