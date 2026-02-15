@@ -42,7 +42,10 @@ def _load_jsonl(path: Path) -> list[dict]:
 def _anchor_id(unit: dict) -> str:
     locator = unit["source_locator"]
     unit_type = str(unit.get("unit_type", "paragraph"))
-    raw = f"{locator['part']}|{locator['clause']}|{locator['page_start']}|{unit_type}|{unit['unit_id']}"
+    raw = (
+        f"{locator['part']}|{locator['clause']}|{locator['page_start']}|"
+        f"{unit_type}|{unit['unit_id']}"
+    )
     digest = hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
     edition = str(locator.get("edition", "2018-ed2"))
     page = int(locator.get("page_start", 0))
@@ -54,14 +57,26 @@ def _anchor_id(unit: dict) -> str:
     return f"ISO26262:{edition}:{locator['part']}:PG{page:04d}:{unit_code}:{digest}"
 
 
+def _scope_anchor_id(scope_type: str, part: str, scope_value: str) -> str:
+    token = scope_value.strip() or "unknown"
+    digest = hashlib.sha256(f"{scope_type}:{part}:{token}".encode("utf-8")).hexdigest()[
+        :16
+    ]
+    return f"ISO26262:2018-ed2:{part}:{scope_type.upper()}:{digest}"
+
+
 def _shard_name(unit_type: str, index: int) -> str:
     return f"{unit_type}-{index:04d}.jsonl"
 
 
 def run_anchor_stage(ctx: "StageContext") -> "StageResult":
     units = _load_normalized_units(ctx.paths.control_run_root)
-    unit_slices = _load_jsonl(ctx.paths.run_root / "normalize" / "verbatim" / "unit-slices.jsonl")
-    unit_text_links = _load_jsonl(ctx.paths.run_root / "normalize" / "verbatim" / "unit-text-links.jsonl")
+    unit_slices = _load_jsonl(
+        ctx.paths.run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
+    )
+    unit_text_links = _load_jsonl(
+        ctx.paths.run_root / "normalize" / "verbatim" / "unit-text-links.jsonl"
+    )
     if not units:
         raise AnchorError("normalized unit set is empty")
 
@@ -78,7 +93,9 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
 
     anchored: list[dict] = []
     anchor_text_links: list[dict] = []
+    scope_anchor_rows: list[dict] = []
     seen_ids: set[str] = set()
+    seen_scope_ids: set[str] = set()
     for unit in units:
         unit_id = str(unit["unit_id"])
         if unit_id not in links_by_unit:
@@ -90,13 +107,67 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
         if aid in seen_ids:
             raise AnchorError(f"duplicate anchor_id generated: {aid}")
         seen_ids.add(aid)
-        anchored.append({**unit, "anchor_id": aid})
+
+        locator = unit.get("source_locator", {})
+        part = str(locator.get("part", ""))
+        section = str(locator.get("section", ""))
+        clause = str(locator.get("clause", ""))
+        table = str(locator.get("table", ""))
+
+        section_anchor_id = _scope_anchor_id("section", part, section)
+        clause_anchor_id = _scope_anchor_id("clause", part, clause)
+        table_anchor_id = _scope_anchor_id("table", part, table) if table else ""
+
+        for scope_type, scope_value, scope_anchor_id in (
+            ("section", section, section_anchor_id),
+            ("clause", clause, clause_anchor_id),
+            ("table", table, table_anchor_id),
+        ):
+            if not scope_anchor_id or not scope_value:
+                continue
+            if scope_anchor_id in seen_scope_ids:
+                continue
+            seen_scope_ids.add(scope_anchor_id)
+            scope_anchor_rows.append(
+                {
+                    "scope_anchor_id": scope_anchor_id,
+                    "scope_type": scope_type,
+                    "part": part,
+                    "scope_value": scope_value,
+                }
+            )
+
+        parent_scope_anchor_id = (
+            table_anchor_id or clause_anchor_id or section_anchor_id
+        )
+
+        anchored.append(
+            {
+                **unit,
+                "anchor_id": aid,
+                "scope_anchors": {
+                    "section": section_anchor_id,
+                    "clause": clause_anchor_id,
+                    "table": table_anchor_id,
+                },
+                "parent_scope_anchor_id": parent_scope_anchor_id,
+            }
+        )
 
         slice_rows = sorted(
             slices_by_unit[unit_id],
-            key=lambda row: (str(row.get("slice_id", "")), str(row.get("text_sha256", ""))),
+            key=lambda row: (
+                str(row.get("slice_id", "")),
+                str(row.get("text_sha256", "")),
+            ),
         )
-        text_sha256_set = sorted({str(row.get("text_sha256", "")) for row in slice_rows if str(row.get("text_sha256", ""))})
+        text_sha256_set = sorted(
+            {
+                str(row.get("text_sha256", ""))
+                for row in slice_rows
+                if str(row.get("text_sha256", ""))
+            }
+        )
         link_fingerprint = hashlib.sha256(
             f"{aid}:{unit_id}:{'|'.join(text_sha256_set)}".encode("utf-8")
         ).hexdigest()[:24]
@@ -110,6 +181,7 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
                 "slice_ids": list(link_row.get("slice_ids", [])),
                 "text_sha256_set": text_sha256_set,
                 "link_fingerprint": link_fingerprint,
+                "parent_scope_anchor_id": parent_scope_anchor_id,
             }
         )
 
@@ -121,7 +193,22 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
             item["unit_id"],
         )
     )
-    anchor_text_links.sort(key=lambda row: (row["part"], row["unit_type"], row["unit_id"], row["anchor_id"]))
+    anchor_text_links.sort(
+        key=lambda row: (
+            row["part"],
+            row["unit_type"],
+            row["unit_id"],
+            row["anchor_id"],
+        )
+    )
+    scope_anchor_rows.sort(
+        key=lambda row: (
+            row["scope_type"],
+            row["part"],
+            row["scope_value"],
+            row["scope_anchor_id"],
+        )
+    )
 
     by_part: dict[str, list[dict]] = {}
     for record in anchored:
@@ -166,6 +253,16 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
         },
     )
 
+    scope_anchor_index_path = verbatim_dir / "scope-anchor-index.json"
+    write_json(
+        scope_anchor_index_path,
+        {
+            "run_id": ctx.run_id,
+            "record_count": len(scope_anchor_rows),
+            "scope_anchors": scope_anchor_rows,
+        },
+    )
+
     manifests: list[str] = []
     shard_outputs: list[str] = []
     for part, records in sorted(by_part.items()):
@@ -173,14 +270,19 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
         part_root.mkdir(parents=True, exist_ok=True)
         shard_names: list[str] = []
         for unit_type in ("paragraph", "list_bullet", "table_cell"):
-            typed_records = [row for row in records if str(row.get("unit_type")) == unit_type]
+            typed_records = [
+                row for row in records if str(row.get("unit_type")) == unit_type
+            ]
             shard_size = 250
             shard_count = 0
             for offset in range(0, len(typed_records), shard_size):
                 shard_count += 1
                 shard_path = part_root / _shard_name(unit_type, shard_count)
                 chunk = typed_records[offset : offset + shard_size]
-                shard_path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in chunk), encoding="utf-8")
+                shard_path.write_text(
+                    "".join(json.dumps(row, sort_keys=True) + "\n" for row in chunk),
+                    encoding="utf-8",
+                )
                 shard_outputs.append(str(shard_path))
                 shard_names.append(shard_path.name)
 
@@ -203,7 +305,9 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
             "run_id": ctx.run_id,
             "anchor_text_links_path": str(anchor_text_links_path),
             "anchor_link_index_path": str(anchor_link_index_path),
-            "unit_slice_input_path": str(ctx.paths.run_root / "normalize" / "verbatim" / "unit-slices.jsonl"),
+            "unit_slice_input_path": str(
+                ctx.paths.run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
+            ),
         },
     )
 
@@ -212,7 +316,10 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
     bijection_pass = required_unit_link_count == len(anchor_text_links) == len(seen_ids)
     if not bijection_pass:
         raise AnchorError(
-            f"anchor-text-link bijection failed: units={required_unit_link_count} anchors={len(seen_ids)} links={len(anchor_text_links)}"
+            "anchor-text-link bijection failed: "
+            f"units={required_unit_link_count} "
+            f"anchors={len(seen_ids)} "
+            f"links={len(anchor_text_links)}"
         )
 
     summary = {
@@ -221,6 +328,7 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
         "anchored_unit_count": len(anchored),
         "unique_anchor_count": len(seen_ids),
         "anchor_text_link_count": len(anchor_text_links),
+        "scope_anchor_count": len(scope_anchor_rows),
         "duplicate_anchor_count": 0,
         "link_bijection_pass": bijection_pass,
         "parts": {part: len(records) for part, records in sorted(by_part.items())},
@@ -235,6 +343,7 @@ def run_anchor_stage(ctx: "StageContext") -> "StageResult":
             anchored_data,
             anchor_text_links_path,
             anchor_link_index_path,
+            scope_anchor_index_path,
             query_binding_path,
             summary_path,
             *[Path(path) for path in manifests],

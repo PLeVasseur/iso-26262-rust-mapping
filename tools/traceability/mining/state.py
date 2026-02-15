@@ -111,9 +111,7 @@ def _required_stage_artifacts(state: dict[str, str], stage: str) -> tuple[Path, 
     control_root = Path(state["CONTROL_RUN_ROOT"])
     run_root = Path(state["RUN_ROOT"])
     by_stage: dict[str, tuple[Path, ...]] = {
-        "ingest": (
-            control_root / "artifacts" / "ingest" / "ingest-summary.json",
-        ),
+        "ingest": (control_root / "artifacts" / "ingest" / "ingest-summary.json",),
         "extract": (
             control_root / "artifacts" / "extract" / "extract-page-decisions.jsonl",
             run_root / "extract" / "verbatim" / "page-text.jsonl",
@@ -136,9 +134,7 @@ def _required_stage_artifacts(state: dict[str, str], stage: str) -> tuple[Path, 
             control_root / "artifacts" / "publish" / "publish-summary.json",
             control_root / "artifacts" / "publish" / "publish.commit",
         ),
-        "verify": (
-            control_root / "artifacts" / "verify" / "verify-summary.json",
-        ),
+        "verify": (control_root / "artifacts" / "verify" / "verify-summary.json",),
         "finalize": (
             control_root / "artifacts" / "checkpoints" / "finalize.done.json",
         ),
@@ -216,7 +212,8 @@ def bootstrap_state(
     defaults = {
         "STATE_SCHEMA_VERSION": "1",
         "RUN_ID": run_id,
-        "TASK_NAME": state.get("TASK_NAME", "iso26262-mining-verbatim") or "iso26262-mining-verbatim",
+        "TASK_NAME": state.get("TASK_NAME", "iso26262-mining-verbatim")
+        or "iso26262-mining-verbatim",
         "REPO_ROOT": str(repo_root),
         "PLAN_PATH": str(plan_path),
         "RUN_ROOT": str(run_root),
@@ -231,29 +228,63 @@ def bootstrap_state(
         "RELEVANT_POLICY_PATH": str(relevant_policy_path),
         "EXTRACTION_POLICY_PATH": str(extraction_policy_path),
         "VERBATIM_PREWARM_ENABLED": state.get("VERBATIM_PREWARM_ENABLED", "1") or "1",
-        "VERBATIM_CACHE_ROOT": state.get("VERBATIM_CACHE_ROOT", str(run_root)) or str(run_root),
+        "VERBATIM_CACHE_ROOT": state.get("VERBATIM_CACHE_ROOT", str(run_root))
+        or str(run_root),
         "VERBATIM_SCHEMA_VERSION": state.get("VERBATIM_SCHEMA_VERSION", "1") or "1",
         "PAGE_TEXT_SCHEMA_PATH": state.get(
             "PAGE_TEXT_SCHEMA_PATH",
-            str(repo_root / "traceability" / "iso26262" / "schema" / "page-text.schema.json"),
+            str(
+                repo_root
+                / "traceability"
+                / "iso26262"
+                / "schema"
+                / "page-text.schema.json"
+            ),
         )
-        or str(repo_root / "traceability" / "iso26262" / "schema" / "page-text.schema.json"),
+        or str(
+            repo_root / "traceability" / "iso26262" / "schema" / "page-text.schema.json"
+        ),
         "UNIT_SLICE_SCHEMA_PATH": state.get(
             "UNIT_SLICE_SCHEMA_PATH",
-            str(repo_root / "traceability" / "iso26262" / "schema" / "unit-slice.schema.json"),
+            str(
+                repo_root
+                / "traceability"
+                / "iso26262"
+                / "schema"
+                / "unit-slice.schema.json"
+            ),
         )
-        or str(repo_root / "traceability" / "iso26262" / "schema" / "unit-slice.schema.json"),
+        or str(
+            repo_root
+            / "traceability"
+            / "iso26262"
+            / "schema"
+            / "unit-slice.schema.json"
+        ),
         "ANCHOR_TEXT_LINK_SCHEMA_PATH": state.get(
             "ANCHOR_TEXT_LINK_SCHEMA_PATH",
-            str(repo_root / "traceability" / "iso26262" / "schema" / "anchor-text-link.schema.json"),
+            str(
+                repo_root
+                / "traceability"
+                / "iso26262"
+                / "schema"
+                / "anchor-text-link.schema.json"
+            ),
         )
-        or str(repo_root / "traceability" / "iso26262" / "schema" / "anchor-text-link.schema.json"),
+        or str(
+            repo_root
+            / "traceability"
+            / "iso26262"
+            / "schema"
+            / "anchor-text-link.schema.json"
+        ),
         "QUERY_TOOL_PATH": state.get(
             "QUERY_TOOL_PATH",
             str(repo_root / "tools" / "traceability" / "query_iso_prewarm_cache.py"),
         )
         or str(repo_root / "tools" / "traceability" / "query_iso_prewarm_cache.py"),
-        "QUERY_INDEX_SCHEMA_VERSION": state.get("QUERY_INDEX_SCHEMA_VERSION", "1") or "1",
+        "QUERY_INDEX_SCHEMA_VERSION": state.get("QUERY_INDEX_SCHEMA_VERSION", "1")
+        or "1",
         "QUERY_INDEX_MANIFEST_PATH": state.get(
             "QUERY_INDEX_MANIFEST_PATH",
             str(run_root / "query" / "index-manifest.json"),
@@ -271,15 +302,33 @@ def bootstrap_state(
         or "SPHINX_MIGRATION_RUN_ROOT=$CONTROL_RUN_ROOT ./make.py verify",
         "SRC_INTEGRATION_MANIFEST_PATH": state.get(
             "SRC_INTEGRATION_MANIFEST_PATH",
-            str(control_run_root / "artifacts" / "source-integration" / "src-integration-manifest.json"),
+            str(
+                control_run_root
+                / "artifacts"
+                / "source-integration"
+                / "src-integration-manifest.json"
+            ),
         )
-        or str(control_run_root / "artifacts" / "source-integration" / "src-integration-manifest.json"),
+        or str(
+            control_run_root
+            / "artifacts"
+            / "source-integration"
+            / "src-integration-manifest.json"
+        ),
         "PROBESET_FREEZE_MANIFEST_PATH": state.get(
             "PROBESET_FREEZE_MANIFEST_PATH",
-            str(control_run_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"),
+            str(
+                control_run_root
+                / "artifacts"
+                / "probes"
+                / "probeset-freeze-manifest.json"
+            ),
         )
-        or str(control_run_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"),
-        "PROBESET_FREEZE_SIGNATURE": state.get("PROBESET_FREEZE_SIGNATURE", "UNSET") or "UNSET",
+        or str(
+            control_run_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"
+        ),
+        "PROBESET_FREEZE_SIGNATURE": state.get("PROBESET_FREEZE_SIGNATURE", "UNSET")
+        or "UNSET",
         "RETAIN_PROBE_INSERTIONS": state.get("RETAIN_PROBE_INSERTIONS", "0") or "0",
         "MODE": mode,
         "REQUIRED_PARTS": _required_parts_csv(required_parts_csv),
@@ -302,8 +351,15 @@ def bootstrap_state(
             defaults[key] = state.get(key, "")
 
     for key, value in defaults.items():
-        if key in IMMUTABLE_KEYS and key in state and state[key] and state[key] != value:
-            raise ContractDriftError(f"immutable contract drift for {key}: {state[key]} != {value}")
+        if (
+            key in IMMUTABLE_KEYS
+            and key in state
+            and state[key]
+            and state[key] != value
+        ):
+            raise ContractDriftError(
+                f"immutable contract drift for {key}: {state[key]} != {value}"
+            )
         state[key] = value
 
     checklist.setdefault("CHECKLIST_SCHEMA_VERSION", "1")
@@ -333,7 +389,9 @@ def reconcile_resume(
             break
 
         checkpoint = control_root / "artifacts" / "checkpoints" / f"{stage}.done.json"
-        required_ok = all(checklist.get(key, "0") == "1" for key in CHECKLIST_KEYS[stage])
+        required_ok = all(
+            checklist.get(key, "0") == "1" for key in CHECKLIST_KEYS[stage]
+        )
         required_artifacts = _required_stage_artifacts(state, stage)
         missing_artifacts = [path for path in required_artifacts if not path.exists()]
         if not checkpoint.exists() or not required_ok or missing_artifacts:
@@ -348,32 +406,51 @@ def reconcile_resume(
     if marker_sha:
         head = _git_head(Path(state["REPO_ROOT"]))
         if head != marker_sha:
-            raise StopConditionError(f"LAST_COMMITTED_SHA mismatch: state={marker_sha} head={head}")
+            raise StopConditionError(
+                f"LAST_COMMITTED_SHA mismatch: state={marker_sha} head={head}"
+            )
     if marker_ckpt and not Path(marker_ckpt).exists():
-        raise StopConditionError(f"missing committed checkpoint artifact: {marker_ckpt}")
+        raise StopConditionError(
+            f"missing committed checkpoint artifact: {marker_ckpt}"
+        )
 
     run_root = Path(state["RUN_ROOT"])
-    unit_link_rows = _jsonl_row_count(run_root / "normalize" / "verbatim" / "unit-text-links.jsonl")
-    anchor_link_rows = _jsonl_row_count(run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl")
+    unit_link_rows = _jsonl_row_count(
+        run_root / "normalize" / "verbatim" / "unit-text-links.jsonl"
+    )
+    anchor_link_rows = _jsonl_row_count(
+        run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl"
+    )
     if state.get("S_ANCHOR_DONE", "0") == "1" and unit_link_rows != anchor_link_rows:
         raise StopConditionError(
-            f"unit-link/anchor-link count mismatch: unit_text_links={unit_link_rows} anchor_text_links={anchor_link_rows}"
+            "unit-link/anchor-link count mismatch: "
+            f"unit_text_links={unit_link_rows} "
+            f"anchor_text_links={anchor_link_rows}"
         )
 
     last_phase = int(state.get("LAST_COMMITTED_PHASE", "0") or "0")
-    if last_phase >= 19 and state.get("S_ANCHOR_DONE", "0") == "1" and not Path(state["QUERY_INDEX_MANIFEST_PATH"]).exists():
+    if (
+        last_phase >= 19
+        and state.get("S_ANCHOR_DONE", "0") == "1"
+        and not Path(state["QUERY_INDEX_MANIFEST_PATH"]).exists()
+    ):
         raise StopConditionError(
-            f"query index manifest missing for completed query phase: {state['QUERY_INDEX_MANIFEST_PATH']}"
+            "query index manifest missing for completed query phase: "
+            f"{state['QUERY_INDEX_MANIFEST_PATH']}"
         )
 
     source_tx_root = control_root / "artifacts" / "source-integration"
     source_begin = source_tx_root / "src-integration.begin"
     source_commit = source_tx_root / "src-integration.commit"
     if source_begin.exists() and not source_commit.exists():
-        raise StopConditionError("source integration transaction is open (begin present without commit)")
+        raise StopConditionError(
+            "source integration transaction is open (begin present without commit)"
+        )
 
     if not _source_integration_manifest_checksum_pass(state):
-        raise StopConditionError("source integration manifest checksum mismatch at resume boundary")
+        raise StopConditionError(
+            "source integration manifest checksum mismatch at resume boundary"
+        )
 
     if not _probe_signature_matches(state):
         raise StopConditionError("probe freeze signature mismatch at resume boundary")
@@ -402,7 +479,9 @@ def complete_stage(
     paths: StatePaths,
 ) -> tuple[dict[str, str], dict[str, str]]:
     if not stage_checklist_complete(stage, checklist):
-        raise StopConditionError(f"cannot mark stage done with incomplete checklist: {stage}")
+        raise StopConditionError(
+            f"cannot mark stage done with incomplete checklist: {stage}"
+        )
 
     state[DONE_FLAGS[stage]] = "1"
     state["CURRENT_STAGE"] = _next_stage(stage)

@@ -31,7 +31,9 @@ def _pdf_inventory(pdf_root: Path) -> list[Path]:
     return sorted([path for path in pdf_root.rglob("*.pdf") if path.is_file()])
 
 
-def _resolve_part_file(part: str, pdf_root: Path, inventory: list[Path]) -> tuple[Path, str]:
+def _resolve_part_file(
+    part: str, pdf_root: Path, inventory: list[Path]
+) -> tuple[Path, str]:
     preferred = pdf_root / PREFERRED_FILENAMES[part]
     if preferred.exists():
         return preferred, "preferred_exact"
@@ -42,17 +44,21 @@ def _resolve_part_file(part: str, pdf_root: Path, inventory: list[Path]) -> tupl
         return candidates[0], "fallback_regex"
     if not candidates:
         raise IngestError(
-            f"missing required part {part} under {pdf_root}; expected {PREFERRED_FILENAMES[part]} or {FALLBACK_PATTERNS[part]}"
+            f"missing required part {part} under {pdf_root}; expected "
+            f"{PREFERRED_FILENAMES[part]} or {FALLBACK_PATTERNS[part]}"
         )
     raise IngestError(
-        f"ambiguous required part {part} under {pdf_root}; candidates={','.join(str(path) for path in candidates)}"
+        f"ambiguous required part {part} under {pdf_root}; candidates="
+        f"{','.join(str(path) for path in candidates)}"
     )
 
 
 def _load_required_parts(relevant_policy_path: Path) -> list[str]:
     policy = read_jsonc(relevant_policy_path)
     in_scope = policy.get("in_scope_parts", [])
-    if not isinstance(in_scope, list) or not all(isinstance(item, str) for item in in_scope):
+    if not isinstance(in_scope, list) or not all(
+        isinstance(item, str) for item in in_scope
+    ):
         raise IngestError(f"invalid in_scope_parts in {relevant_policy_path}")
     return [item.strip() for item in in_scope if item.strip()]
 
@@ -104,10 +110,14 @@ def run_ingest_stage(ctx: "StageContext") -> "StageResult":
             source_changed = True
 
         if declared_sha == "PENDING" and not ctx.lock_source_hashes:
-            raise IngestError(f"required part {part} hash is PENDING outside --lock-source-hashes flow")
+            raise IngestError(
+                f"required part {part} hash is PENDING outside "
+                "--lock-source-hashes flow"
+            )
         if declared_sha and declared_sha != "PENDING" and declared_sha != observed_sha:
             raise IngestError(
-                f"hash mismatch for {part}: declared={declared_sha} observed={observed_sha} path={path}"
+                f"hash mismatch for {part}: declared={declared_sha} "
+                f"observed={observed_sha} path={path}"
             )
 
         input_hashes[part] = observed_sha
@@ -132,16 +142,25 @@ def run_ingest_stage(ctx: "StageContext") -> "StageResult":
         "extraction_policy_path": str(ctx.extraction_policy_path),
         "resolved_parts": resolved,
         "required_parts_completeness": f"{len(resolved)}/{len(required_parts)}",
-        "pending_hashes": sum(1 for info in resolved.values() if info["hash_status"] != "LOCKED"),
+        "pending_hashes": sum(
+            1 for info in resolved.values() if info["hash_status"] != "LOCKED"
+        ),
         "timestamp_utc": now,
     }
 
-    control_summary = ctx.paths.control_run_root / "artifacts" / "ingest" / "ingest-summary.json"
+    control_summary = (
+        ctx.paths.control_run_root / "artifacts" / "ingest" / "ingest-summary.json"
+    )
     data_summary = ctx.paths.run_root / "ingest" / "ingest-summary.json"
     write_json(control_summary, summary)
     write_json(data_summary, summary)
 
-    source_evidence = ctx.paths.control_run_root / "artifacts" / "ingest" / "source-hash-evidence.json"
+    source_evidence = (
+        ctx.paths.control_run_root
+        / "artifacts"
+        / "ingest"
+        / "source-hash-evidence.json"
+    )
     write_json(
         source_evidence,
         {
@@ -154,4 +173,7 @@ def run_ingest_stage(ctx: "StageContext") -> "StageResult":
 
     from .stages import StageResult
 
-    return StageResult(outputs=[control_summary, data_summary, source_evidence], input_hashes=input_hashes)
+    return StageResult(
+        outputs=[control_summary, data_summary, source_evidence],
+        input_hashes=input_hashes,
+    )

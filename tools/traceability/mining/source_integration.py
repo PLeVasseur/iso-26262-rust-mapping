@@ -26,7 +26,9 @@ def _sha256_path(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _query_search(repo_root: Path, run_root: Path, *, term: str = "", phrase: str = "") -> dict[str, Any]:
+def _query_search(
+    repo_root: Path, run_root: Path, *, term: str = "", phrase: str = ""
+) -> dict[str, Any]:
     args = [
         "uv",
         "run",
@@ -47,7 +49,9 @@ def _query_search(repo_root: Path, run_root: Path, *, term: str = "", phrase: st
     else:
         raise RuntimeError("query requires term or phrase")
 
-    completed = subprocess.run(args, cwd=str(repo_root), check=True, capture_output=True, text=True)
+    completed = subprocess.run(
+        args, cwd=str(repo_root), check=True, capture_output=True, text=True
+    )
     payload = json.loads(completed.stdout)
     return payload
 
@@ -82,7 +86,9 @@ def _markdown_insert(path: Path, selector: str, snippet: str) -> bool:
     raise RuntimeError(f"selector not found in markdown file: {path} :: {selector}")
 
 
-def _table_insert(path: Path, row_id: str, column_key: str, bundle: dict[str, Any]) -> bool:
+def _table_insert(
+    path: Path, row_id: str, column_key: str, bundle: dict[str, Any]
+) -> bool:
     payload = yaml.safe_load(path.read_text(encoding="utf-8"))
     rows = payload.get("rows", [])
     for row in rows:
@@ -124,14 +130,18 @@ def run_source_integration(
 
     paragraph_hit = _best_hit(repo_root, run_root, "This document maps ISO 26262")
     list_hit = _best_hit(repo_root, run_root, "ISO 26262-6:2018 clauses and tables")
-    table_hit = _best_hit(repo_root, run_root, "General topics and modelling coding guideline topics")
+    table_hit = _best_hit(
+        repo_root, run_root, "General topics and modelling coding guideline topics"
+    )
 
     paragraph_bundle = paragraph_hit["ts_authoring_bundle"]
     list_bundle = list_hit["ts_authoring_bundle"]
     table_bundle = table_hit["ts_authoring_bundle"]
 
     touched_paths = [paragraph_path, table_path]
-    pre_checksums = {str(path.relative_to(repo_root)): _sha256_path(path) for path in touched_paths}
+    pre_checksums = {
+        str(path.relative_to(repo_root)): _sha256_path(path) for path in touched_paths
+    }
 
     paragraph_changed = _markdown_insert(
         paragraph_path,
@@ -150,7 +160,9 @@ def run_source_integration(
         bundle=table_bundle,
     )
 
-    post_checksums = {str(path.relative_to(repo_root)): _sha256_path(path) for path in touched_paths}
+    post_checksums = {
+        str(path.relative_to(repo_root)): _sha256_path(path) for path in touched_paths
+    }
 
     manifest_rows: list[dict[str, str]] = []
     for rel in sorted(pre_checksums.keys()):
@@ -171,7 +183,9 @@ def run_source_integration(
         "list_insertion_changed": list_changed,
         "table_insertion_changed": table_changed,
     }
-    manifest_path.write_text(json.dumps(manifest_payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    manifest_path.write_text(
+        json.dumps(manifest_payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
     commit_marker = tx_root / "src-integration.commit"
     commit_marker.write_text(f"timestamp_utc={_utc_now()}\n", encoding="utf-8")
@@ -187,7 +201,9 @@ def run_source_integration(
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run deterministic source integration transaction")
+    parser = argparse.ArgumentParser(
+        description="Run deterministic source integration transaction"
+    )
     parser.add_argument("--repo-root", required=True)
     parser.add_argument("--control-root", required=True)
     parser.add_argument("--run-root", required=True)

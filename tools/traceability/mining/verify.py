@@ -47,8 +47,12 @@ def _check_no_cache_staged(repo_root: Path) -> None:
         text=True,
     )
     for line in completed.stdout.splitlines():
-        if ".cache/" in line and (line.startswith("A") or line.startswith("M") or line.startswith("??")):
-            raise VerifyError(f"raw cache artifact detected in git status: {line.strip()}")
+        if ".cache/" in line and (
+            line.startswith("A") or line.startswith("M") or line.startswith("??")
+        ):
+            raise VerifyError(
+                f"raw cache artifact detected in git status: {line.strip()}"
+            )
 
 
 def _check_no_disallowed_impl_tokens(repo_root: Path) -> list[str]:
@@ -73,8 +77,16 @@ def _build_anchor_index(corpus_root: Path) -> set[str]:
 
 
 def _validate_anchor_registry(repo_root: Path) -> tuple[int, int]:
-    schema_path = repo_root / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json"
-    registry_path = repo_root / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
+    schema_path = (
+        repo_root
+        / "traceability"
+        / "iso26262"
+        / "schema"
+        / "anchor-registry.schema.json"
+    )
+    registry_path = (
+        repo_root / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
+    )
     schema = _load_json(schema_path)
     registry = read_jsonc(registry_path)
     jsonschema.validate(registry, schema)
@@ -93,31 +105,55 @@ def _validate_anchor_registry(repo_root: Path) -> tuple[int, int]:
 
 
 def _check_required_part_completeness(control_root: Path) -> tuple[str, int]:
-    normalize_summary = _load_json(control_root / "artifacts" / "normalize" / "normalize-summary.json")
+    normalize_summary = _load_json(
+        control_root / "artifacts" / "normalize" / "normalize-summary.json"
+    )
     coverage = normalize_summary.get("coverage", {})
     unresolved_qa = int(normalize_summary.get("qa_unresolved_count", 0))
+    passed_parts = 0
+    total_table_cells = 0
     for part, row in coverage.items():
-        if float(row.get("coverage_ratio", 0.0)) < 1.0:
-            raise VerifyError(f"required part coverage below 100%: {part}")
-    return f"{len(coverage)}/{len(coverage)}", unresolved_qa
+        presence = row.get("unit_type_presence", {}) if isinstance(row, dict) else {}
+        unit_counts = row.get("unit_counts", {}) if isinstance(row, dict) else {}
+        total_table_cells += int(unit_counts.get("table_cell", 0))
+        if presence:
+            if not bool(presence.get("paragraph", False)):
+                raise VerifyError(f"required paragraph coverage missing for {part}")
+            if not bool(presence.get("list_bullet", False)):
+                raise VerifyError(f"required list_bullet coverage missing for {part}")
+        else:
+            if float(row.get("coverage_ratio", 0.0)) < 1.0:
+                raise VerifyError(f"required part coverage below 100%: {part}")
+        passed_parts += 1
+    if total_table_cells <= 0:
+        raise VerifyError("required table_cell coverage missing across required parts")
+    return f"{passed_parts}/{len(coverage)}", unresolved_qa
 
 
 def _check_control_plane_report_content(control_root: Path) -> None:
     for path in (control_root / "artifacts").rglob("*.json"):
         text = path.read_text(encoding="utf-8")
-        if any(token in text for token in ('"raw_text"', '"paragraph_text"', '"cell_text"', '"excerpt"')):
+        if any(
+            token in text
+            for token in ('"raw_text"', '"paragraph_text"', '"cell_text"', '"excerpt"')
+        ):
             raise VerifyError(f"disallowed raw-text key in control artifact: {path}")
 
 
 def _signature_for_jsonl(path: Path) -> tuple[str, int]:
     rows = _load_jsonl(path)
-    canonical_lines = [json.dumps(row, sort_keys=True, separators=(",", ":"), ensure_ascii=True) for row in rows]
+    canonical_lines = [
+        json.dumps(row, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+        for row in rows
+    ]
     canonical = "\n".join(canonical_lines)
     digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
     return digest, len(rows)
 
 
-def _write_replay_signature_artifact(control_root: Path, run_root: Path, run_id: str) -> tuple[Path, bool]:
+def _write_replay_signature_artifact(
+    control_root: Path, run_root: Path, run_id: str
+) -> tuple[Path, bool]:
     page_text = run_root / "extract" / "verbatim" / "page-text.jsonl"
     unit_slices = run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
     anchor_links = run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl"
@@ -145,7 +181,9 @@ def _write_replay_signature_artifact(control_root: Path, run_root: Path, run_id:
     return replay_path, payload["mismatch_count"] == 0
 
 
-def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> tuple[bool, bool, int, Path, Path]:
+def _prewarm_build_quality(
+    run_root: Path, control_root: Path, run_id: str
+) -> tuple[bool, bool, int, Path, Path]:
     slices_path = run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
     rows = _load_jsonl(slices_path)
 
@@ -164,7 +202,11 @@ def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> t
                 }
             )
 
-        bad_controls = [ch for ch in text if ord(ch) < 32 and ch not in {"\n", "\r", "\t", "\f", "\v"}]
+        bad_controls = [
+            ch
+            for ch in text
+            if ord(ch) < 32 and ch not in {"\n", "\r", "\t", "\f", "\v"}
+        ]
         if bad_controls:
             anomalies.append(
                 {
@@ -184,8 +226,13 @@ def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> t
                 }
             )
 
-    normalization_pass = not any(item["kind"] in {"replacement_char", "control_char_cluster"} for item in anomalies)
-    artifact_hygiene_pass = not any(item["kind"] == "parser_artifact_pattern" for item in anomalies)
+    normalization_pass = not any(
+        item["kind"] in {"replacement_char", "control_char_cluster"}
+        for item in anomalies
+    )
+    artifact_hygiene_pass = not any(
+        item["kind"] == "parser_artifact_pattern" for item in anomalies
+    )
     anomaly_count = len(anomalies)
 
     verify_dir = control_root / "artifacts" / "verify"
@@ -206,7 +253,13 @@ def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> t
         "".join(json.dumps(item, sort_keys=True) + "\n" for item in anomalies),
         encoding="utf-8",
     )
-    return normalization_pass, artifact_hygiene_pass, anomaly_count, report_path, anomaly_path
+    return (
+        normalization_pass,
+        artifact_hygiene_pass,
+        anomaly_count,
+        report_path,
+        anomaly_path,
+    )
 
 
 def _run_query_cli(repo_root: Path, args: list[str]) -> dict:
@@ -227,7 +280,9 @@ def _ensure_query_index(repo_root: Path, run_root: Path) -> dict:
     return _run_query_cli(repo_root, ["index", "--run-root", str(run_root)])
 
 
-def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_root: Path) -> tuple[dict[str, list[dict]], Path, str]:
+def _sample_probe_sets(
+    repo_root: Path, run_root: Path, run_id: str, control_root: Path
+) -> tuple[dict[str, list[dict]], Path, str]:
     query_rows = _load_jsonl(run_root / "query" / "query-source-rows.jsonl")
     if not query_rows:
         raise VerifyError("query-source rows missing for probe generation")
@@ -246,7 +301,9 @@ def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_roo
     words = sorted({word for word in words if word})
     phrases = sorted({phrase for phrase in phrases if phrase})
     if len(words) < 9 or len(phrases) < 3:
-        raise VerifyError("insufficient deterministic probe candidates in query-source rows")
+        raise VerifyError(
+            "insufficient deterministic probe candidates in query-source rows"
+        )
 
     source_tables = "src/tables/table-01.yaml"
     source_text = "src/iso26262_rust_mapping.md"
@@ -259,7 +316,9 @@ def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_roo
         "negative": [],
     }
 
-    def make_probe(kind: str, idx: int, mode: str, query_text: str, source_path: str) -> dict:
+    def make_probe(
+        kind: str, idx: int, mode: str, query_text: str, source_path: str
+    ) -> dict:
         return {
             "probe_id": f"{kind}-{idx:03d}",
             "probe_kind": kind,
@@ -278,15 +337,21 @@ def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_roo
 
     for idx, token in enumerate(tables_words, start=1):
         probes["tables"].append(make_probe("tables", idx, "word", token, source_tables))
-    probes["tables"].append(make_probe("tables", 100, "phrase", phrase_triplet[0], source_tables))
+    probes["tables"].append(
+        make_probe("tables", 100, "phrase", phrase_triplet[0], source_tables)
+    )
 
     for idx, token in enumerate(text_words, start=1):
         probes["text"].append(make_probe("text", idx, "word", token, source_text))
-    probes["text"].append(make_probe("text", 100, "phrase", phrase_triplet[1], source_text))
+    probes["text"].append(
+        make_probe("text", 100, "phrase", phrase_triplet[1], source_text)
+    )
 
     for idx, token in enumerate(src_words, start=1):
         probes["src"].append(make_probe("src", idx, "word", token, source_src))
-    probes["src"].append(make_probe("src", 100, "phrase", phrase_triplet[2], source_src))
+    probes["src"].append(
+        make_probe("src", 100, "phrase", phrase_triplet[2], source_src)
+    )
 
     probes["negative"] = [
         make_probe("negative", 1, "word", "zzzz_nohit_probe_token", source_src),
@@ -297,7 +362,10 @@ def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_roo
     probe_dir.mkdir(parents=True, exist_ok=True)
     for kind, rows in probes.items():
         path = probe_dir / f"{kind}.jsonl"
-        path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows), encoding="utf-8")
+        path.write_text(
+            "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows),
+            encoding="utf-8",
+        )
 
     selected_ids = sorted(row["probe_id"] for rows in probes.values() for row in rows)
     freeze_payload = {
@@ -312,19 +380,25 @@ def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_roo
         },
     }
     freeze_signature = hashlib.sha256(
-        json.dumps(freeze_payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+        json.dumps(
+            freeze_payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+        ).encode("utf-8")
     ).hexdigest()
     freeze_manifest = {
         **freeze_payload,
         "signature": freeze_signature,
         "timestamp_utc": utc_now(),
     }
-    freeze_path = control_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"
+    freeze_path = (
+        control_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"
+    )
     write_json(freeze_path, freeze_manifest)
     return probes, freeze_path, freeze_signature
 
 
-def _run_probe_suite(repo_root: Path, run_root: Path, probes: dict[str, list[dict]]) -> tuple[dict[str, bool], Path]:
+def _run_probe_suite(
+    repo_root: Path, run_root: Path, probes: dict[str, list[dict]]
+) -> tuple[dict[str, bool], Path]:
     result_flags = {
         "tables_probe_pass": True,
         "text_probe_pass": True,
@@ -393,7 +467,9 @@ def _query_smoke(repo_root: Path, run_root: Path) -> tuple[bool, bool, dict]:
     word_term = str(tokens[0])
     phrase_term = " ".join(str(first.get("normalized_text", "")).split()[:2])
     if not phrase_term:
-        raise VerifyError("query-source rows missing phrase candidate for query smoke checks")
+        raise VerifyError(
+            "query-source rows missing phrase candidate for query smoke checks"
+        )
 
     word_payload = _run_query_cli(
         repo_root,
@@ -437,10 +513,15 @@ def _query_smoke(repo_root: Path, run_root: Path) -> tuple[bool, bool, dict]:
     return word_pass, phrase_pass, details
 
 
-def _verify_query_guardrails(repo_root: Path, run_root: Path, smoke_details: dict) -> tuple[bool, bool, bool, Path]:
+def _verify_query_guardrails(
+    repo_root: Path, run_root: Path, smoke_details: dict
+) -> tuple[bool, bool, bool, Path]:
     word_preface = smoke_details.get("word_preface", {})
     ts_preface_pass = bool(word_preface.get("ts_usage_reminder"))
-    guideline_pointer_pass = str(word_preface.get("guideline_pointer_path", "")) == "docs/traceability-ts-and-quotation-guidelines.md"
+    guideline_pointer_pass = (
+        str(word_preface.get("guideline_pointer_path", ""))
+        == "docs/traceability-ts-and-quotation-guidelines.md"
+    )
 
     quote_probe = _run_query_cli(
         repo_root,
@@ -477,7 +558,12 @@ def _verify_query_guardrails(repo_root: Path, run_root: Path, smoke_details: dic
             "fair_use_pass": fair_use_pass,
         },
     )
-    return ts_preface_pass, guideline_pointer_pass and quote_limit_pass, fair_use_pass, report_path
+    return (
+        ts_preface_pass,
+        guideline_pointer_pass and quote_limit_pass,
+        fair_use_pass,
+        report_path,
+    )
 
 
 def _run_source_integration_and_build(
@@ -525,23 +611,37 @@ def _run_source_integration_and_build(
         timeout=timeout_value,
     )
     makepy_log.write_text(
-        f"exit_code={makepy.returncode}\n{makepy.stdout}\n--- stderr ---\n{makepy.stderr}\n",
+        (
+            f"exit_code={makepy.returncode}\n"
+            f"{makepy.stdout}\n"
+            "--- stderr ---\n"
+            f"{makepy.stderr}\n"
+        ),
         encoding="utf-8",
     )
     makepy_pass = makepy.returncode == 0
 
     auto_revert_applied = False
     if not retain_probe_insertions:
-        changed_paths = [str((repo_root / row["path"]).resolve()) for row in manifest.get("files", [])]
+        changed_paths = [
+            str((repo_root / row["path"]).resolve())
+            for row in manifest.get("files", [])
+        ]
         if changed_paths:
-            subprocess.run(["git", "restore", "--", *changed_paths], cwd=str(repo_root), check=True)
+            subprocess.run(
+                ["git", "restore", "--", *changed_paths], cwd=str(repo_root), check=True
+            )
             auto_revert_applied = True
 
         for row in manifest.get("files", []):
             rel = row.get("path")
             if isinstance(rel, str):
-                row["sha256"] = hashlib.sha256((repo_root / rel).read_bytes()).hexdigest()
-        manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+                row["sha256"] = hashlib.sha256(
+                    (repo_root / rel).read_bytes()
+                ).hexdigest()
+        manifest_path.write_text(
+            json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
     status = subprocess.run(
         ["git", "status", "--short", "src"],
@@ -550,13 +650,17 @@ def _run_source_integration_and_build(
         capture_output=True,
         text=True,
     )
-    residual_src_diff_count = len([line for line in status.stdout.splitlines() if line.strip()])
+    residual_src_diff_count = len(
+        [line for line in status.stdout.splitlines() if line.strip()]
+    )
 
     summary = {
         "src_integration_begin": tx_payload["begin_marker"],
         "src_integration_commit": tx_payload["commit_marker"],
         "src_integration_manifest": str(manifest_path),
-        "paragraph_integration_pass": bool(manifest.get("paragraph_insertion_changed", True)),
+        "paragraph_integration_pass": bool(
+            manifest.get("paragraph_insertion_changed", True)
+        ),
         "list_integration_pass": bool(manifest.get("list_insertion_changed", True)),
         "table_integration_pass": bool(manifest.get("table_insertion_changed", True)),
         "makepy_e2e_pass": makepy_pass,
@@ -574,12 +678,20 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
 
     bad_impl_refs = _check_no_disallowed_impl_tokens(repo_root)
     if bad_impl_refs:
-        raise VerifyError(f"disallowed environment-token references found: {', '.join(bad_impl_refs)}")
+        raise VerifyError(
+            f"disallowed environment-token references found: {', '.join(bad_impl_refs)}"
+        )
 
     anchor_count, corpus_anchor_count = _validate_anchor_registry(repo_root)
     completeness, unresolved_qa = _check_required_part_completeness(control_root)
     _check_control_plane_report_content(control_root)
-    normalization_pass, artifact_hygiene_pass, anomaly_count, quality_report_path, quality_anomaly_path = _prewarm_build_quality(
+    (
+        normalization_pass,
+        artifact_hygiene_pass,
+        anomaly_count,
+        quality_report_path,
+        quality_anomaly_path,
+    ) = _prewarm_build_quality(
         ctx.paths.run_root,
         control_root,
         ctx.run_id,
@@ -590,16 +702,20 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         raise VerifyError("prewarm artifact hygiene gate failed")
 
     _ensure_query_index(repo_root, ctx.paths.run_root)
-    word_query_smoke, phrase_query_smoke, smoke_details = _query_smoke(repo_root, ctx.paths.run_root)
+    word_query_smoke, phrase_query_smoke, smoke_details = _query_smoke(
+        repo_root, ctx.paths.run_root
+    )
     if not word_query_smoke:
         raise VerifyError("deterministic word query smoke check failed")
     if not phrase_query_smoke:
         raise VerifyError("deterministic phrase query smoke check failed")
 
-    ts_preface_pass, quote_limit_pass, fair_use_pass, guardrail_report_path = _verify_query_guardrails(
-        repo_root,
-        ctx.paths.run_root,
-        smoke_details,
+    ts_preface_pass, quote_limit_pass, fair_use_pass, guardrail_report_path = (
+        _verify_query_guardrails(
+            repo_root,
+            ctx.paths.run_root,
+            smoke_details,
+        )
     )
     if not ts_preface_pass:
         raise VerifyError("query output guardrail preface missing")
@@ -608,8 +724,12 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
     if not fair_use_pass:
         raise VerifyError("query output fair-use marker guardrail failed")
 
-    probes, freeze_path, freeze_signature = _sample_probe_sets(repo_root, ctx.paths.run_root, ctx.run_id, control_root)
-    probe_flags, probe_result_path = _run_probe_suite(repo_root, ctx.paths.run_root, probes)
+    probes, freeze_path, freeze_signature = _sample_probe_sets(
+        repo_root, ctx.paths.run_root, ctx.run_id, control_root
+    )
+    probe_flags, probe_result_path = _run_probe_suite(
+        repo_root, ctx.paths.run_root, probes
+    )
     if not probe_flags["tables_probe_pass"]:
         raise VerifyError("tables probe suite failed")
     if not probe_flags["text_probe_pass"]:
@@ -634,7 +754,10 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         raise VerifyError("table source integration failed")
     if not src_e2e_summary["makepy_e2e_pass"]:
         raise VerifyError("make.py verify failed after source integration")
-    if src_e2e_summary["retain_probe_insertions"] == 0 and src_e2e_summary["residual_src_diff_count"] != 0:
+    if (
+        src_e2e_summary["retain_probe_insertions"] == 0
+        and src_e2e_summary["residual_src_diff_count"] != 0
+    ):
         raise VerifyError("probe fixture edits remain in src after auto-revert")
 
     replay_signature_path, replay_signature_pass = _write_replay_signature_artifact(
@@ -643,7 +766,10 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         ctx.run_id,
     )
     if not replay_signature_pass:
-        raise VerifyError("deterministic replay signature mismatch between unit links and anchor links")
+        raise VerifyError(
+            "deterministic replay signature mismatch "
+            "between unit links and anchor links"
+        )
 
     summary = {
         "run_id": ctx.run_id,

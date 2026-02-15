@@ -34,7 +34,9 @@ class StageResult:
 
 
 def _write_scaffold_marker(stage: str, ctx: StageContext) -> StageResult:
-    marker = ctx.paths.control_run_root / "artifacts" / "scaffold" / f"{stage}.marker.json"
+    marker = (
+        ctx.paths.control_run_root / "artifacts" / "scaffold" / f"{stage}.marker.json"
+    )
     write_json(
         marker,
         {

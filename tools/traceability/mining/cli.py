@@ -50,7 +50,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--run-id", default="", help="Run identifier (UTC timestamp)")
     parser.add_argument("--run-root", default="", help="Data-plane run root path")
     parser.add_argument("--pdf-root", default="", help="PDF source root path")
-    parser.add_argument("--plan-path", default="plans/2026-02-15-hierarchical-pdf-mining-corpus-plan.md")
+    parser.add_argument(
+        "--plan-path", default="plans/2026-02-15-hierarchical-pdf-mining-corpus-plan.md"
+    )
     parser.add_argument("--base-branch", default="main")
     parser.add_argument("--target-branch", default="")
     parser.add_argument("--base-pin-sha", default="")
@@ -59,11 +61,20 @@ def build_parser() -> argparse.ArgumentParser:
         required=True,
         help="Control-plane run root path (required)",
     )
-    parser.add_argument("--resume-run", default="", help="Resume token or explicit run root")
-    parser.add_argument("--no-resume", action="store_true", help="Reject existing resumable state")
+    parser.add_argument(
+        "--resume-run", default="", help="Resume token or explicit run root"
+    )
+    parser.add_argument(
+        "--no-resume", action="store_true", help="Reject existing resumable state"
+    )
     parser.add_argument("--lock-timeout-seconds", type=int, default=120)
-    parser.add_argument("--source-pdfset", default="traceability/iso26262/index/source-pdfset.jsonc")
-    parser.add_argument("--relevant-policy", default="traceability/iso26262/index/relevant-pdf-policy.jsonc")
+    parser.add_argument(
+        "--source-pdfset", default="traceability/iso26262/index/source-pdfset.jsonc"
+    )
+    parser.add_argument(
+        "--relevant-policy",
+        default="traceability/iso26262/index/relevant-pdf-policy.jsonc",
+    )
     parser.add_argument(
         "--extraction-policy",
         default="tools/traceability/mining/config/extraction_policy_v1.jsonc",
@@ -71,9 +82,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--lock-source-hashes", action="store_true")
     parser.add_argument("--edition", default="")
     parser.add_argument("--parts", default="")
-    parser.add_argument("--mode", choices=("fixture_ci", "licensed_local"), default="licensed_local")
+    parser.add_argument(
+        "--mode", choices=("fixture_ci", "licensed_local"), default="licensed_local"
+    )
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--fail-on-qa", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument(
+        "--fail-on-qa", action=argparse.BooleanOptionalAction, default=True
+    )
     parser.add_argument("--allow-partial-scope", action="store_true")
 
     sub = parser.add_subparsers(dest="command", required=True)
@@ -91,8 +106,16 @@ def _resolve_paths(args: argparse.Namespace) -> tuple[str, RunPaths]:
     state_file = Path(args.control_run_root).resolve() / "state.env"
     existing_state = parse_env(state_file)
     run_id = args.run_id or existing_state.get("RUN_ID", "") or "adhoc"
-    run_root = Path(args.run_root).resolve() if args.run_root else _default_run_root(repo_root, run_id)
-    pdf_root = Path(args.pdf_root).resolve() if args.pdf_root else (repo_root / ".cache" / "iso26262")
+    run_root = (
+        Path(args.run_root).resolve()
+        if args.run_root
+        else _default_run_root(repo_root, run_id)
+    )
+    pdf_root = (
+        Path(args.pdf_root).resolve()
+        if args.pdf_root
+        else (repo_root / ".cache" / "iso26262")
+    )
     control_root = Path(args.control_run_root).resolve()
     paths = RunPaths(
         repo_root=repo_root,
@@ -120,7 +143,9 @@ def _git_value(repo_root: Path, args: list[str], fallback: str = "") -> str:
 
 def _ensure_roots(paths: RunPaths) -> None:
     paths.control_run_root.mkdir(parents=True, exist_ok=True)
-    (paths.control_run_root / "artifacts" / "checkpoints").mkdir(parents=True, exist_ok=True)
+    (paths.control_run_root / "artifacts" / "checkpoints").mkdir(
+        parents=True, exist_ok=True
+    )
     (paths.control_run_root / "lock").mkdir(parents=True, exist_ok=True)
     paths.run_root.mkdir(parents=True, exist_ok=True)
 
@@ -160,8 +185,12 @@ def main(argv: list[str] | None = None) -> int:
     state_paths = _state_paths(paths)
 
     repo_root = paths.repo_root
-    target_branch = args.target_branch or _git_value(repo_root, ["rev-parse", "--abbrev-ref", "HEAD"], "")
-    base_pin_sha = args.base_pin_sha or _git_value(repo_root, ["rev-parse", args.base_branch], "")
+    target_branch = args.target_branch or _git_value(
+        repo_root, ["rev-parse", "--abbrev-ref", "HEAD"], ""
+    )
+    base_pin_sha = args.base_pin_sha or _git_value(
+        repo_root, ["rev-parse", args.base_branch], ""
+    )
 
     try:
         state, checklist = bootstrap_state(
@@ -195,7 +224,9 @@ def main(argv: list[str] | None = None) -> int:
         return ExitCode.LOCK_ACTIVE
 
     try:
-        state, checklist, _ = reconcile_resume(state=state, checklist=checklist, paths=state_paths)
+        state, checklist, _ = reconcile_resume(
+            state=state, checklist=checklist, paths=state_paths
+        )
         if args.command in HANDLERS:
             stage = args.command
 
@@ -240,7 +271,9 @@ def main(argv: list[str] | None = None) -> int:
             state["LAST_COMMITTED_CHECKPOINT"] = str(phase_checkpoint)
             state["CURRENT_PHASE"] = str(phase)
             write_env(state_paths.state_file, state)
-            state, checklist = complete_stage(stage=stage, state=state, checklist=checklist, paths=state_paths)
+            state, checklist = complete_stage(
+                stage=stage, state=state, checklist=checklist, paths=state_paths
+            )
             print(f"stage={stage}")
             print(f"stage_checkpoint={stage_checkpoint}")
             print(f"phase_checkpoint={phase_checkpoint}")
@@ -258,3 +291,7 @@ def main(argv: list[str] | None = None) -> int:
 
     parser.error(f"unsupported command: {args.command}")
     return ExitCode.USAGE
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

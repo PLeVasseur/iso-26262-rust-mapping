@@ -65,10 +65,16 @@ def acquire_lock(lock_file: Path, run_log: Path, run_id: str) -> LockPayload:
         except json.JSONDecodeError:
             prior_payload = {}
 
-        prior_pid = int(prior_payload.get("pid", 0)) if str(prior_payload.get("pid", "")).isdigit() else 0
+        prior_pid = (
+            int(prior_payload.get("pid", 0))
+            if str(prior_payload.get("pid", "")).isdigit()
+            else 0
+        )
         if _pid_active(prior_pid):
             raise LockContentionError(
-                f"active lock at {lock_file}: pid={prior_pid} host={prior_payload.get('host','?')} user={prior_payload.get('user','?')}"
+                f"active lock at {lock_file}: pid={prior_pid} "
+                f"host={prior_payload.get('host', '?')} "
+                f"user={prior_payload.get('user', '?')}"
             )
 
         _append_log(run_log, f"stale_lock_replaced payload={prior_raw}")

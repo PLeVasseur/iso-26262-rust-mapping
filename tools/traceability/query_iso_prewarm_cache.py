@@ -10,7 +10,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 GUIDELINES_PATH = "docs/traceability-ts-and-quotation-guidelines.md"
 ANCHOR_REGISTRY_PATH = "traceability/iso26262/index/anchor-registry.jsonc"
 CORPUS_MANIFEST_PATH = "traceability/iso26262/index/corpus-manifest.jsonc"
@@ -31,12 +30,17 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows), encoding="utf-8")
+    path.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows),
+        encoding="utf-8",
+    )
 
 
 def _normalize(text: str) -> str:
@@ -162,7 +166,9 @@ def _build_index(args: argparse.Namespace) -> int:
     token_rows: list[dict[str, Any]] = []
     for token in sorted(token_postings.keys()):
         postings = sorted(token_postings[token], key=_posting_key)
-        serialized = json.dumps(postings, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+        serialized = json.dumps(
+            postings, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+        )
         token_rows.append(
             {
                 "token": token,
@@ -175,7 +181,9 @@ def _build_index(args: argparse.Namespace) -> int:
     phrase_rows: list[dict[str, Any]] = []
     for phrase in sorted(phrase_postings.keys()):
         postings = sorted(phrase_postings[phrase], key=_posting_key)
-        serialized = json.dumps(postings, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+        serialized = json.dumps(
+            postings, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+        )
         phrase_rows.append(
             {
                 "phrase": phrase,
@@ -197,7 +205,11 @@ def _build_index(args: argparse.Namespace) -> int:
         "token_count": len(token_rows),
         "phrase_count": len(phrase_rows),
     }
-    signature = _sha256_text(json.dumps(signature_payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True))
+    signature = _sha256_text(
+        json.dumps(
+            signature_payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+        )
+    )
     manifest = {
         **signature_payload,
         "run_root": str(run_root),
@@ -206,7 +218,16 @@ def _build_index(args: argparse.Namespace) -> int:
     manifest_path = query_root / "index-manifest.json"
     _write_json(manifest_path, manifest)
 
-    print(json.dumps({"manifest": str(manifest_path), "token_count": len(token_rows), "phrase_count": len(phrase_rows)}, sort_keys=True))
+    print(
+        json.dumps(
+            {
+                "manifest": str(manifest_path),
+                "token_count": len(token_rows),
+                "phrase_count": len(phrase_rows),
+            },
+            sort_keys=True,
+        )
+    )
     return 0
 
 
@@ -246,10 +267,20 @@ def _filter_hit(hit: dict[str, Any], args: argparse.Namespace) -> bool:
     return True
 
 
-def _row_hint(repo_root: Path, part: str, unit_type: str, anchor_id: str) -> tuple[int, str]:
+def _row_hint(
+    repo_root: Path, part: str, unit_type: str, anchor_id: str
+) -> tuple[int, str]:
     part_lower = part.lower()
     shard_name = f"{unit_type}-0001.jsonl"
-    shard_path = repo_root / "traceability" / "iso26262" / "corpus" / "2018-ed2" / part_lower / shard_name
+    shard_path = (
+        repo_root
+        / "traceability"
+        / "iso26262"
+        / "corpus"
+        / "2018-ed2"
+        / part_lower
+        / shard_name
+    )
     if not shard_path.exists():
         return 1, f"traceability/iso26262/corpus/2018-ed2/{part_lower}/{shard_name}"
 
@@ -260,7 +291,10 @@ def _row_hint(repo_root: Path, part: str, unit_type: str, anchor_id: str) -> tup
         line_number += 1
         row = json.loads(line)
         if str(row.get("anchor_id", "")) == anchor_id:
-            return line_number, f"traceability/iso26262/corpus/2018-ed2/{part_lower}/{shard_name}"
+            return (
+                line_number,
+                f"traceability/iso26262/corpus/2018-ed2/{part_lower}/{shard_name}",
+            )
     return 1, f"traceability/iso26262/corpus/2018-ed2/{part_lower}/{shard_name}"
 
 
@@ -276,7 +310,9 @@ def _ts_bundle(anchor_id: str, unit_id: str) -> dict[str, Any]:
             "rel": "direct",
             "a": anchor_id,
         },
-        "myst_snippet": f"{{dp}}`{dp_value}` {{ts}}`mapped` {{rel}}`direct` {{a}}`{anchor_id}`",
+        "myst_snippet": (
+            f"{{dp}}`{dp_value}` {{ts}}`mapped` {{rel}}`direct` " f"{{a}}`{anchor_id}`"
+        ),
     }
 
 
@@ -310,7 +346,11 @@ def _search(args: argparse.Namespace) -> int:
     else:
         candidate_hits = list(phrase_map.get(phrase, []))
         if not candidate_hits:
-            candidate_hits = [row for row in _build_rows(run_root) if phrase in str(row.get("normalized_text", ""))]
+            candidate_hits = [
+                row
+                for row in _build_rows(run_root)
+                if phrase in str(row.get("normalized_text", ""))
+            ]
 
     filtered = [hit for hit in candidate_hits if _filter_hit(hit, args)]
     filtered.sort(key=_posting_key)
@@ -318,7 +358,11 @@ def _search(args: argparse.Namespace) -> int:
     seen: set[tuple[str, str, str]] = set()
     deduped: list[dict[str, Any]] = []
     for hit in filtered:
-        key = (str(hit.get("anchor_id", "")), str(hit.get("unit_id", "")), str(hit.get("slice_id", "")))
+        key = (
+            str(hit.get("anchor_id", "")),
+            str(hit.get("unit_id", "")),
+            str(hit.get("slice_id", "")),
+        )
         if key in seen:
             continue
         seen.add(key)
@@ -350,12 +394,17 @@ def _search(args: argparse.Namespace) -> int:
             "lookup_pointers": {
                 "anchor_registry_path": ANCHOR_REGISTRY_PATH,
                 "corpus_manifest_path": CORPUS_MANIFEST_PATH,
-                "part_manifest_path": f"traceability/iso26262/corpus/2018-ed2/{part.lower()}/part-manifest.jsonc",
+                "part_manifest_path": (
+                    "traceability/iso26262/corpus/2018-ed2/"
+                    f"{part.lower()}/part-manifest.jsonc"
+                ),
                 "part_shard_path": shard_rel,
                 "jsonl_row_hint": row_hint,
                 "json_pointer_hint": f"/anchors/{max(0, row_hint - 1)}",
             },
-            "ts_authoring_bundle": _ts_bundle(anchor_id=anchor_id, unit_id=str(hit.get("unit_id", ""))),
+            "ts_authoring_bundle": _ts_bundle(
+                anchor_id=anchor_id, unit_id=str(hit.get("unit_id", ""))
+            ),
         }
 
         if args.quote:
@@ -366,7 +415,9 @@ def _search(args: argparse.Namespace) -> int:
 
     payload = {
         "compliance_preface": {
-            "ts_usage_reminder": "Use {ts} tokens appropriately in downstream authored outputs.",
+            "ts_usage_reminder": (
+                "Use {ts} tokens appropriately in downstream authored outputs."
+            ),
             "guideline_pointer_path": GUIDELINES_PATH,
         },
         "query": {
@@ -387,7 +438,9 @@ def _explain(args: argparse.Namespace) -> int:
     if bool(args.anchor_id) == bool(args.unit_id):
         raise SystemExit("exactly one of --anchor-id or --unit-id is required")
 
-    anchor_rows = _read_jsonl(run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl")
+    anchor_rows = _read_jsonl(
+        run_root / "anchor" / "verbatim" / "anchor-text-links.jsonl"
+    )
     slice_rows = _read_jsonl(run_root / "normalize" / "verbatim" / "unit-slices.jsonl")
     by_unit: dict[str, list[dict[str, Any]]] = {}
     for row in slice_rows:
@@ -407,7 +460,9 @@ def _explain(args: argparse.Namespace) -> int:
         return 0
 
     unit_id = str(target.get("unit_id", ""))
-    slices = sorted(by_unit.get(unit_id, []), key=lambda row: str(row.get("slice_id", "")))
+    slices = sorted(
+        by_unit.get(unit_id, []), key=lambda row: str(row.get("slice_id", ""))
+    )
     payload = {
         "found": True,
         "guideline_pointer_path": GUIDELINES_PATH,
@@ -426,10 +481,14 @@ def _explain(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Query run-scoped ISO 26262 prewarm cache artifacts")
+    parser = argparse.ArgumentParser(
+        description="Query run-scoped ISO 26262 prewarm cache artifacts"
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_index = sub.add_parser("index", help="Build deterministic token and phrase index shards")
+    p_index = sub.add_parser(
+        "index", help="Build deterministic token and phrase index shards"
+    )
     p_index.add_argument("--run-root", required=True)
     p_index.set_defaults(func=_build_index)
 
@@ -447,7 +506,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_search.add_argument("--max-hits", type=int, default=20)
     p_search.set_defaults(func=_search)
 
-    p_explain = sub.add_parser("explain", help="Explain query lineage from anchor or unit")
+    p_explain = sub.add_parser(
+        "explain", help="Explain query lineage from anchor or unit"
+    )
     p_explain.add_argument("--run-root", required=True)
     p_explain.add_argument("--anchor-id", default="")
     p_explain.add_argument("--unit-id", default="")

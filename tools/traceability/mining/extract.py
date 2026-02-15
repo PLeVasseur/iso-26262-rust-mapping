@@ -69,12 +69,18 @@ def _extract_page_text(path: Path, page: int) -> tuple[str, bool]:
 def _control_char_ratio(text: str, extracted_count: int) -> float:
     if extracted_count == 0:
         return 0.0
-    count = sum(1 for char in text if ord(char) < 32 and char not in {"\n", "\r", "\t", "\f", "\v"})
+    count = sum(
+        1
+        for char in text
+        if ord(char) < 32 and char not in {"\n", "\r", "\t", "\f", "\v"}
+    )
     return count / extracted_count
 
 
 def _list_or_table_markers(text: str) -> int:
-    markers = re.findall(r"(^\s*(?:[-*]|\d+[\.)]|[A-Za-z][\.)]))|\|", text, flags=re.MULTILINE)
+    markers = re.findall(
+        r"(^\s*(?:[-*]|\d+[\.)]|[A-Za-z][\.)]))|\|", text, flags=re.MULTILINE
+    )
     return len(markers)
 
 
@@ -88,23 +94,31 @@ def _page_decision(
 ) -> dict:
     extracted_char_count = sum(1 for char in text if not char.isspace())
     replacement_count = text.count("\ufffd")
-    replacement_ratio = (replacement_count / extracted_char_count) if extracted_char_count else 0.0
+    replacement_ratio = (
+        (replacement_count / extracted_char_count) if extracted_char_count else 0.0
+    )
     control_ratio = _control_char_ratio(text, extracted_char_count)
-    pdf_text_object_count = (extracted_char_count // 40) + (1 if extracted_char_count > 0 else 0)
+    pdf_text_object_count = (extracted_char_count // 40) + (
+        1 if extracted_char_count > 0 else 0
+    )
     layout_text_region_count = 1 if extracted_char_count > 0 else 0
     marker_count = _list_or_table_markers(text)
     ink_coverage_ratio = 0.02 if extracted_char_count > 0 else 0.0
-    non_blank = ink_coverage_ratio >= float(thresholds["non_blank_ink_coverage_ratio_min"])
+    non_blank = ink_coverage_ratio >= float(
+        thresholds["non_blank_ink_coverage_ratio_min"]
+    )
     text_bearing_expected = (
-        pdf_text_object_count >= 3
-        or layout_text_region_count >= 1
-        or marker_count >= 1
+        pdf_text_object_count >= 3 or layout_text_region_count >= 1 or marker_count >= 1
     )
 
     hard_fail_reasons: list[str] = []
     if non_blank and extracted_char_count == 0:
         hard_fail_reasons.append("primary_zero_text_nonblank")
-    if non_blank and text_bearing_expected and extracted_char_count < int(thresholds["primary_low_char_count_threshold"]):
+    if (
+        non_blank
+        and text_bearing_expected
+        and extracted_char_count < int(thresholds["primary_low_char_count_threshold"])
+    ):
         hard_fail_reasons.append("primary_low_char_count_text_bearing")
     if replacement_ratio > float(thresholds["replacement_char_ratio_max"]):
         hard_fail_reasons.append("primary_replacement_char_ratio_high")
@@ -132,7 +146,12 @@ def _page_decision(
     }
 
 
-def _ocr_quality_band(policy: dict, mean_word_conf: float, p25_word_conf: float, low_conf_ratio_lt50: float) -> str:
+def _ocr_quality_band(
+    policy: dict,
+    mean_word_conf: float,
+    p25_word_conf: float,
+    low_conf_ratio_lt50: float,
+) -> str:
     pass_band = policy.get("ocr_quality_bands", {}).get("pass", {})
     needs_review_band = policy.get("ocr_quality_bands", {}).get("needs_review", {})
 
@@ -146,7 +165,8 @@ def _ocr_quality_band(policy: dict, mean_word_conf: float, p25_word_conf: float,
     if (
         mean_word_conf >= float(needs_review_band.get("mean_word_conf_min", 75))
         and p25_word_conf >= float(needs_review_band.get("p25_word_conf_min", 55))
-        and low_conf_ratio_lt50 <= float(needs_review_band.get("low_conf_ratio_lt50_max", 0.25))
+        and low_conf_ratio_lt50
+        <= float(needs_review_band.get("low_conf_ratio_lt50_max", 0.25))
     ):
         return "needs_review"
 
@@ -176,7 +196,9 @@ def _apply_ocr_fallback(decision: dict, policy: dict) -> dict:
         p25_word_conf = 0.0
         low_conf_ratio_lt50 = 1.0
 
-    quality_band = _ocr_quality_band(policy, mean_word_conf, p25_word_conf, low_conf_ratio_lt50)
+    quality_band = _ocr_quality_band(
+        policy, mean_word_conf, p25_word_conf, low_conf_ratio_lt50
+    )
 
     reason_codes = list(decision["reason_codes"])
     if orientation_conf < orientation_min:
@@ -251,7 +273,9 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
             decisions.append(decision)
 
             page_text_sha = text_sha256(text)
-            record_id = page_record_id(part, page, str(decision["method"]), page_text_sha)
+            record_id = page_record_id(
+                part, page, str(decision["method"]), page_text_sha
+            )
             page_text_records.append(
                 {
                     "run_id": ctx.run_id,
@@ -267,7 +291,9 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
             )
             page_index.setdefault(part, {})[str(page)] = record_id
 
-            for block_ordinal, (char_start, char_end, block_text) in enumerate(split_page_blocks(text), start=1):
+            for block_ordinal, (char_start, char_end, block_text) in enumerate(
+                split_page_blocks(text), start=1
+            ):
                 block_sha = text_sha256(block_text)
                 page_block_records.append(
                     {
@@ -324,11 +350,20 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
     verbatim_dir.mkdir(parents=True, exist_ok=True)
 
     decisions.sort(key=lambda row: (row["part"], int(row["page"])))
-    page_text_records.sort(key=lambda row: (row["part"], int(row["page"]), row["record_id"]))
-    page_block_records.sort(
-        key=lambda row: (row["part"], int(row["page"]), int(row["block_ordinal"]), row["block_id"])
+    page_text_records.sort(
+        key=lambda row: (row["part"], int(row["page"]), row["record_id"])
     )
-    page_signatures.sort(key=lambda row: (row["part"], int(row["page"]), row["record_id"]))
+    page_block_records.sort(
+        key=lambda row: (
+            row["part"],
+            int(row["page"]),
+            int(row["block_ordinal"]),
+            row["block_id"],
+        )
+    )
+    page_signatures.sort(
+        key=lambda row: (row["part"], int(row["page"]), row["record_id"])
+    )
 
     control_summary = control_dir / "extract-summary.json"
     data_summary = data_dir / "extract-summary.json"
@@ -337,7 +372,9 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
 
     control_decisions = control_dir / "extract-page-decisions.jsonl"
     data_decisions = data_dir / "extract-page-decisions.jsonl"
-    decision_lines = "".join(json.dumps(row, sort_keys=True) + "\n" for row in decisions)
+    decision_lines = "".join(
+        json.dumps(row, sort_keys=True) + "\n" for row in decisions
+    )
     control_decisions.write_text(decision_lines, encoding="utf-8")
     data_decisions.write_text(decision_lines, encoding="utf-8")
 
@@ -358,7 +395,10 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
         page_index_path,
         {
             "run_id": ctx.run_id,
-            "parts": {part: dict(sorted(rows.items(), key=lambda kv: int(kv[0]))) for part, rows in sorted(page_index.items())},
+            "parts": {
+                part: dict(sorted(rows.items(), key=lambda kv: int(kv[0])))
+                for part, rows in sorted(page_index.items())
+            },
             "record_count": len(page_text_records),
         },
     )
