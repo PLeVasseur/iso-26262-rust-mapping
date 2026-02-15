@@ -1,0 +1,182 @@
+name: ISO26262 Mining
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  fixture_schema_integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Validate anchor registry schema
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          import jsonschema
+
+          repo = Path('.')
+          schema = json.loads((repo / 'traceability/iso26262/schema/anchor-registry.schema.json').read_text(encoding='utf-8'))
+          registry_text = (repo / 'traceability/iso26262/index/anchor-registry.jsonc').read_text(encoding='utf-8')
+          clean = []
+          in_string = False
+          escaped = False
+          i = 0
+          while i < len(registry_text):
+            ch = registry_text[i]
+            nxt = registry_text[i + 1] if i + 1 < len(registry_text) else ''
+            if in_string:
+              clean.append(ch)
+              if escaped:
+                escaped = False
+              elif ch == '\\':
+                escaped = True
+              elif ch == '"':
+                in_string = False
+              i += 1
+              continue
+            if ch == '"':
+              in_string = True
+              clean.append(ch)
+              i += 1
+              continue
+            if ch == '/' and nxt == '/':
+              while i < len(registry_text) and registry_text[i] != '\n':
+                i += 1
+              continue
+            clean.append(ch)
+            i += 1
+          registry = json.loads(''.join(clean))
+          jsonschema.validate(registry, schema)
+          print('anchor-registry-schema=pass')
+          PY
+
+      - name: Anti-leak key scan
+        run: |
+          uv run python - <<'PY'
+          from pathlib import Path
+
+          blocked = {'"raw_text"', '"paragraph_text"', '"cell_text"', '"excerpt"'}
+          hits = []
+          for path in Path('traceability/iso26262').rglob('*'):
+            if path.suffix not in {'.json', '.jsonc', '.jsonl', '.md'}:
+              continue
+            text = path.read_text(encoding='utf-8')
+            for token in blocked:
+              if token in text:
+                hits.append(f'{path}:{token}')
+          if hits:
+            raise SystemExit('anti-leak-failed\n' + '\n'.join(hits))
+          print('anti-leak=pass')
+          PY
+
+  fixture_replay:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Deterministic replay command
+        run: |
+          uv run python tools/traceability/mine_iso_corpus.py \
+            --run-id fixture-replay \
+            --control-run-root "$RUNNER_TEMP/iso26262-mining-replay" \
+            --mode fixture_ci \
+            replay
+
+  fixture_compatibility_registry:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Validate anchor registry compatibility ordering
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('traceability/iso26262/index/anchor-registry.jsonc')
+          text = path.read_text(encoding='utf-8')
+          lines = []
+          for raw in text.splitlines():
+            if raw.strip().startswith('//'):
+              continue
+            lines.append(raw)
+          value = json.loads('\n'.join(lines))
+          anchors = value.get('anchors', [])
+          ids = [row['anchor_id'] for row in anchors]
+          if ids != sorted(ids):
+            raise SystemExit('anchor-registry is not sorted by anchor_id')
+          print(f'anchor-registry-anchors={len(ids)}')
+          PY
+
+  mining_code_hygiene:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail on OPENCODE references in implementation paths
+        run: |
+          if rg -n "OPENCODE|OPENCODE_CONFIG_DIR" tools/traceability/mining tools/traceability/mine_iso_corpus.py; then
+            echo "Found forbidden OPENCODE references in mining implementation files"
+            exit 1
+          fi
+
+  licensed_e2e_local:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved self-hosted licensed run
+        run: echo "Run full licensed-local mining in controlled environment"
+
+  resilience_crash_windows:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved crash window resilience drills
+        run: echo "Inject crash windows A/B/C/D and verify deterministic resume"
+
+  resilience_locking:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved lock contention and stale-lock drills
+        run: echo "Validate lock contention and stale-lock replacement behavior"
