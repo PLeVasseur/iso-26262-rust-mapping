@@ -208,6 +208,234 @@ def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> t
     return normalization_pass, artifact_hygiene_pass, anomaly_count, report_path, anomaly_path
 
 
+def _run_query_cli(repo_root: Path, args: list[str]) -> dict:
+    completed = subprocess.run(
+        ["uv", "run", "python", "tools/traceability/query_iso_prewarm_cache.py", *args],
+        cwd=str(repo_root),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    stdout = completed.stdout.strip()
+    if not stdout:
+        return {}
+    return json.loads(stdout)
+
+
+def _ensure_query_index(repo_root: Path, run_root: Path) -> dict:
+    return _run_query_cli(repo_root, ["index", "--run-root", str(run_root)])
+
+
+def _sample_probe_sets(repo_root: Path, run_root: Path, run_id: str, control_root: Path) -> tuple[dict[str, list[dict]], Path, str]:
+    query_rows = _load_jsonl(run_root / "query" / "query-source-rows.jsonl")
+    if not query_rows:
+        raise VerifyError("query-source rows missing for probe generation")
+
+    words: list[str] = []
+    phrases: list[str] = []
+    for row in query_rows:
+        tokens = list(row.get("tokens", []))
+        if tokens:
+            words.append(str(tokens[0]))
+        normalized = str(row.get("normalized_text", ""))
+        parts = normalized.split()
+        if len(parts) >= 2:
+            phrases.append(" ".join(parts[:2]))
+
+    words = sorted({word for word in words if word})
+    phrases = sorted({phrase for phrase in phrases if phrase})
+    if len(words) < 9 or len(phrases) < 3:
+        raise VerifyError("insufficient deterministic probe candidates in query-source rows")
+
+    source_tables = "src/tables/table-01.yaml"
+    source_text = "src/iso26262_rust_mapping.md"
+    source_src = "src/index.md"
+
+    probes: dict[str, list[dict]] = {
+        "tables": [],
+        "text": [],
+        "src": [],
+        "negative": [],
+    }
+
+    def make_probe(kind: str, idx: int, mode: str, query_text: str, source_path: str) -> dict:
+        return {
+            "probe_id": f"{kind}-{idx:03d}",
+            "probe_kind": kind,
+            "query_mode": mode,
+            "query_text": query_text,
+            "source_path": source_path,
+            "source_locator": f"{source_path}:{idx}",
+            "expected_part": None,
+            "expected_anchor_hint": None,
+        }
+
+    tables_words = words[0:3]
+    text_words = words[3:6]
+    src_words = words[6:9]
+    phrase_triplet = phrases[0:3]
+
+    for idx, token in enumerate(tables_words, start=1):
+        probes["tables"].append(make_probe("tables", idx, "word", token, source_tables))
+    probes["tables"].append(make_probe("tables", 100, "phrase", phrase_triplet[0], source_tables))
+
+    for idx, token in enumerate(text_words, start=1):
+        probes["text"].append(make_probe("text", idx, "word", token, source_text))
+    probes["text"].append(make_probe("text", 100, "phrase", phrase_triplet[1], source_text))
+
+    for idx, token in enumerate(src_words, start=1):
+        probes["src"].append(make_probe("src", idx, "word", token, source_src))
+    probes["src"].append(make_probe("src", 100, "phrase", phrase_triplet[2], source_src))
+
+    probes["negative"] = [
+        make_probe("negative", 1, "word", "zzzz_nohit_probe_token", source_src),
+        make_probe("negative", 2, "phrase", "qqqq nohit probe phrase", source_src),
+    ]
+
+    probe_dir = run_root / "query" / "probe-set"
+    probe_dir.mkdir(parents=True, exist_ok=True)
+    for kind, rows in probes.items():
+        path = probe_dir / f"{kind}.jsonl"
+        path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows), encoding="utf-8")
+
+    selected_ids = sorted(row["probe_id"] for rows in probes.values() for row in rows)
+    freeze_payload = {
+        "run_id": run_id,
+        "algorithm_version": 1,
+        "seed": f"prewarm-{run_id}",
+        "selected_probe_ids": selected_ids,
+        "source_selectors": {
+            "tables": source_tables,
+            "text": source_text,
+            "src": source_src,
+        },
+    }
+    freeze_signature = hashlib.sha256(
+        json.dumps(freeze_payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    ).hexdigest()
+    freeze_manifest = {
+        **freeze_payload,
+        "signature": freeze_signature,
+        "timestamp_utc": utc_now(),
+    }
+    freeze_path = control_root / "artifacts" / "probes" / "probeset-freeze-manifest.json"
+    write_json(freeze_path, freeze_manifest)
+    return probes, freeze_path, freeze_signature
+
+
+def _run_probe_suite(repo_root: Path, run_root: Path, probes: dict[str, list[dict]]) -> tuple[dict[str, bool], Path]:
+    result_flags = {
+        "tables_probe_pass": True,
+        "text_probe_pass": True,
+        "src_probe_pass": True,
+        "negative_probe_pass": True,
+    }
+    details: list[dict] = []
+
+    for kind, rows in probes.items():
+        for row in rows:
+            query_args = [
+                "search",
+                "--run-root",
+                str(run_root),
+                "--repo-root",
+                str(repo_root),
+                "--max-hits",
+                "5",
+            ]
+            if row["query_mode"] == "word":
+                query_args.extend(["--term", row["query_text"]])
+            else:
+                query_args.extend(["--phrase", row["query_text"]])
+
+            response = _run_query_cli(repo_root, query_args)
+            hit_count = int(response.get("hit_count", 0))
+            expected_hit = kind != "negative"
+            passed = (hit_count > 0) if expected_hit else (hit_count == 0)
+            details.append(
+                {
+                    "probe_id": row["probe_id"],
+                    "probe_kind": kind,
+                    "query_mode": row["query_mode"],
+                    "query_text": row["query_text"],
+                    "hit_count": hit_count,
+                    "pass": passed,
+                }
+            )
+            if not passed:
+                flag_key = f"{kind}_probe_pass"
+                if flag_key in result_flags:
+                    result_flags[flag_key] = False
+
+    report_path = run_root / "query" / "probe-set" / "probe-results.json"
+    _write_json(
+        report_path,
+        {
+            "generated_at_utc": utc_now(),
+            "results": details,
+            **result_flags,
+        },
+    )
+    return result_flags, report_path
+
+
+def _query_smoke(repo_root: Path, run_root: Path) -> tuple[bool, bool, dict]:
+    source_rows = _load_jsonl(run_root / "query" / "query-source-rows.jsonl")
+    if not source_rows:
+        raise VerifyError("query-source rows unavailable for query smoke checks")
+
+    first = source_rows[0]
+    tokens = list(first.get("tokens", []))
+    if not tokens:
+        raise VerifyError("query-source rows missing tokens for query smoke checks")
+
+    word_term = str(tokens[0])
+    phrase_term = " ".join(str(first.get("normalized_text", "")).split()[:2])
+    if not phrase_term:
+        raise VerifyError("query-source rows missing phrase candidate for query smoke checks")
+
+    word_payload = _run_query_cli(
+        repo_root,
+        [
+            "search",
+            "--run-root",
+            str(run_root),
+            "--repo-root",
+            str(repo_root),
+            "--term",
+            word_term,
+            "--max-hits",
+            "5",
+        ],
+    )
+    phrase_payload = _run_query_cli(
+        repo_root,
+        [
+            "search",
+            "--run-root",
+            str(run_root),
+            "--repo-root",
+            str(repo_root),
+            "--phrase",
+            phrase_term,
+            "--max-hits",
+            "5",
+        ],
+    )
+
+    word_pass = int(word_payload.get("hit_count", 0)) > 0
+    phrase_pass = int(phrase_payload.get("hit_count", 0)) > 0
+    details = {
+        "word_term": word_term,
+        "phrase_term": phrase_term,
+        "word_hit_count": int(word_payload.get("hit_count", 0)),
+        "phrase_hit_count": int(phrase_payload.get("hit_count", 0)),
+        "word_preface": word_payload.get("compliance_preface", {}),
+        "phrase_preface": phrase_payload.get("compliance_preface", {}),
+    }
+    return word_pass, phrase_pass, details
+
+
 def run_verify_stage(ctx: "StageContext") -> "StageResult":
     repo_root = ctx.paths.repo_root
     control_root = ctx.paths.control_run_root
@@ -229,6 +457,25 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         raise VerifyError("prewarm text normalization gate failed")
     if not artifact_hygiene_pass:
         raise VerifyError("prewarm artifact hygiene gate failed")
+
+    _ensure_query_index(repo_root, ctx.paths.run_root)
+    word_query_smoke, phrase_query_smoke, smoke_details = _query_smoke(repo_root, ctx.paths.run_root)
+    if not word_query_smoke:
+        raise VerifyError("deterministic word query smoke check failed")
+    if not phrase_query_smoke:
+        raise VerifyError("deterministic phrase query smoke check failed")
+
+    probes, freeze_path, freeze_signature = _sample_probe_sets(repo_root, ctx.paths.run_root, ctx.run_id, control_root)
+    probe_flags, probe_result_path = _run_probe_suite(repo_root, ctx.paths.run_root, probes)
+    if not probe_flags["tables_probe_pass"]:
+        raise VerifyError("tables probe suite failed")
+    if not probe_flags["text_probe_pass"]:
+        raise VerifyError("text probe suite failed")
+    if not probe_flags["src_probe_pass"]:
+        raise VerifyError("src probe suite failed")
+    if not probe_flags["negative_probe_pass"]:
+        raise VerifyError("negative probe suite failed")
+
     replay_signature_path, replay_signature_pass = _write_replay_signature_artifact(
         control_root,
         ctx.paths.run_root,
@@ -250,6 +497,14 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         "normalization_pass": normalization_pass,
         "artifact_hygiene_pass": artifact_hygiene_pass,
         "anomaly_count": anomaly_count,
+        "word_query_smoke": word_query_smoke,
+        "phrase_query_smoke": phrase_query_smoke,
+        "probe_signature": freeze_signature,
+        "tables_probe_pass": probe_flags["tables_probe_pass"],
+        "text_probe_pass": probe_flags["text_probe_pass"],
+        "src_probe_pass": probe_flags["src_probe_pass"],
+        "negative_probe_pass": probe_flags["negative_probe_pass"],
+        "query_smoke": smoke_details,
         "replay_signature_pass": replay_signature_pass,
     }
 
@@ -261,6 +516,13 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
     from .stages import StageResult
 
     return StageResult(
-        outputs=[summary_path, replay_signature_path, quality_report_path, quality_anomaly_path],
+        outputs=[
+            summary_path,
+            replay_signature_path,
+            quality_report_path,
+            quality_anomaly_path,
+            probe_result_path,
+            freeze_path,
+        ],
         input_hashes={},
     )
