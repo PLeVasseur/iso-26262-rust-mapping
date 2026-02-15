@@ -104,6 +104,23 @@ Decision: style/lint checks are CI-enforced and documented as local operator com
 - `$SPHINX_MIGRATION_RUN_ROOT/artifacts/traceability/paragraph-ids-schema-validation.json`
 - `$SPHINX_MIGRATION_RUN_ROOT/artifacts/traceability/paragraph-ids-table-entry-audit.json`
 
+## IRM ID authoring workflow
+
+Use the generator to mint new ISO 26262 Rust Mapping IDs (IRM IDs) and output
+ready-to-paste snippets:
+
+```bash
+python3 tools/traceability/generate_irm_ids.py
+python3 tools/traceability/generate_irm_ids.py --mode myst-preface --count 3 --trace-status unmapped_with_rationale --no-prompt
+python3 tools/traceability/generate_irm_ids.py --mode yaml-cell --count 2 --trace-status mapped --relation maps_to --anchor iso_26262_clause_5 --no-prompt
+```
+
+Rules:
+
+- Always mint IRM IDs with tooling; do not handcraft IDs.
+- Move IRM IDs with the statement text when reordering content.
+- Mint a new IRM ID only for genuinely new statements.
+
 ## Troubleshooting
 
 - `ModuleNotFoundError` on `./make.py`: run from repo root and use uv launcher (`./make.py`), or fallback to `uv run python make.py <command>`.

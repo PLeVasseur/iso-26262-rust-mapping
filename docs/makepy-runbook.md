@@ -65,6 +65,35 @@ uvx black . --check --diff --color
 uvx flake8 . --exclude .venv
 ```
 
+## IRM ID tooling workflows
+
+Interactive generator (default wizard mode):
+
+```bash
+python3 tools/traceability/generate_irm_ids.py
+```
+
+Non-interactive examples for scripted usage:
+
+```bash
+python3 tools/traceability/generate_irm_ids.py --mode myst-preface --count 5 --trace-status unmapped_with_rationale --no-prompt
+python3 tools/traceability/generate_irm_ids.py --mode yaml-row --count 2 --trace-status mapped --relation maps_to --anchor iso_26262_clause_8 --no-prompt
+```
+
+One-time backfill workflow:
+
+```bash
+python3 tools/traceability/backfill_irm_ids.py --repo-root . --mapping-json <mapping-json> --summary-json <dry-run-summary-json>
+python3 tools/traceability/backfill_irm_ids.py --repo-root . --apply --mapping-json <mapping-json> --rewrite-summary-json <rewrite-summary-json> --validation-summary-json <validation-summary-json> --check-idempotent
+```
+
+Authoring rules:
+
+- Use generator output as-is for MyST preface and YAML metadata blocks.
+- Keep each IRM ID attached to the original statement while moving content.
+- Do not reformat IRM IDs manually.
+- Mint a new IRM ID only for new statements.
+
 ## Failure-handling matrix
 
 - Missing uv executable: install uv, then rerun preflight.
