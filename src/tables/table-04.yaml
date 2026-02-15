@@ -20,30 +20,30 @@ rows:
   row_id: r0001
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zgIt6HGwU5As
     rust_mapping:
-      source_id: SRCN-T04-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_uiN0o6xU6REU
     key_rules:
-      source_id: SRCN-T04-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0bLQ8KnxgucH
     asil_tightening:
-      source_id: SRCN-T04-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KvCZ0ZiYARN3
     notes_examples:
-      source_id: SRCN-T04-R0001-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_d9PoOwzQEk31
 - principle: 1b Restricted size/complexity
   rust_mapping: Metrics + linting; idiomatic small functions; avoid mega-modules.
   key_rules: Set limits for LOC, cyclomatic complexity, nesting, generic bounds; require refactoring when exceeded.
@@ -52,30 +52,30 @@ rows:
   row_id: r0002
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VesubWY51nnP
     rust_mapping:
-      source_id: SRCN-T04-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_LUw4ItOBQILA
     key_rules:
-      source_id: SRCN-T04-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Aa7lvelPKJRp
     asil_tightening:
-      source_id: SRCN-T04-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_6EptVCbqtDrA
     notes_examples:
-      source_id: SRCN-T04-R0002-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_7GOOJpapHctZ
 - principle: 1c Restricted interface size
   rust_mapping: Small public APIs; narrow traits; explicit types.
   key_rules: Minimize `pub` surface; forbid wildcard re-exports; use newtypes to prevent accidental misuse.
@@ -84,30 +84,30 @@ rows:
   row_id: r0003
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VfGXpjxZ0cTy
     rust_mapping:
-      source_id: SRCN-T04-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_V3lRGBmzdqnK
     key_rules:
-      source_id: SRCN-T04-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_YwE4u4zoUQBA
     asil_tightening:
-      source_id: SRCN-T04-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_9GLgVEIvFFJO
     notes_examples:
-      source_id: SRCN-T04-R0003-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Gvfk9yXzHHqy
 - principle: 1d Strong cohesion
   rust_mapping: Cohesive modules with single responsibility; private helpers.
   key_rules: "Group by domain concept; avoid \u2018util\u2019 grab-bags; require module-level docs describing responsibilities and invariants."
@@ -116,30 +116,30 @@ rows:
   row_id: r0004
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BcVBgQjbRqSB
     rust_mapping:
-      source_id: SRCN-T04-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xukN25ulxHpR
     key_rules:
-      source_id: SRCN-T04-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_lW5S5kM9fL9J
     asil_tightening:
-      source_id: SRCN-T04-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_LUP4SzPXzsZP
     notes_examples:
-      source_id: SRCN-T04-R0004-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xP84w0YQXqRF
 - principle: 1e Loose coupling
   rust_mapping: Dependency inversion via traits; avoid global state; explicit data flow.
   key_rules: Prefer passing dependencies explicitly; avoid hidden singletons; restrict `lazy_static`/global caches.
@@ -148,30 +148,30 @@ rows:
   row_id: r0005
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_35H26cIwowrY
     rust_mapping:
-      source_id: SRCN-T04-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_1L4unD2H27u4
     key_rules:
-      source_id: SRCN-T04-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_6TJPQWj30xTJ
     asil_tightening:
-      source_id: SRCN-T04-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_P70bjJW21iNT
     notes_examples:
-      source_id: SRCN-T04-R0005-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BnU5bnOR0emX
 - principle: 1f Scheduling properties
   rust_mapping: Deterministic execution model; avoid unbounded work; bounded loops; time budgets.
   key_rules: For RT code, require bounded execution time per cycle; avoid allocation on hot paths; avoid dynamic dispatch in timing-critical code.
@@ -180,30 +180,30 @@ rows:
   row_id: r0006
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_yMDvIq5JUucp
     rust_mapping:
-      source_id: SRCN-T04-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_oX7jLitCoCOM
     key_rules:
-      source_id: SRCN-T04-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ywc21tYo0dvQ
     asil_tightening:
-      source_id: SRCN-T04-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_RmiyyFh6MtfJ
     notes_examples:
-      source_id: SRCN-T04-R0006-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_3JUQJtOsDCwn
 - principle: 1g Restricted interrupts
   rust_mapping: Interrupt handlers as minimal, deterministic, side-effect controlled functions; use atomics/critical sections.
   key_rules: Keep ISRs short; no allocation; no locks that can deadlock; communicate via lock-free queues or deferred processing.
@@ -212,30 +212,30 @@ rows:
   row_id: r0007
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_i01k1TPgDAWz
     rust_mapping:
-      source_id: SRCN-T04-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HsRZwFGzBUeH
     key_rules:
-      source_id: SRCN-T04-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_jCWaaUOyJzlK
     asil_tightening:
-      source_id: SRCN-T04-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_55XgPXMZz129
     notes_examples:
-      source_id: SRCN-T04-R0007-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_qrjooL0m7mJH
 - principle: 1h Spatial isolation
   rust_mapping: "Memory protection + partitioning; Rust\u2019s memory safety complements but does not replace MPU/MMU partitioning."
   key_rules: No shared mutable globals; isolate safety partitions into separate processes/partitions where needed.
@@ -244,30 +244,30 @@ rows:
   row_id: r0008
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TNnv7G9rxqUo
     rust_mapping:
-      source_id: SRCN-T04-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_NUFl3EvRBDXm
     key_rules:
-      source_id: SRCN-T04-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_vK2hfLxKS1Wh
     asil_tightening:
-      source_id: SRCN-T04-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_84Sz404EslMD
     notes_examples:
-      source_id: SRCN-T04-R0008-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_CTnMD7muuTkF
 - principle: 1i Shared resource management
   rust_mapping: Mutex/RwLock/Atomics; ownership; explicit resource arbitration; avoid global contention.
   key_rules: Define lock ordering; require bounded blocking; prefer lock-free only with documented memory ordering; resource usage budgets.
@@ -276,27 +276,27 @@ rows:
   row_id: r0009
   cell_trace:
     principle:
-      source_id: SRCN-T04-R0009-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ds8EuCvq3wyf
     rust_mapping:
-      source_id: SRCN-T04-R0009-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_r2NapxVF0it1
     key_rules:
-      source_id: SRCN-T04-R0009-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_q3zfFoPB9htB
     asil_tightening:
-      source_id: SRCN-T04-R0009-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0J3weGw4d6al
     notes_examples:
-      source_id: SRCN-T04-R0009-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_gfSQTkhzeOjP

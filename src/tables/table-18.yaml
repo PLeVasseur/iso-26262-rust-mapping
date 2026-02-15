@@ -26,40 +26,40 @@ rows:
   row_id: r0001
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8b6gSDWksxdF
     qm:
-      source_id: SRCN-T18-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_JApdrtmB0oWJ
     a:
-      source_id: SRCN-T18-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_4fys0iabP36x
     b:
-      source_id: SRCN-T18-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Uyu6KZFlW4Aq
     c:
-      source_id: SRCN-T18-R0001-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ZUn5IqGbRPJJ
     d:
-      source_id: SRCN-T18-R0001-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_LwIFzKJrV4d2
     restrictions_notes:
-      source_id: SRCN-T18-R0001-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_t106GlRz7gKt
 - construct_feature: Debug-only asserts (`debug_assert!` etc.)
   qm: P
   a: R
@@ -70,40 +70,40 @@ rows:
   row_id: r0002
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_sMR816KnFXrg
     qm:
-      source_id: SRCN-T18-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_95327IeAO2QP
     a:
-      source_id: SRCN-T18-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_y2s0ISyvpfSG
     b:
-      source_id: SRCN-T18-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_dz2zuGQrWsnO
     c:
-      source_id: SRCN-T18-R0002-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TsYXCJvod89E
     d:
-      source_id: SRCN-T18-R0002-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_AlEsxKlFUuwn
     restrictions_notes:
-      source_id: SRCN-T18-R0002-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_wLk2XFlaaIdJ
 - construct_feature: Panic macros (`panic!`, `todo!`, `unimplemented!`, `unreachable!`)
   qm: R
   a: R
@@ -114,40 +114,40 @@ rows:
   row_id: r0003
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_vwz9JK3k36r0
     qm:
-      source_id: SRCN-T18-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_LFfPk2eD0Zrw
     a:
-      source_id: SRCN-T18-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KPxbTH0t6uvG
     b:
-      source_id: SRCN-T18-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Grkq9QYTm6tD
     c:
-      source_id: SRCN-T18-R0003-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BzyZDhSF2cK3
     d:
-      source_id: SRCN-T18-R0003-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_mxRMToFWX2Sa
     restrictions_notes:
-      source_id: SRCN-T18-R0003-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0jHRwlsrbHBc
 - construct_feature: Formatting/IO macros (`println!`, `eprintln!`, `dbg!`)
   qm: P
   a: R
@@ -158,40 +158,40 @@ rows:
   row_id: r0004
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_fya5lnBUq8Es
     qm:
-      source_id: SRCN-T18-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_QnsBCRV3loQX
     a:
-      source_id: SRCN-T18-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_PICqKtUHJqCC
     b:
-      source_id: SRCN-T18-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BanLgJF9prme
     c:
-      source_id: SRCN-T18-R0004-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_U755AjtNIJJ0
     d:
-      source_id: SRCN-T18-R0004-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_DygC0ovNK5V2
     restrictions_notes:
-      source_id: SRCN-T18-R0004-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Hc8yefWQxQQU
 - construct_feature: Collection macros (`vec!`)
   qm: P
   a: P
@@ -202,40 +202,40 @@ rows:
   row_id: r0005
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_iHQHR1tG9urB
     qm:
-      source_id: SRCN-T18-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ZwyyFGZLOVyI
     a:
-      source_id: SRCN-T18-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_GKyiFOr0gZdy
     b:
-      source_id: SRCN-T18-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EqoJ2HD2XpmQ
     c:
-      source_id: SRCN-T18-R0005-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xWH5LK0ZG48r
     d:
-      source_id: SRCN-T18-R0005-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KXrCuN0r9r1S
     restrictions_notes:
-      source_id: SRCN-T18-R0005-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nqUo8nMaea2j
 - construct_feature: Include macros (`include!`, `include_bytes!`, `include_str!`)
   qm: P
   a: R
@@ -246,40 +246,40 @@ rows:
   row_id: r0006
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_JGn3ZhSnT4e2
     qm:
-      source_id: SRCN-T18-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_MIB4vK3sSHe7
     a:
-      source_id: SRCN-T18-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Dpfl8R4o4RP1
     b:
-      source_id: SRCN-T18-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_CYfGMDFY1P3W
     c:
-      source_id: SRCN-T18-R0006-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0XCw7Zw5vH3Z
     d:
-      source_id: SRCN-T18-R0006-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Nbc8VYO9nH0m
     restrictions_notes:
-      source_id: SRCN-T18-R0006-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_q9EUrdC8RKAK
 - construct_feature: Declarative macros (`macro_rules!`)
   qm: P
   a: R
@@ -290,40 +290,40 @@ rows:
   row_id: r0007
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_NDwVRy1Uu32q
     qm:
-      source_id: SRCN-T18-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_gU4AMSohUowp
     a:
-      source_id: SRCN-T18-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_F0jNEYehUHYL
     b:
-      source_id: SRCN-T18-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_4YqHAQJS5bxy
     c:
-      source_id: SRCN-T18-R0007-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_D0rStW368gvr
     d:
-      source_id: SRCN-T18-R0007-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_YBxQJEPDm2xd
     restrictions_notes:
-      source_id: SRCN-T18-R0007-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_sYurg9MoTJNY
 - construct_feature: Procedural macros (derive/attribute/function-like)
   qm: R
   a: R
@@ -334,37 +334,37 @@ rows:
   row_id: r0008
   cell_trace:
     construct_feature:
-      source_id: SRCN-T18-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_PVZ7SsbdWBL3
     qm:
-      source_id: SRCN-T18-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_11WHUarMYMBI
     a:
-      source_id: SRCN-T18-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nhpfu4RjUsZ6
     b:
-      source_id: SRCN-T18-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_pfUlBCDtr08f
     c:
-      source_id: SRCN-T18-R0008-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xrm7B5cZ3s2v
     d:
-      source_id: SRCN-T18-R0008-C06
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_UjTkDsfypx8q
     restrictions_notes:
-      source_id: SRCN-T18-R0008-C07
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_SkPFMuAy1gb7

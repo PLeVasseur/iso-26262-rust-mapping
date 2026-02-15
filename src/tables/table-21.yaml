@@ -17,25 +17,25 @@ rows:
   row_id: r0001
   cell_trace:
     module:
-      source_id: SRCN-T21-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aQbvPJ1XHlNf
     purpose_risk_area:
-      source_id: SRCN-T21-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_OdvJKA4KbfCa
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_WHfFQkrwQbHS
     notes_key_restrictions:
-      source_id: SRCN-T21-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ycPPV27KG5HL
 - module: alloc::borrow
   purpose_risk_area: Borrowed data utilities (Cow)
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -43,25 +43,25 @@ rows:
   row_id: r0002
   cell_trace:
     module:
-      source_id: SRCN-T21-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Tx9C96wOkEU2
     purpose_risk_area:
-      source_id: SRCN-T21-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_f2Q5xxG03JsW
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_CepnwQyEze9W
     notes_key_restrictions:
-      source_id: SRCN-T21-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_lxdtoVLqAlvQ
 - module: alloc::boxed
   purpose_risk_area: Box heap allocation
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -69,25 +69,25 @@ rows:
   row_id: r0003
   cell_trace:
     module:
-      source_id: SRCN-T21-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_641jx9NIdJGZ
     purpose_risk_area:
-      source_id: SRCN-T21-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_qAneSkSstrb5
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_dYuOKIpaOyWG
     notes_key_restrictions:
-      source_id: SRCN-T21-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ICNVlEfasafi
 - module: alloc::collections
   purpose_risk_area: Heap-backed collections
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -95,25 +95,25 @@ rows:
   row_id: r0004
   cell_trace:
     module:
-      source_id: SRCN-T21-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_U498PK5prF1S
     purpose_risk_area:
-      source_id: SRCN-T21-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_K5qlMg72HArX
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_eAXOt1IWgrms
     notes_key_restrictions:
-      source_id: SRCN-T21-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_d3RFXn4eqM1t
 - module: alloc::ffi
   purpose_risk_area: FFI utilities (CString etc)
   profile_qm_a_b_c_d: R/R/R/Q/Q
@@ -121,25 +121,25 @@ rows:
   row_id: r0005
   cell_trace:
     module:
-      source_id: SRCN-T21-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_1B0nUqf6GWGn
     purpose_risk_area:
-      source_id: SRCN-T21-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_E1UfdRyreu6u
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_gZ0pEWaMZx0i
     notes_key_restrictions:
-      source_id: SRCN-T21-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_4lLK6EgFNzDz
 - module: alloc::fmt
   purpose_risk_area: Formatting for `String`
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -147,25 +147,25 @@ rows:
   row_id: r0006
   cell_trace:
     module:
-      source_id: SRCN-T21-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_iCsqDf1kiuCr
     purpose_risk_area:
-      source_id: SRCN-T21-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_cc9lp9ZonCVk
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ejUx5OlIoSFJ
     notes_key_restrictions:
-      source_id: SRCN-T21-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_D9ol36UQEnzW
 - module: alloc::rc
   purpose_risk_area: Single-threaded reference counting
   profile_qm_a_b_c_d: P/P/R/R/R
@@ -173,25 +173,25 @@ rows:
   row_id: r0007
   cell_trace:
     module:
-      source_id: SRCN-T21-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_yvtIqUD4uyr7
     purpose_risk_area:
-      source_id: SRCN-T21-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nReanBDl26Gj
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_yYhcgcnR6924
     notes_key_restrictions:
-      source_id: SRCN-T21-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_NiAdlakGa7Dn
 - module: alloc::slice / alloc::str
   purpose_risk_area: Utilities for slice/str
   profile_qm_a_b_c_d: P/P/P/P/P
@@ -199,25 +199,25 @@ rows:
   row_id: r0008
   cell_trace:
     module:
-      source_id: SRCN-T21-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_lWCgoMYU6ZdK
     purpose_risk_area:
-      source_id: SRCN-T21-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_g11W1SgaxyFr
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_qJy28HWfXDcn
     notes_key_restrictions:
-      source_id: SRCN-T21-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_i8s43kv2EZku
 - module: alloc::string
   purpose_risk_area: Owned String
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -225,25 +225,25 @@ rows:
   row_id: r0009
   cell_trace:
     module:
-      source_id: SRCN-T21-R0009-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TyuSVjJtmrEo
     purpose_risk_area:
-      source_id: SRCN-T21-R0009-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_QMThO6FXz3K7
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0009-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_UTcQLRMCaTt3
     notes_key_restrictions:
-      source_id: SRCN-T21-R0009-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_vAOj4EEOEj79
 - module: alloc::sync
   purpose_risk_area: Arc and related
   profile_qm_a_b_c_d: P/P/R/R/R
@@ -251,25 +251,25 @@ rows:
   row_id: r0010
   cell_trace:
     module:
-      source_id: SRCN-T21-R0010-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_wIoI0CeWXSQE
     purpose_risk_area:
-      source_id: SRCN-T21-R0010-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_abWrLV4R8ewO
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0010-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_uATxG8aiymo9
     notes_key_restrictions:
-      source_id: SRCN-T21-R0010-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aEeYBNMlTZY2
 - module: alloc::task
   purpose_risk_area: Async task types
   profile_qm_a_b_c_d: P/R/R/R/X
@@ -277,25 +277,25 @@ rows:
   row_id: r0011
   cell_trace:
     module:
-      source_id: SRCN-T21-R0011-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KgKRcS7RRgOY
     purpose_risk_area:
-      source_id: SRCN-T21-R0011-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_P1VmiuVCwXiG
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0011-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_pXjQMnNtXUIx
     notes_key_restrictions:
-      source_id: SRCN-T21-R0011-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_F7TzaOxqhcMi
 - module: alloc::vec
   purpose_risk_area: Vec heap allocation
   profile_qm_a_b_c_d: P/P/P/R/R
@@ -303,25 +303,25 @@ rows:
   row_id: r0012
   cell_trace:
     module:
-      source_id: SRCN-T21-R0012-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_YvFdKPmhNals
     purpose_risk_area:
-      source_id: SRCN-T21-R0012-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_2UBT2B1eJu5Z
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0012-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_W4lrDC5dcOb8
     notes_key_restrictions:
-      source_id: SRCN-T21-R0012-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_k0GSAGbM9kTj
 - module: alloc::bstr (Experimental)
   purpose_risk_area: ByteStr/ByteString
   profile_qm_a_b_c_d: U/U/U/U/U
@@ -329,22 +329,22 @@ rows:
   row_id: r0013
   cell_trace:
     module:
-      source_id: SRCN-T21-R0013-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_YbZq272wg9n7
     purpose_risk_area:
-      source_id: SRCN-T21-R0013-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aceK5JxRdpCM
     profile_qm_a_b_c_d:
-      source_id: SRCN-T21-R0013-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_q1utCsgklGJM
     notes_key_restrictions:
-      source_id: SRCN-T21-R0013-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_iTZrjoeREY0K

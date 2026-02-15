@@ -14,117 +14,117 @@ rows:
   row_id: r0001
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8o5SYV1ayL5w
     purpose:
-      source_id: SRCN-T25-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_tupwYq1qCFSs
     evidence_artifacts:
-      source_id: SRCN-T25-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_kkcSwp2vT3MS
 - tool_activity: Formatter (rustfmt)
   purpose: Deterministic formatting to reduce review noise
   evidence_artifacts: Locked rustfmt version/config; CI enforcement.
   row_id: r0002
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xXv3cYlgBGg3
     purpose:
-      source_id: SRCN-T25-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_whDaKAwFtaQl
     evidence_artifacts:
-      source_id: SRCN-T25-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EYOKgZYz9fLd
 - tool_activity: Static analysis (Clippy + custom lints)
   purpose: Enforce subset rules, complexity limits, and bug patterns
   evidence_artifacts: Qualified lint set; reports stored as work products.
   row_id: r0003
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_235dFKsWsYSN
     purpose:
-      source_id: SRCN-T25-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_p62gYBfNUKGo
     evidence_artifacts:
-      source_id: SRCN-T25-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_M3eLiMsEi7BF
 - tool_activity: Unsafe analysis (Miri / UB checkers)
   purpose: Detect undefined behavior in unsafe code paths
   evidence_artifacts: Run on all unsafe modules; store results.
   row_id: r0004
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_mBQZTjwRmwIV
     purpose:
-      source_id: SRCN-T25-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zn3JX699QPVf
     evidence_artifacts:
-      source_id: SRCN-T25-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_rMPCqKn0Q6PM
 - tool_activity: Dependency auditing (cargo-audit / cargo-deny)
   purpose: Detect known vulnerabilities and license issues
   evidence_artifacts: Regular scans; policy for remediation; SBOM.
   row_id: r0005
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_USABhQkP25RF
     purpose:
-      source_id: SRCN-T25-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_XjQE3TQSkhEM
     evidence_artifacts:
-      source_id: SRCN-T25-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_x6tzaRoveuSs
 - tool_activity: Coverage tooling (llvm-cov/tarpaulin/etc.)
   purpose: Provide structural coverage evidence
   evidence_artifacts: Qualified tool or validated workflow; consistent build flags; archive reports.
   row_id: r0006
   cell_trace:
     tool_activity:
-      source_id: SRCN-T25-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_XyCKeVdWklPM
     purpose:
-      source_id: SRCN-T25-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_WN8yfi7UzNaG
     evidence_artifacts:
-      source_id: SRCN-T25-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_UUuCAuErtNwP

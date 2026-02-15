@@ -20,30 +20,30 @@ rows:
   row_id: r0001
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_I6gyfX7usJsq
     iso_intent:
-      source_id: SRCN-T02-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EUaHf627NWOQ
     rust_mechanisms:
-      source_id: SRCN-T02-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HxGg90tjHLnk
     coding_standard_implications:
-      source_id: SRCN-T02-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_UDZtASQ57zwD
     asil_notes:
-      source_id: SRCN-T02-R0001-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8j8NJlTnhCg3
 - iso_topic: 1b Language subsets
   iso_intent: Define and enforce a safe subset of the language to avoid error-prone constructs.
   rust_mechanisms: Safe Rust as default; crate-level forbid/deny unsafe; edition pinning; feature-gating; linting.
@@ -52,30 +52,30 @@ rows:
   row_id: r0002
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TSwIZiJnM1Dx
     iso_intent:
-      source_id: SRCN-T02-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xbrcWZXrryzH
     rust_mechanisms:
-      source_id: SRCN-T02-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xuMmu3v1U9d2
     coding_standard_implications:
-      source_id: SRCN-T02-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zZu12MMtriHc
     asil_notes:
-      source_id: SRCN-T02-R0002-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_d2BHgdBP7slo
 - iso_topic: 1c Strong typing
   iso_intent: Prevent type confusion and unintended conversions.
   rust_mechanisms: No implicit numeric conversions; enums/newtypes; Option/Result; const generics; trait bounds.
@@ -84,30 +84,30 @@ rows:
   row_id: r0003
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_evgIgd0P0GjC
     iso_intent:
-      source_id: SRCN-T02-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_u6zGO0yvBZ8L
     rust_mechanisms:
-      source_id: SRCN-T02-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_S454R7YOa7KO
     coding_standard_implications:
-      source_id: SRCN-T02-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_bmYfiiZHA6aD
     asil_notes:
-      source_id: SRCN-T02-R0003-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0p3PhsrB6qqu
 - iso_topic: 1d Defensive implementation techniques
   iso_intent: Detect and handle errors, invalid inputs, and internal failures.
   rust_mechanisms: Result/Option; bounds checks; checked/saturating arithmetic; assertions; pattern matching.
@@ -116,30 +116,30 @@ rows:
   row_id: r0004
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_jvtZb6uIT1On
     iso_intent:
-      source_id: SRCN-T02-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_G2Ho4PulHeNa
     rust_mechanisms:
-      source_id: SRCN-T02-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_6bU6cImDQ6Le
     coding_standard_implications:
-      source_id: SRCN-T02-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_3FmLKOJpxKr5
     asil_notes:
-      source_id: SRCN-T02-R0004-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ux2ZWODonek5
 - iso_topic: 1e Well-trusted design principles
   iso_intent: Prefer proven design principles (modularity, encapsulation, RAII).
   rust_mechanisms: RAII/Drop; composition via traits; exhaustive match; explicit ownership; zero-cost abstractions.
@@ -148,30 +148,30 @@ rows:
   row_id: r0005
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Yj9X6Mmuinjh
     iso_intent:
-      source_id: SRCN-T02-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_OL5XrK7YknNJ
     rust_mechanisms:
-      source_id: SRCN-T02-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_fAKmfiErO4CF
     coding_standard_implications:
-      source_id: SRCN-T02-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_cSH2qeP24S4F
     asil_notes:
-      source_id: SRCN-T02-R0005-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VqlIZ8HypSGV
 - iso_topic: 1f Unambiguous graphical representation
   iso_intent: Ensure design representations are unambiguous and understandable.
   rust_mechanisms: Rustdoc for API docs; module dependency graphs; UML/Arch diagrams generated from Cargo metadata.
@@ -180,30 +180,30 @@ rows:
   row_id: r0006
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_keZtnVCyG8WG
     iso_intent:
-      source_id: SRCN-T02-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_mBnm7j6Md5xL
     rust_mechanisms:
-      source_id: SRCN-T02-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_bTl31h6AkuaV
     coding_standard_implications:
-      source_id: SRCN-T02-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_R5YfbvTYruHJ
     asil_notes:
-      source_id: SRCN-T02-R0006-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EN26Rm4yoghz
 - iso_topic: 1g Style guides
   iso_intent: Consistency and readability to support reviews and maintenance.
   rust_mechanisms: rustfmt; Clippy; Rust API Guidelines; project-specific lints.
@@ -212,30 +212,30 @@ rows:
   row_id: r0007
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KeoeBbjB1K9f
     iso_intent:
-      source_id: SRCN-T02-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_JlinpxsKZDN3
     rust_mechanisms:
-      source_id: SRCN-T02-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KW3KmgZ1qAw0
     coding_standard_implications:
-      source_id: SRCN-T02-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_S9h2Pwyh6uZQ
     asil_notes:
-      source_id: SRCN-T02-R0007-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_rzudBw7eIGQ9
 - iso_topic: 1h Naming conventions
   iso_intent: Avoid ambiguity and improve traceability.
   rust_mechanisms: Compiler lints for non_snake_case, non_camel_case_types, etc.
@@ -244,30 +244,30 @@ rows:
   row_id: r0008
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_kEkcNazgWLDf
     iso_intent:
-      source_id: SRCN-T02-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_djbEtpNwNgYL
     rust_mechanisms:
-      source_id: SRCN-T02-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_XV11A6vgahjQ
     coding_standard_implications:
-      source_id: SRCN-T02-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zrki2U52HzBC
     asil_notes:
-      source_id: SRCN-T02-R0008-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8oAwRuhhpggc
 - iso_topic: 1i Concurrency aspects
   iso_intent: Prevent unintended interference via shared resources and concurrency.
   rust_mechanisms: Send/Sync; ownership; Mutex/RwLock/Atomics; no data races in safe code; explicit synchronization primitives.
@@ -276,27 +276,27 @@ rows:
   row_id: r0009
   cell_trace:
     iso_topic:
-      source_id: SRCN-T02-R0009-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_hzRQYY62gVkj
     iso_intent:
-      source_id: SRCN-T02-R0009-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KKtQX24aTgZB
     rust_mechanisms:
-      source_id: SRCN-T02-R0009-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0aFpMASlRKTA
     coding_standard_implications:
-      source_id: SRCN-T02-R0009-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0oDc0jB4eFiR
     asil_notes:
-      source_id: SRCN-T02-R0009-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_7Ch5ZqOtX11H

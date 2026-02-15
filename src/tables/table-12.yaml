@@ -14,57 +14,57 @@ rows:
   row_id: r0001
   cell_trace:
     environment:
-      source_id: SRCN-T12-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ZQKjs7FjPzmL
     rust_considerations:
-      source_id: SRCN-T12-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_QKQwqIIPA8Pm
     guidance:
-      source_id: SRCN-T12-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_NSFQfN2HCIQ2
 - environment: ECU network environments
   rust_considerations: Verify end-to-end timing, message ordering, and fault handling; test coexistence/partitioning
   guidance: Run integration tests under realistic bus load; include fault injection on buses and sensors.
   row_id: r0002
   cell_trace:
     environment:
-      source_id: SRCN-T12-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aYzpYQDLCKoE
     rust_considerations:
-      source_id: SRCN-T12-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HwKHwm6Zn671
     guidance:
-      source_id: SRCN-T12-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_pT0dLDaQGGFy
 - environment: Vehicles
   rust_considerations: Validate operational modes, degraded modes, and safe-state behavior
   guidance: Ensure test cases cover operational use cases and safety mechanisms under real timing.
   row_id: r0003
   cell_trace:
     environment:
-      source_id: SRCN-T12-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_iw4NCoaqJunl
     rust_considerations:
-      source_id: SRCN-T12-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_PniboL5GpkPD
     guidance:
-      source_id: SRCN-T12-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_PgCGeCUCWxt5

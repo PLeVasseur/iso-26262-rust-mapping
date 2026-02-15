@@ -17,25 +17,25 @@ rows:
   row_id: r0001
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_tRQOiPeMSL2M
     rust_aligned_execution:
-      source_id: SRCN-T10-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_J8m5cNrCvmue
     evidence_artifacts:
-      source_id: SRCN-T10-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_pE3aK6hKu3hh
     asil_notes:
-      source_id: SRCN-T10-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_oJPqXQ6H9wvB
 - method_table_10: 1b Interface test
   rust_aligned_execution: Contract tests for module/crate interfaces; FFI boundary validation
   evidence_artifacts: Interface test suite; negative tests
@@ -43,25 +43,25 @@ rows:
   row_id: r0002
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_s2loRvRnwDc0
     rust_aligned_execution:
-      source_id: SRCN-T10-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_okYYucYeHuui
     evidence_artifacts:
-      source_id: SRCN-T10-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_t9F4DjggeERU
     asil_notes:
-      source_id: SRCN-T10-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_yYLxu2sM4vDn
 - method_table_10: 1c Fault injection test
   rust_aligned_execution: Inject corrupted messages/config/inputs; simulate peripheral failures
   evidence_artifacts: Fault injection plan/results
@@ -69,25 +69,25 @@ rows:
   row_id: r0003
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TKp9qK9M22td
     rust_aligned_execution:
-      source_id: SRCN-T10-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_gq6oEFq7mR3u
     evidence_artifacts:
-      source_id: SRCN-T10-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xVJ5l92v7CqU
     asil_notes:
-      source_id: SRCN-T10-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_C3cMBRFGzoo5
 - method_table_10: 1d Resource usage evaluation
   rust_aligned_execution: Measure stack/heap/CPU/time usage; detect contention
   evidence_artifacts: Resource measurement reports; budgets
@@ -95,25 +95,25 @@ rows:
   row_id: r0004
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_h9F0YL1Yptz1
     rust_aligned_execution:
-      source_id: SRCN-T10-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_fgnnGG41DZn7
     evidence_artifacts:
-      source_id: SRCN-T10-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_hOQpnwOVJVBO
     asil_notes:
-      source_id: SRCN-T10-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Ru2yyJMlgV5o
 - method_table_10: 1e Back-to-back model/code comparison
   rust_aligned_execution: If model-based design is used, compare model output to Rust implementation
   evidence_artifacts: Comparison results; tolerances
@@ -121,25 +121,25 @@ rows:
   row_id: r0005
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Ti05cQqQyFCA
     rust_aligned_execution:
-      source_id: SRCN-T10-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_lfE3OeWKGLwE
     evidence_artifacts:
-      source_id: SRCN-T10-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_X5qSbqeGlbNp
     asil_notes:
-      source_id: SRCN-T10-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_U8GKgah3Fd9J
 - method_table_10: 1f Control/data flow verification
   rust_aligned_execution: Verify scheduling order, data flow, and mode switching across units
   evidence_artifacts: Integration analysis report
@@ -147,25 +147,25 @@ rows:
   row_id: r0006
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_acCqCAbVB52f
     rust_aligned_execution:
-      source_id: SRCN-T10-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_oNVTXhW580us
     evidence_artifacts:
-      source_id: SRCN-T10-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_jJ6W6ArGTZxd
     asil_notes:
-      source_id: SRCN-T10-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_v1TxYmPdTc1x
 - method_table_10: 1g Static code analysis
   rust_aligned_execution: Run linting and static analyzers on integrated builds; check cfg variants
   evidence_artifacts: Static analysis reports
@@ -173,25 +173,25 @@ rows:
   row_id: r0007
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_wACBXzsDXzA6
     rust_aligned_execution:
-      source_id: SRCN-T10-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ZrHjff53afxQ
     evidence_artifacts:
-      source_id: SRCN-T10-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_TdlXgyyG7Qt9
     asil_notes:
-      source_id: SRCN-T10-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ppAS33kSVfL4
 - method_table_10: 1h Abstract interpretation
   rust_aligned_execution: Use high-assurance analyzers for integration-level runtime errors
   evidence_artifacts: Abstract interpretation report
@@ -199,22 +199,22 @@ rows:
   row_id: r0008
   cell_trace:
     method_table_10:
-      source_id: SRCN-T10-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aC5jYYh6n0UX
     rust_aligned_execution:
-      source_id: SRCN-T10-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_6WUgKqXTKm9E
     evidence_artifacts:
-      source_id: SRCN-T10-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_j6BISpXeF6i2
     asil_notes:
-      source_id: SRCN-T10-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EiSDGaXmPmAH

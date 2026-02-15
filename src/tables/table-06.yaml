@@ -20,30 +20,30 @@ rows:
   row_id: r0001
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BV6QLfQBN1be
     rust_mapping:
-      source_id: SRCN-T06-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_SwabgQMepcQ3
     default_rule:
-      source_id: SRCN-T06-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_rJyEomX4Zpcv
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ExYHwTX9lShP
     rationale:
-      source_id: SRCN-T06-R0001-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_NEfl4X8IK4m8
 - principle: 1b No dynamic objects / online test
   rust_mapping: Allocation is explicit (`Box`, `Vec`, `String`, `Arc`, `Rc`). `no_std`/no-alloc profiles eliminate heap use entirely.
   default_rule: "QM\u2013B: allocation permitted with bounded capacity and failure handling. C/D: prefer no-alloc; otherwise require qualified allocator + fallible allocation patterns."
@@ -52,30 +52,30 @@ rows:
   row_id: r0002
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_tbd2r2g8Lw9V
     rust_mapping:
-      source_id: SRCN-T06-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_59g02S2FHciF
     default_rule:
-      source_id: SRCN-T06-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_n5hXmVX7NBaU
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Sne3Z7nkYyBq
     rationale:
-      source_id: SRCN-T06-R0002-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zoyEuz6GxJty
 - principle: 1c Initialization of variables
   rust_mapping: Rust enforces definite initialization in safe code; `MaybeUninit` exists for controlled patterns.
   default_rule: All variables must be initialized before use. Prohibit use of uninitialized memory APIs; allow `MaybeUninit` only in Q modules with proof of initialization.
@@ -84,30 +84,30 @@ rows:
   row_id: r0003
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8J0M3nTB5Jws
     rust_mapping:
-      source_id: SRCN-T06-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Gxzfkst3UZxB
     default_rule:
-      source_id: SRCN-T06-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_gIquzecUatST
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Q7wn0vGefUBo
     rationale:
-      source_id: SRCN-T06-R0003-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_onCP7ac2ebfK
 - principle: 1d No multiple use of variable names
   rust_mapping: Rust allows shadowing via `let`; can harm clarity.
   default_rule: "Prohibit variable shadowing in safety-related code (`let x = \u2026` reusing names). Allow shadowing only in tiny scopes (e.g., iterator adapters) with explicit lint suppression and justification."
@@ -116,30 +116,30 @@ rows:
   row_id: r0004
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_LiMUcPyfwAey
     rust_mapping:
-      source_id: SRCN-T06-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BNph6gYYVolI
     default_rule:
-      source_id: SRCN-T06-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Zfxzo3hk42g6
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xvaVdNVLEMB3
     rationale:
-      source_id: SRCN-T06-R0004-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_AWyZyEwOZRCl
 - principle: 1e Avoid global variables
   rust_mapping: Globals exist as `static` and `const`; mutable globals (`static mut`) require unsafe.
   default_rule: Prefer dependency injection and explicit state. Prohibit `static mut`. Restrict `static` to immutable data or to `OnceLock`/`LazyLock` with controlled initialization.
@@ -148,30 +148,30 @@ rows:
   row_id: r0005
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_I3AAbl73BsBP
     rust_mapping:
-      source_id: SRCN-T06-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Ejk7gNIqSflC
     default_rule:
-      source_id: SRCN-T06-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_GRi6Fr9vZtGs
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_7I9A4q2Mv0d2
     rationale:
-      source_id: SRCN-T06-R0005-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KKvAHKzTf7FF
 - principle: 1f Restricted use of pointers
   rust_mapping: References are non-null and lifetime-checked; raw pointers exist but require unsafe to dereference.
   default_rule: Use references (`&T`, `&mut T`) by default. Raw pointers only inside Q modules. Prohibit pointer arithmetic in application code.
@@ -180,30 +180,30 @@ rows:
   row_id: r0006
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HPq2J3ekZPgM
     rust_mapping:
-      source_id: SRCN-T06-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8kdC7cNX3RQm
     default_rule:
-      source_id: SRCN-T06-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_cl7IDczLMA6p
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_9aJs6QS54arA
     rationale:
-      source_id: SRCN-T06-R0006-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HLI2hQhA2WNg
 - principle: 1g No implicit conversions
   rust_mapping: Rust has no implicit numeric conversions; but has `Deref` coercions and `as` casts.
   default_rule: Restrict `as` to safe, non-lossy cases; require `TryFrom/TryInto` for narrowing. Avoid relying on `Deref` coercions in public APIs (make types explicit).
@@ -212,30 +212,30 @@ rows:
   row_id: r0007
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_yNxTVv4i4KkA
     rust_mapping:
-      source_id: SRCN-T06-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_7as3kkqbKkkV
     default_rule:
-      source_id: SRCN-T06-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VHgKbJvwizom
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_WPCoGXH8NjZP
     rationale:
-      source_id: SRCN-T06-R0007-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_zB81kcXrKbzI
 - principle: 1h No hidden data/control flow
   rust_mapping: No exceptions; but macros, trait objects, and `Drop` can hide effects.
   default_rule: Restrict macros that introduce control flow; require explicit error handling (`Result`). Document `Drop` side effects. Restrict dynamic dispatch (`dyn Trait`) in critical timing paths.
@@ -244,30 +244,30 @@ rows:
   row_id: r0008
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_qw7pEwDrqn3f
     rust_mapping:
-      source_id: SRCN-T06-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_B28xYE3ooozx
     default_rule:
-      source_id: SRCN-T06-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Hh1ps9czhJSW
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nJnt2pUuiKGc
     rationale:
-      source_id: SRCN-T06-R0008-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_uQuMGbhb4EG3
 - principle: 1i No unconditional jumps
   rust_mapping: Rust has no `goto`; `break`/`continue` are structured; labels exist.
   default_rule: Allow structured `break`/`continue`. Restrict labelled `break`/`continue` to cases where they simplify nesting; otherwise refactor.
@@ -276,30 +276,30 @@ rows:
   row_id: r0009
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0009-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_oxOJnDTftvsE
     rust_mapping:
-      source_id: SRCN-T06-R0009-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_2timu39GUHJD
     default_rule:
-      source_id: SRCN-T06-R0009-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_kY6tqT51tC0h
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0009-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_DhL5xawwvx2r
     rationale:
-      source_id: SRCN-T06-R0009-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_885i1bl0GWaq
 - principle: 1j No recursion (or justify/bound)
   rust_mapping: Recursion permitted; no guaranteed tail-call optimization.
   default_rule: Prohibit unbounded recursion. Allow bounded recursion only with explicit maximum depth and stack usage analysis.
@@ -308,27 +308,27 @@ rows:
   row_id: r0010
   cell_trace:
     principle:
-      source_id: SRCN-T06-R0010-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_dbfU5vYK35ex
     rust_mapping:
-      source_id: SRCN-T06-R0010-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_paFkdqGoPNie
     default_rule:
-      source_id: SRCN-T06-R0010-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_vqCgf0CieHCL
     asil_c_d_tightening:
-      source_id: SRCN-T06-R0010-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_23rGeNIeEYdV
     rationale:
-      source_id: SRCN-T06-R0010-C05
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_m4AgXC2uH6rf

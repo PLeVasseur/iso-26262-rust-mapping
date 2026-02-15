@@ -17,25 +17,25 @@ rows:
   row_id: r0001
   cell_trace:
     method:
-      source_id: SRCN-T05-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VF53f61YMrCJ
     rust_aligned_practice:
-      source_id: SRCN-T05-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_KZy0HYbSz4EL
     evidence_artifacts:
-      source_id: SRCN-T05-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_H1DPYrrMSgQW
     asil_expectations:
-      source_id: SRCN-T05-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_recWTeAw4UcH
 - method: Inspection (+/++)
   rust_aligned_practice: Formal inspections of architecture and interface specs
   evidence_artifacts: Inspection checklist, defect metrics, sign-off
@@ -43,25 +43,25 @@ rows:
   row_id: r0002
   cell_trace:
     method:
-      source_id: SRCN-T05-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_JLbY5nGlbbl7
     rust_aligned_practice:
-      source_id: SRCN-T05-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_q7mmu0AvKiur
     evidence_artifacts:
-      source_id: SRCN-T05-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_mCwlSnZaoi2e
     asil_expectations:
-      source_id: SRCN-T05-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_x39Y7rLBJwx2
 - method: Simulation (+/++ for D)
   rust_aligned_practice: Model-level or harness-level simulation of dynamic behavior
   evidence_artifacts: Simulation results, assumptions, coverage of modes
@@ -69,25 +69,25 @@ rows:
   row_id: r0003
   cell_trace:
     method:
-      source_id: SRCN-T05-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_dGBE2j1zKtzk
     rust_aligned_practice:
-      source_id: SRCN-T05-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_O17fVvurYrhH
     evidence_artifacts:
-      source_id: SRCN-T05-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_GwJbVhdnaqN0
     asil_expectations:
-      source_id: SRCN-T05-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_XtkDvrhMkzcA
 - method: Prototype generation (o/++ for D)
   rust_aligned_practice: Executable spike for risky interfaces/protocols
   evidence_artifacts: Prototype report and lessons learned
@@ -95,25 +95,25 @@ rows:
   row_id: r0004
   cell_trace:
     method:
-      source_id: SRCN-T05-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_rqhZARU4HPWr
     rust_aligned_practice:
-      source_id: SRCN-T05-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_OFMncUgwwodW
     evidence_artifacts:
-      source_id: SRCN-T05-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_U1ASxl5qSxrB
     asil_expectations:
-      source_id: SRCN-T05-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EUwNo12DRFmW
 - method: Formal verification (o/+)
   rust_aligned_practice: Formalize and verify critical protocols, unsafe abstractions, or control logic
   evidence_artifacts: Proofs, model checking results, assumptions and limitations
@@ -121,25 +121,25 @@ rows:
   row_id: r0005
   cell_trace:
     method:
-      source_id: SRCN-T05-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_k1VAyzLRrDau
     rust_aligned_practice:
-      source_id: SRCN-T05-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_pxF496CthGM6
     evidence_artifacts:
-      source_id: SRCN-T05-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_26zPY3Vfd2kQ
     asil_expectations:
-      source_id: SRCN-T05-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_PTZ5UoI5edkS
 - method: Control flow analysis (+/++)
   rust_aligned_practice: Control-flow graph analysis; restrict complex branching; review unsafe code
   evidence_artifacts: Static analysis reports; complexity metrics
@@ -147,25 +147,25 @@ rows:
   row_id: r0006
   cell_trace:
     method:
-      source_id: SRCN-T05-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_xqL3PazNzO0l
     rust_aligned_practice:
-      source_id: SRCN-T05-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_QbwDnuZgTbE2
     evidence_artifacts:
-      source_id: SRCN-T05-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_7fN8Wi1X8KLQ
     asil_expectations:
-      source_id: SRCN-T05-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nWBMnLd80v2n
 - method: Data flow analysis (+/++)
   rust_aligned_practice: Data-flow analysis for initialization, lifetimes, shared resources
   evidence_artifacts: Static analysis; taint/dataflow results
@@ -173,25 +173,25 @@ rows:
   row_id: r0007
   cell_trace:
     method:
-      source_id: SRCN-T05-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_mFbTM0yvHz5Z
     rust_aligned_practice:
-      source_id: SRCN-T05-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_RYzrSATac417
     evidence_artifacts:
-      source_id: SRCN-T05-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_HeYt3gb9YwbZ
     asil_expectations:
-      source_id: SRCN-T05-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_jJOkBPYYFuVR
 - method: Scheduling analysis (+/++)
   rust_aligned_practice: WCET/timing budget analysis; priority inversion review
   evidence_artifacts: Timing models; measurement reports; lock analysis
@@ -199,22 +199,22 @@ rows:
   row_id: r0008
   cell_trace:
     method:
-      source_id: SRCN-T05-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_OaXgE6J4j8Tw
     rust_aligned_practice:
-      source_id: SRCN-T05-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_XeFpj6mVXGLR
     evidence_artifacts:
-      source_id: SRCN-T05-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8YNAlePwpG1g
     asil_expectations:
-      source_id: SRCN-T05-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Z83C4D49Hg9S

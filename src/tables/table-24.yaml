@@ -17,25 +17,25 @@ rows:
   row_id: r0001
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0001-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_fW3RC850GwWf
     status:
-      source_id: SRCN-T24-R0001-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_FDoKZjChha7C
     rationale:
-      source_id: SRCN-T24-R0001-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_GBZCi66lfn8C
     preferred_alternatives:
-      source_id: SRCN-T24-R0001-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_2TCOnJe6HM5R
 - api_pattern: Indexing (`v[i]`, `slice[i]`)
   status: "R (QM\u2013B), X (C/D)"
   rationale: May panic; harder to prove bounds for MC/DC and review
@@ -43,25 +43,25 @@ rows:
   row_id: r0002
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0002-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_skwlxXQ7pkLr
     status:
-      source_id: SRCN-T24-R0002-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_aslLvjOlWeYj
     rationale:
-      source_id: SRCN-T24-R0002-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_0OkZzktouq2M
     preferred_alternatives:
-      source_id: SRCN-T24-R0002-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_4OcyoBs6POAR
 - api_pattern: '`panic!`, `todo!`, `unimplemented!`'
   status: R/X
   rationale: Uncontrolled termination; placeholders unacceptable in released code
@@ -69,25 +69,25 @@ rows:
   row_id: r0003
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0003-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_rZaf2euSaYaU
     status:
-      source_id: SRCN-T24-R0003-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Iw98Un16hrpn
     rationale:
-      source_id: SRCN-T24-R0003-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_apj1QiRR5M06
     preferred_alternatives:
-      source_id: SRCN-T24-R0003-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_BnRAYgnYxpN6
 - api_pattern: '`mem::transmute`, `mem::zeroed`'
   status: X
   rationale: High UB risk, invalid values, layout assumptions
@@ -95,25 +95,25 @@ rows:
   row_id: r0004
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0004-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_JNjPfHQPBy25
     status:
-      source_id: SRCN-T24-R0004-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_VGp2g60RcV0B
     rationale:
-      source_id: SRCN-T24-R0004-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_ZrmASNkW40OU
     preferred_alternatives:
-      source_id: SRCN-T24-R0004-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_8TUV9hWqXphi
 - api_pattern: '`ptr::read`, `ptr::write`, `get_unchecked`'
   status: Q (C/D)
   rationale: Unsafe memory access
@@ -121,25 +121,25 @@ rows:
   row_id: r0005
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0005-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_G6OjHwLmTOan
     status:
-      source_id: SRCN-T24-R0005-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_CPkcUBLq4zcb
     rationale:
-      source_id: SRCN-T24-R0005-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Y1mSs1wZ4SCU
     preferred_alternatives:
-      source_id: SRCN-T24-R0005-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nbEBMYi9lJ2D
 - api_pattern: '`Rc` / cycles with `Arc` + `Weak`'
   status: R
   rationale: Complex ownership and drop order; potential leaks
@@ -147,25 +147,25 @@ rows:
   row_id: r0006
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0006-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_4BIbMMQK9f16
     status:
-      source_id: SRCN-T24-R0006-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_68qVb2l4GThu
     rationale:
-      source_id: SRCN-T24-R0006-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_nmrRHQlQfUvK
     preferred_alternatives:
-      source_id: SRCN-T24-R0006-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_9elXMK0NfQyl
 - api_pattern: Hash-based collections (`HashMap`, `HashSet`)
   status: P/R
   rationale: Nondeterministic iteration order; DOS considerations
@@ -173,25 +173,25 @@ rows:
   row_id: r0007
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0007-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_X2RL1fIe7IbU
     status:
-      source_id: SRCN-T24-R0007-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_T8J8G3cT1RVZ
     rationale:
-      source_id: SRCN-T24-R0007-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_miL711Mebkcv
     preferred_alternatives:
-      source_id: SRCN-T24-R0007-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_tCF6xxigSHCp
 - api_pattern: '`std::thread::spawn`'
   status: "R (B\u2013D)"
   rationale: Unbounded concurrency and scheduling nondeterminism
@@ -199,22 +199,22 @@ rows:
   row_id: r0008
   cell_trace:
     api_pattern:
-      source_id: SRCN-T24-R0008-C01
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_sJZ9qn3zvRuj
     status:
-      source_id: SRCN-T24-R0008-C02
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_uN7PWsZ8qKTk
     rationale:
-      source_id: SRCN-T24-R0008-C03
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_Ia4DONVPNHpJ
     preferred_alternatives:
-      source_id: SRCN-T24-R0008-C04
       trace_status: unmapped_with_rationale
       anchor_ids: []
       relation: ''
+      irm_id: irm_EUH9FEdewd4h
