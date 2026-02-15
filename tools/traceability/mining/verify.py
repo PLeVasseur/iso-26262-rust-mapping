@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -368,7 +369,7 @@ def _run_probe_suite(repo_root: Path, run_root: Path, probes: dict[str, list[dic
                     result_flags[flag_key] = False
 
     report_path = run_root / "query" / "probe-set" / "probe-results.json"
-    _write_json(
+    write_json(
         report_path,
         {
             "generated_at_utc": utc_now(),
@@ -436,6 +437,136 @@ def _query_smoke(repo_root: Path, run_root: Path) -> tuple[bool, bool, dict]:
     return word_pass, phrase_pass, details
 
 
+def _verify_query_guardrails(repo_root: Path, run_root: Path, smoke_details: dict) -> tuple[bool, bool, bool, Path]:
+    word_preface = smoke_details.get("word_preface", {})
+    ts_preface_pass = bool(word_preface.get("ts_usage_reminder"))
+    guideline_pointer_pass = str(word_preface.get("guideline_pointer_path", "")) == "docs/traceability-ts-and-quotation-guidelines.md"
+
+    quote_probe = _run_query_cli(
+        repo_root,
+        [
+            "search",
+            "--run-root",
+            str(run_root),
+            "--repo-root",
+            str(repo_root),
+            "--term",
+            str(smoke_details.get("word_term", "software")),
+            "--quote",
+            "--max-hits",
+            "2",
+        ],
+    )
+    quote_limit_pass = True
+    fair_use_pass = True
+    for hit in quote_probe.get("hits", []):
+        quote = str(hit.get("quote", ""))
+        if len(quote) > 240 or len(quote.splitlines()) > 2:
+            quote_limit_pass = False
+        if hit.get("fair_use_brief_quote") is not True:
+            fair_use_pass = False
+
+    report_path = run_root / "query" / "query-snapshots" / "guardrail-smoke.json"
+    write_json(
+        report_path,
+        {
+            "generated_at_utc": utc_now(),
+            "ts_preface_pass": ts_preface_pass,
+            "guideline_pointer_pass": guideline_pointer_pass,
+            "quote_limit_pass": quote_limit_pass,
+            "fair_use_pass": fair_use_pass,
+        },
+    )
+    return ts_preface_pass, guideline_pointer_pass and quote_limit_pass, fair_use_pass, report_path
+
+
+def _run_source_integration_and_build(
+    repo_root: Path,
+    control_root: Path,
+    run_root: Path,
+    retain_probe_insertions: bool,
+) -> tuple[dict, Path]:
+    integration = subprocess.run(
+        [
+            "uv",
+            "run",
+            "python",
+            "tools/traceability/mining/source_integration.py",
+            "--repo-root",
+            str(repo_root),
+            "--control-root",
+            str(control_root),
+            "--run-root",
+            str(run_root),
+        ],
+        cwd=str(repo_root),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    tx_payload = json.loads(integration.stdout.strip())
+    manifest_path = Path(tx_payload["manifest_path"])
+    manifest = _load_json(manifest_path)
+
+    verify_dir = control_root / "artifacts" / "verify"
+    verify_dir.mkdir(parents=True, exist_ok=True)
+    makepy_log = verify_dir / "makepy-e2e.log"
+
+    env = os.environ.copy()
+    env["SPHINX_MIGRATION_RUN_ROOT"] = str(control_root)
+    timeout = int(os.environ.get("MAKEPY_VERIFY_TIMEOUT_SECONDS", "0") or "0")
+    timeout_value = timeout if timeout > 0 else None
+    makepy = subprocess.run(
+        ["./make.py", "verify"],
+        cwd=str(repo_root),
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=timeout_value,
+    )
+    makepy_log.write_text(
+        f"exit_code={makepy.returncode}\n{makepy.stdout}\n--- stderr ---\n{makepy.stderr}\n",
+        encoding="utf-8",
+    )
+    makepy_pass = makepy.returncode == 0
+
+    auto_revert_applied = False
+    if not retain_probe_insertions:
+        changed_paths = [str((repo_root / row["path"]).resolve()) for row in manifest.get("files", [])]
+        if changed_paths:
+            subprocess.run(["git", "restore", "--", *changed_paths], cwd=str(repo_root), check=True)
+            auto_revert_applied = True
+
+        for row in manifest.get("files", []):
+            rel = row.get("path")
+            if isinstance(rel, str):
+                row["sha256"] = hashlib.sha256((repo_root / rel).read_bytes()).hexdigest()
+        manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    status = subprocess.run(
+        ["git", "status", "--short", "src"],
+        cwd=str(repo_root),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    residual_src_diff_count = len([line for line in status.stdout.splitlines() if line.strip()])
+
+    summary = {
+        "src_integration_begin": tx_payload["begin_marker"],
+        "src_integration_commit": tx_payload["commit_marker"],
+        "src_integration_manifest": str(manifest_path),
+        "paragraph_integration_pass": bool(manifest.get("paragraph_insertion_changed", True)),
+        "list_integration_pass": bool(manifest.get("list_insertion_changed", True)),
+        "table_integration_pass": bool(manifest.get("table_insertion_changed", True)),
+        "makepy_e2e_pass": makepy_pass,
+        "retain_probe_insertions": int(retain_probe_insertions),
+        "auto_revert_applied": auto_revert_applied,
+        "residual_src_diff_count": residual_src_diff_count,
+    }
+    return summary, makepy_log
+
+
 def run_verify_stage(ctx: "StageContext") -> "StageResult":
     repo_root = ctx.paths.repo_root
     control_root = ctx.paths.control_run_root
@@ -465,6 +596,18 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
     if not phrase_query_smoke:
         raise VerifyError("deterministic phrase query smoke check failed")
 
+    ts_preface_pass, quote_limit_pass, fair_use_pass, guardrail_report_path = _verify_query_guardrails(
+        repo_root,
+        ctx.paths.run_root,
+        smoke_details,
+    )
+    if not ts_preface_pass:
+        raise VerifyError("query output guardrail preface missing")
+    if not quote_limit_pass:
+        raise VerifyError("query output quote limit guardrail failed")
+    if not fair_use_pass:
+        raise VerifyError("query output fair-use marker guardrail failed")
+
     probes, freeze_path, freeze_signature = _sample_probe_sets(repo_root, ctx.paths.run_root, ctx.run_id, control_root)
     probe_flags, probe_result_path = _run_probe_suite(repo_root, ctx.paths.run_root, probes)
     if not probe_flags["tables_probe_pass"]:
@@ -475,6 +618,24 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         raise VerifyError("src probe suite failed")
     if not probe_flags["negative_probe_pass"]:
         raise VerifyError("negative probe suite failed")
+
+    retain_probe_insertions = os.environ.get("RETAIN_PROBE_INSERTIONS", "0") == "1"
+    src_e2e_summary, makepy_log_path = _run_source_integration_and_build(
+        repo_root,
+        control_root,
+        ctx.paths.run_root,
+        retain_probe_insertions,
+    )
+    if not src_e2e_summary["paragraph_integration_pass"]:
+        raise VerifyError("paragraph source integration failed")
+    if not src_e2e_summary["list_integration_pass"]:
+        raise VerifyError("list source integration failed")
+    if not src_e2e_summary["table_integration_pass"]:
+        raise VerifyError("table source integration failed")
+    if not src_e2e_summary["makepy_e2e_pass"]:
+        raise VerifyError("make.py verify failed after source integration")
+    if src_e2e_summary["retain_probe_insertions"] == 0 and src_e2e_summary["residual_src_diff_count"] != 0:
+        raise VerifyError("probe fixture edits remain in src after auto-revert")
 
     replay_signature_path, replay_signature_pass = _write_replay_signature_artifact(
         control_root,
@@ -500,11 +661,15 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         "word_query_smoke": word_query_smoke,
         "phrase_query_smoke": phrase_query_smoke,
         "probe_signature": freeze_signature,
+        "query_guardrail_preface_pass": ts_preface_pass,
+        "query_guardrail_quote_limit_pass": quote_limit_pass,
+        "query_guardrail_fair_use_pass": fair_use_pass,
         "tables_probe_pass": probe_flags["tables_probe_pass"],
         "text_probe_pass": probe_flags["text_probe_pass"],
         "src_probe_pass": probe_flags["src_probe_pass"],
         "negative_probe_pass": probe_flags["negative_probe_pass"],
         "query_smoke": smoke_details,
+        "source_integration": src_e2e_summary,
         "replay_signature_pass": replay_signature_pass,
     }
 
@@ -523,6 +688,8 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
             quality_anomaly_path,
             probe_result_path,
             freeze_path,
+            guardrail_report_path,
+            makepy_log_path,
         ],
         input_hashes={},
     )
