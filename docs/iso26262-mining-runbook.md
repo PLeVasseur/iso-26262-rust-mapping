@@ -140,6 +140,45 @@ uv run python tools/traceability/mine_iso_corpus.py \
   replay
 ```
 
+## Canonical let-it-rip operator mode (`C24`)
+
+Use run-to-completion when no throttle is supplied.
+
+- `MODE` default: `licensed_local`
+- `START_PHASE` default: earliest incomplete safe phase
+- `MAX_PHASES` default: `all` (run to completion)
+- `RETAIN_PROBE_INSERTIONS` default: `0` (auto-revert probe fixtures)
+
+One-shot kickoff (no existing incomplete run):
+
+```bash
+RUN_ID=$(date -u +%Y%m%dT%H%M%SZ)
+CONTROL_RUN_ROOT="$OPENCODE_CONFIG_DIR/reports/iso26262-mining-verbatim-$RUN_ID"
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+uv run python tools/traceability/mine_iso_corpus.py \
+  --run-id "$RUN_ID" \
+  --plan-path "$OPENCODE_CONFIG_DIR/plans/2026-02-16-verbatim-prewarm-cache-integration-plan.md" \
+  --control-run-root "$CONTROL_RUN_ROOT" \
+  --pdf-root "$REPO_ROOT/.cache/iso26262" \
+  --source-pdfset "$REPO_ROOT/traceability/iso26262/index/source-pdfset.jsonc" \
+  --relevant-policy "$REPO_ROOT/traceability/iso26262/index/relevant-pdf-policy.jsonc" \
+  --extraction-policy "$REPO_ROOT/tools/traceability/mining/config/extraction_policy_v1.jsonc" \
+  --mode licensed_local \
+  verify
+```
+
+Resume explicit run:
+
+```bash
+uv run python tools/traceability/mine_iso_corpus.py \
+  --run-id "$RUN_ID" \
+  --plan-path "$OPENCODE_CONFIG_DIR/plans/2026-02-16-verbatim-prewarm-cache-integration-plan.md" \
+  --control-run-root "$CONTROL_RUN_ROOT" \
+  --mode licensed_local \
+  verify
+```
+
 ## Forbidden report content
 
 Do not place any of the following under control-plane reports/artifacts:
