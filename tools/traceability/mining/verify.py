@@ -144,6 +144,70 @@ def _write_replay_signature_artifact(control_root: Path, run_root: Path, run_id:
     return replay_path, payload["mismatch_count"] == 0
 
 
+def _prewarm_build_quality(run_root: Path, control_root: Path, run_id: str) -> tuple[bool, bool, int, Path, Path]:
+    slices_path = run_root / "normalize" / "verbatim" / "unit-slices.jsonl"
+    rows = _load_jsonl(slices_path)
+
+    anomalies: list[dict] = []
+    for row in rows:
+        text = str(row.get("text", ""))
+        unit_id = str(row.get("unit_id", ""))
+        slice_id = str(row.get("slice_id", ""))
+
+        if "\ufffd" in text:
+            anomalies.append(
+                {
+                    "kind": "replacement_char",
+                    "unit_id": unit_id,
+                    "slice_id": slice_id,
+                }
+            )
+
+        bad_controls = [ch for ch in text if ord(ch) < 32 and ch not in {"\n", "\r", "\t", "\f", "\v"}]
+        if bad_controls:
+            anomalies.append(
+                {
+                    "kind": "control_char_cluster",
+                    "unit_id": unit_id,
+                    "slice_id": slice_id,
+                    "count": len(bad_controls),
+                }
+            )
+
+        if "@@@" in text or "###" in text:
+            anomalies.append(
+                {
+                    "kind": "parser_artifact_pattern",
+                    "unit_id": unit_id,
+                    "slice_id": slice_id,
+                }
+            )
+
+    normalization_pass = not any(item["kind"] in {"replacement_char", "control_char_cluster"} for item in anomalies)
+    artifact_hygiene_pass = not any(item["kind"] == "parser_artifact_pattern" for item in anomalies)
+    anomaly_count = len(anomalies)
+
+    verify_dir = control_root / "artifacts" / "verify"
+    verify_dir.mkdir(parents=True, exist_ok=True)
+    report_path = verify_dir / "prewarm-build-quality.json"
+    anomaly_path = verify_dir / "prewarm-build-quality-anomalies.jsonl"
+    write_json(
+        report_path,
+        {
+            "run_id": run_id,
+            "timestamp_utc": utc_now(),
+            "normalization_pass": normalization_pass,
+            "artifact_hygiene_pass": artifact_hygiene_pass,
+            "anomaly_count": anomaly_count,
+        },
+    )
+    anomaly_path.write_text(
+        "".join(json.dumps(item, sort_keys=True) + "\n" for item in anomalies),
+        encoding="utf-8",
+    )
+    return normalization_pass, artifact_hygiene_pass, anomaly_count, report_path, anomaly_path
+
+
 def run_verify_stage(ctx: "StageContext") -> "StageResult":
     repo_root = ctx.paths.repo_root
     control_root = ctx.paths.control_run_root
@@ -156,6 +220,15 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
     anchor_count, corpus_anchor_count = _validate_anchor_registry(repo_root)
     completeness, unresolved_qa = _check_required_part_completeness(control_root)
     _check_control_plane_report_content(control_root)
+    normalization_pass, artifact_hygiene_pass, anomaly_count, quality_report_path, quality_anomaly_path = _prewarm_build_quality(
+        ctx.paths.run_root,
+        control_root,
+        ctx.run_id,
+    )
+    if not normalization_pass:
+        raise VerifyError("prewarm text normalization gate failed")
+    if not artifact_hygiene_pass:
+        raise VerifyError("prewarm artifact hygiene gate failed")
     replay_signature_path, replay_signature_pass = _write_replay_signature_artifact(
         control_root,
         ctx.paths.run_root,
@@ -174,6 +247,9 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
         "anchor_registry_count": anchor_count,
         "corpus_anchor_count": corpus_anchor_count,
         "report_content_pass": True,
+        "normalization_pass": normalization_pass,
+        "artifact_hygiene_pass": artifact_hygiene_pass,
+        "anomaly_count": anomaly_count,
         "replay_signature_pass": replay_signature_pass,
     }
 
@@ -184,4 +260,7 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
 
     from .stages import StageResult
 
-    return StageResult(outputs=[summary_path, replay_signature_path], input_hashes={})
+    return StageResult(
+        outputs=[summary_path, replay_signature_path, quality_report_path, quality_anomaly_path],
+        input_hashes={},
+    )
