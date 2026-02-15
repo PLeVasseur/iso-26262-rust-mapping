@@ -1,0 +1,72 @@
+"""Initial stage scaffolding for mining pipeline."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Callable
+
+from .framework import RunPaths, utc_now, write_json
+
+
+@dataclass
+class StageContext:
+    run_id: str
+    phase: int
+    paths: RunPaths
+    mode: str
+
+
+def _write_scaffold_marker(stage: str, ctx: StageContext) -> Path:
+    marker = ctx.paths.control_run_root / "artifacts" / "scaffold" / f"{stage}.marker.json"
+    write_json(
+        marker,
+        {
+            "run_id": ctx.run_id,
+            "stage": stage,
+            "phase": ctx.phase,
+            "mode": ctx.mode,
+            "timestamp_utc": utc_now(),
+            "status": "scaffold_only",
+        },
+    )
+    return marker
+
+
+def run_ingest(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("ingest", ctx)
+
+
+def run_extract(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("extract", ctx)
+
+
+def run_normalize(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("normalize", ctx)
+
+
+def run_anchor(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("anchor", ctx)
+
+
+def run_publish(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("publish", ctx)
+
+
+def run_verify(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("verify", ctx)
+
+
+def run_finalize(ctx: StageContext) -> Path:
+    return _write_scaffold_marker("finalize", ctx)
+
+
+HANDLERS: dict[str, Callable[[StageContext], Path]] = {
+    "ingest": run_ingest,
+    "extract": run_extract,
+    "normalize": run_normalize,
+    "anchor": run_anchor,
+    "publish": run_publish,
+    "verify": run_verify,
+    "finalize": run_finalize,
+}
