@@ -14,9 +14,13 @@ CONF_DIR = ROOT / "docs"
 SOURCE_DIR = ROOT / "src"
 OUT_DIR = ROOT / "build" / "html"
 DOCTREE_DIR = ROOT / "build" / "doctrees"
+PARAGRAPH_IDS_PATH = ROOT / "build" / "paragraph-ids.json"
+PARAGRAPH_IDS_SCHEMA_PATH = (
+    ROOT / "traceability" / "iso26262" / "schema" / "paragraph-ids.schema.json"
+)
 
 LEGACY_TOKENS = ("{{TABLE:", "{{PAGE_BREAK}}", "{{BLANK}}")
-TRACE_ENV_VARS = ("OPENCODE_CONFIG_DIR", "SPHINX_MIGRATION_RUN_ROOT")
+TRACE_ENV_VARS = ("SPHINX_MIGRATION_RUN_ROOT",)
 
 
 def _draft202012_validator(schema: dict):
@@ -51,7 +55,6 @@ def _require_trace_env(command_name: str) -> None:
         f"missing required environment variables for '{command_name}': {missing_csv}",
         "",
         "Export and retry, for example:",
-        "  export OPENCODE_CONFIG_DIR=<path-to-opencode-config>",
         "  export SPHINX_MIGRATION_RUN_ROOT=<path-to-run-root>",
     ]
     raise SystemExit("\n".join(details))
@@ -157,29 +160,25 @@ def _validate_no_leak() -> list[str]:
 def _run_trace_validate() -> tuple[bool, list[str]]:
     diagnostics: list[str] = []
 
-    paragraph_ids_path = OUT_DIR / "paragraph-ids.json"
+    paragraph_ids_path = PARAGRAPH_IDS_PATH
     if not paragraph_ids_path.exists():
         diagnostics.append(f"missing paragraph-ids export: {paragraph_ids_path}")
     else:
         payload = json.loads(paragraph_ids_path.read_text(encoding="utf-8"))
 
-        opencode_dir = os.environ.get("OPENCODE_CONFIG_DIR", "")
-        if opencode_dir:
-            schema_path = (
-                Path(opencode_dir) / "reports" / "schemas" / "paragraph-ids.schema.json"
+        schema_path = PARAGRAPH_IDS_SCHEMA_PATH
+        if schema_path.exists():
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+            validator = _draft202012_validator(schema)
+            errors = sorted(
+                validator.iter_errors(payload),
+                key=lambda err: list(err.absolute_path),
             )
-            if schema_path.exists():
-                schema = json.loads(schema_path.read_text(encoding="utf-8"))
-                validator = _draft202012_validator(schema)
-                errors = sorted(
-                    validator.iter_errors(payload),
-                    key=lambda err: list(err.absolute_path),
-                )
-                diagnostics.extend(
-                    [f"paragraph-ids schema: {err.message}" for err in errors]
-                )
-            else:
-                diagnostics.append(f"missing paragraph-ids schema: {schema_path}")
+            diagnostics.extend(
+                [f"paragraph-ids schema: {err.message}" for err in errors]
+            )
+        else:
+            diagnostics.append(f"missing paragraph-ids schema: {schema_path}")
 
         records = payload.get("records", payload if isinstance(payload, list) else [])
         table_anchor_re = re.compile(r"^[a-z0-9-]+--r-[a-z0-9-]+--c-[a-z0-9-]+$")

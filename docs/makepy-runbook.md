@@ -30,20 +30,19 @@ uv run python make.py build
 
 ## Runtime environment contract
 
-Set both variables for strict traceability commands:
+Set this variable for strict traceability commands:
 
 ```bash
-export OPENCODE_CONFIG_DIR=/path/to/opencode-config-dir
 export SPHINX_MIGRATION_RUN_ROOT=/path/to/sphinx-traceability-migration-run-root
 ```
 
-Commands requiring both env vars:
+Commands requiring the trace env var:
 
 - `./make.py trace-validate`
 - `./make.py trace-report`
 - `./make.py verify`
 
-Commands not requiring trace env vars:
+Commands not requiring the trace env var:
 
 - `./make.py --help`
 - `./make.py validate`
@@ -52,11 +51,10 @@ Commands not requiring trace env vars:
 New-session env verification checklist:
 
 ```bash
-echo "$OPENCODE_CONFIG_DIR"
 echo "$SPHINX_MIGRATION_RUN_ROOT"
 ```
 
-- Both commands must print non-empty values before running strict trace commands.
+- The command must print a non-empty value before running strict trace commands.
 
 ## Python style and lint checks
 
@@ -71,7 +69,7 @@ uvx flake8 . --exclude .venv
 
 - Missing uv executable: install uv, then rerun preflight.
 - Direct launcher unavailable: use `uv run python make.py <command>`.
-- Missing env vars for trace commands: export required vars and rerun.
+- Missing trace env var for trace commands: export the required var and rerun.
 - CI lint failure: rerun local Black and Flake8 commands, fix, repeat.
 - Dependency resolution failure: run `uv sync` and validate `uv.lock` is current.
 

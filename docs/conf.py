@@ -44,7 +44,7 @@ iso26262_trace_statuses = [
 ]
 
 iso26262_trace_schema_path = str(
-    REPO_ROOT / "traceability" / "iso26262" / "schema" / "anchor-registry.schema.json"
+    REPO_ROOT / "traceability" / "iso26262" / "schema" / "paragraph-ids.schema.json"
 )
 iso26262_anchor_registry_path = str(
     REPO_ROOT / "traceability" / "iso26262" / "index" / "anchor-registry.jsonc"
@@ -52,4 +52,3 @@ iso26262_anchor_registry_path = str(
 iso26262_table_root = str(REPO_ROOT / "src" / "tables")
 
 iso26262_run_root = os.environ.get("SPHINX_MIGRATION_RUN_ROOT", "")
-iso26262_opencode_config_dir = os.environ.get("OPENCODE_CONFIG_DIR", "")

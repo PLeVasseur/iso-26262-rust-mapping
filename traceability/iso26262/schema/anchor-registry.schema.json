@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://opencode.local/iso26262/schema/anchor-registry.schema.json",
+  "$id": "https://iso26262-rust-mapping.local/schema/anchor-registry.schema.json",
   "title": "ISO 26262 anchor registry",
   "type": "object",
   "required": [

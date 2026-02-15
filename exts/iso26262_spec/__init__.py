@@ -464,8 +464,8 @@ def _write_text(path: Path, text: str) -> None:
 
 def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
     _ensure_env(env)
-    outdir = Path(app.outdir)
-    paragraph_ids_path = outdir / "paragraph-ids.json"
+    build_root = Path(app.outdir).parent
+    paragraph_ids_path = build_root / "paragraph-ids.json"
 
     records: list[dict[str, Any]] = []
     for idx, source_id in enumerate(env.iso26262_trace_order, start=1):
@@ -479,12 +479,17 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
     }
     _write_json(paragraph_ids_path, paragraph_payload)
 
-    schema_path = (
-        Path(app.config.iso26262_opencode_config_dir)
-        / "reports"
-        / "schemas"
-        / "paragraph-ids.schema.json"
-    )
+    schema_path_raw = str(app.config.iso26262_trace_schema_path).strip()
+    if schema_path_raw:
+        schema_path = Path(schema_path_raw)
+    else:
+        schema_path = (
+            Path(app.confdir).parent
+            / "traceability"
+            / "iso26262"
+            / "schema"
+            / "paragraph-ids.schema.json"
+        )
     schema_validation_result = {
         "schema_path": str(schema_path),
         "paragraph_ids_path": str(paragraph_ids_path),
@@ -575,7 +580,6 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
     )
 
     run_root_raw = app.config.iso26262_run_root
-    opencode_config_dir_raw = app.config.iso26262_opencode_config_dir
     if run_root_raw:
         run_root = Path(run_root_raw)
         _write_json(run_root / "traceability-statement-coverage.json", coverage_json)
@@ -618,15 +622,6 @@ def _emit_trace_outputs(app: Sphinx, env: BuildEnvironment) -> None:
         _write_json(
             run_root / "artifacts" / "indexes" / "anchor_to_source.stats.json",
             anchor_to_source_stats,
-        )
-
-    if opencode_config_dir_raw:
-        reports_root = Path(opencode_config_dir_raw) / "reports"
-        _write_json(
-            reports_root / "traceability-statement-coverage-latest.json", coverage_json
-        )
-        _write_text(
-            reports_root / "traceability-statement-coverage-latest.md", coverage_md
         )
 
 
@@ -999,7 +994,6 @@ def setup(app: Sphinx) -> dict[str, Any]:
     app.add_config_value("iso26262_anchor_registry_path", "", "env")
     app.add_config_value("iso26262_table_root", "", "env")
     app.add_config_value("iso26262_run_root", "", "env")
-    app.add_config_value("iso26262_opencode_config_dir", "", "env")
 
     app.add_domain(TraceDomain)
 

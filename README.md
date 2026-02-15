@@ -52,20 +52,19 @@ uv run python make.py <command>
 
 ## Trace runtime environment contract
 
-Strict trace commands require both environment variables:
+Strict trace commands require this environment variable:
 
 ```bash
-export OPENCODE_CONFIG_DIR=/path/to/opencode-config-dir
 export SPHINX_MIGRATION_RUN_ROOT=/path/to/sphinx-migration-run-root
 ```
 
-Requires env vars:
+Requires env var:
 
 - `./make.py trace-validate`
 - `./make.py trace-report`
 - `./make.py verify`
 
-Does not require env vars:
+Does not require trace env var:
 
 - `./make.py --help`
 - `./make.py validate`
@@ -99,18 +98,18 @@ Decision: style/lint checks are CI-enforced and documented as local operator com
 
 ## Traceability outputs
 
-- `build/html/paragraph-ids.json`
-- `$OPENCODE_CONFIG_DIR/reports/sphinx-traceability-migration-<run-id>/traceability-statement-coverage.json`
-- `$OPENCODE_CONFIG_DIR/reports/sphinx-traceability-migration-<run-id>/traceability-statement-coverage.md`
-- `$OPENCODE_CONFIG_DIR/reports/traceability-statement-coverage-latest.json`
-- `$OPENCODE_CONFIG_DIR/reports/traceability-statement-coverage-latest.md`
+- `build/paragraph-ids.json`
+- `$SPHINX_MIGRATION_RUN_ROOT/traceability-statement-coverage.json`
+- `$SPHINX_MIGRATION_RUN_ROOT/traceability-statement-coverage.md`
+- `$SPHINX_MIGRATION_RUN_ROOT/artifacts/traceability/paragraph-ids-schema-validation.json`
+- `$SPHINX_MIGRATION_RUN_ROOT/artifacts/traceability/paragraph-ids-table-entry-audit.json`
 
 ## Troubleshooting
 
 - `ModuleNotFoundError` on `./make.py`: run from repo root and use uv launcher (`./make.py`), or fallback to `uv run python make.py <command>`.
 - `env: uv: No such file or directory`: install uv, then rerun preflight.
 - `permission denied` for `./make.py`: run `chmod +x make.py`.
-- missing trace env vars: export `OPENCODE_CONFIG_DIR` and `SPHINX_MIGRATION_RUN_ROOT` before trace commands.
+- missing trace env var: export `SPHINX_MIGRATION_RUN_ROOT` before trace commands.
 - dependency resolution failure: run `uv sync` and ensure `uv.lock` matches `pyproject.toml`.
 
 ## Notes
