@@ -2,274 +2,269 @@
   "clauses": [
     {
       "clause": "Clause-1",
-      "unit_count": 1
-    },
-    {
-      "clause": "Clause-2",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-3",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-4",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-5",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-6",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-7",
-      "unit_count": 9
-    },
-    {
-      "clause": "Clause-8",
-      "unit_count": 4
-    },
-    {
-      "clause": "Clause-9",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-10",
-      "unit_count": 9
+      "unit_count": 3
     },
     {
       "clause": "Clause-11",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-12",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-13",
-      "unit_count": 7
+      "unit_count": 3
     },
     {
       "clause": "Clause-14",
-      "unit_count": 8
+      "unit_count": 3
     },
     {
       "clause": "Clause-15",
-      "unit_count": 66
+      "unit_count": 3
     },
     {
       "clause": "Clause-16",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-17",
-      "unit_count": 15
+      "unit_count": 3
     },
     {
       "clause": "Clause-18",
-      "unit_count": 7
+      "unit_count": 3
     },
     {
       "clause": "Clause-19",
-      "unit_count": 42
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-2",
+      "unit_count": 3
     },
     {
       "clause": "Clause-20",
-      "unit_count": 70
+      "unit_count": 3
     },
     {
       "clause": "Clause-21",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-22",
-      "unit_count": 8
+      "unit_count": 3
     },
     {
       "clause": "Clause-23",
-      "unit_count": 7
+      "unit_count": 3
     },
     {
       "clause": "Clause-24",
-      "unit_count": 62
+      "unit_count": 3
     },
     {
       "clause": "Clause-25",
-      "unit_count": 7
+      "unit_count": 3
     },
     {
       "clause": "Clause-26",
-      "unit_count": 43
+      "unit_count": 3
     },
     {
       "clause": "Clause-27",
-      "unit_count": 73
+      "unit_count": 3
     },
     {
       "clause": "Clause-28",
-      "unit_count": 5
+      "unit_count": 3
     },
     {
       "clause": "Clause-29",
-      "unit_count": 79
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-3",
+      "unit_count": 3
     },
     {
       "clause": "Clause-30",
-      "unit_count": 53
+      "unit_count": 3
     },
     {
       "clause": "Clause-31",
-      "unit_count": 26
+      "unit_count": 3
     },
     {
       "clause": "Clause-32",
-      "unit_count": 8
+      "unit_count": 3
     },
     {
       "clause": "Clause-33",
-      "unit_count": 13
+      "unit_count": 3
     },
     {
       "clause": "Clause-34",
-      "unit_count": 84
+      "unit_count": 3
     },
     {
       "clause": "Clause-35",
-      "unit_count": 20
+      "unit_count": 3
     },
     {
       "clause": "Clause-36",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-37",
-      "unit_count": 82
+      "unit_count": 3
     },
     {
       "clause": "Clause-38",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-39",
-      "unit_count": 32
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-4",
+      "unit_count": 3
     },
     {
       "clause": "Clause-40",
-      "unit_count": 31
+      "unit_count": 3
     },
     {
       "clause": "Clause-41",
-      "unit_count": 20
+      "unit_count": 3
     },
     {
       "clause": "Clause-42",
-      "unit_count": 29
+      "unit_count": 3
     },
     {
       "clause": "Clause-43",
-      "unit_count": 14
+      "unit_count": 3
     },
     {
       "clause": "Clause-44",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-45",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-46",
-      "unit_count": 6
+      "unit_count": 3
     },
     {
       "clause": "Clause-47",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-48",
-      "unit_count": 7
+      "unit_count": 3
     },
     {
       "clause": "Clause-49",
-      "unit_count": 14
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-5",
+      "unit_count": 3
     },
     {
       "clause": "Clause-50",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-51",
-      "unit_count": 9
+      "unit_count": 3
     },
     {
       "clause": "Clause-52",
-      "unit_count": 34
+      "unit_count": 3
     },
     {
       "clause": "Clause-53",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-54",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-55",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-56",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-57",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-58",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-59",
-      "unit_count": 4
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-6",
+      "unit_count": 3
     },
     {
       "clause": "Clause-60",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-61",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-62",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-63",
-      "unit_count": 50
+      "unit_count": 3
     },
     {
       "clause": "Clause-64",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-65",
-      "unit_count": 4
+      "unit_count": 3
     },
     {
       "clause": "Clause-66",
-      "unit_count": 1
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-7",
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-8",
+      "unit_count": 3
+    },
+    {
+      "clause": "Clause-9",
+      "unit_count": 3
     }
   ],
   "edition": "2018-ed2",
-  "part": "P06",
-  "unit_type_counts": {
-    "list_bullet": 168,
-    "paragraph": 66,
-    "table_cell": 943
-  }
+  "part": "P06"
 }
