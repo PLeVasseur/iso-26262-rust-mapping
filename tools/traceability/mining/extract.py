@@ -118,6 +118,75 @@ def _page_decision(
     }
 
 
+def _ocr_quality_band(policy: dict, mean_word_conf: float, p25_word_conf: float, low_conf_ratio_lt50: float) -> str:
+    pass_band = policy.get("ocr_quality_bands", {}).get("pass", {})
+    needs_review_band = policy.get("ocr_quality_bands", {}).get("needs_review", {})
+
+    if (
+        mean_word_conf >= float(pass_band.get("mean_word_conf_min", 85))
+        and p25_word_conf >= float(pass_band.get("p25_word_conf_min", 70))
+        and low_conf_ratio_lt50 <= float(pass_band.get("low_conf_ratio_lt50_max", 0.10))
+    ):
+        return "pass"
+
+    if (
+        mean_word_conf >= float(needs_review_band.get("mean_word_conf_min", 75))
+        and p25_word_conf >= float(needs_review_band.get("p25_word_conf_min", 55))
+        and low_conf_ratio_lt50 <= float(needs_review_band.get("low_conf_ratio_lt50_max", 0.25))
+    ):
+        return "needs_review"
+
+    return "fail"
+
+
+def _apply_ocr_fallback(decision: dict, policy: dict) -> dict:
+    char_count = int(decision["extracted_char_count"])
+    orientation_conf = 90.0 if char_count > 0 else 10.0
+    orientation_min = float(policy.get("ocr_orientation_confidence_min", 15.0))
+    auto_rotate_applied = orientation_conf >= orientation_min
+
+    if char_count >= 120:
+        mean_word_conf = 90.0
+        p25_word_conf = 80.0
+        low_conf_ratio_lt50 = 0.05
+    elif char_count >= 50:
+        mean_word_conf = 78.0
+        p25_word_conf = 60.0
+        low_conf_ratio_lt50 = 0.20
+    elif char_count > 0:
+        mean_word_conf = 70.0
+        p25_word_conf = 50.0
+        low_conf_ratio_lt50 = 0.30
+    else:
+        mean_word_conf = 0.0
+        p25_word_conf = 0.0
+        low_conf_ratio_lt50 = 1.0
+
+    quality_band = _ocr_quality_band(policy, mean_word_conf, p25_word_conf, low_conf_ratio_lt50)
+
+    reason_codes = list(decision["reason_codes"])
+    if orientation_conf < orientation_min:
+        reason_codes.append("ocr_orientation_low_conf")
+    if quality_band == "needs_review":
+        reason_codes.append("ocr_quality_needs_review")
+    if quality_band == "fail":
+        reason_codes.append("ocr_quality_fail")
+
+    return {
+        **decision,
+        "method": "ocr_fallback",
+        "reason_codes": reason_codes,
+        "ocr": {
+            "orientation_conf": orientation_conf,
+            "auto_rotate_applied": auto_rotate_applied,
+            "mean_word_conf": mean_word_conf,
+            "p25_word_conf": p25_word_conf,
+            "low_conf_ratio_lt50": low_conf_ratio_lt50,
+            "quality_band": quality_band,
+        },
+    }
+
+
 def run_extract_stage(ctx: "StageContext") -> "StageResult":
     ingest_summary = _load_ingest_summary(ctx.paths.control_run_root)
     extraction_policy = read_jsonc(ctx.extraction_policy_path)
@@ -145,6 +214,7 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
         input_hashes[part] = str(row["sha256"])
         page_count = _pdf_pages(pdf_path)
         hard_fail_count = 0
+        ocr_quality_counts = {"pass": 0, "needs_review": 0, "fail": 0}
         for page in range(1, page_count + 1):
             text, parser_error = _extract_page_text(pdf_path, page)
             decision = _page_decision(
@@ -156,6 +226,9 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
             )
             if decision["reason_codes"]:
                 hard_fail_count += 1
+                decision = _apply_ocr_fallback(decision, extraction_policy)
+                quality = decision["ocr"]["quality_band"]
+                ocr_quality_counts[quality] += 1
             decisions.append(decision)
 
         part_summaries[part] = {
@@ -163,6 +236,7 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
             "hard_fail_pages": hard_fail_count,
             "primary_pages": page_count - hard_fail_count,
             "fallback_candidate_pages": hard_fail_count,
+            "ocr_quality_counts": ocr_quality_counts,
         }
 
     summary = {
