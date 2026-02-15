@@ -10,6 +10,7 @@ from typing import TYPE_CHECKING
 
 from .framework import utc_now
 from .jsonc import read_jsonc, write_json
+from .verbatim import block_id, page_record_id, split_page_blocks, text_sha256
 
 if TYPE_CHECKING:
     from .stages import StageContext, StageResult
@@ -203,6 +204,10 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
 
     resolved_parts = ingest_summary.get("resolved_parts", {})
     decisions: list[dict] = []
+    page_text_records: list[dict] = []
+    page_block_records: list[dict] = []
+    page_signatures: list[dict] = []
+    page_index: dict[str, dict[str, str]] = {}
     part_summaries: dict[str, dict] = {}
     input_hashes: dict[str, str] = {}
 
@@ -231,6 +236,54 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
                 ocr_quality_counts[quality] += 1
             decisions.append(decision)
 
+            page_text_sha = text_sha256(text)
+            record_id = page_record_id(part, page, str(decision["method"]), page_text_sha)
+            page_text_records.append(
+                {
+                    "run_id": ctx.run_id,
+                    "part": part,
+                    "page": page,
+                    "record_id": record_id,
+                    "extract_method": decision["method"],
+                    "source_pdf_sha256": str(row["sha256"]),
+                    "text": text,
+                    "text_sha256": page_text_sha,
+                    "char_count": len(text),
+                }
+            )
+            page_index.setdefault(part, {})[str(page)] = record_id
+
+            for block_ordinal, (char_start, char_end, block_text) in enumerate(split_page_blocks(text), start=1):
+                block_sha = text_sha256(block_text)
+                page_block_records.append(
+                    {
+                        "run_id": ctx.run_id,
+                        "part": part,
+                        "page": page,
+                        "record_id": record_id,
+                        "block_id": block_id(record_id, block_ordinal, block_sha),
+                        "block_ordinal": block_ordinal,
+                        "char_start": char_start,
+                        "char_end": char_end,
+                        "text": block_text,
+                        "text_sha256": block_sha,
+                    }
+                )
+
+            page_signatures.append(
+                {
+                    "run_id": ctx.run_id,
+                    "part": part,
+                    "page": page,
+                    "record_id": record_id,
+                    "extract_method": decision["method"],
+                    "source_pdf_sha256": str(row["sha256"]),
+                    "text_sha256": page_text_sha,
+                    "char_count": len(text),
+                    "block_count": len(split_page_blocks(text)),
+                }
+            )
+
         part_summaries[part] = {
             "pages": page_count,
             "hard_fail_pages": hard_fail_count,
@@ -245,12 +298,23 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
         "policy_id": extraction_policy.get("policy_id", "extraction_policy_v1"),
         "parts": part_summaries,
         "decision_count": len(decisions),
+        "page_text_record_count": len(page_text_records),
+        "page_block_record_count": len(page_block_records),
     }
 
     control_dir = ctx.paths.control_run_root / "artifacts" / "extract"
     data_dir = ctx.paths.run_root / "extract"
+    verbatim_dir = data_dir / "verbatim"
     control_dir.mkdir(parents=True, exist_ok=True)
     data_dir.mkdir(parents=True, exist_ok=True)
+    verbatim_dir.mkdir(parents=True, exist_ok=True)
+
+    decisions.sort(key=lambda row: (row["part"], int(row["page"])))
+    page_text_records.sort(key=lambda row: (row["part"], int(row["page"]), row["record_id"]))
+    page_block_records.sort(
+        key=lambda row: (row["part"], int(row["page"]), int(row["block_ordinal"]), row["block_id"])
+    )
+    page_signatures.sort(key=lambda row: (row["part"], int(row["page"]), row["record_id"]))
 
     control_summary = control_dir / "extract-summary.json"
     data_summary = data_dir / "extract-summary.json"
@@ -263,9 +327,44 @@ def run_extract_stage(ctx: "StageContext") -> "StageResult":
     control_decisions.write_text(decision_lines, encoding="utf-8")
     data_decisions.write_text(decision_lines, encoding="utf-8")
 
+    page_text_path = verbatim_dir / "page-text.jsonl"
+    page_blocks_path = verbatim_dir / "page-blocks.jsonl"
+    page_index_path = verbatim_dir / "page-index.json"
+    page_signatures_path = verbatim_dir / "page-signatures.jsonl"
+
+    page_text_path.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in page_text_records),
+        encoding="utf-8",
+    )
+    page_blocks_path.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in page_block_records),
+        encoding="utf-8",
+    )
+    write_json(
+        page_index_path,
+        {
+            "run_id": ctx.run_id,
+            "parts": {part: dict(sorted(rows.items(), key=lambda kv: int(kv[0]))) for part, rows in sorted(page_index.items())},
+            "record_count": len(page_text_records),
+        },
+    )
+    page_signatures_path.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in page_signatures),
+        encoding="utf-8",
+    )
+
     from .stages import StageResult
 
     return StageResult(
-        outputs=[control_summary, data_summary, control_decisions, data_decisions],
+        outputs=[
+            control_summary,
+            data_summary,
+            control_decisions,
+            data_decisions,
+            page_text_path,
+            page_blocks_path,
+            page_index_path,
+            page_signatures_path,
+        ],
         input_hashes=input_hashes,
     )
