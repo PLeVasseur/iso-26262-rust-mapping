@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
+from .extract import run_extract_stage
 from .ingest import run_ingest_stage
 from .framework import RunPaths, utc_now, write_json
 
@@ -49,7 +50,7 @@ def run_ingest(ctx: StageContext) -> StageResult:
 
 
 def run_extract(ctx: StageContext) -> StageResult:
-    return _write_scaffold_marker("extract", ctx)
+    return run_extract_stage(ctx)
 
 
 def run_normalize(ctx: StageContext) -> StageResult:
