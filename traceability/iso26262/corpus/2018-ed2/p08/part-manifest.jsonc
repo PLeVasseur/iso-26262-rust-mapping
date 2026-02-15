@@ -1,0 +1,9 @@
+{
+  "clause_manifest": "clause-manifest.jsonc",
+  "edition": "2018-ed2",
+  "part": "P08",
+  "shards": [
+    "paragraph-0001.jsonl"
+  ],
+  "unit_count": 72
+}

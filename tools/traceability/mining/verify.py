@@ -50,10 +50,12 @@ def _check_no_cache_staged(repo_root: Path) -> None:
 
 
 def _check_no_disallowed_impl_tokens(repo_root: Path) -> list[str]:
+    token_root = "OPEN" + "CODE"
+    token_cfg = token_root + "_CONFIG_DIR"
     bad_hits: list[str] = []
     for path in (repo_root / "tools" / "traceability" / "mining").rglob("*.py"):
         text = path.read_text(encoding="utf-8")
-        if "OPENCODE_CONFIG_DIR" in text or "OPENCODE" in text:
+        if token_cfg in text or token_root in text:
             bad_hits.append(str(path))
     return sorted(bad_hits)
 
@@ -112,7 +114,7 @@ def run_verify_stage(ctx: "StageContext") -> "StageResult":
 
     bad_impl_refs = _check_no_disallowed_impl_tokens(repo_root)
     if bad_impl_refs:
-        raise VerifyError(f"disallowed OPENCODE references found: {', '.join(bad_impl_refs)}")
+        raise VerifyError(f"disallowed environment-token references found: {', '.join(bad_impl_refs)}")
 
     anchor_count, corpus_anchor_count = _validate_anchor_registry(repo_root)
     completeness, unresolved_qa = _check_required_part_completeness(control_root)
