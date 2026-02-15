@@ -203,20 +203,30 @@ def main(argv: list[str] | None = None) -> int:
             write_env(state_paths.checklist_file, checklist)
 
             phase = _phase_number_for_stage(stage)
-            ctx = StageContext(run_id=run_id, phase=phase, paths=paths, mode=args.mode)
-            marker = HANDLERS[stage](ctx)
+            ctx = StageContext(
+                run_id=run_id,
+                phase=phase,
+                paths=paths,
+                mode=args.mode,
+                source_pdfset_path=Path(args.source_pdfset).resolve(),
+                relevant_policy_path=Path(args.relevant_policy).resolve(),
+                extraction_policy_path=Path(args.extraction_policy).resolve(),
+                lock_source_hashes=bool(args.lock_source_hashes),
+            )
+            result = HANDLERS[stage](ctx)
 
             _mark_checklist_stage_complete(stage, checklist)
             write_env(state_paths.checklist_file, checklist)
 
-            input_hashes = {}
+            output_paths = [str(path) for path in result.outputs]
+            input_hashes = result.input_hashes
             stage_checkpoint = write_stage_checkpoint(
                 paths=paths,
                 run_id=run_id,
                 stage=stage,
                 phase=phase,
                 input_hashes=input_hashes,
-                outputs=[str(marker)],
+                outputs=output_paths,
             )
             phase_checkpoint = write_phase_checkpoint(
                 paths=paths,
@@ -224,7 +234,7 @@ def main(argv: list[str] | None = None) -> int:
                 phase=phase,
                 stage=stage,
                 input_hashes=input_hashes,
-                outputs=[str(marker), str(stage_checkpoint)],
+                outputs=[*output_paths, str(stage_checkpoint)],
             )
 
             state["LAST_COMMITTED_CHECKPOINT"] = str(phase_checkpoint)
