@@ -11,34 +11,210 @@ columns:
   title: Preferred alternatives
 rows:
 - api_pattern: '`unwrap()` / `expect()` on Option/Result'
-  status: R (QM–B), X (C/D)
+  status: "R (QM\u2013B), X (C/D)"
   rationale: Panics on error/None; hides error handling
   preferred_alternatives: Use `?`, `match`, or `unwrap_or` with defined fallback; treat panics as fatal invariants only.
+  row_id: r0001
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fW3RC850GwWf
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FDoKZjChha7C
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GBZCi66lfn8C
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2TCOnJe6HM5R
 - api_pattern: Indexing (`v[i]`, `slice[i]`)
-  status: R (QM–B), X (C/D)
+  status: "R (QM\u2013B), X (C/D)"
   rationale: May panic; harder to prove bounds for MC/DC and review
   preferred_alternatives: Use iterators or `get()` returning Option and handle error path.
+  row_id: r0002
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_skwlxXQ7pkLr
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aslLvjOlWeYj
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0OkZzktouq2M
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4OcyoBs6POAR
 - api_pattern: '`panic!`, `todo!`, `unimplemented!`'
   status: R/X
   rationale: Uncontrolled termination; placeholders unacceptable in released code
   preferred_alternatives: Return `Result` with error; use explicit fail-safe state transitions.
+  row_id: r0003
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rZaf2euSaYaU
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Iw98Un16hrpn
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_apj1QiRR5M06
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BnRAYgnYxpN6
 - api_pattern: '`mem::transmute`, `mem::zeroed`'
   status: X
   rationale: High UB risk, invalid values, layout assumptions
   preferred_alternatives: Use explicit conversions, `from_ne_bytes`, `bytemuck`-like qualified wrappers (if approved).
+  row_id: r0004
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JNjPfHQPBy25
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VGp2g60RcV0B
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZrmASNkW40OU
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8TUV9hWqXphi
 - api_pattern: '`ptr::read`, `ptr::write`, `get_unchecked`'
   status: Q (C/D)
   rationale: Unsafe memory access
   preferred_alternatives: Prefer safe APIs; encapsulate in audited safe abstractions.
+  row_id: r0005
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_G6OjHwLmTOan
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CPkcUBLq4zcb
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Y1mSs1wZ4SCU
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nbEBMYi9lJ2D
 - api_pattern: '`Rc` / cycles with `Arc` + `Weak`'
   status: R
   rationale: Complex ownership and drop order; potential leaks
   preferred_alternatives: Prefer explicit ownership trees or arenas; document cycle-breaking strategy.
+  row_id: r0006
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4BIbMMQK9f16
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_68qVb2l4GThu
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nmrRHQlQfUvK
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9elXMK0NfQyl
 - api_pattern: Hash-based collections (`HashMap`, `HashSet`)
   status: P/R
   rationale: Nondeterministic iteration order; DOS considerations
   preferred_alternatives: Prefer `BTreeMap/BTreeSet` for determinism; if HashMap needed, fix hasher and document.
+  row_id: r0007
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_X2RL1fIe7IbU
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_T8J8G3cT1RVZ
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_miL711Mebkcv
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tCF6xxigSHCp
 - api_pattern: '`std::thread::spawn`'
-  status: R (B–D)
+  status: "R (B\u2013D)"
   rationale: Unbounded concurrency and scheduling nondeterminism
   preferred_alternatives: Prefer RTOS tasks with known scheduling; bound thread count; use message passing.
+  row_id: r0008
+  cell_trace:
+    api_pattern:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sJZ9qn3zvRuj
+    status:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uN7PWsZ8qKTk
+    rationale:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ia4DONVPNHpJ
+    preferred_alternatives:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EUH9FEdewd4h

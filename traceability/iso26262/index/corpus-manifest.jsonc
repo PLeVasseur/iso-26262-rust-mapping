@@ -1,0 +1,20 @@
+{
+  "edition": "2018-ed2",
+  "generated_at_utc": "2026-02-16T04:50:40Z",
+  "parts": [
+    {
+      "manifest": "corpus/2018-ed2/p06/part-manifest.jsonc",
+      "part": "P06"
+    },
+    {
+      "manifest": "corpus/2018-ed2/p08/part-manifest.jsonc",
+      "part": "P08"
+    },
+    {
+      "manifest": "corpus/2018-ed2/p09/part-manifest.jsonc",
+      "part": "P09"
+    }
+  ],
+  "record_count": 2403,
+  "schema_version": 1
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "run_id": "20260215T143525Z",
+  "source_pdfset_id": "ISO26262-2018-ed2-p06-p08-p09",
+  "required_parts": [
+    {
+      "part": "P06",
+      "sha256": "126e0fcf087860ba1822f6def83122328ca42206e0919485de13d4eacb5f9bce",
+      "resolved_path": ".cache/iso26262/ISO 26262-6;2018 ed.2 (en).pdf"
+    },
+    {
+      "part": "P08",
+      "sha256": "77a86a9c81760dcd0428e0e46882fc66724e43b0617c21e0a8d166c369316c0c",
+      "resolved_path": ".cache/iso26262/ISO 26262-8;2018 ed.2 (en).pdf"
+    },
+    {
+      "part": "P09",
+      "sha256": "0ead898ccdc80e420ca801eced451eae2c6740b119bc16ae0ca4da768f785e5a",
+      "resolved_path": ".cache/iso26262/ISO 26262-9;2018 ed.2 (en).pdf"
+    }
+  ],
+  "lock_provenance": {
+    "control_run_root": "$OPENCODE_CONFIG_DIR/reports/iso26262-mining-20260215T143525Z",
+    "lock_file": "$OPENCODE_CONFIG_DIR/reports/iso26262-mining-20260215T143525Z/lock/active.lock",
+    "fields": [
+      "pid",
+      "host",
+      "user",
+      "run_id",
+      "acquired_at_utc"
+    ]
+  }
+}

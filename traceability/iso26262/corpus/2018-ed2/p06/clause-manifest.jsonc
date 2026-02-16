@@ -1,0 +1,146 @@
+{
+  "clauses": [
+    {
+      "clause": "1.0",
+      "unit_count": 22
+    },
+    {
+      "clause": "10.3.1",
+      "unit_count": 17
+    },
+    {
+      "clause": "10.4.3",
+      "unit_count": 28
+    },
+    {
+      "clause": "10.4.7",
+      "unit_count": 20
+    },
+    {
+      "clause": "11.0",
+      "unit_count": 272
+    },
+    {
+      "clause": "11.3.2",
+      "unit_count": 18
+    },
+    {
+      "clause": "11.4.3",
+      "unit_count": 30
+    },
+    {
+      "clause": "11.5",
+      "unit_count": 44
+    },
+    {
+      "clause": "11.5.2",
+      "unit_count": 3
+    },
+    {
+      "clause": "4.2",
+      "unit_count": 11
+    },
+    {
+      "clause": "4.4",
+      "unit_count": 15
+    },
+    {
+      "clause": "5.2",
+      "unit_count": 9
+    },
+    {
+      "clause": "5.4.1",
+      "unit_count": 19
+    },
+    {
+      "clause": "5.4.3",
+      "unit_count": 12
+    },
+    {
+      "clause": "6.0",
+      "unit_count": 14
+    },
+    {
+      "clause": "6.1",
+      "unit_count": 32
+    },
+    {
+      "clause": "6.4.1",
+      "unit_count": 20
+    },
+    {
+      "clause": "6.4.7",
+      "unit_count": 22
+    },
+    {
+      "clause": "7.3.2",
+      "unit_count": 14
+    },
+    {
+      "clause": "7.4.10",
+      "unit_count": 16
+    },
+    {
+      "clause": "7.4.11",
+      "unit_count": 22
+    },
+    {
+      "clause": "7.4.13",
+      "unit_count": 24
+    },
+    {
+      "clause": "7.4.2",
+      "unit_count": 24
+    },
+    {
+      "clause": "7.4.3",
+      "unit_count": 37
+    },
+    {
+      "clause": "7.4.7",
+      "unit_count": 22
+    },
+    {
+      "clause": "8.0",
+      "unit_count": 22
+    },
+    {
+      "clause": "8.1",
+      "unit_count": 26
+    },
+    {
+      "clause": "8.4.2",
+      "unit_count": 20
+    },
+    {
+      "clause": "8.4.5",
+      "unit_count": 29
+    },
+    {
+      "clause": "9.0",
+      "unit_count": 9
+    },
+    {
+      "clause": "9.2",
+      "unit_count": 30
+    },
+    {
+      "clause": "9.4",
+      "unit_count": 1
+    },
+    {
+      "clause": "9.4.2",
+      "unit_count": 50
+    },
+    {
+      "clause": "9.4.4",
+      "unit_count": 13
+    },
+    {
+      "clause": "9.4.5",
+      "unit_count": 23
+    }
+  ],
+  "edition": "2018-ed2",
+  "part": "P06"
+}

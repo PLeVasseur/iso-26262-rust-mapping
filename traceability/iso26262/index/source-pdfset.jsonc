@@ -1,0 +1,22 @@
+{
+  // Source PDF metadata (non-verbatim)
+  "schema_version": 1,
+  "source_pdfset_id": "ISO26262-2018-ed2-p06-p08-p09",
+  "parts": [
+    {
+      "part": "P06",
+      "edition": "2018-ed2",
+      "sha256": "126e0fcf087860ba1822f6def83122328ca42206e0919485de13d4eacb5f9bce"
+    },
+    {
+      "part": "P08",
+      "edition": "2018-ed2",
+      "sha256": "77a86a9c81760dcd0428e0e46882fc66724e43b0617c21e0a8d166c369316c0c"
+    },
+    {
+      "part": "P09",
+      "edition": "2018-ed2",
+      "sha256": "0ead898ccdc80e420ca801eced451eae2c6740b119bc16ae0ca4da768f785e5a"
+    }
+  ]
+}

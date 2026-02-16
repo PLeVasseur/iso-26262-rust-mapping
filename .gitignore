@@ -17,6 +17,10 @@ build/docx/
 build/reports/
 build/render_compare/
 build/tmp/
+build/html/
+build/doctrees/
+build/paragraph-ids.json
+artifacts/
 out/
 
 # OS clutter

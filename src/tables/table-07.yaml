@@ -14,43 +14,285 @@ rows:
   rust_aligned_implementation: Peer walk-through of design + source (include safety arguments and invariants)
   suggested_tools_artifacts: Review minutes, issue tracking, sign-off
   notes: Useful early; not sufficient alone for ASIL C/D.
+  row_id: r0001
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8vHJqAccZ1gb
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9xnczNrr0PAX
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pxDRTPSTVpmT
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_14fYwCJhbF5V
 - method_table_7: 1b Pair-programming
   rust_aligned_implementation: Structured pair work on safety-critical or unsafe sections
   suggested_tools_artifacts: Pairing records; reviewer sign-off
-  notes: Treat as ‘enhanced review’, not a substitute for formal inspection.
+  notes: "Treat as \u2018enhanced review\u2019, not a substitute for formal inspection."
+  row_id: r0002
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8rqPEJUsq6hm
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_f6zzxes5hBXt
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DwFsyhd3lqFn
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7GEIvq0w1RRZ
 - method_table_7: 1c Inspection
   rust_aligned_implementation: Checklist-based inspection of code, especially unsafe boundaries
   suggested_tools_artifacts: Inspection checklist; defect density metrics
   notes: Mandatory intensity increases with ASIL.
+  row_id: r0003
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fSSTstu4lO0s
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FFCU70SzPE7u
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Vb2bYThwAWN0
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5zW34ouXhj3J
 - method_table_7: 1d Semi-formal verification
   rust_aligned_implementation: Formalized reasoning about invariants, contracts, and state machines
   suggested_tools_artifacts: Proof sketches, contracts, model checks
   notes: Use for concurrency protocols and safety mechanisms.
+  row_id: r0004
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_foqZwl6m7dHj
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hIt8steGyPwZ
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lblFQqqgvXHa
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8XCoyyyph8Hw
 - method_table_7: 1e Formal verification
   rust_aligned_implementation: Theorem proving / model checking for highest-risk components
   suggested_tools_artifacts: Formal artifacts, assumptions, traceability
   notes: Target unsafe abstractions and complex decision logic.
+  row_id: r0005
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Mmh0qP7OR81M
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YyLhhXABCbqp
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_E4yCAGGVANDl
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pyUiT3RMB9HL
 - method_table_7: 1f Control flow analysis
   rust_aligned_implementation: Control-flow graphs; complexity metrics; unreachable/dead-code checks
   suggested_tools_artifacts: Clippy lints; custom CFG tools; coverage reports
   notes: Tie to complexity thresholds and Table 6 principles.
+  row_id: r0006
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ajSTAuibpMl4
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9BYjHIichoU2
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_b4VirqU4603s
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Amb38vKQOv0j
 - method_table_7: 1g Data flow analysis
   rust_aligned_implementation: Initialization, aliasing, shared resource access, and value range checks
   suggested_tools_artifacts: Static analysis; value-range tools; lint reports
   notes: For Rust, include unsafe and FFI boundary checks.
+  row_id: r0007
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IHyGDh5wweIW
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lGG06zT9251i
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VTfHjHEiCMeo
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_iGlJdWjykgSl
 - method_table_7: 1h Static code analysis
   rust_aligned_implementation: Systematic linting and pattern-based checks
   suggested_tools_artifacts: Clippy reports; `#![deny(warnings)]`; MISRA-style rules implemented as lints
   notes: Make lints part of CI; qualify tool where required.
+  row_id: r0008
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_wjwAkS2gLvSZ
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QQCZltRglzkD
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JPJudAYWuw4f
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kjeczA0TTzJF
 - method_table_7: 1i Abstract interpretation
   rust_aligned_implementation: High-assurance static analyzers for runtime errors, overflow, ranges
   suggested_tools_artifacts: Abstract interpretation reports
   notes: Especially useful for ASIL C/D where value ranges matter.
+  row_id: r0009
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0aq5pBNCjMAO
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_R3l8OZwXyeqa
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kK2fYnGKWKAG
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_j1dL2kGr5Y4I
 - method_table_7: 1j Requirements-based test
   rust_aligned_implementation: Unit tests derived from requirements; property tests where appropriate
   suggested_tools_artifacts: Test specs; test results; traceability
-  notes: Avoid relying solely on ‘happy path’; include boundary cases.
+  notes: "Avoid relying solely on \u2018happy path\u2019; include boundary cases."
+  row_id: r0010
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xVfpYYUz6Dub
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1WlgtCo4iBLo
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dTHW10RxnRXp
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rjEDSc3nwjul
 - method_table_7: 1k Interface test
   rust_aligned_implementation: Unit interface tests validating preconditions, error paths, and contracts
   suggested_tools_artifacts: Interface test suites; mocks/harnesses
   notes: Critical for FFI and hardware interaction layers.
+  row_id: r0011
+  cell_trace:
+    method_table_7:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zBIGRInYHKBK
+    rust_aligned_implementation:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MuV6mUJUugsD
+    suggested_tools_artifacts:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gn0H4g0WPuVb
+    notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Im53tEHo2LQC

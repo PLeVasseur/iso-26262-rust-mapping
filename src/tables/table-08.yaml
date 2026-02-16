@@ -11,12 +11,80 @@ rows:
 - method_table_8: 1a Requirements analysis
   rust_testing_approach: Write tests that trace to each requirement clause / acceptance criterion
   concrete_guidance: Require requirement IDs in test names or attributes; maintain traceability matrix.
+  row_id: r0001
+  cell_trace:
+    method_table_8:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VoptHkdAWimf
+    rust_testing_approach:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yOETZRLFnOat
+    concrete_guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qrU3ezktNp6h
 - method_table_8: 1b Equivalence classes
   rust_testing_approach: Partition inputs/outputs; test one representative per class
   concrete_guidance: Use table-driven tests; consider property tests for broad partitions.
+  row_id: r0002
+  cell_trace:
+    method_table_8:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fOsIRCRlYUMr
+    rust_testing_approach:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OtT8xzluWGwe
+    concrete_guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_z9BKKsyAQQ2c
 - method_table_8: 1c Boundary values
   rust_testing_approach: 'Test edges: min/max, off-by-one, overflow boundaries'
   concrete_guidance: For numeric code, prefer checked arithmetic and test failure modes explicitly.
+  row_id: r0003
+  cell_trace:
+    method_table_8:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_doiuGPpN7xvi
+    rust_testing_approach:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cf2w9D8q4ytk
+    concrete_guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_89a4N1B47KPX
 - method_table_8: 1d Error guessing
-  rust_testing_approach: Use ‘lessons learned’ defect patterns to design additional cases
+  rust_testing_approach: "Use \u2018lessons learned\u2019 defect patterns to design additional cases"
   concrete_guidance: Maintain a bug-pattern checklist; include fuzzing for parsers where applicable.
+  row_id: r0004
+  cell_trace:
+    method_table_8:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OS2K7uEe6sc6
+    rust_testing_approach:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nUvUlISkaIZ1
+    concrete_guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rwG5uUGuwhjf

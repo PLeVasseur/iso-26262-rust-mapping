@@ -1,0 +1,4 @@
+# Black-compatible Flake8 baseline (FLS parity)
+[flake8]
+max-line-length = 88
+extend-ignore = E203

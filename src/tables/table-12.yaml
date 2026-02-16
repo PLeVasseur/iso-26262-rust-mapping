@@ -11,9 +11,60 @@ rows:
 - environment: Hardware-in-the-loop (HIL)
   rust_considerations: Ensure build reproducibility and deterministic configuration; instrument safely for coverage
   guidance: Use qualified build toolchain; separate test instrumentation from production builds.
+  row_id: r0001
+  cell_trace:
+    environment:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZQKjs7FjPzmL
+    rust_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QKQwqIIPA8Pm
+    guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NSFQfN2HCIQ2
 - environment: ECU network environments
   rust_considerations: Verify end-to-end timing, message ordering, and fault handling; test coexistence/partitioning
   guidance: Run integration tests under realistic bus load; include fault injection on buses and sensors.
+  row_id: r0002
+  cell_trace:
+    environment:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aYzpYQDLCKoE
+    rust_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HwKHwm6Zn671
+    guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pT0dLDaQGGFy
 - environment: Vehicles
   rust_considerations: Validate operational modes, degraded modes, and safe-state behavior
   guidance: Ensure test cases cover operational use cases and safety mechanisms under real timing.
+  row_id: r0003
+  cell_trace:
+    environment:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_iw4NCoaqJunl
+    rust_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PniboL5GpkPD
+    guidance:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PgCGeCUCWxt5

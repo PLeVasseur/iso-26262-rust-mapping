@@ -1,0 +1,291 @@
+name: ISO26262 Mining
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  fixture_schema_integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Validate anchor registry schema
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          import jsonschema
+
+          repo = Path('.')
+          schema = json.loads((repo / 'traceability/iso26262/schema/anchor-registry.schema.json').read_text(encoding='utf-8'))
+          registry_text = (repo / 'traceability/iso26262/index/anchor-registry.jsonc').read_text(encoding='utf-8')
+          clean = []
+          in_string = False
+          escaped = False
+          i = 0
+          while i < len(registry_text):
+            ch = registry_text[i]
+            nxt = registry_text[i + 1] if i + 1 < len(registry_text) else ''
+            if in_string:
+              clean.append(ch)
+              if escaped:
+                escaped = False
+              elif ch == '\\':
+                escaped = True
+              elif ch == '"':
+                in_string = False
+              i += 1
+              continue
+            if ch == '"':
+              in_string = True
+              clean.append(ch)
+              i += 1
+              continue
+            if ch == '/' and nxt == '/':
+              while i < len(registry_text) and registry_text[i] != '\n':
+                i += 1
+              continue
+            clean.append(ch)
+            i += 1
+          registry = json.loads(''.join(clean))
+          jsonschema.validate(registry, schema)
+          print('anchor-registry-schema=pass')
+          PY
+
+      - name: Anti-leak key scan
+        run: |
+          uv run python - <<'PY'
+          from pathlib import Path
+
+          blocked = {'"raw_text"', '"paragraph_text"', '"cell_text"', '"excerpt"'}
+          hits = []
+          for path in Path('traceability/iso26262').rglob('*'):
+            if path.suffix not in {'.json', '.jsonc', '.jsonl', '.md'}:
+              continue
+            text = path.read_text(encoding='utf-8')
+            for token in blocked:
+              if token in text:
+                hits.append(f'{path}:{token}')
+          if hits:
+            raise SystemExit('anti-leak-failed\n' + '\n'.join(hits))
+          print('anti-leak=pass')
+          PY
+
+  fixture_replay:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Deterministic replay command
+        run: |
+          uv run python tools/traceability/mine_iso_corpus.py \
+            --run-id fixture-replay \
+            --control-run-root "$RUNNER_TEMP/iso26262-mining-replay" \
+            --mode fixture_ci \
+            replay
+
+  fixture_compatibility_registry:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Validate anchor registry compatibility ordering
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('traceability/iso26262/index/anchor-registry.jsonc')
+          text = path.read_text(encoding='utf-8')
+          lines = []
+          for raw in text.splitlines():
+            if raw.strip().startswith('//'):
+              continue
+            lines.append(raw)
+          value = json.loads('\n'.join(lines))
+          anchors = value.get('anchors', [])
+          ids = [row['anchor_id'] for row in anchors]
+          if ids != sorted(ids):
+            raise SystemExit('anchor-registry is not sorted by anchor_id')
+          print(f'anchor-registry-anchors={len(ids)}')
+          PY
+
+  fixture_prewarm_query:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Build fixture prewarm index and smoke query output
+        run: |
+          RUN_ROOT="$RUNNER_TEMP/iso26262-prewarm-fixture"
+          export RUN_ROOT
+          mkdir -p "$RUN_ROOT/normalize/verbatim" "$RUN_ROOT/anchor/verbatim"
+
+          uv run python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          run_root = Path(os.environ['RUN_ROOT'])
+          slices = [
+              {
+                  'unit_id': 'p06-p0001-par',
+                  'unit_type': 'paragraph',
+                  'part': 'P06',
+                  'page': 1,
+                  'slice_id': 'slice-0001',
+                  'text': 'Software development evidence for deterministic query smoke checks.',
+                  'text_sha256': 'fixture-a',
+                  'source_block_refs': ['block-0001'],
+                  'source_locator': {'part': 'P06', 'clause': 'Clause-1', 'page_start': 1, 'unit_type': 'paragraph'},
+              },
+              {
+                  'unit_id': 'p08-p0002-lb',
+                  'unit_type': 'list_bullet',
+                  'part': 'P08',
+                  'page': 2,
+                  'slice_id': 'slice-0002',
+                  'text': 'Software architecture and verification methods.',
+                  'text_sha256': 'fixture-b',
+                  'source_block_refs': ['block-0002'],
+                  'source_locator': {'part': 'P08', 'clause': 'Clause-2', 'page_start': 2, 'unit_type': 'list_bullet'},
+              },
+          ]
+          anchors = [
+              {
+                  'anchor_id': 'ISO26262:2018-ed2:P06:PG0001:PAR:fixture0001',
+                  'unit_id': 'p06-p0001-par',
+                  'part': 'P06',
+                  'unit_type': 'paragraph',
+                  'slice_ids': ['slice-0001'],
+                  'text_sha256_set': ['fixture-a'],
+                  'link_fingerprint': 'fp-0001',
+              },
+              {
+                  'anchor_id': 'ISO26262:2018-ed2:P08:PG0002:LST:fixture0002',
+                  'unit_id': 'p08-p0002-lb',
+                  'part': 'P08',
+                  'unit_type': 'list_bullet',
+                  'slice_ids': ['slice-0002'],
+                  'text_sha256_set': ['fixture-b'],
+                  'link_fingerprint': 'fp-0002',
+              },
+          ]
+
+          slices_path = run_root / 'normalize' / 'verbatim' / 'unit-slices.jsonl'
+          anchors_path = run_root / 'anchor' / 'verbatim' / 'anchor-text-links.jsonl'
+          slices_path.parent.mkdir(parents=True, exist_ok=True)
+          anchors_path.parent.mkdir(parents=True, exist_ok=True)
+          slices_path.write_text(''.join(json.dumps(row, sort_keys=True) + '\n' for row in slices), encoding='utf-8')
+          anchors_path.write_text(''.join(json.dumps(row, sort_keys=True) + '\n' for row in anchors), encoding='utf-8')
+          PY
+
+          uv run python tools/traceability/query_iso_prewarm_cache.py index --run-root "$RUN_ROOT"
+          uv run python tools/traceability/query_iso_prewarm_cache.py search --run-root "$RUN_ROOT" --repo-root "$GITHUB_WORKSPACE" --term software > "$RUNNER_TEMP/query-term.json"
+          uv run python tools/traceability/query_iso_prewarm_cache.py search --run-root "$RUN_ROOT" --repo-root "$GITHUB_WORKSPACE" --phrase "software development" > "$RUNNER_TEMP/query-phrase.json"
+          uv run python tools/traceability/query_iso_prewarm_cache.py search --run-root "$RUN_ROOT" --repo-root "$GITHUB_WORKSPACE" --term software --quote > "$RUNNER_TEMP/query-quote.json"
+
+          uv run python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          term_payload = json.loads((Path(os.environ['RUNNER_TEMP']) / 'query-term.json').read_text(encoding='utf-8'))
+          phrase_payload = json.loads((Path(os.environ['RUNNER_TEMP']) / 'query-phrase.json').read_text(encoding='utf-8'))
+          quote_payload = json.loads((Path(os.environ['RUNNER_TEMP']) / 'query-quote.json').read_text(encoding='utf-8'))
+
+          for payload in (term_payload, phrase_payload, quote_payload):
+              preface = payload.get('compliance_preface', {})
+              if 'ts_usage_reminder' not in preface:
+                  raise SystemExit('missing ts usage reminder preface')
+              if preface.get('guideline_pointer_path') != 'docs/traceability-ts-and-quotation-guidelines.md':
+                  raise SystemExit('missing guideline pointer path preface')
+
+          if term_payload.get('hit_count', 0) <= 0:
+              raise SystemExit('word query smoke failed')
+          if phrase_payload.get('hit_count', 0) <= 0:
+              raise SystemExit('phrase query smoke failed')
+          for hit in quote_payload.get('hits', []):
+              if hit.get('fair_use_brief_quote') is not True:
+                  raise SystemExit('quote fair-use marker missing')
+          print('fixture-prewarm-query=pass')
+          PY
+
+  mining_code_hygiene:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail on OPENCODE references in implementation paths
+        run: |
+          if rg -n "OPENCODE|OPENCODE_CONFIG_DIR" tools/traceability/mining tools/traceability/mine_iso_corpus.py; then
+            echo "Found forbidden OPENCODE references in mining implementation files"
+            exit 1
+          fi
+
+  licensed_e2e_local:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved self-hosted licensed run
+        run: echo "Run full licensed-local mining in controlled environment"
+
+  resilience_crash_windows:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved crash window resilience drills
+        run: echo "Inject crash windows A/B/C/D and verify deterministic resume"
+
+  resilience_locking:
+    if: ${{ false }}
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reserved lock contention and stale-lock drills
+        run: echo "Validate lock contention and stale-lock replacement behavior"

@@ -11,10 +11,60 @@ rows:
 - coverage_metric: Statement coverage
   rust_specific_considerations: Compiler inlining can hide statements; use consistent build flags for coverage
   evidence_rules: Define target thresholds per ASIL; require coverage reports as work products.
+  row_id: r0001
+  cell_trace:
+    coverage_metric:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4jRSLxDqxrzt
+    rust_specific_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Owt9k7CjU2yp
+    evidence_rules:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_iBPBnbd4SPD9
 - coverage_metric: Branch coverage
   rust_specific_considerations: Match exhaustiveness helps but does not replace measurement; guard conditions matter
   evidence_rules: Require high branch coverage for safety-related units; justify any exclusions.
+  row_id: r0002
+  cell_trace:
+    coverage_metric:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PfK400c5DVaz
+    rust_specific_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1hNp6yepguUh
+    evidence_rules:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EJ9JAMmagjNU
 - coverage_metric: MC/DC
-  rust_specific_considerations: Boolean expressions in `if`, match guards, and short-circuit operators require careful test
-    design
+  rust_specific_considerations: Boolean expressions in `if`, match guards, and short-circuit operators require careful test design
   evidence_rules: 'ASIL D: require MC/DC evidence; restrict complex boolean expressions and prefer named predicates.'
+  row_id: r0003
+  cell_trace:
+    coverage_metric:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2eoA9cv9qRhU
+    rust_specific_considerations:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SNjAobN5uH9d
+    evidence_rules:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5ecgUJlIWAzf

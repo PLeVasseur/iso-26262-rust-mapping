@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-08.schema.json",
-  "title": "Schema for table-08",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-08"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-08"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "method_table_8",
-          "rust_testing_approach",
-          "concrete_guidance"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "concrete_guidance": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "method_table_8": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_testing_approach": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "method_table_8",
+              "rust_testing_approach",
+              "concrete_guidance"
+            ],
+            "type": "object"
+          },
+          "concrete_guidance": {
+            "type": "string"
+          },
           "method_table_8": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
             "type": "string"
           },
           "rust_testing_approach": {
             "type": "string"
-          },
-          "concrete_guidance": {
-            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "method_table_8",
+          "rust_testing_approach",
+          "concrete_guidance",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-08"
 }

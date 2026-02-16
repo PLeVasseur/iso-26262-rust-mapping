@@ -23,6 +23,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Use modules to enforce encapsulation and layering; require module-level docs for safety-related modules.
+  row_id: r0001
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_W7OtPHaIlGZU
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dhSGn9Z8Ywzh
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SwuTXRg61Ynz
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Z9Kk70iYKp22
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FH5DJo6wi6UF
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_svyHbpakwqvV
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_94Bm8NFEknPI
 - construct_feature: Imports (`use`)
   qm: P
   a: P
@@ -30,6 +67,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prohibit wildcard imports (`use foo::*`) in ASIL code; prefer explicit paths for traceability.
+  row_id: r0002
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dmWSu7uSLyt5
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_A6LrIz3VAKLg
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GsxJJJL96Yat
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_eVx6ti7joEc4
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_c1np41cL18jz
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0xsuIXyYW9n7
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TDVjtlvGPk5H
 - construct_feature: Public visibility (`pub`)
   qm: P
   a: R
@@ -37,6 +111,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Minimize public API surface; all `pub` items require documentation and review.
+  row_id: r0003
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_XiEyfG74Qj5D
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tTT57QAhZMwH
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_muHQP9Dp5hXL
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cJ9z9r1nzxLW
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_z2bOtPP94Sf0
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tioLUcBCSAmD
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jvCbwINcApco
 - construct_feature: Restricted visibility (`pub(crate)`, `pub(super)`, `pub(in path)`)
   qm: HR
   a: HR
@@ -44,6 +155,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Preferred over `pub` to support encapsulation.
+  row_id: r0004
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_D0ZMnwpwKC6T
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5j2xZUwCQ8l5
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GR7e1XvLv9oM
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0t13x6hIEDl9
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AEyRtHjSvIxp
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5axg4PnjbZ9F
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_k614Tu2PKpmu
 - construct_feature: Constants (`const` items)
   qm: P
   a: P
@@ -51,6 +199,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prefer `const` for pure values; avoid large computed const expressions unless toolchain supports.
+  row_id: r0005
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Q4o96UOhIw3G
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SeQ03881LmZl
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_C1EckIB6RjNx
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JUzkLTeaAzCp
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_mQlBHC5J9dX6
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aWBlvyKa3dWA
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sSa2nqC667AK
 - construct_feature: Statics (`static` immutable)
   qm: P
   a: R
@@ -58,6 +243,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowed for immutable data; must be justified if used for shared resources.
+  row_id: r0006
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sEMQ6IXW6n9S
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lRe8LWVbuiVn
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_adAUrMrAbA95
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ewqf5HtKEsVY
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6zzeUHcD0Fjp
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gnExvNduizYE
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uWzbbSnoOwD4
 - construct_feature: Mutable statics (`static mut`)
   qm: X
   a: X
@@ -65,6 +287,43 @@ rows:
   c: X
   d: X
   restrictions_notes: Prohibited; use safe synchronization (`Mutex`, atomics) or partitioning.
+  row_id: r0007
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sIKZb3O8vAt6
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CdSLucYeNSjs
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KA5c5j1kZqs6
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dSpMTHagdBUK
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lRly5Rp7IlDt
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ewJSopRfFYwe
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RxASyW3TtJId
 - construct_feature: Functions (`fn`)
   qm: P
   a: P
@@ -72,6 +331,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Apply complexity limits and error-handling policy; prefer explicit `Result`.
+  row_id: r0008
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SUtDJaxfM6oC
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_K0T0UTv8iiTn
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Sc8yNLOTY2ce
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gCgSiau64ijS
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PBEH7ufvPuWo
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3AkVckW575rP
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JnTGB6ShzZxf
 - construct_feature: Traits (`trait`)
   qm: P
   a: P
@@ -79,6 +375,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Document trait contracts and invariants; restrict deep hierarchies.
+  row_id: r0009
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PD76areMbW4q
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4LHG7RlBlbhJ
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9OwK9OsHCkkI
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NGro03m1Rd1Q
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KYYb67OpWrvw
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WcKJtYBFlJb0
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lBpCwOPYBxkJ
 - construct_feature: Trait objects (`dyn Trait`)
   qm: P
   a: P
@@ -86,6 +419,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Dynamic dispatch requires justification; restrict in timing-critical paths.
+  row_id: r0010
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yra6otQzm6bD
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tlADXF7zYsJJ
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ObdtjKP8yRkf
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UEfz6RiEzEM8
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cB4zUP6UBKsP
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yLTHcbplh8Hm
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TRmn5BOr2ZG8
 - construct_feature: Implementations (`impl`)
   qm: P
   a: P
@@ -93,6 +463,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Prefer inherent methods for cohesion; avoid orphan impls in application code.
+  row_id: r0011
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_H5A0c0avzPk1
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EXnn1fqZ6qlE
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1MtUJyvzg0ZG
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2QKt6BfanqkS
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OLV2MvYwjBhq
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AS3sLlbGucII
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FQ3XalIdBWDo
 - construct_feature: Type aliases (`type`)
   qm: P
   a: P
@@ -100,6 +507,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Use for readability only; prefer newtypes for type safety.
+  row_id: r0012
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jAZRjFNKzHWR
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jqwO0pGLzzW4
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cSBqBQG8VP1i
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rcCx44e7bg7O
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5fzP98emSMhz
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qOwdiLL7VLoQ
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fVN441RPtgA4
 - construct_feature: Structs (`struct`)
   qm: P
   a: P
@@ -107,6 +551,43 @@ rows:
   c: P
   d: P
   restrictions_notes: Preferred for domain modeling; document invariants; use private fields.
+  row_id: r0013
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yrajAHeg4pBC
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2CJ2H6GIpA5I
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ucxRHLIwwIq6
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1adBjBzI7mrx
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4r5CD7DzjOCz
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_txLOdzBmn293
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8eNuZ1j6sQae
 - construct_feature: Enums (`enum`)
   qm: HR
   a: HR
@@ -114,6 +595,43 @@ rows:
   c: HR
   d: HR
   restrictions_notes: Prefer to encode state machines; require exhaustive matching; avoid wildcard arms for evolving enums.
+  row_id: r0014
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_N888zDK5zvwH
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uHr7RKAVo8GQ
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WeHRgEmnWD4v
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WQ7glDZJL9Y5
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ihn12G5uBQE3
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZAy6Kh0ha2JS
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aV8HY85qJMDr
 - construct_feature: Unions (`union`)
   qm: R
   a: R
@@ -121,6 +639,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only for FFI; must be wrapped and audited; unsafe field access.
+  row_id: r0015
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DWHkjkKiLmcC
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KZhb1TkXRwdV
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hNEVqzSO56zR
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cSfhgSOOOtX0
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2NLwkZ0IETij
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BmPhpQzW29cH
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DgWEqGoqPnQ7
 - construct_feature: Extern blocks (`extern "C" { ... }`)
   qm: R
   a: R
@@ -128,6 +683,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: FFI allowed only in qualified boundary modules; validate all inputs; forbid unwinding across boundary.
+  row_id: r0016
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fNRMUl7Tg0YR
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_j9CH5PsmRWLO
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_G2N3CLeNk0k3
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OUtQXMEWFXwr
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IiDNp04I5afv
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Alciv4PWFyG9
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MD94f7ErZWZN
 - construct_feature: Unsafe functions (`unsafe fn`)
   qm: R
   a: R
@@ -135,6 +727,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only where preconditions cannot be expressed; require documented SAFETY contract.
+  row_id: r0017
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RL5EyreUUIgm
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DWcGSJVKGL4Q
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vVlKjdJU0QqJ
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_V08lSPvZSAAs
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ciCetudufQPv
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NVV5FXvMQ61I
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fOMed2saacDQ
 - construct_feature: Unsafe traits/impls
   qm: R
   a: R
@@ -142,6 +771,43 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only with explicit invariant proof; independent review at ASIL C/D.
+  row_id: r0018
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ApQsgGiGTpoX
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WlnncQ0NemFW
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DpUz1UK6Foab
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_H9ccAa34dbrl
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gypGkQ2ijaeb
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JFkzPDWUVZRD
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_S1qlD8KsuB9E
 - construct_feature: Macro definitions (`macro_rules!`)
   qm: P
   a: R
@@ -149,6 +815,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowlist only; expansions must be reviewed; avoid hidden control flow.
+  row_id: r0019
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_svdFkeByoDPc
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WLHkRwVV8uBP
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YfwLfdBebWCp
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oy3odk1PJ5DO
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_B3DmIeJFpu2R
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qUdWCAryG3OC
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_q21WabEhUbin
 - construct_feature: Procedural macros
   qm: R
   a: R
@@ -156,3 +859,40 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Allowed only if macro crate is qualified and generated code is reviewable; prefer explicit code.
+  row_id: r0020
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RHVhz8sQxr36
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_miVa5Je2Ekta
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vjx7QXUYOMgO
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_y4JTH6mlpW1l
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DvddyA24g8ii
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hn0FZx5wpb9h
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KFthGPP2Au8w

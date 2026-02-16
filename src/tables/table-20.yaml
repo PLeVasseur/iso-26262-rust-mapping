@@ -13,206 +13,1326 @@ rows:
 - module: core::alloc
   purpose_risk_area: Layout and allocation-related types (even in no_std)
   profile_qm_a_b_c_d: P/P/P/P/P
-  notes_key_restrictions: Permitted; includes `Layout`, `GlobalAlloc`-related interfaces; treat allocator implementation as
-    Q.
+  notes_key_restrictions: Permitted; includes `Layout`, `GlobalAlloc`-related interfaces; treat allocator implementation as Q.
+  row_id: r0001
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2aRlIRR7NKkT
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AsuAAJ1PlP3t
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lRB8r8pzemhX
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ag4SwcM7qYev
 - module: core::any
   purpose_risk_area: Type reflection (TypeId) and downcasting
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Restrict in ASIL C/D to avoid dynamic-type complexity; prefer static typing.
+  row_id: r0002
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aM0pNLFSmXvB
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GsKP0lUhTeVZ
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LAlw60V26UC6
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6H1SnnblQari
 - module: core::arch
   purpose_risk_area: SIMD/vendor intrinsics
   profile_qm_a_b_c_d: R/R/R/Q/Q
-  notes_key_restrictions: Hardware-specific; allow only in qualified, reviewed low-level modules; avoid if WCET determinism
-    impacted.
+  notes_key_restrictions: Hardware-specific; allow only in qualified, reviewed low-level modules; avoid if WCET determinism impacted.
+  row_id: r0003
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IZgMX66RcX9z
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LyKx2373UyWh
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1zNwAK2T2x3K
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gkqw9VY3kB0d
 - module: core::array
   purpose_risk_area: Array utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; prefer fixed-size arrays for determinism.
+  row_id: r0004
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zbV57dlePFdu
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xnthrpg3jPCf
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oQT5xnzb03us
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sUwOht57cbya
 - module: core::ascii
   purpose_risk_area: ASCII operations
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; ensure encoding assumptions are documented.
+  row_id: r0005
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WGgEwccXH0Ta
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PznNWGVw1SP6
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CL6pS7PV4Ng4
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nttfscixK6YR
 - module: core::borrow
   purpose_risk_area: Borrowed data utilities (Cow, Borrow)
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; beware of Cow allocations when paired with alloc.
+  row_id: r0006
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_wXMHtRB9YwaJ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gzXenB0f7Tyx
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oMm6Xr4pTxh4
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ajBtg1mq8zdm
 - module: core::cell
   purpose_risk_area: Interior mutability (Cell/RefCell/UnsafeCell)
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict; avoid RefCell (runtime panics). UnsafeCell only in Q primitives.
+  row_id: r0007
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fVzHusqTaHjH
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cf1Qh1FUTtn2
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HpFLfNi6NNnn
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1IO8SYTggFLm
 - module: core::char
   purpose_risk_area: char utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0008
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_goXZmelGPnnf
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_k0j5jQ5eKyfh
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pOgUISYnHwho
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Uohd9bZ4ICF1
 - module: core::clone
   purpose_risk_area: Clone trait
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; review manual Clone implementations.
+  row_id: r0009
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CUUsG5Jkhpr6
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aNqK1cNMYBsE
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TlTM9DRtjmTM
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lH8aRkdJ2AJw
 - module: core::cmp
   purpose_risk_area: Comparison and ordering
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0010
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IgOf27x9wTka
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EmrsP36UFRqG
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Cm4MhLbM9hfA
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3intM7dvupFN
 - module: core::convert
   purpose_risk_area: From/Into/TryFrom/TryInto
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; require TryFrom for fallible/narrowing conversions.
+  row_id: r0011
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_XzdZp7W52w0X
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_h4297W1pBtui
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DOUKCcRebzRY
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8xYWPbhGw7ER
 - module: core::default
   purpose_risk_area: Default trait
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; Default must represent valid state.
+  row_id: r0012
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NjF9hicx2XVG
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ivl01TU4rd8r
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xysYY5fGzR7r
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HrFYMcdntMaq
 - module: core::error
   purpose_risk_area: Error trait
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; define project error taxonomy.
+  row_id: r0013
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0LZPYq24uQfT
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lH4zYP4VmdR8
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HEYrGHqeYCgz
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CMQRoS9YV1wf
 - module: core::f32 / core::f64
   purpose_risk_area: Float constants
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict floating point usage in safety-critical control unless justified.
+  row_id: r0014
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_I41HWMYI24oC
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ssiOGXHQTXTl
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AsaQjjvr5mEl
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_bnNTCz0w1A2X
 - module: core::ffi
   purpose_risk_area: C-compatible primitive types
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: FFI boundary only; validate conversions and layouts.
+  row_id: r0015
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0ii88F6RIU2F
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Fe0Zz52qkMeW
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OxFCL7AODXcA
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tHqAKti9R3kk
 - module: core::fmt
   purpose_risk_area: Formatting traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; avoid panics in fmt; restrict formatting in timing-critical paths.
+  row_id: r0016
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_W58gRGkmcpIi
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zog4MPUqwIcs
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3vGtjfou5bjF
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_L7v60yGnJpoU
 - module: core::future / core::task
   purpose_risk_area: Async primitives
   profile_qm_a_b_c_d: P/R/R/R/X
   notes_key_restrictions: Async requires qualified runtime/policy; default prohibit at ASIL D.
+  row_id: r0017
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EpRzvtMDmSFk
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WXOfYVcH78lr
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uqAwEPPTrQRu
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_84U2fl4G7B6I
 - module: core::hash
   purpose_risk_area: Hashing support
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Hash-based behavior may be nondeterministic; restrict in high ASIL unless determinism ensured.
+  row_id: r0018
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jpM2PlzF6js7
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sa1GDzhIZEdT
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LQl97K9jHk7d
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lp6R1ksyVg36
 - module: core::hint
   purpose_risk_area: Compiler hints
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Allow sparingly; document any reliance on optimization behavior.
+  row_id: r0019
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_o20bGkAmoqBa
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YFVXqfdP8IEo
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KA2iu4jFXt0C
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Vpvn3KHSgUuz
 - module: core::iter
   purpose_risk_area: Iterator trait
   profile_qm_a_b_c_d: HR/HR/HR/HR/HR
   notes_key_restrictions: Preferred iteration model.
+  row_id: r0020
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TeyiptnK6654
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8W6ZZbPSWN6e
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yP5vol6y2wPU
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hwKlSIXaNl0Z
 - module: core::marker
   purpose_risk_area: Marker traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; manual impls of Send/Sync are Q.
+  row_id: r0021
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_m4Qupx3Y2m7X
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FVvTuynfDNHa
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9pyampzy3mLe
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_l7eXDQwotK06
 - module: core::mem
   purpose_risk_area: Memory utilities (includes some unsafe-adjacent APIs)
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Allow safe subset (size_of, replace); prohibit transmute/zeroed; unsafe parts only in Q.
+  row_id: r0022
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_K64mCdcyFAXP
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tR5ivJDyCDGP
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dHbhHBbByYds
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HlhRppK0Kjeh
 - module: core::net
   purpose_risk_area: Socket address types
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Use only if network stack exists and is qualified; otherwise avoid in embedded.
+  row_id: r0023
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6JPW9Q2UGXSj
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_G6ULGeoOYioO
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KsQj72WcEinG
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SitiBnpDIDpn
 - module: core::num
   purpose_risk_area: Numeric wrappers (NonZero, Wrapping, Saturating)
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Encourage explicit overflow semantics.
+  row_id: r0024
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fv6E8Rw0t0qg
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cv2YDOjbV8Cw
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ldCzFG3NRq5f
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZJRAsc5Dh62u
 - module: core::ops
   purpose_risk_area: Operator traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: 'Permitted with restrictions: operator overloading must preserve semantics.'
+  row_id: r0025
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xzJad9aHkmcg
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SIXjJu1XQR1q
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sJuPemy8aQRs
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qyWtKSQFaXAL
 - module: core::option / core::result
   purpose_risk_area: Option/Result
   profile_qm_a_b_c_d: M/M/M/M/M
   notes_key_restrictions: Mandatory for optional and fallible operations.
+  row_id: r0026
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_l2zghMatxUbC
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_b71h6MOW0evI
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GY1m8mWKpwXH
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uSVbKH1qtKpI
 - module: core::panic
   purpose_risk_area: Panic support
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Define panic policy; for ASIL C/D require panic=abort.
+  row_id: r0027
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Q1Ef0muOEWXc
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_a89Y4PYHK3CG
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zMycPwGYjHNP
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gXG7M4J7TEqO
 - module: core::pin
   purpose_risk_area: Pinning
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Restrict to advanced code; direct Pin manipulation only in qualified libraries.
+  row_id: r0028
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8l83qbrywjDS
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HvOdbQRLMnFZ
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dFfE6tuFZVqh
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_bjphGgCbt7RC
 - module: core::prelude / core::primitive
   purpose_risk_area: Prelude and primitive reexports
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; follow visibility and API rules.
+  row_id: r0029
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4GUUHzr76FbT
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_22DJJs4DwcMC
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_b5EXQwByvAWE
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lKlnuw1AtZrS
 - module: core::ptr
   purpose_risk_area: Raw pointer operations
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Unsafe-adjacent; application code forbidden; Q only with proofs.
+  row_id: r0030
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WQ2rMiU3I3k5
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_s7gabm1x0fZr
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_n7QCfYOn55cU
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pIdraldCzHuQ
 - module: core::slice / core::str
   purpose_risk_area: Slice and string utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Prefer safe accessors; restrict unchecked indexing.
+  row_id: r0031
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7sFFclb4eWSk
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qJfCfjzIwOpY
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nkxrgm4yU5Zz
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dQiTLKIKlJdn
 - module: core::sync
   purpose_risk_area: Core sync primitives
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Mostly atomic and fence primitives; restrict memory ordering; require documentation.
+  row_id: r0032
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9zIcQR8Pr21S
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_l8ba705rptD7
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uZnWfBXgjMTs
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_p2bC2myDsBJe
 - module: core::time
   purpose_risk_area: Duration and time utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; actual clocks are in std.
+  row_id: r0033
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JXeVa6tCsIqJ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WTypH98IiFmz
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tjSUxypOYugY
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TwzEeJAjYrO6
 - module: core::{i8,i16,i32,i64,i128,isize,u8,u16,u32,u64,u128,usize} (const modules)
   purpose_risk_area: Redundant constants modules (deprecation planned)
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Avoid in new code; prefer inherent constants (e.g., i32::MAX).
+  row_id: r0034
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ko511uXCxfVU
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IP7C91u4W3rI
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VOepdvFd4qmt
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6hkqainhJICN
 - module: core::assert_matches
   purpose_risk_area: Experimental macro module
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; not allowed in certified builds.
+  row_id: r0035
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gcfOOszlJMxY
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Sh5rlGExmmy1
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6HLY2V9i4EOg
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_K9oV0ugMRIzn
 - module: core::async_iter
   purpose_risk_area: Experimental async iteration
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0036
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_bYgyJRD1EyEP
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LoumdqIEJbck
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1LSoLMUPmBNc
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_F6zJ3SonXgkI
 - module: core::autodiff
   purpose_risk_area: Experimental automatic differentiation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0037
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2RfLqUPjZnkZ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2lREJTuCNNUs
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YTLK6dUQ5azc
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_v6YaTM80cL1U
 - module: core::bstr
   purpose_risk_area: Experimental byte string types
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0038
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0kGTfOGR0Xv2
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0A0cxdLe1Ked
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kMpaDoNq1rw3
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_eIGKiKk2xupG
 - module: core::contracts
   purpose_risk_area: Experimental contracts / attribute macros
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0039
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_XxsnvYhjS6EZ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_d1xxbkcVZPOa
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Z44WNo0NhFog
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yfl776vUYbIq
 - module: core::f16 / core::f128 (const modules)
   purpose_risk_area: Experimental float constants
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0040
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AhFCzBIqvSPq
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YzojMTLQDeNw
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uH0GBUHxJ5FK
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JoLtexL1BF5C
 - module: core::from
   purpose_risk_area: Experimental From derive macro
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0041
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SPdnhsF6Lk8l
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oSuGzUXir0Np
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VI7YJDhvygJS
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tqV20hw5tGEe
 - module: core::index
   purpose_risk_area: Experimental slice indexing helpers
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0042
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VuVJ5FTicqYr
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_d5nfYX0sFZpz
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_N58a9NlJkiqD
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OVdC7oi686FQ
 - module: core::intrinsics
   purpose_risk_area: Compiler intrinsics
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; prohibited.
+  row_id: r0043
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OWHepdEQluD8
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zoaYVByVxGas
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KYAwOmO0aFc9
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SvRHT8FKrBbV
 - module: core::io / core::os / core::panicking
   purpose_risk_area: Experimental low-level support modules
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; prohibited.
+  row_id: r0044
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7AXdDcYp4qTm
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MDMXWasYIr7X
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SCFqL5gbYaHQ
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Gafgaa2e4dk0
 - module: core::pat
   purpose_risk_area: Experimental pattern_type macro helpers
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0045
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TINSdEenRHN3
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rK6U5MEVwBnQ
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zlUnABdV4TBL
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_h3XRnuG0lwTa
 - module: core::profiling
   purpose_risk_area: Experimental profiling markers
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0046
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VRQhlzKGt3ex
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WloAnQrWToTG
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CMkXT1B0T9zd
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PjrbKUcuLJZP
 - module: core::random
   purpose_risk_area: Experimental random generation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0047
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_s1Hga1mfJ3sv
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_T9FhyTkkusfq
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_K4A1MYeptRmg
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MSg6CjmD1CM9
 - module: core::range
   purpose_risk_area: Experimental range types
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0048
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_M8oZziBpj48e
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kPFI1rmZ5o1Q
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SCIusHNheXHt
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vnMbiiNwMrIw
 - module: core::simd
   purpose_risk_area: Experimental portable SIMD
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; prohibit in certified builds.
+  row_id: r0049
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hQvEywXtgyr6
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8sAq73DQy92N
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jFpnlLv2kLiQ
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PKL4wDxTGvuS
 - module: core::ub_checks
   purpose_risk_area: Experimental unsafe precondition checks
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0050
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OaQHG7LaEURT
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EuqqToWlmSny
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DyeyWlbSV1VV
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_toqxxfQgN0bm
 - module: core::unsafe_binder
   purpose_risk_area: Experimental unsafe binder operators
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0051
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gTN9PPdFDsS4
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GTGPsigsWJrn
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0BTzMXYNrzQ0
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tXz1ErNkkygq

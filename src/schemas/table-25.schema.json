@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-25.schema.json",
-  "title": "Schema for table-25",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-25"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-25"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "tool_activity",
-          "purpose",
-          "evidence_artifacts"
-        ],
         "properties": {
-          "tool_activity": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_artifacts": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "purpose": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "tool_activity": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "tool_activity",
+              "purpose",
+              "evidence_artifacts"
+            ],
+            "type": "object"
+          },
+          "evidence_artifacts": {
             "type": "string"
           },
           "purpose": {
             "type": "string"
           },
-          "evidence_artifacts": {
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "tool_activity": {
             "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "tool_activity",
+          "purpose",
+          "evidence_artifacts",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-25"
 }

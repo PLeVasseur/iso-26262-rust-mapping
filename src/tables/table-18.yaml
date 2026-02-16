@@ -23,6 +23,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Permitted for invariant checks; must not be used for expected errors; define policy for production builds.
+  row_id: r0001
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8b6gSDWksxdF
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JApdrtmB0oWJ
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4fys0iabP36x
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Uyu6KZFlW4Aq
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZUn5IqGbRPJJ
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LwIFzKJrV4d2
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_t106GlRz7gKt
 - construct_feature: Debug-only asserts (`debug_assert!` etc.)
   qm: P
   a: R
@@ -30,6 +67,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowed only if build system ensures release builds do not rely on them for safety.
+  row_id: r0002
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sMR816KnFXrg
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_95327IeAO2QP
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_y2s0ISyvpfSG
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dz2zuGQrWsnO
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_TsYXCJvod89E
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AlEsxKlFUuwn
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_wLk2XFlaaIdJ
 - construct_feature: Panic macros (`panic!`, `todo!`, `unimplemented!`, `unreachable!`)
   qm: R
   a: R
@@ -37,6 +111,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Only for unrecoverable invariants; `todo!/unimplemented!` prohibited in released software.
+  row_id: r0003
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vwz9JK3k36r0
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LFfPk2eD0Zrw
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KPxbTH0t6uvG
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Grkq9QYTm6tD
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BzyZDhSF2cK3
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_mxRMToFWX2Sa
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0jHRwlsrbHBc
 - construct_feature: Formatting/IO macros (`println!`, `eprintln!`, `dbg!`)
   qm: P
   a: R
@@ -44,6 +155,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Prohibit in production safety code unless routed through a qualified logging/diagnostic layer.
+  row_id: r0004
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fya5lnBUq8Es
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QnsBCRV3loQX
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PICqKtUHJqCC
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BanLgJF9prme
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_U755AjtNIJJ0
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DygC0ovNK5V2
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Hc8yefWQxQQU
 - construct_feature: Collection macros (`vec!`)
   qm: P
   a: P
@@ -51,6 +199,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allocates; subject to heap-allocation policy.
+  row_id: r0005
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_iHQHR1tG9urB
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZwyyFGZLOVyI
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GKyiFOr0gZdy
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EqoJ2HD2XpmQ
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xWH5LK0ZG48r
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KXrCuN0r9r1S
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nqUo8nMaea2j
 - construct_feature: Include macros (`include!`, `include_bytes!`, `include_str!`)
   qm: P
   a: R
@@ -58,6 +243,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Increases build-time coupling; require justification and traceability; validate included data.
+  row_id: r0006
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JGn3ZhSnT4e2
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MIB4vK3sSHe7
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Dpfl8R4o4RP1
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CYfGMDFY1P3W
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0XCw7Zw5vH3Z
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Nbc8VYO9nH0m
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_q9EUrdC8RKAK
 - construct_feature: Declarative macros (`macro_rules!`)
   qm: P
   a: R
@@ -65,6 +287,43 @@ rows:
   c: R
   d: R
   restrictions_notes: Allowlist only; require documentation of expansion and prohibit hidden early returns.
+  row_id: r0007
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NDwVRy1Uu32q
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_gU4AMSohUowp
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_F0jNEYehUHYL
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4YqHAQJS5bxy
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_D0rStW368gvr
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YBxQJEPDm2xd
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sYurg9MoTJNY
 - construct_feature: Procedural macros (derive/attribute/function-like)
   qm: R
   a: R
@@ -72,3 +331,40 @@ rows:
   c: Q
   d: Q
   restrictions_notes: Only if macro crate is qualified; generated code must be reviewable and stable.
+  row_id: r0008
+  cell_trace:
+    construct_feature:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PVZ7SsbdWBL3
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_11WHUarMYMBI
+    a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nhpfu4RjUsZ6
+    b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pfUlBCDtr08f
+    c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xrm7B5cZ3s2v
+    d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UjTkDsfypx8q
+    restrictions_notes:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SkPFMuAy1gb7

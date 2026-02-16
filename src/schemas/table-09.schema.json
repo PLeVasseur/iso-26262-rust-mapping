@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-09.schema.json",
-  "title": "Schema for table-09",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-09"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-09"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "coverage_metric",
-          "rust_specific_considerations",
-          "evidence_rules"
-        ],
         "properties": {
-          "coverage_metric": {
-            "type": "string"
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
           },
-          "rust_specific_considerations": {
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "coverage_metric": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "evidence_rules": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_specific_considerations": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "coverage_metric",
+              "rust_specific_considerations",
+              "evidence_rules"
+            ],
+            "type": "object"
+          },
+          "coverage_metric": {
             "type": "string"
           },
           "evidence_rules": {
             "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "rust_specific_considerations": {
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "coverage_metric",
+          "rust_specific_considerations",
+          "evidence_rules",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-09"
 }

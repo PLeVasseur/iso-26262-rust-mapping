@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-23.schema.json",
-  "title": "Schema for table-23",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-23"
-    },
     "columns": {
       "const": [
         {
@@ -31,32 +27,69 @@
         }
       ]
     },
+    "id": {
+      "const": "table-23"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "macro",
-          "purpose",
-          "profile_qm_a_b_c_d",
-          "notes_key_restrictions"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "macro": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "notes_key_restrictions": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "profile_qm_a_b_c_d": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "purpose": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "macro",
+              "purpose",
+              "profile_qm_a_b_c_d",
+              "notes_key_restrictions"
+            ],
+            "type": "object"
+          },
           "macro": {
             "type": "string"
           },
-          "purpose": {
+          "notes_key_restrictions": {
             "type": "string"
           },
           "profile_qm_a_b_c_d": {
             "type": "string"
           },
-          "notes_key_restrictions": {
+          "purpose": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
             "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "macro",
+          "purpose",
+          "profile_qm_a_b_c_d",
+          "notes_key_restrictions",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-23"
 }

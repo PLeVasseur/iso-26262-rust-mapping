@@ -7,10 +7,14 @@ from jsonschema import Draft202012Validator, RefResolver
 
 from .util import load_yaml, load_json
 
+
 class ValidationError(Exception):
     pass
 
-def validate_table(table_yaml: Path, schema_json: Path, common_schema_json: Path) -> None:
+
+def validate_table(
+    table_yaml: Path, schema_json: Path, common_schema_json: Path
+) -> None:
     instance = load_yaml(table_yaml)
     schema = load_json(schema_json)
     common = load_json(common_schema_json)
@@ -21,8 +25,11 @@ def validate_table(table_yaml: Path, schema_json: Path, common_schema_json: Path
         schema.get("$id", schema_json.name): schema,
     }
 
-    resolver = RefResolver(base_uri=schema_json.resolve().as_uri(), referrer=schema, store=store)
+    resolver = RefResolver(
+        base_uri=schema_json.resolve().as_uri(), referrer=schema, store=store
+    )
     Draft202012Validator(schema, resolver=resolver).validate(instance)
+
 
 def validate_all_tables(src_tables_dir: Path, src_schemas_dir: Path) -> None:
     common_schema = src_schemas_dir / "table_common.schema.json"

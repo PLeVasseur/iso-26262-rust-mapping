@@ -14,239 +14,1559 @@ rows:
   purpose_risk_area: Allocator interfaces
   profile_qm_a_b_c_d: P/R/R/Q/Q
   notes_key_restrictions: Allocator must be qualified; prefer no-alloc for ASIL D.
+  row_id: r0001
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qHSRGzgiwU8f
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oZphQm11VUmk
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rRhTea8i4ywy
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_j87ctIgXs0v3
 - module: std::any
   purpose_risk_area: Dynamic typing/reflection
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Restrict for C/D; avoid runtime type dispatch in safety code.
+  row_id: r0002
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_mNl4WrR7hWaq
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yiK3ZMZ3KlGC
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_2fI4cBIbz2hA
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7mS1f8VfGi4a
 - module: std::arch
   purpose_risk_area: SIMD/vendor intrinsics
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Hardware-specific; only in qualified modules with timing review.
+  row_id: r0003
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_N8frQl9lb6El
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7xEqrm2JTYDU
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yAquEvYzvu1X
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_U4cZAKu84NCa
 - module: std::array
   purpose_risk_area: Array utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0004
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QozoGIc5AHJJ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_HtnXAh4UM9yz
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vBAg2SGQLgiZ
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ICECKgRuZYWY
 - module: std::ascii
   purpose_risk_area: ASCII utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0005
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_wQmi6P2y9ES2
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YBcdJiJBfuuz
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_krLL7SxqcRay
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_M58CePevms8j
 - module: std::backtrace
   purpose_risk_area: Backtrace capture
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Diagnostics only; avoid in production safety paths; may allocate and depend on OS.
+  row_id: r0006
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WJuajKl8PWoh
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Hp5Jx41ktJ6m
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IFjvsRniuHft
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_X2jvNKu9vMAC
 - module: std::borrow
   purpose_risk_area: Borrow utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted; watch for hidden allocations via Cow.
+  row_id: r0007
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cMXTh9aaDAhA
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DsxHgDj7YKVO
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fQIUkVh8sU0S
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JRGUCDASHaRc
 - module: std::boxed
   purpose_risk_area: Box
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation policy applies.
+  row_id: r0008
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PGnlBKR71xoP
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6IlZiD9cckft
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aNlG0gdaJD4i
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KmGaGEzKOLhh
 - module: std::cell
   purpose_risk_area: Interior mutability
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict; avoid runtime borrow panics.
+  row_id: r0009
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_X8OzAsX24xfF
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VvCiD6k8zJDz
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LcdGCrqdgF6w
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vj5Ppkm5F1no
 - module: std::char
   purpose_risk_area: Char utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0010
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qtn5jANNjcOp
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0RlLRyhfYUme
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ME8YTjHUTgEc
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hW1eS00iRvtC
 - module: std::clone
   purpose_risk_area: Clone trait
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0011
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_t2Jwl5nwofzQ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3bZoX3Csdo7y
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YmfeRb1aeQAr
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FcDwtrpiSqIF
 - module: std::cmp
   purpose_risk_area: Comparisons
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0012
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_e9URmtke75wN
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NAFekVU6Km9M
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ulTpbhiFaVBt
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_XePVQkvb0M0q
 - module: std::collections
   purpose_risk_area: Collections
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Restrict unbounded growth; prefer deterministic maps (BTree*) for higher ASIL.
+  row_id: r0013
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rYytGCmmzFdJ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_on0EUd40Rsz0
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_I2WnqzM0Qi0P
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PH0s1Grz2VcF
 - module: std::convert
   purpose_risk_area: Conversions
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Require TryFrom for narrowing.
+  row_id: r0014
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_N7jR0gSLXcug
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RAMLZFARnGgb
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kEzI3AQJSssd
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_i2ZXIEh2w9Ht
 - module: std::default
   purpose_risk_area: Default
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Default must be valid state.
+  row_id: r0015
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_A0Ssrxz9ZXGQ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EYQhLf51Ij2g
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZVgFNRcXlDTP
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_g0tepIOQwcrC
 - module: std::env
   purpose_risk_area: Environment variables
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Global mutable state; restrict to initialization/config only.
+  row_id: r0016
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JwEz4xTO6uvx
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nxm7yNDLiFNJ
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kRamwBiQ9tSH
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ehEpMv2vcO8c
 - module: std::error
   purpose_risk_area: Error traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0017
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ohk0LLzt2arO
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dyhuiLjYDjqn
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_y3e9WaIbgdAF
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vcr5drOcmWms
 - module: std::f32 / std::f64
   purpose_risk_area: Float constants
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict floating point usage unless justified.
+  row_id: r0018
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_a11eEYq8js0W
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_XnDU96U5GZZ6
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AuT1huqQkXTp
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dGosfpE0u1Ih
 - module: std::ffi
   purpose_risk_area: FFI utilities
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Qualified boundary only; validate all conversions.
+  row_id: r0019
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0ou25ZzUY41q
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_R9JqkEOdDke0
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_l7gadF3Ua3tu
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_c6WILBsdlEsm
 - module: std::fmt
   purpose_risk_area: Formatting
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Formatting may allocate; restrict in timing-critical paths.
+  row_id: r0020
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CDkTqE80t7OS
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ERHUO0izXfMu
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_N8IBuUj6kezy
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1oX6xQnDa9Yp
 - module: std::fs
   purpose_risk_area: Filesystem
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; allowed only in qualified platform components.
+  row_id: r0021
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_avt0uIJZpOYs
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NLeEIAnbEZUR
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_hmU1nEaENvDN
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_La8HJayQx7U5
 - module: std::future
   purpose_risk_area: Async basics
   profile_qm_a_b_c_d: P/R/R/R/X
   notes_key_restrictions: Requires qualified runtime; prohibited by default at ASIL D.
+  row_id: r0022
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pTor4RUyc8YB
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1T3hQuDMbBP0
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UjOgWC2bl46K
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OqOm8aQxJpB5
 - module: std::hash
   purpose_risk_area: Hashing
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Hash collections may be nondeterministic; prefer ordered collections for C/D.
+  row_id: r0023
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UIj0X6F2G2T2
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Epl8mySruAuu
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RUqVpvpdsotX
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7SAGgPwN2DnZ
 - module: std::hint
   purpose_risk_area: Compiler hints
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Allow sparingly; document usage.
+  row_id: r0024
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_W5JVKCxJa4WH
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sceGAgczIG8B
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YKyECmZFLFkX
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Wy9roYFxzD5x
 - module: std::{i8,i16,i32,i64,i128,isize,u8,u16,u32,u64,u128,usize} (const modules)
   purpose_risk_area: Redundant constants (deprecation planned)
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Avoid in new code; prefer inherent constants (e.g., i32::MAX).
+  row_id: r0025
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CC4HnLilK7gE
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Jz6HT6K68NvX
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_iLDtn7OvPmXC
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LtY6O8HpWfRI
 - module: std::io
   purpose_risk_area: I/O traits and helpers
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; all I/O is fallible; restrict to qualified components.
+  row_id: r0026
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pQ5gGqoOM26K
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_o4XeQoVcZGa4
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oh5chGLySqmi
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_72MECqYWQ1id
 - module: std::iter
   purpose_risk_area: Iterators
   profile_qm_a_b_c_d: HR/HR/HR/HR/HR
   notes_key_restrictions: Preferred iteration.
+  row_id: r0027
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_dk6cblTbe03u
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AszHeZDQYKS5
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lcygWFL1TA0h
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AuZwybeSyetU
 - module: std::marker
   purpose_risk_area: Marker traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0028
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_i619QowTsddC
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FShElb2UQzqs
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_njHUWVFmyoSh
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jTwkwIugFiSt
 - module: std::mem
   purpose_risk_area: Memory utilities
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Permit safe subset; unsafe-adjacent APIs only in Q.
+  row_id: r0029
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_STlLZepP8kBJ
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1ebklUiVaHxd
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_VoZK634OCZI2
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oU15AzW04NcT
 - module: std::net
   purpose_risk_area: Networking
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Domain-dependent; typically restricted in ECU software.
+  row_id: r0030
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9y8ZamKe58Ge
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BsSLWKAx0WbM
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Lvd4pgBflhBD
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MQ5P5cqthXR6
 - module: std::num
   purpose_risk_area: Numeric utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Encourage explicit overflow handling.
+  row_id: r0031
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xyR9Csr3HmQ5
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7xgAFI7ut2c2
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UuOww8hd0cQx
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rJeyOAWxBUno
 - module: std::ops
   purpose_risk_area: Operator traits
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Operator overloading restricted by semantics.
+  row_id: r0032
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aFXYjWi8Pudw
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_eq66d6lAh8V5
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cKtOKwOfHGjq
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_m352uwzGUWA1
 - module: std::option / std::result
   purpose_risk_area: Option/Result
   profile_qm_a_b_c_d: M/M/M/M/M
   notes_key_restrictions: Mandatory for optional/fallible operations.
+  row_id: r0033
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DpNdTMdkc2yD
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cE3HbNImg2SO
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PdQdZBuP4dKb
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_eha7f1fvf92v
 - module: std::os
   purpose_risk_area: OS-specific APIs
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Qualified platform layer only; avoid in portable safety components.
+  row_id: r0034
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KsgB50mlUZHu
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_g63oJHEDTiWH
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0Zgp0KyYKHBm
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_DNawhCAPDdzo
 - module: std::panic
   purpose_risk_area: Panic support
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Define panic policy; avoid panics in normal control flow.
+  row_id: r0035
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AvI9XnV5HBZU
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_t97dSyPlD9Ke
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_KsW6jugeaRUW
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BTiKBChKyJdF
 - module: std::path
   purpose_risk_area: Paths
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Path parsing/normalization can be complex; restrict to platform layer.
+  row_id: r0036
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZOm4cSNtgk46
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_80zHv4mppf0x
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_poK8ibYercOZ
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_53mFOQOj0n54
 - module: std::pin
   purpose_risk_area: Pinning
   profile_qm_a_b_c_d: R/R/R/R/R
   notes_key_restrictions: Restrict to qualified async or self-referential code.
+  row_id: r0037
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JBI6eoxVimuf
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fnLvWdEuyyra
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_U0QPUo3OXrhv
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5lMNggLGhLLJ
 - module: std::prelude / std::primitive
   purpose_risk_area: Prelude and primitive reexports
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Permitted.
+  row_id: r0038
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oGe1uADi5Ehx
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_vg48zhHLQWsG
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_CjvR5zHLIyBo
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3LeAl8Mhqp6y
 - module: std::process
   purpose_risk_area: Process control
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Rare in ECU; restrict to tooling or qualified diagnostics.
+  row_id: r0039
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ylbu5mfi9YrK
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_R5k3ca4xTeo9
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aeeDD3ngy4hG
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YVma3nL3QH0w
 - module: std::ptr
   purpose_risk_area: Raw pointer operations
   profile_qm_a_b_c_d: R/R/R/Q/Q
   notes_key_restrictions: Unsafe-adjacent; Q only.
+  row_id: r0040
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IXKsyFjrq1q8
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_n3MKMWAi9hCJ
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GnjrPGm5TrqB
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pOKisDvkZYFO
 - module: std::rc
   purpose_risk_area: Rc/Weak
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Restrict due to complex lifetimes and cycles; avoid in safety-critical.
+  row_id: r0041
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1axAeCcQGJdY
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ThIjRcyvyI7q
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zpErCBl3hfu2
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_zA9dMddGkL1w
 - module: std::slice / std::str
   purpose_risk_area: Slice/str utilities
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Prefer checked access.
+  row_id: r0042
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5ZSmQl1hsDsn
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1NoyN51YAOug
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_joPKa6zPB7HW
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_B5yqebcG5DXX
 - module: std::string
   purpose_risk_area: String
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation; restrict size and avoid in timing-critical code.
+  row_id: r0043
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9oVWWfLaN10I
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GtQDgWsTYa00
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NWP6U5ewwB2d
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pvluBZvopCiG
 - module: std::sync
   purpose_risk_area: Synchronization primitives
   profile_qm_a_b_c_d: P/P/R/R/R
   notes_key_restrictions: Deadlocks not prevented by type system; define lock order and bounded blocking.
+  row_id: r0044
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_ZJfW97kD2ZDM
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MnzBzVldCNyn
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_l7Ub27Ypfjyg
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1Uat9sXAvog2
 - module: std::task
   purpose_risk_area: Async task types
   profile_qm_a_b_c_d: P/R/R/R/X
   notes_key_restrictions: Depends on async policy.
+  row_id: r0045
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9AxjYHRwCPwl
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_jvUSPALCUaCN
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NEMm7gUAKemD
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3KVv7X5KSm8l
 - module: std::thread
   purpose_risk_area: OS threads
   profile_qm_a_b_c_d: P/R/R/R/R
   notes_key_restrictions: Restrict; define thread creation policy; avoid unbounded threads.
+  row_id: r0046
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MUFGkC7S043l
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YKCJc1bGnImt
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_i6Vf8pAizPDy
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JtcCY1DWCPRl
 - module: std::time
   purpose_risk_area: Time measurement
   profile_qm_a_b_c_d: P/P/P/P/P
   notes_key_restrictions: Prefer monotonic `Instant` for timing; wall-clock for logging only.
+  row_id: r0047
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_807Nf1JAEC2X
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aQUnA6yu0kzl
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_LttxBd5BXgFr
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_C8hQcHPokPpV
 - module: std::vec
   purpose_risk_area: Vec
   profile_qm_a_b_c_d: P/P/P/R/R
   notes_key_restrictions: Heap allocation policy applies; bounded capacity required at C/D.
+  row_id: r0048
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fQutkPqW8SGd
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_pT1s1S72JBpf
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aLSNWC2Lx4cI
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_i1yEjbow4eJd
 - module: std::assert_matches (Experimental)
   purpose_risk_area: Unstable assert_matches macro
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; not allowed in certified builds.
+  row_id: r0049
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5W1ANhmDsWeE
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oTp9LqFO0i4r
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_I0Vis1upGSTg
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_aNz7ExmyXRio
 - module: std::async_iter (Experimental)
   purpose_risk_area: Async iterators
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0050
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Os6sDOXe0ziS
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Y9hyKmOhpIHC
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nEhxNVoKR5BC
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6RMfS6gmCg8G
 - module: std::autodiff (Experimental)
   purpose_risk_area: Automatic differentiation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0051
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cMVsu86a6dtr
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9n0IBv7S5opk
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_fhmg4KvxGIrZ
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xCjLjcHWKSg4
 - module: std::bstr (Experimental)
   purpose_risk_area: Byte strings
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0052
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_r6YkiQxQ5HFC
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Rg577N5KAm37
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_cmEaDWU9pHeq
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_UVMSw82XV7wY
 - module: std::f16 / std::f128 (Experimental)
   purpose_risk_area: Experimental float constants
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0053
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sp7Z3AmMWR2R
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_sKYqUJduWh5J
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qg9kZsXqMBE3
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_exoTeW0KdTWB
 - module: std::from (Experimental)
   purpose_risk_area: Unstable From derive
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0054
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_da4gM5xvMQZV
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_197FkoA58D4B
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_3Sbl5CMFtD2E
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PDJDv31oqhmv
 - module: std::intrinsics (Experimental)
   purpose_risk_area: Compiler intrinsics
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0055
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9QXDo12UQAwf
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NLdgsIrG8ciw
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Y0t9gLubWilE
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_PJFAlRbCaOuK
 - module: std::pat (Experimental)
   purpose_risk_area: pattern_type helpers
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0056
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1vXnHfjvrQAY
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xuxwX5zxGkiP
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_y3I88RXAbRB6
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_v9qMQl0sjib3
 - module: std::random (Experimental)
   purpose_risk_area: Random generation
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable; prohibit.
+  row_id: r0057
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_scbJ21IHC5AY
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Zax49e1RCzay
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_w2rktWko2bYF
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RLKc8SvYsKsN
 - module: std::range (Experimental)
   purpose_risk_area: Replacement range types
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0058
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_a1bev7oxua7p
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_unWpRkktN12E
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xMl6oNGQbZ0r
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NMS0MNwO9EGC
 - module: std::simd (Experimental)
   purpose_risk_area: Portable SIMD
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0059
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_u8rJQrgGkYGd
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_q01zm4CEUON2
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_EFpTLsWiwhds
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Ur7FcnOr1VxP
 - module: std::unsafe_binder (Experimental)
   purpose_risk_area: Unsafe binder operators
   profile_qm_a_b_c_d: U/U/U/U/U
   notes_key_restrictions: Unstable.
+  row_id: r0060
+  cell_trace:
+    module:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WQcz37iqyL0s
+    purpose_risk_area:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QBP9EdbBiEh4
+    profile_qm_a_b_c_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_d6HcHCIqkU8I
+    notes_key_restrictions:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_BIy9Ur6IaBqb

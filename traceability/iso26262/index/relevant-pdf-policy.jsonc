@@ -1,0 +1,10 @@
+{
+  // Policy-only metadata; no ISO verbatim text.
+  "schema_version": 1,
+  "in_scope_parts": [
+    "P06",
+    "P08",
+    "P09"
+  ],
+  "policy": "software-traceability-migration"
+}

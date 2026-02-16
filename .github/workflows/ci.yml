@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+
+permissions: {}
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Verify direct launcher help
+        run: ./make.py --help
+
+      - name: Validate tables and contracts
+        run: ./make.py validate
+
+      - name: Build Sphinx HTML
+        run: ./make.py build
+
+      - name: Verify Python formatting
+        run: uvx black . --check --diff --color
+
+      - name: Lint Python with Flake8
+        run: uvx flake8 . --exclude .venv

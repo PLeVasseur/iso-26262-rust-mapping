@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-01.schema.json",
-  "title": "Schema for table-01",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-01"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-01"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "document_section",
-          "iso_26262_6_2018_reference",
-          "scope_notes"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "document_section": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "iso_26262_6_2018_reference": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "scope_notes": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "document_section",
+              "iso_26262_6_2018_reference",
+              "scope_notes"
+            ],
+            "type": "object"
+          },
           "document_section": {
             "type": "string"
           },
           "iso_26262_6_2018_reference": {
             "type": "string"
           },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
           "scope_notes": {
             "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "document_section",
+          "iso_26262_6_2018_reference",
+          "scope_notes",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-01"
 }

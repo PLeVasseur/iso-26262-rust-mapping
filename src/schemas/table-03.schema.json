@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-03.schema.json",
-  "title": "Schema for table-03",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-03"
-    },
     "columns": {
       "const": [
         {
@@ -27,28 +23,61 @@
         }
       ]
     },
+    "id": {
+      "const": "table-03"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "notation_type_table_2",
-          "rust_aligned_artifacts",
-          "guideline_evidence"
-        ],
         "properties": {
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "guideline_evidence": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "notation_type_table_2": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "rust_aligned_artifacts": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "notation_type_table_2",
+              "rust_aligned_artifacts",
+              "guideline_evidence"
+            ],
+            "type": "object"
+          },
+          "guideline_evidence": {
+            "type": "string"
+          },
           "notation_type_table_2": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
             "type": "string"
           },
           "rust_aligned_artifacts": {
             "type": "string"
-          },
-          "guideline_evidence": {
-            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "notation_type_table_2",
+          "rust_aligned_artifacts",
+          "guideline_evidence",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-03"
 }

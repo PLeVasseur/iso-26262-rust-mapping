@@ -20,57 +20,377 @@ rows:
   asil_b: Restricted + enhanced review
   asil_c: Q only (TCB crates); 4-eye review
   asil_d: Q only + independent verification/formal argument
+  row_id: r0001
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_6QuxBJ0XX1ec
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_MCOTR2NOTQCM
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_AXPtS7RNs77g
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OKtJbMeoadqh
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_uiLKB0XRDwMZ
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lRbP5wuShP9Z
 - policy_topic: Heap allocation
   qm: Allowed
   asil_a: Allowed (bounded)
   asil_b: Allowed (bounded + monitoring)
   asil_c: Restricted (qualified allocator, deterministic)
   asil_d: Prefer no-alloc; otherwise Q allocator + strict bounds
+  row_id: r0002
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_oM7dZIbmTsGc
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_enHTBR0MIhFw
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_auUydVYkLq7u
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_QmRMzJUkDnIH
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JdaUNrDWujqG
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Pnt4HXVPw4u5
 - policy_topic: Panics / unwinding
   qm: Allowed but discouraged
   asil_a: Restricted; define policy
   asil_b: Restricted; panic=abort preferred
   asil_c: panic=abort required; no panics for expected errors
   asil_d: panic=abort required; panics only for fatal invariants
+  row_id: r0003
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_JQtx1HN9rOw1
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_4aBa1dE7POpd
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_YTbcka9iBmEK
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_19XZi7afFjM3
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_qKsQSgmnsOZ1
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_GXWQbsSPoZXS
 - policy_topic: Recursion
   qm: Allowed
   asil_a: Allowed with caution
   asil_b: Restricted; prefer iterative
   asil_c: Only bounded and justified
   asil_d: Only bounded and justified; prefer iterative
+  row_id: r0004
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_xPZEgAWh2907
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_RAJR9veL8cWR
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_u0pBvlegDLug
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lldzHfkJeEBh
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7l5MxYCela5Y
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NRL7Z6t6dKde
 - policy_topic: Dynamic dispatch (`dyn Trait`)
   qm: Allowed
   asil_a: Allowed with justification
   asil_b: Restricted in critical paths
   asil_c: Restricted; avoid in timing-critical
   asil_d: Strongly discouraged; prefer generics/static dispatch
+  row_id: r0005
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Q11L0ljlbAKX
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_mANFB7ayhtF6
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_c6thErFYdpOa
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_C4ig1g4jAZBQ
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OHMcdVSXe9iH
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_91yb9R5wzfEo
 - policy_topic: Async/await
   qm: Allowed if needed
   asil_a: Restricted
   asil_b: Restricted
   asil_c: Restricted; qualified runtime required
   asil_d: Prohibited by default; allow only with qualified runtime and evidence
+  row_id: r0006
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_mbdIWBAVxRqh
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_OSXNEwX4Emwy
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_teBl0X9legmG
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_1mhf0gYMMnrU
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yqOdunP7ZDUP
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_H3P6D94CIAIX
 - policy_topic: Conditional compilation (`cfg`)
   qm: Allowed
   asil_a: Restricted; test variants
   asil_b: Restricted; test variants
   asil_c: Minimize; verify all configs
   asil_d: Minimize; verify all configs; avoid safety logic behind cfg
+  row_id: r0007
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_rrbGN6Y6MPQd
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Le2hSCL5wTKp
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_yj0jvtX7ROtv
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_Kf1xAv7ptuJJ
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_W8SSbeT7Brgo
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_7NVQLgHVZQ0d
 - policy_topic: Macros
   qm: Allowed
   asil_a: Allowlist recommended
   asil_b: Allowlist required for safety code
   asil_c: Allowlist required; proc macros qualified
   asil_d: Allowlist required; proc macros qualified; minimize macro complexity
+  row_id: r0008
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_0GzhsYxujy0j
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_s3rp57wiqrK8
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_kteellz0ScGV
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SXkSA9fctMBu
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lyT6gKyCUkRt
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_SpRlMLi3121z
 - policy_topic: Concurrency primitives
   qm: Allowed
   asil_a: Allowed with policy
   asil_b: Restricted (deadlock/priority)
   asil_c: Restricted (bounded blocking, analysis)
   asil_d: Restricted + scheduling analysis + freedom-from-interference evidence
+  row_id: r0009
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_I1XJKAvaB5oD
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_IDgb8laWFUTe
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_nJKQOceTUmN5
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_lqf3kSHbhMPR
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_WZSCrNJl5jSQ
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_la2wb66K2emO
 - policy_topic: HashMap/HashSet
   qm: Allowed
   asil_a: Allowed with justification
   asil_b: Restricted
   asil_c: Restricted; prefer BTree*
   asil_d: Prefer BTree*; HashMap only with fixed hasher and justification
+  row_id: r0010
+  cell_trace:
+    policy_topic:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_FAdBZBqQW97B
+    qm:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_5lcxJACz1Kcg
+    asil_a:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_tvYagsmHPNqS
+    asil_b:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_8AqpKxqGqcd9
+    asil_c:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_NjrHtakfYZHN
+    asil_d:
+      trace_status: unmapped_with_rationale
+      anchor_ids: []
+      relation: ''
+      irm_id: irm_9IStvAyM6LcH

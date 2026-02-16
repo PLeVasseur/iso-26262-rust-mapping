@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "table-26.schema.json",
-  "title": "Schema for table-26",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
       "$ref": "table_common.schema.json"
     }
   ],
   "properties": {
-    "id": {
-      "const": "table-26"
-    },
     "columns": {
       "const": [
         {
@@ -39,25 +35,15 @@
         }
       ]
     },
+    "id": {
+      "const": "table-26"
+    },
     "rows": {
-      "type": "array",
       "items": {
-        "type": "object",
         "additionalProperties": false,
-        "required": [
-          "policy_topic",
-          "qm",
-          "asil_a",
-          "asil_b",
-          "asil_c",
-          "asil_d"
-        ],
         "properties": {
-          "policy_topic": {
-            "type": "string"
-          },
-          "qm": {
-            "type": "string"
+          "_trace": {
+            "$ref": "table_common.schema.json#/$defs/traceMetadata"
           },
           "asil_a": {
             "type": "string"
@@ -70,9 +56,64 @@
           },
           "asil_d": {
             "type": "string"
+          },
+          "cell_trace": {
+            "additionalProperties": false,
+            "properties": {
+              "asil_a": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "asil_b": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "asil_c": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "asil_d": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "policy_topic": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              },
+              "qm": {
+                "$ref": "table_common.schema.json#/$defs/traceMetadata"
+              }
+            },
+            "required": [
+              "policy_topic",
+              "qm",
+              "asil_a",
+              "asil_b",
+              "asil_c",
+              "asil_d"
+            ],
+            "type": "object"
+          },
+          "policy_topic": {
+            "type": "string"
+          },
+          "qm": {
+            "type": "string"
+          },
+          "row_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": [
+          "policy_topic",
+          "qm",
+          "asil_a",
+          "asil_b",
+          "asil_c",
+          "asil_d",
+          "row_id",
+          "cell_trace"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Schema for table-26"
 }
