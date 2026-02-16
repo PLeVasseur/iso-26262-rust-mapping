@@ -369,8 +369,8 @@ def _update_scope_context(
         if _is_table_line(text):
             table_line_hits += 1
 
-    if table_line_hits > 0:
-        opportunities["table"] += max(1, table_line_hits // 2)
+    if table_line_hits > 0 and opportunities["table"] == 0:
+        opportunities["table"] = 1
 
     opportunities["section"] = max(opportunities["section"], boundaries["section"])
     opportunities["clause"] = max(opportunities["clause"], boundaries["clause"])

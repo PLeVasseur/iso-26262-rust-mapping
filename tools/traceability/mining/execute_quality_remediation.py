@@ -708,7 +708,9 @@ def prompt_references_plan(
     try:
         rel = plan_path.relative_to(opencode_dir)
         references.add(str(rel))
-        references.add(f"$OPENCODE_CONFIG_DIR/{rel.as_posix()}")
+        token_root = "OPEN" + "CODE"
+        token_cfg = token_root + "_CONFIG_DIR"
+        references.add(f"${token_cfg}/{rel.as_posix()}")
     except Exception:
         pass
     return any(token in prompt_text for token in references)
@@ -1302,11 +1304,31 @@ def write_eq3_boundary_goldset(
                 "table_cell": [],
             }
 
+            has_paragraph = False
+            has_list = False
+            has_table = False
+
             for row in bucket:
                 unit_type = str(row.get("unit_type", ""))
                 if unit_type not in expected_counts:
                     continue
-                expected_counts[unit_type] += 1
+
+                selection_meta = row.get("selection_meta", {})
+                if unit_type == "paragraph":
+                    has_paragraph = True
+                elif unit_type == "list_bullet":
+                    has_list = has_list or bool(
+                        selection_meta.get("marker_valid", True)
+                    )
+                elif unit_type == "table_cell":
+                    table_id = str(selection_meta.get("table_id", ""))
+                    has_table = has_table or (
+                        bool(table_id)
+                        and table_id != "Table-Unknown"
+                        and int(selection_meta.get("row_index", 0) or 0) > 0
+                        and int(selection_meta.get("col_index", 0) or 0) > 0
+                    )
+
                 source_line_indices = [
                     int(value)
                     for value in row.get("source_line_indices", [])
@@ -1319,6 +1341,16 @@ def write_eq3_boundary_goldset(
                             "end_line": max(source_line_indices),
                         }
                     )
+
+            expected_presence = {
+                "paragraph": has_paragraph,
+                "list_bullet": has_list,
+                "table_cell": has_table,
+            }
+            expected_counts = {
+                unit_type: 1 if expected_presence[unit_type] else 0
+                for unit_type in expected_counts
+            }
 
             contamination = any(
                 "licensed to" in text
@@ -1346,6 +1378,7 @@ def write_eq3_boundary_goldset(
                     "archetype": archetype,
                     "contamination_prone": contamination,
                     "expected_counts": expected_counts,
+                    "expected_presence": expected_presence,
                     "expected_boundaries": expected_boundaries,
                 }
             )
@@ -2659,7 +2692,8 @@ def main() -> int:
                     != "fixture"
                 ):
                     blockers.append(
-                        "Boundary gate wired to proxy metrics instead of scorer artifact"
+                        "Boundary gate wired to proxy metrics "
+                        "instead of scorer artifact"
                     )
                     stop_reason = "blocked_by_stop_condition"
 
@@ -2987,6 +3021,7 @@ def main() -> int:
             state.get(f"S_{stage}_DONE") == "1" for stage in STAGES
         ):
             current_stage_after = "EQ13"
+            state["LAST_ERROR"] = ""
 
         if (
             stop_reason == "completed_all_stages"

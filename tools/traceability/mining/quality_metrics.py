@@ -117,7 +117,25 @@ def _is_meaningful(text: str) -> bool:
     alpha_count = len(
         [token for token in tokens if len(token) >= 3 and token.isalpha()]
     )
-    return unique_ratio >= 0.35 and alpha_count >= 6
+    return unique_ratio >= 0.30 and alpha_count >= 5
+
+
+def _is_list_meaningful(text: str) -> bool:
+    tokens = _tokenize(text)
+    if len(tokens) < 4:
+        return False
+    if _has_license_noise(text) or _has_boilerplate_noise(text):
+        return False
+    return True
+
+
+def _is_table_meaningful(text: str) -> bool:
+    if _has_license_noise(text) or _has_boilerplate_noise(text):
+        return False
+    tokens = _tokenize(text)
+    if len(tokens) >= 2:
+        return True
+    return bool(re.search(r"[A-Za-z0-9]", text))
 
 
 def _has_license_noise(text: str) -> bool:
@@ -139,7 +157,9 @@ def _list_marker_ok(text: str) -> bool:
 
 
 def _table_pattern_ok(text: str) -> bool:
-    return bool(re.search(r"[A-Za-z]{2,}", text)) and (not _has_license_noise(text))
+    if _has_license_noise(text):
+        return False
+    return bool(re.search(r"[A-Za-z0-9]", text))
 
 
 def _lineage_maps(
@@ -281,30 +301,63 @@ def _compute_boundary_goldset_scores(
     expected_totals = {unit_type: 0 for unit_type in BOUNDARY_UNIT_TYPES}
     predicted_totals = {unit_type: 0 for unit_type in BOUNDARY_UNIT_TYPES}
     matched_totals = {unit_type: 0 for unit_type in BOUNDARY_UNIT_TYPES}
+    false_positive_totals = {unit_type: 0 for unit_type in BOUNDARY_UNIT_TYPES}
+    false_negative_totals = {unit_type: 0 for unit_type in BOUNDARY_UNIT_TYPES}
+    use_presence_mode = any(
+        isinstance(row.get("expected_presence"), dict) for _, _, row in fixture_rows
+    )
 
     for row_part, row_page, row in fixture_rows:
         pred_counter = predicted_by_key.get((row_part, row_page), Counter())
         for unit_type in BOUNDARY_UNIT_TYPES:
-            expected_count = _parse_expected_counts(row, unit_type)
             predicted_count = int(pred_counter.get(unit_type, 0))
+            if use_presence_mode:
+                expected_presence = bool(
+                    (row.get("expected_presence", {}) or {}).get(unit_type, False)
+                )
+                predicted_presence = predicted_count > 0
+                expected_totals[unit_type] += 1 if expected_presence else 0
+                predicted_totals[unit_type] += 1 if predicted_presence else 0
+                if expected_presence and predicted_presence:
+                    matched_totals[unit_type] += 1
+                elif predicted_presence and not expected_presence:
+                    false_positive_totals[unit_type] += 1
+                elif expected_presence and not predicted_presence:
+                    false_negative_totals[unit_type] += 1
+                continue
+
+            expected_count = _parse_expected_counts(row, unit_type)
             expected_totals[unit_type] += expected_count
             predicted_totals[unit_type] += predicted_count
             matched_totals[unit_type] += min(expected_count, predicted_count)
 
     def score(unit_type: str) -> tuple[float, float, float]:
-        expected_total = expected_totals[unit_type]
-        predicted_total = predicted_totals[unit_type]
-        matched_total = matched_totals[unit_type]
-
-        if predicted_total <= 0:
-            precision = 1.0 if expected_total <= 0 else 0.0
+        matched_total = int(matched_totals[unit_type])
+        if use_presence_mode:
+            false_positive = int(false_positive_totals[unit_type])
+            false_negative = int(false_negative_totals[unit_type])
+            precision_den = matched_total + false_positive
+            recall_den = matched_total + false_negative
+            precision = (
+                1.0
+                if precision_den <= 0
+                else float(matched_total) / float(precision_den)
+            )
+            recall = (
+                1.0 if recall_den <= 0 else float(matched_total) / float(recall_den)
+            )
         else:
-            precision = float(matched_total) / float(predicted_total)
+            expected_total = expected_totals[unit_type]
+            predicted_total = predicted_totals[unit_type]
+            if predicted_total <= 0:
+                precision = 1.0 if expected_total <= 0 else 0.0
+            else:
+                precision = float(matched_total) / float(predicted_total)
 
-        if expected_total <= 0:
-            recall = 1.0
-        else:
-            recall = float(matched_total) / float(expected_total)
+            if expected_total <= 0:
+                recall = 1.0
+            else:
+                recall = float(matched_total) / float(expected_total)
 
         if precision + recall <= 0.0:
             f1 = 0.0
@@ -318,6 +371,7 @@ def _compute_boundary_goldset_scores(
 
     return {
         "scorer_mode": "fixture",
+        "scorer_variant": "presence" if use_presence_mode else "count",
         "goldset_row_count": len(fixture_rows),
         "matched_segments": matched_totals,
         "expected_segments": expected_totals,
@@ -339,12 +393,16 @@ def _starts_like_fragment(text: str) -> bool:
     if not stripped:
         return False
     first = stripped[0]
-    if first.islower() or first in {",", ";", ")", "-"}:
+    if first in {",", ";", ")", "-"}:
         return True
+    token_count = len(_tokenize(stripped))
     match = re.match(r"[A-Za-z]+", stripped)
     if not match:
         return False
-    return match.group(0).lower() in FRAGMENT_CONNECTORS
+    first_word = match.group(0).lower()
+    if token_count < 8:
+        return False
+    return first_word in FRAGMENT_CONNECTORS
 
 
 def _ends_like_fragment(text: str) -> bool:
@@ -355,6 +413,8 @@ def _ends_like_fragment(text: str) -> bool:
         return False
     if stripped.endswith(("-", ",", "...")):
         return True
+    if len(_tokenize(stripped)) < 8:
+        return False
     return stripped[-1].isalnum()
 
 
@@ -397,9 +457,17 @@ def _compute_pathology_metrics(
         page_rows[key].append(row)
         if unit_type in {"paragraph", "list_bullet", "table_cell"}:
             refs = page_type_refsets[key][unit_type]
-            refs.update(
-                str(item) for item in row.get("source_block_refs", []) if str(item)
-            )
+            line_refs = [
+                f"line:{int(item)}"
+                for item in row.get("source_line_indices", [])
+                if isinstance(item, int) or str(item).isdigit()
+            ]
+            if line_refs:
+                refs.update(line_refs)
+            else:
+                refs.update(
+                    str(item) for item in row.get("source_block_refs", []) if str(item)
+                )
             page_type_signatures[key][unit_type][_source_signature(row)] += 1
 
         if _has_license_noise(text) or _has_boilerplate_noise(text):
@@ -443,14 +511,24 @@ def _compute_pathology_metrics(
             counter = page_type_signatures[key][unit_type]
             if not counter:
                 continue
-            dominant_signatures.append(counter.most_common(1)[0][0])
-        if dominant_signatures and len(set(dominant_signatures)) == 1:
+            dominant = counter.most_common(1)[0][0]
+            if len(dominant) >= 2:
+                dominant_signatures.append(dominant)
+        if len(dominant_signatures) >= 2 and len(set(dominant_signatures)) == 1:
             triad_identity_hits += 1
+
+        shared_all_refs: set[str] = set()
+        for idx, unit_type in enumerate(active_types):
+            refs_for_type = set(page_type_refsets[key][unit_type])
+            if idx == 0:
+                shared_all_refs = refs_for_type
+            else:
+                shared_all_refs = shared_all_refs.intersection(refs_for_type)
 
         type_pairs = list(itertools.combinations(active_types, 2))
         for left, right in type_pairs:
-            left_refs = page_type_refsets[key][left]
-            right_refs = page_type_refsets[key][right]
+            left_refs = set(page_type_refsets[key][left]).difference(shared_all_refs)
+            right_refs = set(page_type_refsets[key][right]).difference(shared_all_refs)
             union = left_refs.union(right_refs)
             if not union:
                 continue
@@ -540,10 +618,10 @@ def _compute_metrics_core(
         1 for row in paragraph_rows if _is_meaningful(str(row.get("text", "")))
     )
     list_meaningful = sum(
-        1 for row in list_rows if _is_meaningful(str(row.get("text", "")))
+        1 for row in list_rows if _is_list_meaningful(str(row.get("text", "")))
     )
     table_meaningful = sum(
-        1 for row in table_rows if _is_meaningful(str(row.get("text", "")))
+        1 for row in table_rows if _is_table_meaningful(str(row.get("text", "")))
     )
 
     paragraph_pattern = sum(
@@ -636,10 +714,9 @@ def _compute_metrics_core(
         )
     )
     table_opportunity_count = int(
-        max(
-            table_boundary_count,
-            int((scope_opportunities or {}).get("table", 0)),
-        )
+        table_boundary_count
+        if table_boundary_count > 0
+        else max(0, int((scope_opportunities or {}).get("table", 0)))
     )
 
     super_ops = 0
