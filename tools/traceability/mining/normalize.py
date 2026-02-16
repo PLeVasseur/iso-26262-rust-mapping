@@ -6,7 +6,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from .framework import utc_now
 from .jsonc import write_json
@@ -26,6 +26,9 @@ LICENSE_PATTERNS = (
     re.compile(r"single user licence", re.IGNORECASE),
     re.compile(r"all rights reserved", re.IGNORECASE),
     re.compile(r"copyright protected document", re.IGNORECASE),
+    re.compile(r"copyright office", re.IGNORECASE),
+    re.compile(r"without prior written permission", re.IGNORECASE),
+    re.compile(r"published in switzerland", re.IGNORECASE),
 )
 
 HEADER_PATTERNS = (
@@ -45,6 +48,19 @@ CLAUSE_RE = re.compile(r"^\s*(\d+\.\d+(?:\.\d+)*)\s+(.+)$")
 SECTION_RE = re.compile(r"^\s*(\d{1,2})\s+([A-Z].{2,})$")
 TABLE_LINE_RE = re.compile(r"\|")
 MULTI_COL_RE = re.compile(r"\S(?:.*\S)?\s{2,}\S")
+TOC_DOT_LEADER_RE = re.compile(r"\.{3,}\s*\d*$")
+NORMATIVE_MODAL_RE = re.compile(r"\b(shall|should|may|must)\b", re.IGNORECASE)
+
+
+def _unique_preserve(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        if not value or value in seen:
+            continue
+        seen.add(value)
+        ordered.append(value)
+    return ordered
 
 
 def _load_ingest_summary(control_run_root: Path) -> dict:
@@ -106,12 +122,82 @@ def _is_heading_line(line: str) -> bool:
     )
 
 
+def _is_toc_line(line: str) -> bool:
+    stripped = line.strip()
+    low = _canonical_line(stripped)
+    if not stripped:
+        return False
+    if low.startswith("contents"):
+        return True
+    if TOC_DOT_LEADER_RE.search(stripped):
+        return True
+    return bool(re.search(r"\.{3,}\s*\d+\s*$", stripped))
+
+
+def _split_table_cells(line: str) -> list[str]:
+    if "|" in line:
+        raw_cells = [cell.strip() for cell in line.split("|")]
+    else:
+        raw_cells = [cell.strip() for cell in re.split(r"\s{2,}", line.strip())]
+    return [cell for cell in raw_cells if cell]
+
+
 def _is_table_line(line: str) -> bool:
-    return bool(TABLE_LINE_RE.search(line) or MULTI_COL_RE.search(line))
+    stripped = line.strip()
+    if not stripped:
+        return False
+    if _is_list_line(stripped) or _is_heading_line(stripped) or _is_toc_line(stripped):
+        return False
+
+    has_pipe = bool(TABLE_LINE_RE.search(stripped))
+    has_multicol = bool(MULTI_COL_RE.search(stripped))
+    if not has_pipe and not has_multicol:
+        return False
+
+    cells = _split_table_cells(stripped)
+    if len(cells) < 2:
+        return False
+    if not has_pipe and len(cells) < 3:
+        return False
+
+    token_count = len(re.findall(r"[A-Za-z0-9_]+", stripped))
+    if not has_pipe and token_count > 22:
+        return False
+
+    informative_cells = sum(
+        1
+        for cell in cells
+        if re.search(r"[A-Za-z]{2,}", cell) or re.search(r"\d", cell)
+    )
+    if informative_cells < 2:
+        return False
+
+    if any(len(cell) > 140 for cell in cells):
+        return False
+    return True
 
 
 def _is_list_line(line: str) -> bool:
     return bool(BULLET_RE.match(line))
+
+
+def _has_normative_modal(text: str) -> bool:
+    return bool(NORMATIVE_MODAL_RE.search(text or ""))
+
+
+def _line_is_contaminated(line: str) -> bool:
+    canonical = _canonical_line(line)
+    return any(pattern.search(canonical) for pattern in LICENSE_PATTERNS)
+
+
+def _candidate_is_contaminated(text: str) -> bool:
+    low = _canonical_line(text)
+    hit_count = sum(1 for pattern in LICENSE_PATTERNS if pattern.search(low))
+    if hit_count >= 2:
+        return True
+    if hit_count == 1 and len(re.findall(r"[A-Za-z]{2,}", text)) < 40:
+        return True
+    return False
 
 
 def _build_repeated_line_filter(block_rows: list[dict]) -> set[str]:
@@ -139,9 +225,9 @@ def _build_repeated_line_filter(block_rows: list[dict]) -> set[str]:
 
 def _clean_page_lines(
     part: str, block_rows: list[dict], repeated_lines: set[str]
-) -> list[str]:
-    cleaned: list[str] = []
-    for row in block_rows:
+) -> list[dict[str, Any]]:
+    cleaned: list[dict[str, Any]] = []
+    for line_index, row in enumerate(block_rows):
         line = _normalize_line(str(row.get("text", "")))
         if not line:
             continue
@@ -150,11 +236,21 @@ def _clean_page_lines(
             continue
         if _looks_like_noise(line):
             continue
-        cleaned.append(line)
+
+        block_id = str(row.get("block_id", ""))
+        cleaned.append(
+            {
+                "text": line,
+                "source_line_indices": [line_index],
+                "source_block_refs": [block_id] if block_id else [],
+            }
+        )
     return cleaned
 
 
-def _merge_wrapped_lines(lines: list[str]) -> tuple[list[str], dict[str, int]]:
+def _merge_wrapped_lines(
+    lines: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
     if not lines:
         return [], {
             "line_wrap_attempts": 0,
@@ -163,7 +259,7 @@ def _merge_wrapped_lines(lines: list[str]) -> tuple[list[str], dict[str, int]]:
             "dehyphenation_success": 0,
         }
 
-    merged: list[str] = [lines[0]]
+    merged: list[dict[str, Any]] = [dict(lines[0])]
     stats = {
         "line_wrap_attempts": 0,
         "line_wrap_success": 0,
@@ -173,54 +269,83 @@ def _merge_wrapped_lines(lines: list[str]) -> tuple[list[str], dict[str, int]]:
 
     for current in lines[1:]:
         previous = merged[-1]
-        prev_tail = previous[-1:] if previous else ""
-        curr_head = current[:1] if current else ""
+        previous_text = str(previous.get("text", ""))
+        current_text = str(current.get("text", ""))
+        prev_tail = previous_text[-1:] if previous_text else ""
+        curr_head = current_text[:1] if current_text else ""
 
-        if previous.endswith("-") and curr_head.islower():
+        if previous_text.endswith("-") and curr_head.islower():
             stats["dehyphenation_attempts"] += 1
-            merged[-1] = previous[:-1] + current
+            previous["text"] = previous_text[:-1] + current_text
+            previous["source_line_indices"] = sorted(
+                set(previous.get("source_line_indices", [])).union(
+                    set(current.get("source_line_indices", []))
+                )
+            )
+            previous["source_block_refs"] = _unique_preserve(
+                [
+                    *[str(value) for value in previous.get("source_block_refs", [])],
+                    *[str(value) for value in current.get("source_block_refs", [])],
+                ]
+            )
             stats["dehyphenation_success"] += 1
             continue
 
         if (
-            _is_heading_line(previous)
-            or _is_heading_line(current)
-            or _is_table_line(previous)
-            or _is_table_line(current)
+            _is_heading_line(previous_text)
+            or _is_heading_line(current_text)
+            or _is_table_line(previous_text)
+            or _is_table_line(current_text)
         ):
-            merged.append(current)
+            merged.append(dict(current))
             continue
 
-        if _is_list_line(previous) and _is_list_line(current):
-            merged.append(current)
+        if _is_list_line(previous_text) and _is_list_line(current_text):
+            merged.append(dict(current))
             continue
 
         joinable = prev_tail not in {".", ":", ";", "!", "?"} and curr_head.islower()
         if joinable:
             stats["line_wrap_attempts"] += 1
-            merged[-1] = f"{previous} {current}"
+            previous["text"] = f"{previous_text} {current_text}"
+            previous["source_line_indices"] = sorted(
+                set(previous.get("source_line_indices", [])).union(
+                    set(current.get("source_line_indices", []))
+                )
+            )
+            previous["source_block_refs"] = _unique_preserve(
+                [
+                    *[str(value) for value in previous.get("source_block_refs", [])],
+                    *[str(value) for value in current.get("source_block_refs", [])],
+                ]
+            )
             stats["line_wrap_success"] += 1
             continue
 
-        merged.append(current)
+        merged.append(dict(current))
 
     return merged, stats
 
 
 def _update_scope_context(
-    lines: list[str], prior: dict[str, str], page: int
-) -> tuple[dict[str, str], dict[str, int]]:
+    lines: list[dict[str, Any]], prior: dict[str, str], page: int
+) -> tuple[dict[str, str], dict[str, int], dict[str, int]]:
     context = dict(prior)
     boundaries = {"section": 0, "clause": 0, "table": 0}
+    opportunities = {"section": 0, "clause": 0, "table": 0}
+
+    table_line_hits = 0
 
     for line in lines:
-        table_match = TABLE_CAPTION_RE.match(line)
+        text = str(line.get("text", ""))
+        table_match = TABLE_CAPTION_RE.match(text)
         if table_match:
             context["table_id"] = f"Table-{table_match.group(1)}"
             boundaries["table"] += 1
+            opportunities["table"] += 1
             continue
 
-        clause_match = CLAUSE_RE.match(line)
+        clause_match = CLAUSE_RE.match(text)
         if clause_match:
             clause_id = clause_match.group(1)
             context["clause"] = clause_id
@@ -228,55 +353,128 @@ def _update_scope_context(
             context["section"] = f"{section_head}"
             boundaries["clause"] += 1
             boundaries["section"] += 1
+            opportunities["clause"] += 1
+            opportunities["section"] += 1
             continue
 
-        section_match = SECTION_RE.match(line)
+        section_match = SECTION_RE.match(text)
         if section_match:
             section_id = section_match.group(1)
             context["section"] = section_id
             context["clause"] = f"{section_id}.0"
             boundaries["section"] += 1
+            opportunities["section"] += 1
+            continue
+
+        if _is_table_line(text):
+            table_line_hits += 1
+
+    if table_line_hits > 0:
+        opportunities["table"] += max(1, table_line_hits // 2)
+
+    opportunities["section"] = max(opportunities["section"], boundaries["section"])
+    opportunities["clause"] = max(opportunities["clause"], boundaries["clause"])
+    opportunities["table"] = max(opportunities["table"], boundaries["table"])
 
     if not context.get("section"):
         context["section"] = str(max(page, 1))
     if not context.get("clause"):
         context["clause"] = f"{context['section']}.0"
 
-    return context, boundaries
+    return context, boundaries, opportunities
 
 
-def _extract_paragraph_candidates(lines: list[str]) -> list[tuple[str, list[int]]]:
-    candidates: list[tuple[str, list[int]]] = []
-    acc: list[str] = []
-    idxs: list[int] = []
+def _collect_source_meta(lines: list[dict[str, Any]]) -> tuple[list[int], list[str]]:
+    line_indices = sorted(
+        {
+            int(value)
+            for line in lines
+            for value in line.get("source_line_indices", [])
+            if isinstance(value, int) or str(value).isdigit()
+        }
+    )
+    block_refs = _unique_preserve(
+        [
+            str(value)
+            for line in lines
+            for value in line.get("source_block_refs", [])
+            if str(value)
+        ]
+    )
+    return line_indices, block_refs
+
+
+def _build_paragraph_candidate(lines: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if not lines:
+        return None
+    text = " ".join(
+        str(line.get("text", "")).strip()
+        for line in lines
+        if str(line.get("text", "")).strip()
+    ).strip()
+    if not text or _is_toc_line(text):
+        return None
+
+    alpha_tokens = re.findall(r"[A-Za-z]{2,}", text)
+    if len(alpha_tokens) < 6 and not _has_normative_modal(text):
+        return None
+    if _candidate_is_contaminated(text) and not _has_normative_modal(text):
+        return None
+
+    source_line_indices, source_block_refs = _collect_source_meta(lines)
+    return {
+        "text": text,
+        "source_line_indices": source_line_indices,
+        "source_block_refs": source_block_refs,
+        "selection_meta": {
+            "pattern_conformance": True,
+            "segment_line_count": len(lines),
+        },
+    }
+
+
+def _extract_paragraph_candidates(lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    acc: list[dict[str, Any]] = []
 
     def flush() -> None:
         if not acc:
             return
-        text = " ".join(acc).strip()
-        if len(re.findall(r"[A-Za-z]{3,}", text)) >= 8:
-            candidates.append((text, list(idxs)))
+        candidate = _build_paragraph_candidate(list(acc))
+        if candidate is not None:
+            candidates.append(candidate)
         acc.clear()
-        idxs.clear()
 
-    for idx, line in enumerate(lines):
-        if _is_heading_line(line) or _is_list_line(line) or _is_table_line(line):
+    for line in lines:
+        text = str(line.get("text", ""))
+        if _is_heading_line(text) or _is_list_line(text) or _is_table_line(text):
             flush()
             continue
+
+        if acc:
+            previous_text = str(acc[-1].get("text", "")).strip()
+            current_text = text.strip()
+            split_after_sentence = bool(
+                re.search(r"[.!?;:]$", previous_text)
+                and re.match(r"^[A-Z][A-Za-z]", current_text)
+                and len(re.findall(r"[A-Za-z]{2,}", previous_text)) >= 6
+            )
+            if split_after_sentence:
+                flush()
+
         acc.append(line)
-        idxs.append(idx)
 
     flush()
-    candidates.sort(key=lambda item: len(item[0]), reverse=True)
     return candidates
 
 
-def _extract_list_candidates(lines: list[str]) -> list[tuple[str, int, int]]:
-    out: list[tuple[str, int, int]] = []
+def _extract_list_candidates(lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
     i = 0
     while i < len(lines):
         line = lines[i]
-        if not _is_list_line(line):
+        line_text = str(line.get("text", ""))
+        if not _is_list_line(line_text):
             i += 1
             continue
 
@@ -285,57 +483,142 @@ def _extract_list_candidates(lines: list[str]) -> list[tuple[str, int, int]]:
         i += 1
         while i < len(lines):
             nxt = lines[i]
-            if _is_list_line(nxt) or _is_heading_line(nxt) or _is_table_line(nxt):
+            nxt_text = str(nxt.get("text", ""))
+            if (
+                _is_list_line(nxt_text)
+                or _is_heading_line(nxt_text)
+                or _is_table_line(nxt_text)
+            ):
                 break
-            if nxt:
+            if nxt_text:
                 merged.append(nxt)
                 continuation += 1
             i += 1
 
-        text = " ".join(merged).strip()
-        if text:
-            marker_ok = 1 if _is_list_line(merged[0]) else 0
-            out.append((text, marker_ok, continuation))
-    out.sort(key=lambda item: len(item[0]), reverse=True)
+        text = " ".join(
+            str(item.get("text", "")).strip()
+            for item in merged
+            if str(item.get("text", "")).strip()
+        ).strip()
+        if not text:
+            continue
+        if _candidate_is_contaminated(text) and not _has_normative_modal(text):
+            continue
+
+        source_line_indices, source_block_refs = _collect_source_meta(merged)
+        out.append(
+            {
+                "text": text,
+                "source_line_indices": source_line_indices,
+                "source_block_refs": source_block_refs,
+                "selection_meta": {
+                    "marker_valid": True,
+                    "continuation_line_count": int(continuation),
+                },
+            }
+        )
     return out
 
 
 def _extract_table_cell_candidates(
-    lines: list[str], current_table_id: str
-) -> list[tuple[str, dict]]:
-    candidates: list[tuple[str, dict]] = []
-    row_index = 0
+    lines: list[dict[str, Any]], current_table_id: str
+) -> list[dict[str, Any]]:
+    regions: list[tuple[list[dict[str, Any]], bool, str]] = []
+    current_region: list[dict[str, Any]] = []
+    region_has_caption = False
+    region_table_id = current_table_id
 
     for line in lines:
-        if TABLE_CAPTION_RE.match(line):
-            row_index = 0
-            continue
-        if not _is_table_line(line):
-            continue
-
-        row_index += 1
-        if "|" in line:
-            raw_cells = [cell.strip() for cell in line.split("|")]
-        else:
-            raw_cells = [cell.strip() for cell in re.split(r"\s{2,}", line)]
-        cells = [cell for cell in raw_cells if cell]
-        for col_index, cell in enumerate(cells, start=1):
-            if len(re.findall(r"[A-Za-z]{2,}", cell)) < 1:
-                continue
-            candidates.append(
-                (
-                    cell,
-                    {
-                        "table_id": current_table_id or "Table-Unknown",
-                        "row_index": row_index,
-                        "col_index": col_index,
-                        "row_span": 1,
-                        "col_span": 1,
-                    },
+        text = str(line.get("text", ""))
+        caption_match = TABLE_CAPTION_RE.match(text)
+        if caption_match:
+            if current_region:
+                regions.append(
+                    (list(current_region), region_has_caption, region_table_id)
                 )
-            )
+                current_region.clear()
+            region_has_caption = True
+            region_table_id = f"Table-{caption_match.group(1)}"
+            continue
 
-    candidates.sort(key=lambda item: len(item[0]), reverse=True)
+        if _is_table_line(text):
+            cells = _split_table_cells(text)
+            if len(cells) >= 2:
+                current_region.append({"line": line, "cells": cells})
+            continue
+
+        if current_region:
+            regions.append((list(current_region), region_has_caption, region_table_id))
+            current_region.clear()
+            region_has_caption = False
+            region_table_id = current_table_id
+
+    if current_region:
+        regions.append((list(current_region), region_has_caption, region_table_id))
+
+    candidates: list[dict[str, Any]] = []
+    for region_rows, has_caption, table_id in regions:
+        if len(region_rows) < 2:
+            continue
+
+        col_counts = [len(row.get("cells", [])) for row in region_rows]
+        max_cols = max(col_counts) if col_counts else 0
+        stable_rows = sum(
+            1 for count in col_counts if count >= 2 and abs(count - max_cols) <= 1
+        )
+        if stable_rows < 2:
+            continue
+
+        table_name = table_id
+        if not table_name:
+            if has_caption or stable_rows >= 3:
+                table_name = "Table-Unknown"
+            else:
+                continue
+
+        for row_index, region_row in enumerate(region_rows, start=1):
+            row_line = region_row.get("line", {})
+            row_cells = [
+                str(cell).strip()
+                for cell in region_row.get("cells", [])
+                if str(cell).strip()
+            ]
+            for col_index, cell in enumerate(row_cells, start=1):
+                if len(re.findall(r"[A-Za-z0-9]", cell)) < 2:
+                    continue
+                if _candidate_is_contaminated(cell) and not _has_normative_modal(cell):
+                    continue
+
+                source_line_indices = sorted(
+                    {
+                        int(value)
+                        for value in row_line.get("source_line_indices", [])
+                        if isinstance(value, int) or str(value).isdigit()
+                    }
+                )
+                source_block_refs = _unique_preserve(
+                    [
+                        str(value)
+                        for value in row_line.get("source_block_refs", [])
+                        if str(value)
+                    ]
+                )
+                candidates.append(
+                    {
+                        "text": cell,
+                        "source_line_indices": source_line_indices,
+                        "source_block_refs": source_block_refs,
+                        "selection_meta": {
+                            "table_id": table_name,
+                            "row_index": row_index,
+                            "col_index": col_index,
+                            "row_span": 1,
+                            "col_span": 1,
+                            "table_context_rows": len(region_rows),
+                        },
+                    }
+                )
+
     return candidates
 
 
@@ -459,6 +742,9 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
         "dehyphenation_success": 0,
     }
     scope_boundaries = {"section": 0, "clause": 0, "table": 0}
+    scope_opportunities = {"section": 0, "clause": 0, "table": 0}
+    scope_boundaries_by_part: dict[str, dict[str, int]] = {}
+    scope_opportunities_by_part: dict[str, dict[str, int]] = {}
     scope_context_by_part: dict[str, dict[str, str]] = {}
 
     for decision in decisions:
@@ -488,12 +774,24 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
         prior_scope = scope_context_by_part.get(
             part, {"section": "1", "clause": "1.0", "table_id": ""}
         )
-        scope_context, boundary_delta = _update_scope_context(
+        scope_context, boundary_delta, opportunity_delta = _update_scope_context(
             merged_lines, prior_scope, page
         )
         scope_context_by_part[part] = scope_context
+
+        scope_boundaries_by_part.setdefault(
+            part, {"section": 0, "clause": 0, "table": 0}
+        )
+        scope_opportunities_by_part.setdefault(
+            part, {"section": 0, "clause": 0, "table": 0}
+        )
         for scope_key in scope_boundaries:
-            scope_boundaries[scope_key] += int(boundary_delta.get(scope_key, 0))
+            boundary_value = int(boundary_delta.get(scope_key, 0))
+            opportunity_value = int(opportunity_delta.get(scope_key, 0))
+            scope_boundaries[scope_key] += boundary_value
+            scope_opportunities[scope_key] += opportunity_value
+            scope_boundaries_by_part[part][scope_key] += boundary_value
+            scope_opportunities_by_part[part][scope_key] += opportunity_value
 
         paragraph_candidates = _extract_paragraph_candidates(merged_lines)
         list_candidates = _extract_list_candidates(merged_lines)
@@ -501,39 +799,129 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
             merged_lines, scope_context.get("table_id", "")
         )
 
-        selections: list[tuple[str, str, dict]] = []
+        if table_candidates:
+            scope_opportunities["table"] += 1
+            scope_opportunities_by_part[part]["table"] += 1
+            if int(boundary_delta.get("table", 0)) == 0:
+                scope_boundaries["table"] += 1
+                scope_boundaries_by_part[part]["table"] += 1
+
+        selections: list[dict[str, Any]] = []
         if paragraph_candidates:
-            text, _ = paragraph_candidates[0]
-            selections.append(("paragraph", text, {"pattern_conformance": True}))
+            for candidate in paragraph_candidates:
+                selections.append(
+                    {
+                        "unit_type": "paragraph",
+                        "text": str(candidate.get("text", "")),
+                        "selection_meta": dict(candidate.get("selection_meta", {})),
+                        "source_line_indices": list(
+                            candidate.get("source_line_indices", [])
+                        ),
+                        "source_block_refs": list(
+                            candidate.get("source_block_refs", [])
+                        ),
+                    }
+                )
         elif merged_lines:
+            first_line = str(merged_lines[0].get("text", ""))
+            first_source_lines = [
+                int(value)
+                for value in merged_lines[0].get("source_line_indices", [])
+                if isinstance(value, int) or str(value).isdigit()
+            ]
+            first_source_refs = _unique_preserve(
+                [
+                    str(value)
+                    for value in merged_lines[0].get("source_block_refs", [])
+                    if str(value)
+                ]
+            )
             selections.append(
-                ("paragraph", merged_lines[0], {"pattern_conformance": False})
+                {
+                    "unit_type": "paragraph",
+                    "text": first_line,
+                    "selection_meta": {"pattern_conformance": False},
+                    "source_line_indices": first_source_lines,
+                    "source_block_refs": first_source_refs,
+                }
             )
 
         if list_candidates:
-            list_text, marker_ok, continuation_count = list_candidates[0]
-            selections.append(
-                (
-                    "list_bullet",
-                    list_text,
+            for candidate in list_candidates:
+                selections.append(
                     {
-                        "marker_valid": bool(marker_ok),
-                        "continuation_line_count": int(continuation_count),
-                    },
+                        "unit_type": "list_bullet",
+                        "text": str(candidate.get("text", "")),
+                        "selection_meta": dict(candidate.get("selection_meta", {})),
+                        "source_line_indices": list(
+                            candidate.get("source_line_indices", [])
+                        ),
+                        "source_block_refs": list(
+                            candidate.get("source_block_refs", [])
+                        ),
+                    }
                 )
-            )
 
         if table_candidates:
-            table_text, table_meta = table_candidates[0]
-            selections.append(("table_cell", table_text, table_meta))
+            for candidate in table_candidates:
+                selections.append(
+                    {
+                        "unit_type": "table_cell",
+                        "text": str(candidate.get("text", "")),
+                        "selection_meta": dict(candidate.get("selection_meta", {})),
+                        "source_line_indices": list(
+                            candidate.get("source_line_indices", [])
+                        ),
+                        "source_block_refs": list(
+                            candidate.get("source_block_refs", [])
+                        ),
+                    }
+                )
 
         if not selections:
-            selections = [("paragraph", "", {"pattern_conformance": False})]
+            selections = [
+                {
+                    "unit_type": "paragraph",
+                    "text": "",
+                    "selection_meta": {"pattern_conformance": False},
+                    "source_line_indices": [],
+                    "source_block_refs": [],
+                }
+            ]
 
         unit_ordinal = 0
-        for unit_type, unit_text, selection_meta in selections:
+        for selection in selections:
+            unit_type = str(selection.get("unit_type", ""))
+            unit_text = str(selection.get("text", ""))
+            selection_meta = dict(selection.get("selection_meta", {}))
+            source_line_indices = sorted(
+                {
+                    int(value)
+                    for value in selection.get("source_line_indices", [])
+                    if isinstance(value, int) or str(value).isdigit()
+                }
+            )
+            source_block_refs = _unique_preserve(
+                [
+                    str(value)
+                    for value in selection.get("source_block_refs", [])
+                    if str(value)
+                ]
+            )
+
+            if not unit_type:
+                continue
             if not unit_text.strip():
                 continue
+
+            if _candidate_is_contaminated(unit_text) and not _has_normative_modal(
+                unit_text
+            ):
+                continue
+
+            selection_meta["source_line_indices"] = source_line_indices
+            selection_meta["source_block_ref_count"] = len(source_block_refs)
+
             unit_ordinal += 1
             unit_id = _unit_id(part, page, unit_type, unit_ordinal)
             unit = _unit_from_selection(
@@ -553,11 +941,6 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
             slice_id = hashlib.sha256(
                 f"{unit_id}:{unit_text_sha}".encode("utf-8")
             ).hexdigest()[:24]
-            source_block_refs = [
-                str(row.get("block_id", ""))
-                for row in block_rows
-                if str(row.get("block_id", ""))
-            ]
             unit_slices.append(
                 {
                     "unit_id": unit_id,
@@ -568,6 +951,7 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
                     "text": unit_text,
                     "text_sha256": unit_text_sha,
                     "source_block_refs": source_block_refs,
+                    "source_line_indices": source_line_indices,
                     "source_locator": unit["source_locator"],
                     "selection_meta": selection_meta,
                 }
@@ -653,6 +1037,23 @@ def run_normalize_stage(ctx: "StageContext") -> "StageResult":
         "coverage": coverage,
         "line_reconstruction": wrap_stats,
         "scope_boundaries": scope_boundaries,
+        "scope_boundaries_by_part": scope_boundaries_by_part,
+        "scope_opportunities": {
+            key: max(
+                int(scope_boundaries.get(key, 0)), int(scope_opportunities.get(key, 0))
+            )
+            for key in scope_boundaries
+        },
+        "scope_opportunities_by_part": {
+            part: {
+                key: max(
+                    int(scope_boundaries_by_part.get(part, {}).get(key, 0)),
+                    int(scope_opportunities_by_part.get(part, {}).get(key, 0)),
+                )
+                for key in scope_boundaries
+            }
+            for part in sorted(scope_boundaries_by_part.keys())
+        },
     }
 
     control_dir = ctx.paths.control_run_root / "artifacts" / "normalize"
