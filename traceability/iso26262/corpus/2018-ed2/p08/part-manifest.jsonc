@@ -4,8 +4,10 @@
   "part": "P08",
   "shards": [
     "list_bullet-0001.jsonl",
+    "list_bullet-0002.jsonl",
     "paragraph-0001.jsonl",
+    "paragraph-0002.jsonl",
     "table_cell-0001.jsonl"
   ],
-  "unit_count": 190
+  "unit_count": 988
 }

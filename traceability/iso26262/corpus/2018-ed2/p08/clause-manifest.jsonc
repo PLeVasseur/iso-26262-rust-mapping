@@ -2,223 +2,223 @@
   "clauses": [
     {
       "clause": "1.0",
-      "unit_count": 6
+      "unit_count": 23
     },
     {
       "clause": "10.2",
-      "unit_count": 3
+      "unit_count": 12
     },
     {
       "clause": "10.4.5",
-      "unit_count": 3
+      "unit_count": 18
     },
     {
       "clause": "11.0",
-      "unit_count": 3
+      "unit_count": 23
     },
     {
       "clause": "11.2",
-      "unit_count": 6
+      "unit_count": 29
     },
     {
       "clause": "11.3.2",
-      "unit_count": 2
-    },
-    {
-      "clause": "11.4.4.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "11.4.5.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "11.4.5.4",
-      "unit_count": 3
-    },
-    {
-      "clause": "11.4.7.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "11.4.8.3",
-      "unit_count": 3
-    },
-    {
-      "clause": "12.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "12.4.2.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "12.4.2.3",
-      "unit_count": 3
-    },
-    {
-      "clause": "13.1",
-      "unit_count": 5
-    },
-    {
-      "clause": "13.3.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "13.4.1.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "13.4.3.3.3",
-      "unit_count": 3
-    },
-    {
-      "clause": "13.4.3.6.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "13.5.2",
-      "unit_count": 2
-    },
-    {
-      "clause": "14.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "14.3.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "14.4.2.7",
-      "unit_count": 3
-    },
-    {
-      "clause": "14.4.5.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "14.4.5.2.4",
-      "unit_count": 2
-    },
-    {
-      "clause": "14.5.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "15.4.3",
-      "unit_count": 3
-    },
-    {
-      "clause": "16.0",
-      "unit_count": 9
-    },
-    {
-      "clause": "16.2",
-      "unit_count": 3
-    },
-    {
-      "clause": "16.5",
       "unit_count": 10
     },
     {
+      "clause": "11.4.4.1",
+      "unit_count": 14
+    },
+    {
+      "clause": "11.4.5.1",
+      "unit_count": 20
+    },
+    {
+      "clause": "11.4.5.4",
+      "unit_count": 22
+    },
+    {
+      "clause": "11.4.7.1",
+      "unit_count": 30
+    },
+    {
+      "clause": "11.4.8.3",
+      "unit_count": 18
+    },
+    {
+      "clause": "12.2",
+      "unit_count": 14
+    },
+    {
+      "clause": "12.4.2.1",
+      "unit_count": 21
+    },
+    {
+      "clause": "12.4.2.3",
+      "unit_count": 25
+    },
+    {
+      "clause": "13.1",
+      "unit_count": 15
+    },
+    {
+      "clause": "13.3.2",
+      "unit_count": 19
+    },
+    {
+      "clause": "13.4.1.2",
+      "unit_count": 21
+    },
+    {
+      "clause": "13.4.3.3.3",
+      "unit_count": 17
+    },
+    {
+      "clause": "13.4.3.6.2",
+      "unit_count": 17
+    },
+    {
+      "clause": "13.5.2",
+      "unit_count": 24
+    },
+    {
+      "clause": "14.1",
+      "unit_count": 12
+    },
+    {
+      "clause": "14.3.1",
+      "unit_count": 21
+    },
+    {
+      "clause": "14.4.2.7",
+      "unit_count": 13
+    },
+    {
+      "clause": "14.4.5.1",
+      "unit_count": 12
+    },
+    {
+      "clause": "14.4.5.2.4",
+      "unit_count": 8
+    },
+    {
+      "clause": "14.5.2",
+      "unit_count": 8
+    },
+    {
+      "clause": "15.4.3",
+      "unit_count": 10
+    },
+    {
+      "clause": "16.0",
+      "unit_count": 36
+    },
+    {
+      "clause": "16.2",
+      "unit_count": 12
+    },
+    {
+      "clause": "16.5",
+      "unit_count": 43
+    },
+    {
       "clause": "16.5.1",
-      "unit_count": 3
+      "unit_count": 17
     },
     {
       "clause": "4.2",
-      "unit_count": 3
+      "unit_count": 13
     },
     {
       "clause": "4.4",
-      "unit_count": 3
+      "unit_count": 16
     },
     {
       "clause": "5.3.1",
-      "unit_count": 3
+      "unit_count": 13
+    },
+    {
+      "clause": "5.4.2",
+      "unit_count": 44
     },
     {
       "clause": "5.4.2.1",
-      "unit_count": 3
-    },
-    {
-      "clause": "5.4.2.2",
-      "unit_count": 9
+      "unit_count": 18
     },
     {
       "clause": "5.4.3.1",
-      "unit_count": 3
+      "unit_count": 22
     },
     {
       "clause": "5.4.4.8",
-      "unit_count": 3
+      "unit_count": 15
     },
     {
       "clause": "5.4.5",
-      "unit_count": 6
+      "unit_count": 5
     },
     {
       "clause": "5.5.1",
-      "unit_count": 2
+      "unit_count": 14
     },
     {
       "clause": "6.2",
-      "unit_count": 3
+      "unit_count": 9
     },
     {
       "clause": "6.3.2",
-      "unit_count": 3
+      "unit_count": 5
     },
     {
       "clause": "6.4.2.4",
-      "unit_count": 3
+      "unit_count": 16
     },
     {
       "clause": "6.4.2.5",
-      "unit_count": 3
+      "unit_count": 26
     },
     {
       "clause": "6.4.3.2",
-      "unit_count": 3
+      "unit_count": 22
     },
     {
       "clause": "7.0",
-      "unit_count": 3
+      "unit_count": 32
     },
     {
       "clause": "7.2",
-      "unit_count": 3
+      "unit_count": 21
     },
     {
       "clause": "7.5.1",
-      "unit_count": 3
+      "unit_count": 11
     },
     {
       "clause": "8.3.2",
-      "unit_count": 2
+      "unit_count": 1
     },
     {
       "clause": "8.4.1.3",
-      "unit_count": 3
+      "unit_count": 11
     },
     {
       "clause": "8.4.4.1",
-      "unit_count": 3
+      "unit_count": 21
     },
     {
       "clause": "9.1",
-      "unit_count": 3
+      "unit_count": 13
     },
     {
       "clause": "9.3.2",
-      "unit_count": 3
+      "unit_count": 16
     },
     {
       "clause": "9.4.2.2",
-      "unit_count": 3
+      "unit_count": 22
     },
     {
       "clause": "9.4.3.3",
-      "unit_count": 3
+      "unit_count": 18
     }
   ],
   "edition": "2018-ed2",
